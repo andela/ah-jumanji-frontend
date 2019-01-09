@@ -1,0 +1,124 @@
+/* main preloader */
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+@keyframes letters-loading {
+  0%, 75%, 100% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+
+  25%, 50% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+.animated-background {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eee 8%, #ddd 18%, #eee 33%);
+  background-size: 800px 104px;
+  height: 96px;
+  position: relative;
+}
+
+.section-preloader {
+  align-items: center;
+  cursor: none;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 900;
+  .animation-preloader {
+    position: absolute;
+    z-index: 100;
+    .txt-loading {
+      font: bold 5em 'Montserrat', sans-serif;
+      text-align: center;
+      user-select: none;
+      .letters-loading {
+        &:before {
+          animation: letters-loading 4s infinite;
+          color: #000;
+          content: attr(data-text-preloader);
+          left: 0;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          transform: rotateY(-90deg);
+        }
+        color: rgba(0, 0, 0, 0.2);
+        position: relative;
+        &:nth-child(2):before {
+          animation-delay: 0.2s;
+        }
+        &:nth-child(3):before {
+          animation-delay: 0.4s;
+        }
+        &:nth-child(4):before {
+          animation-delay: 0.6s;
+        }
+        &:nth-child(5):before {
+          animation-delay: 0.8s;
+        }
+        &:nth-child(6):before {
+          animation-delay: 1s;
+        }
+        &:nth-child(7):before {
+          animation-delay: 1.2s;
+        }
+        &:nth-child(8):before {
+          animation-delay: 1.4s;
+        }
+        &:nth-child(9):before {
+          animation-delay: 1.6s;
+        }
+        &:nth-child(10):before {
+          animation-delay: 1.8s;
+        }
+        &:nth-child(11):before {
+          animation-delay: 2s;
+        }
+        &:nth-child(12):before {
+          animation-delay: 2.2s;
+        }
+        &:nth-child(13):before {
+          animation-delay: 2.4s;
+        }
+        &:nth-child(14):before {
+          animation-delay: 2.6s;
+        }
+      }
+    }
+  }
+  .loader-section {
+    background-color: #fff;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+
+.loaded .animation-preloader {
+  opacity: 0;
+  transition: 0.3s ease-out;
+}

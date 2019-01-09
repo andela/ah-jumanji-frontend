@@ -1,0 +1,42 @@
+/* Navbar */
+
+.nav-item {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 5px 5px;
+}
+
+.scroll {
+  margin-top: -10px;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar {
+  padding: 3px;
+  border-bottom: 1px solid #dfe4dd;
+  background: white;
+  position: inherit;
+  width: -webkit-fill-available;
+  .navbar-brand {
+    margin-top: -7px;
+    margin-left: 8px;
+  }
+  .navbar-avatar {
+    margin-top: -8px;
+  }
+  .notifications-badge {
+    margin-top: -6px;
+    position: absolute;
+    margin-left: -18px;
+  }
+}
+
+/* Navbar end */
