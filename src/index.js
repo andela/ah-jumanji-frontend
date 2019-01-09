@@ -1,24 +1,21 @@
+import React from 'react';
 import 'bootstrap';
 import 'popper.js';
-import React from 'react';
-import {
-  render
-} from 'react-dom';
-import {
-  Provider
-} from 'react-redux';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from "react-router-dom";
 
-import App from "./App";
 import ConfigStore from './store/storeConfig';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'; // import bootstrap css styling
+import App from "./App";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"; // import bootstrap css styling
 
 const store = ConfigStore();
 
 render(
   <Provider store={store}>
-
-    <App />
-
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
