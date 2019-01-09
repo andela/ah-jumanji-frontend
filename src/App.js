@@ -1,14 +1,18 @@
-import {hot} from "react-hot-loader/root";
 import React from "react";
-import 'bootstrap';
+import { hot } from "react-hot-loader/root";
+import "bootstrap";
 
-import Socialauth from './apps/social_auth/components/SocialAuth';
+import Main from "./apps/Navigation/Routes";
+import Navigation from "./apps/Navigation/Navbar";
 
-const App = () => (
-  <div className="jumbotron">
-    <h1>Hey there,Welcome to authors Haven</h1>
-    <Socialauth />
-  </div>
-);
+const App = () => {
+  return (
+    <div className="jumbotron">
+      <h1>AUTHORS HAVEN.</h1>
+      <Navigation />
+      <Main />
+    </div>
+  );
+};
 
 export default hot(App);
