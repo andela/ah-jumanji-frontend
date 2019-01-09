@@ -4,24 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --coverageDirectory=output/coverage/jest",
+    "test": "jest --config ./jest.config.json --coverage",
     "start": "npm-run-all --parallel open:src lint:watch",
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch"
-  },
-  "jest": {
-    "coverageReporters": [
-      "text"
-    ],
-    "reporters": [
-      "default",
-      "jest-junit"
-    ]
-  },
-  "jest-junit": {
-    "output": "output/coverage/junit/junit.xml",
-    "usePathForSuiteName": "true"
   },
   "repository": {
     "type": "git",
@@ -50,6 +37,9 @@
     "babel-preset-stage-1": "^6.24.1",
     "coveralls": "^3.0.2",
     "css-loader": "^2.1.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
