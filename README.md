@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/andela/ah-jumanji-frontend.svg?style=svg)](https://circleci.com/gh/andela/ah-jumanji-frontend)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/577c4dbb53e885583bee/test_coverage)](https://codeclimate.com/github/andela/ah-jumanji-frontend/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/577c4dbb53e885583bee/maintainability)](https://codeclimate.com/github/andela/ah-jumanji-frontend/maintainability)
 # Authors Haven
