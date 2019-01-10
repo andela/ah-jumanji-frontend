@@ -53,11 +53,7 @@ export default {
       },
       {
         "test": /\.scss$/,
-<<<<<<< HEAD
         "use": [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-=======
-        "use": ['style-loader', 'css-loader', 'sass-loader'],
->>>>>>> ft(Login): implement login feature
       },
       {
         "test": /\.(png|jpg|gif)$/,
