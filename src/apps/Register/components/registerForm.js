@@ -103,7 +103,7 @@ class RegistrationForm extends Component {
               <button type="submit" className="btn btn-success btn-block" onClick={this.registerUser}>Submit</button>
               <hr />
               Already have an account?
-              <NavLink to="login">Login</NavLink>
+              <NavLink to="/">Login</NavLink>
             </form>
           </div>
         </div>
@@ -118,7 +118,7 @@ RegistrationForm.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    user: state.REGISTER,
+    user: state.Register
   };
 }
 

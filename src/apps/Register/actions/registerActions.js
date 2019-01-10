@@ -7,13 +7,13 @@ const registerUrl = process.env.baseUrl + process.env.registerEndpoint;
 const successMessage = "Successfully registered!";
 
 export const RegisterSuccess = (registerResponse) => ({
-    type: types.REGISTER_SUCCESS,
-    registerResponse
+  type: types.REGISTER_SUCCESS,
+  registerResponse
 });
 
-export const RegisterFail = (error) => ({
+export const RegisterFail = (responseError) => ({
   type: types.REGISTER_FAIL,
-  payload: error
+  responseError
 });
 
 export const RegisterUser = (userData) => {

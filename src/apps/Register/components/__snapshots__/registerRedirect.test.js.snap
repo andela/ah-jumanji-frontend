@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register redirect should match the snapshoot 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="bg-circle-1 bg-circle"
+  />
+  <div
+    className="bg-circle-2 bg-circle"
+  />
+  <div
+    className="bg-circle-3 bg-circle"
+  />
+  <div
+    className="register-redirect-modal"
+  >
+    <img
+      alt="success-icon"
+      id="success-icon"
+      src={null}
+    />
+    <p>
+      You were successfully registered.
+      <br />
+      Check your mailbox for a link to activate your account.
+    </p>
+  </div>
+</div>
+`;

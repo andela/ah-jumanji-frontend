@@ -6,12 +6,12 @@ import {
 import socialAuth from './SocialLogin/reducers/socialReducer';
 import Login from './Login/reducers/loginReducer';
 
-import REGISTER from "./Register/reducers/registerReducer";
+import Register from "./Register/reducers/registerReducer";
 
 const rootReducer = combineReducers({
   socialAuth,
   Login,
-  REGISTER,
+  Register,
   //Add your reducers here
 });
 
