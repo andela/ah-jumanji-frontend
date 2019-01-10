@@ -60,6 +60,14 @@ export default {
         ],
       },
       {
+        test: /\.css$/,
+        loader: 'style-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: 'css-loader',
+      },
+      {
         "test": /\.scss$/,
         "use": [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
