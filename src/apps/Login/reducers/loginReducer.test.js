@@ -25,4 +25,11 @@ describe('login reducer', () => {
     expect( loginUserReducer( { }, action )).toEqual(expectedState );
   });
 
+  it('should handle LOGIN_FAIL', () => {
+    const action = {
+      type: types.LOGIN_FAILED
+    };
+    expect(loginUserReducer({}, action)).toEqual({});
+  });
+
 });
