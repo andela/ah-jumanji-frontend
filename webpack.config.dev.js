@@ -1,6 +1,8 @@
 import webpack from 'webpack';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 
 export default {
   "mode": "development",
@@ -30,6 +32,9 @@ export default {
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
+    }),
+    new MiniCssExtractPlugin({
+      filename: "style.css"
     })
   ],
   "module": {
@@ -47,8 +52,8 @@ export default {
         ],
       },
       {
-        "test": /\.css$/,
-        "use": ['style-loader', 'css-loader'],
+        "test": /\.scss$/,
+        "use": [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         "test": /\.(png|jpg|gif)$/,

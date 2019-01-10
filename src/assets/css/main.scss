@@ -1,0 +1,278 @@
+
+@import '~bootstrap/scss/bootstrap';
+@import 'navbar';
+@import 'masonry';
+@import 'mainpreloader';
+@import 'preloader';
+
+.login-container{
+ width: 100%;
+ height: 100vh;
+ background-repeat: no-repeat;
+ .panel-body{
+   padding: 5px 20px 20px 20px;
+ }
+ .panel-heading{
+   padding: 20px 20px 0px 20px;
+ }
+ .welcome{
+   margin: 160px auto auto 80px;
+   position: inherit;
+ }
+}
+
+.more {
+  color: #4e4c4c !important;
+}
+
+.article-more {
+  margin-left: 10px;
+  color: #4e4c4c !important;
+}
+
+.btn-more {
+  background-color: white !important;
+  color: #4e4c4c !important;
+}
+
+.fa-rated {
+  color: orange;
+}
+
+.fa-ratings {
+  color: #4e4c4c !important;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+
+.sm-dropdown {
+  display: none !important;
+}
+
+.sm-hide {
+  display: block !important;
+  .btn-outline-success:hover {
+    color: white !important;
+  }
+}
+
+.btn-success, .btn-outline-warning:hover {
+  color: white !important;
+}
+
+.btn-follow {
+  width: 80px !important;
+}
+
+#loader-data {
+  display: contents;
+}
+
+#loaded-data {
+  display: none;
+}
+
+.loader-data-hide {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.loaded-data-show {
+  display: contents !important;
+}
+
+.auth-container {
+  min-height: 400px;
+}
+
+.panel {
+  padding: 10px 10px;
+  border: 1px solid #cac9c9;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.panel-heading {
+  padding: 10px 0px;
+}
+
+.followers-avatar {
+  height: 40px;
+  width: 40px;
+}
+
+
+a {
+  color: #72a57e;
+  &:hover {
+    color: teal;
+    text-decoration: none;
+  }
+}
+
+.contact-details {
+  margin-top: 80px;
+  font-size: 18px;
+}
+
+.card-text, .card-title {
+  color: black !important;
+}
+
+#page-content {
+  min-height: 300px;
+  margin-top: 10px;
+}
+
+.text-white {
+  color: white;
+}
+
+.article-bottom {
+  padding: 30px;
+}
+
+.text-fit {
+  color: #3a3939;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.article-avatar {
+  height: 45px;
+  width: 45px;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+.article-text {
+  padding-top: 5px;
+}
+
+.article-header {
+  margin: 10px;
+}
+
+.article-index-header {
+  margin-top: 50px;
+}
+
+.shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.like-comment-button-section {
+  margin: -44px 10px auto auto;
+  padding: 0 30px;
+  a {
+    color: white;
+    margin: auto auto 5px;
+  }
+}
+
+.profile-avatar {
+  height: 160px;
+  width: 160px;
+  align-items: right;
+  margin: 2px auto;
+  display: block;
+}
+
+.profile-content {
+  margin-top: 20px;
+}
+
+.edit-profile-button {
+  margin-left: 10px;
+}
+
+.message {
+  margin-top: 0;
+}
+
+.message-avatar {
+  margin-top: 10px;
+}
+
+.article-title {
+  margin-top: 30px;
+}
+
+.article-pre-details {
+  list-style-type: none;
+  margin: 20px 10px 0;
+}
+
+.alert {
+  display: none;
+}
+
+#login-form {
+  margin: 50px 90px auto 30px;
+  background-color: white;
+}
+
+.bg-circle-1 {
+  height: 35rem;
+  width: 45rem;
+  top: -25rem;
+  right: -25rem;
+  z-index: -1 !important;
+}
+
+.bg-circle {
+  z-index: 0;
+  position: absolute;
+  border-radius: 100%;
+  background: linear-gradient(0deg, #17a2b8 0%, #ffc107 100%);
+}
+
+.bg-circle-2 {
+  height: 70rem;
+  width: 90rem;
+  bottom: -55rem;
+  left: -55rem;
+  position: fixed;
+}
+
+.bg-circle-3 {
+  height: 190rem;
+  width: 230rem;
+  bottom: -130rem;
+  left: 57rem;
+  position: fixed;
+}
+
+/* hide summernote pop overs*/
+.note-table-popover, .note-image-popover, .note-link-popover {
+  display: none;
+}
+
+.text-muted {
+  color: blue;
+}
+
+@import 'mediaqueries';
