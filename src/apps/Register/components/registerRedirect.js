@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import successIcon from "../../../assets/img/success.png";
+import accountOffIcon from "../../../assets/img/account-off.png";
 
 class RegisterRedirect extends Component {
   render() {
@@ -10,11 +10,11 @@ class RegisterRedirect extends Component {
         <div className="bg-circle-2 bg-circle" />
         <div className="bg-circle-3 bg-circle" />
         <div className="register-redirect-modal">
-          <img id="success-icon" src={successIcon} alt="success-icon" />
+          <img id="success-icon" src={accountOffIcon} alt="success-icon" />
           <p>
-            You were successfully registered.
+            Almost there!
             <br />
-            Check your mailbox for a link to activate your account.
+            Go to your mailbox and click the link we sent to you to activate your Account.
           </p>
         </div>
       </div>

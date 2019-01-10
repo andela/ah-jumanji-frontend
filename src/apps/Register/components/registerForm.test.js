@@ -22,14 +22,18 @@ describe('<RegisterContainer />', () => {
 });
 
 describe('Registration form', () => {
+  let wrapper;
   const store = mockStore({});
-  const wrapper = mount(
-    <Provider store={store}>
-      <MemoryRouter>
-        <RegistrationForm />
-      </MemoryRouter>
-    </Provider>,
+
+  beforeEach(() => {
+    wrapper = mount(
+      <Provider store={store}>
+        <MemoryRouter>
+          <RegistrationForm />
+        </MemoryRouter>
+      </Provider>,
   );
+  });
 
   it('should match the snapshoot', () => {
     expect(wrapper).toMatchSnapshot();

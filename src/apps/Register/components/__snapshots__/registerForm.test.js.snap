@@ -33,7 +33,7 @@ exports[`Registration form should match the snapshoot 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "c5i3dq",
+              "key": "s59zmr",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -47,7 +47,7 @@ exports[`Registration form should match the snapshoot 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "c5i3dq",
+            "key": "s59zmr",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -210,20 +210,24 @@ exports[`Registration form should match the snapshoot 1`] = `
                   <NavLink
                     activeClassName="active"
                     aria-current="page"
-                    to="login"
+                    to="/"
                   >
                     <Route
-                      path="login"
+                      path="\\\\/"
                     >
                       <Link
-                        aria-current={null}
+                        aria-current="page"
+                        className="active"
                         replace={false}
-                        to="login"
+                        style={Object {}}
+                        to="/"
                       >
                         <a
-                          aria-current={null}
-                          href="/login"
+                          aria-current="page"
+                          className="active"
+                          href="/"
                           onClick={[Function]}
+                          style={Object {}}
                         >
                           Login
                         </a>

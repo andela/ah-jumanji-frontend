@@ -3,17 +3,18 @@ import { toast } from 'react-toastify';
 import * as types from './registerTypes';
 
 const registerUrl = process.env.baseUrl + process.env.registerEndpoint;
+const activateUserUrl = process.env.baseUrl + process.env.activateUserUrl;
 
 const successMessage = "Successfully registered!";
 
 export const RegisterSuccess = (registerResponse) => ({
-    type: types.REGISTER_SUCCESS,
-    registerResponse
+  type: types.REGISTER_SUCCESS,
+  registerResponse
 });
 
-export const RegisterFail = (error) => ({
+export const RegisterFail = (responseError) => ({
   type: types.REGISTER_FAIL,
-  payload: error
+  responseError
 });
 
 export const RegisterUser = (userData) => {
@@ -45,4 +46,22 @@ export const RegisterUser = (userData) => {
         dispatch(RegisterFail(error.response.data));
       });
   };
+};
+
+export const ActivateUser = (uid, token) => {
+  const activateWithPayload = `${activateUserUrl}/${uid}/${token}`;
+  return axios.get(activateWithPayload, {
+    headers: {
+      Accept: 'application/json'}
+  })
+    .then(response => {
+      // Log success
+      // eslint-disable-next-line no-console
+      console.log(response);
+    })
+    .catch(error => {
+      // Log error
+      // eslint-disable-next-line no-console
+      console.log(error);
+    });
 };

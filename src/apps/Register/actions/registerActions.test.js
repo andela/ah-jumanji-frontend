@@ -26,12 +26,12 @@ describe('Register actions', () => {
   });
 
   it('should dispatch type REGISTER_FAIL', () => {
-    const error = "The username already exists. Kindly try another.";
+    const responseError = "The username already exists. Kindly try another.";
     const expectedAction = {
       type: types.REGISTER_FAIL,
-      payload: error
+      responseError
     };
-    expect(actions.RegisterFail(error)).toEqual(expectedAction);
+    expect(actions.RegisterFail(responseError)).toEqual(expectedAction);
   });
 
 });
@@ -58,7 +58,7 @@ describe('Mocking register request', () => {
      {type: types.REGISTER_SUCCESS, registerResponse}
      ];
 
-   const store = mockStore({ registerResponse: {} });
+   const store = mockStore();
 
    return store.dispatch(actions.RegisterUser(registerResponse)).then(() => {
      expect(store.getActions()).toEqual(expectedAction);

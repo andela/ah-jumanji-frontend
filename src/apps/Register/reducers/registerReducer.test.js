@@ -1,5 +1,5 @@
 import registerReducer from "./registerReducer";
-import * as actions from '../actions/registerActions';
+import * as types from '../actions/registerTypes';
 
 describe('resister reducers', () => {
   const state = {
@@ -14,16 +14,27 @@ describe('resister reducers', () => {
   });
 
   it('should handle REGISTER_SUCCESS', () => {
-    const registerSuccess = {
-      type: actions.RegisterSuccess
+    const action = {
+      type: types.REGISTER_SUCCESS,
+      payload: {
+        username: 'masha',
+        email: 'masha@gmail.com',
+        password: 'Masha12#'
+      }
     };
-    expect(registerReducer({}, registerSuccess)).toEqual({});
+
+    const expectedState = {
+      username: 'masha',
+      email: 'masha@gmail.com',
+      password: 'Masha12#'
+    };
+    expect(registerReducer({}, action)).toEqual(expectedState );
   });
 
   it('should handle REGISTER_FAIL', () => {
-    const registerFail = {
-      type: actions.RegisterFail
+    const action = {
+      type: types.REGISTER_FAIL
     };
-    expect(registerReducer({}, registerFail)).toEqual({});
+    expect(registerReducer({}, action)).toEqual({});
   });
 });
