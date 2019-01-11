@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -16,6 +17,11 @@ export default {
     "contentBase": './src',
     // enable hot reloading
     "hot": true,
+    // webpack options
+    "headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+    }
   },
   "output": {
     "path": __dirname + '/dist',
@@ -35,7 +41,8 @@ export default {
     }),
     new MiniCssExtractPlugin({
       filename: "style.css"
-    })
+    }),
+    new Dotenv()
   ],
   "module": {
     "rules": [
@@ -50,6 +57,14 @@ export default {
             },
           },
         ],
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: 'css-loader',
       },
       {
         "test": /\.scss$/,

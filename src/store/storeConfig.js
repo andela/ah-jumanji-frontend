@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 import {
   createLogger
 } from 'redux-logger';
+
 // import promise from 'redux-promise-middleware';
 
 import initialState from './initialState';
@@ -18,13 +19,19 @@ function jumanjiStore() {
   const store = createStore(
     rootReducer,
     initialState,
-    compose(applyMiddleware(thunk, createLogger()),
-      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+    /* preloadedState, */
+    compose(
+      applyMiddleware(thunk, createLogger()),
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() || compose
+    )
   );
   /* eslint-enable */
 
-  return store;
+  if (process.env.NODE_ENV !== 'production' && module.hot) {
+    module.hot.accept('../rootReducers', () => store.replaceReducer(rootReducer));
+  }
 
+  return store;
 }
 
 export default jumanjiStore;
