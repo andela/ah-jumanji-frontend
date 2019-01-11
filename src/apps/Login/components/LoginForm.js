@@ -1,9 +1,3 @@
-/* eslint-disable react/no-unused-prop-types */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable jsx-a11y/label-has-for */
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
@@ -28,8 +22,7 @@ class LoginForm extends Component {
   }
   handleSubmit(e){
     e.preventDefault();
-    const { email } = this.state;
-    const { password } = this.state;
+    const { email, password } = this.state;
     const loginData = {
         user: {
           email,
@@ -40,34 +33,41 @@ class LoginForm extends Component {
     const { actions } = this.props;
     actions.authenticateUser(loginData);
   }
-
   render() {
+    const {user} = this.props;
+
     return (
       <div className="col-md-6">
         <div className="panel panel-default" id="login-form">
           <div className="panel-heading">
-            <h3>Login</h3>
+            <h3>Login </h3>
             <hr />
           </div>
           <div className="panel-body">
-            <div className="alert alert-success" id="hiddenelement" role="alert">
-              Successfully Logged in.
+            <div
+              className={
+                (user.user) ?
+                  ('alert alert-success') :
+                ((user.errors) ?
+                  ('alert alert-danger') :
+                  ('d-none')
+                )} role="alert">
+              { (user.user) ? ('Login Successful!') : ((user.errors) ? ( user.errors.error[0] ) : (' '))}
             </div>
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
-                <label htmlFor="email">Email address</label>
+                Email address
                 <input type="email" onChange={this.handleChange} className="form-control" name="email" placeholder="Enter email eg. example@gmail.com" required />
               </div>
               <div className="form-group">
-                <label htmlFor="password">Password</label>
+                Password
                 <input type="password" onChange={this.handleChange} className="form-control" name="password" placeholder="Enter Password" required />
               </div>
               <button type="submit" className="btn btn-success btn-block">Submit</button>
               <SocialAuthButtons />
-              <hr />
               <a href="/forgotpassword">Forgot Password?</a>
               <br />
-              Don't have an account?
+              Don&apos;t have an account?
               <a href="/register">Register.</a>
             </form>
           </div>

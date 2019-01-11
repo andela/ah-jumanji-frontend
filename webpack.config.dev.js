@@ -33,6 +33,7 @@ export default {
       $: "jquery",
       jQuery: "jquery"
     }),
+    // extract css from sass and save it in css file.
     new MiniCssExtractPlugin({
       filename: "style.css"
     })

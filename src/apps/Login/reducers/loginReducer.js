@@ -3,9 +3,6 @@ import * as types from  '../actions/actionTypes';
 
 export default function loginUserReducer(state = {}, action){
     switch (action.type) {
-        case types.LOGIN_REQUEST:
-            return Object.assign({}, state, action.user);
-
         case types.LOGIN_SUCCESS:
             return Object.assign({}, state, action.user);
 
@@ -16,5 +13,3 @@ export default function loginUserReducer(state = {}, action){
             return state;
     }
 }
-
-

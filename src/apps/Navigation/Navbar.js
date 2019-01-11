@@ -1,34 +1,37 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from "react";
-//import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 const Navigation = () => (
   <nav className="navbar navbar-expand-lg navbar-light fixed-top">
     <div className="container">
-      <a className="navbar-brand" href="/">
-        Author's Haven
-      </a>
+      <NavLink to="/" className="navbar-brand">
+        Author&apos;s Haven
+      </NavLink>
       <div className="" id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto pull-left">
           <span className="sm-hide">
             <li className="nav-item">
-              <a href="/about" className="nav-link">
+              <NavLink to="/about" className="nav-link">
                 <i className="fas fa-info-circle" />
-              About Us
-              </a>
+                About Us
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a href="/contact" className="nav-link">
+              <NavLink to="/contact" className="nav-link">
                 <i className="fas fa-comments" />
-              Contact Us
-              </a>
+                Contact Us
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a href="/" className="btn btn-outline-warning btn-sm">Login</a>
+              <NavLink to="/" className="btn btn-outline-warning btn-sm">
+                Login
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a href="/register" className="btn btn-outline-success  btn-sm">Signup</a>
+              <NavLink to="/register" className="btn btn-outline-success btn-sm">
+                Signup
+              </NavLink>
             </li>
           </span>
           <li className="nav-item dropdown sm-dropdown">
@@ -37,29 +40,29 @@ const Navigation = () => (
             </button>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a className="dropdown-item" href="/about">
+                <NavLink to="/register" className="dropdown-item">
                   <i className="fas fa-info-circle" />
-                About Us
-                </a>
+                  About
+                </NavLink>
               </li>
               <li>
-                <a href="/contact" className="dropdown-item">
+                <NavLink to="/contact" className="dropdown-item">
                   <i className="fas fa-comments" />
-                Contact Us
-                </a>
+                  Contact Us
+                </NavLink>
               </li>
               <div className="dropdown-divider" />
               <li>
-                <a className="dropdown-item" href="/">
+                <NavLink to="/" className="dropdown-item">
                   <i className="fas fa-sign-in-alt" />
-                Login
-                </a>
+                  Login
+                </NavLink>
               </li>
               <li>
-                <a className="dropdown-item" href="/register">
+                <NavLink to="/register" className="dropdown-item">
                   <i className="fas fa-sign-in-alt" />
-                Sign Up
-                </a>
+                  Signup
+                </NavLink>
               </li>
             </ul>
           </li>

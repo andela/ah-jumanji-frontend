@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login reducer should handle LOGIN_SUCCESS 1`] = `
+Object {
+  "email": "beja.emmanuel@gmail.com",
+  "password": "12345678",
+}
+`;

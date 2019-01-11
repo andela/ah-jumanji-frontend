@@ -1,12 +1,7 @@
-/* eslint-disable react/no-unescaped-entities */
 import React, { Component} from 'react';
-
 
 import LoginForm from './LoginForm';
 import WelcomeSection from '../../Common/components/WelcomeSection';
-
-
-
 
 
 class LoginContainer extends Component {

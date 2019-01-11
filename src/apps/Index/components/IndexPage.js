@@ -1,6 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import  React, { Component } from 'react';
 import LoginContainer from '../../Login/components/LoginContainer';
 import MainPreloader from './MainPreloader';
@@ -17,14 +14,14 @@ class IndexPage extends Component {
   }
 
   render() {
+    let { isLoading } = this.state;
     return (
-      this.state.isLoading ? (
+      isLoading ? (
         <MainPreloader />) : (
           <div>
             <LoginContainer />
           </div>
           )
-
     );
   }
 }

@@ -1,7 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable jsx-a11y/label-has-for */
 import React, { Component } from 'react';
 
 class SocialAuthButtons extends Component {
@@ -15,15 +11,15 @@ class SocialAuthButtons extends Component {
           <div className="btn-group" role="group" aria-label="socialauth">
             <button type="button" className="btn btn-primary">
               <i className="fab fa-facebook-square" />
-              Facebook
+              &nbsp;Facebook
             </button>
             <button type="button" className="btn btn-danger">
               <i className="fab fa-google" />
-              Google
+              &nbsp;Google
             </button>
             <button type="button" className="btn btn-info">
               <i className="fab fa-twitter-square" />
-              Twitter
+              &nbsp;Twitter
             </button>
           </div>
         </div>

@@ -1,7 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable jsx-a11y/label-has-for */
 import React, { Component } from 'react';
 
 class MainPreloader extends Component {
@@ -29,10 +25,15 @@ class MainPreloader extends Component {
               <span data-text-preloader="r" className="letters-loading">
                 r
               </span>
+              <span data-text-preloader="&apos;" className="letters-loading">
+                &apos;
+              </span>
               <span data-text-preloader="s" className="letters-loading">
                 s
               </span>
-              <span data-text-preloader=" " className="letters-loading" />
+              <span data-text-preloader="&nbsp;" className="letters-loading">
+                &nbsp;
+              </span>
               <span data-text-preloader="H" className="letters-loading">
                 H
               </span>
