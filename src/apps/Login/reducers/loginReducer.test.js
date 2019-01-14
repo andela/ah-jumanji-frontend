@@ -8,25 +8,21 @@ describe('login reducer', () => {
       loginUserReducer(undefined, {})).toEqual({});
   });
 
+  it('should handle LOGIN_SUCCESS', () => {
+    const action = {
+      type: types.LOGIN_SUCCESS,
+      user: {
+        email: 'beja.emmanuel@gmail.com',
+        password: '12345678'
+      }
+    };
 
-    it('should handle LOGIN_SUCCESS', () => {
-      const action = {
-        type: types.LOGIN_SUCCESS,
-        user: {
-          email: 'beja.emmanuel@gmail.com',
-          password: '12345678'
-        }
-      };
+    const expectedState = {
+     email: 'beja.emmanuel@gmail.com',
+     password: '12345678'
+    };
 
-      //const expectedState = {
-      //  email: 'beja.emmanuel@gmail.com',
-      //  password: '12345678'
-      //};
-
-      // test if it returns the correct state
-      expect(loginUserReducer(undefined, action)).toMatchSnapshot();
-
-      //expect( loginUserReducer( { action })).toEqual([ expectedState ]);
-    });
+    expect( loginUserReducer( { }, action )).toEqual(expectedState );
+  });
 
 });

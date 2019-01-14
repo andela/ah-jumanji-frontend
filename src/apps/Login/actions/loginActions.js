@@ -1,6 +1,10 @@
 import axios from 'axios';
 
+import { bake_cookie } from 'sfcookies';
+
 import * as types from  './actionTypes';
+
+
 
 const endpoint ='https://ah-jumanji-staging.herokuapp.com/api/users/login';
 
@@ -28,7 +32,11 @@ export function authenticateUser(userData) {
         })
         .then(res => {
             const token = res.data.user.token;
-            localStorage.setItem('token', token);
+
+            // add token in cookie.
+            const cookie_key = 'token';
+            bake_cookie(cookie_key, token);
+
             dispatch(LoginSucess(res.data));
             setTimeout(function(){
               window.location.replace('/home');

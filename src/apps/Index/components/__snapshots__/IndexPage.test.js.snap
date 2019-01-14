@@ -1,3 +1,110 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`IndexPage should render correctly in "debug" mode 1`] = `<MainPreloader />`;
+
+exports[`MainPreloader should render correctly in "debug" mode 1`] = `
+<div
+  id="preloader"
+>
+  <div
+    className="section-preloader"
+    id="section-preloader"
+  >
+    <div
+      className="animation-preloader"
+    >
+      <div
+        className="txt-loading"
+      >
+        <span
+          className="letters-loading"
+          data-text-preloader="A"
+        >
+          A
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="u"
+        >
+          u
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="t"
+        >
+          t
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="h"
+        >
+          h
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="o"
+        >
+          o
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="r"
+        >
+          r
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="'"
+        >
+          '
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="s"
+        >
+          s
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader=" "
+        >
+           
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="H"
+        >
+          H
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="a"
+        >
+          a
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="v"
+        >
+          v
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="e"
+        >
+          e
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="n"
+        >
+          n
+        </span>
+      </div>
+    </div>
+    <div
+      className="loader-section"
+    />
+  </div>
+</div>
+`;
