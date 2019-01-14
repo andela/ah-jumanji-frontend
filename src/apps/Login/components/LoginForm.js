@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
+import { ToastContainer } from 'react-toastify';
+
+
 import SocialAuthButtons from './SocialAuthButtons';
-
 import * as loginActions from '../actions/loginActions';
-
+import FormInput from '../../Common/components/FormInput';
+import PanelHeading from './PanelHeading';
 
 class LoginForm extends Component {
   constructor(props){
@@ -33,36 +36,18 @@ class LoginForm extends Component {
     const { actions } = this.props;
     actions.authenticateUser(loginData);
   }
-  render() {
-    const {user} = this.props;
 
+
+  render() {
     return (
       <div className="col-md-6">
+        <ToastContainer />
         <div className="panel panel-default" id="login-form">
-          <div className="panel-heading">
-            <h3>Login </h3>
-            <hr />
-          </div>
+          <PanelHeading title="Login" />
           <div className="panel-body">
-            <div
-              className={
-                (user.user) ?
-                  ('alert alert-success') :
-                ((user.errors) ?
-                  ('alert alert-danger') :
-                  ('d-none')
-                )} role="alert">
-              { (user.user) ? ('Login Successful!') : ((user.errors) ? ( user.errors.error[0] ) : (' '))}
-            </div>
             <form onSubmit={this.handleSubmit}>
-              <div className="form-group">
-                Email address
-                <input type="email" onChange={this.handleChange} className="form-control" name="email" placeholder="Enter email eg. example@gmail.com" required />
-              </div>
-              <div className="form-group">
-                Password
-                <input type="password" onChange={this.handleChange} className="form-control" name="password" placeholder="Enter Password" required />
-              </div>
+              <FormInput label="Email Adress" inputType="email" onChange={this.handleChange} inputName="email" placeholder="Enter Email" />
+              <FormInput label="Password" inputType="password" onChange={this.handleChange} inputName="password" placeholder="Enter Password" />
               <button type="submit" className="btn btn-success btn-block">Submit</button>
               <SocialAuthButtons />
               <a href="/forgotpassword">Forgot Password?</a>
@@ -78,7 +63,6 @@ class LoginForm extends Component {
 }
 
 LoginForm.propTypes = {
-  user: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };
 

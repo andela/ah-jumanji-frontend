@@ -1,54 +1,25 @@
 import React, { Component } from 'react';
 
 class MainPreloader extends Component {
+
   render() {
+    const letters = ["A", "u", "t", "h", "o", "r", "'", "s", " ", "H", "a", "v", "e", "n"];
+    const items = letters.map((letter) => (
+      <span
+        key={letter}
+        data-text-preloader={letter}
+        className="letters-loading">
+        {letter}
+      </span>
+    )
+    );
+
     return (
       <div id="preloader">
         <div id="section-preloader" className="section-preloader">
           <div className="animation-preloader">
             <div className="txt-loading">
-              <span data-text-preloader="A" className="letters-loading">
-                A
-              </span>
-              <span data-text-preloader="u" className="letters-loading">
-                u
-              </span>
-              <span data-text-preloader="t" className="letters-loading">
-                t
-              </span>
-              <span data-text-preloader="h" className="letters-loading">
-                h
-              </span>
-              <span data-text-preloader="o" className="letters-loading">
-                o
-              </span>
-              <span data-text-preloader="r" className="letters-loading">
-                r
-              </span>
-              <span data-text-preloader="&apos;" className="letters-loading">
-                &apos;
-              </span>
-              <span data-text-preloader="s" className="letters-loading">
-                s
-              </span>
-              <span data-text-preloader="&nbsp;" className="letters-loading">
-                &nbsp;
-              </span>
-              <span data-text-preloader="H" className="letters-loading">
-                H
-              </span>
-              <span data-text-preloader="a" className="letters-loading">
-                a
-              </span>
-              <span data-text-preloader="v" className="letters-loading">
-                v
-              </span>
-              <span data-text-preloader="e" className="letters-loading">
-                e
-              </span>
-              <span data-text-preloader="n" className="letters-loading">
-                n
-              </span>
+              { items }
             </div>
           </div>
           <div className="loader-section" />

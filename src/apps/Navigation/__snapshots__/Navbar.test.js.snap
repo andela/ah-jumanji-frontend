@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation should render correctly in "debug" mode 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-light fixed-top"
+>
+  <div
+    className="container"
+  >
+    <a
+      className="navbar-brand"
+      href="/"
+    >
+      Author's Haven
+    </a>
+    <div
+      className=""
+      id="navbarSupportedContent"
+    >
+      <ul
+        className="navbar-nav ml-auto pull-left"
+      >
+        <span
+          className="sm-hide"
+        >
+          <NavItem
+            classname="fas fa-info-circle"
+            classnameOuter="nav-link"
+            label="About Us"
+            link="/about"
+          />
+          <NavItem
+            classname="fas fa-comments"
+            classnameOuter="nav-link"
+            label="Contact Us"
+            link="/contact"
+          />
+          <NavButton
+            classname="btn btn-outline-warning btn-sm"
+            classnameOuter="nav-link"
+            label="Login"
+            link="/"
+          />
+          <NavButton
+            classname="btn btn-outline-success  btn-sm"
+            classnameOuter="nav-link"
+            label="Signup"
+            link="/register"
+          />
+        </span>
+        <li
+          className="nav-item dropdown sm-dropdown"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="true"
+            className="nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            id="navbarDropdown"
+            type="button"
+          >
+            <i
+              className="fas fa-align-right"
+            />
+          </button>
+          <ul
+            aria-labelledby="navbarDropdown"
+            className="dropdown-menu"
+          >
+            <DropDownItem
+              classname="fas fa-info-circle"
+              classnameOuter="dropdown-item"
+              label="About Us"
+              link="/about"
+            />
+            <DropDownItem
+              classname="fas fa-comments"
+              classnameOuter="dropdown-item"
+              label="Contact Us"
+              link="/contact"
+            />
+            <div
+              className="dropdown-divider"
+            />
+            <DropDownItem
+              classname="fas fa-sign-in-alt"
+              classnameOuter="dropdown-item"
+              label="Login"
+              link="/"
+            />
+            <DropDownItem
+              classname="fas fa-sign-in-alt"
+              classnameOuter="dropdown-item"
+              label="Signup"
+              link="/register"
+            />
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;
