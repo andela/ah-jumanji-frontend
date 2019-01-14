@@ -7,10 +7,8 @@ import expect from 'expect' // You can use any testing library
 
 import moxios from 'moxios';
 
-const middlewares = [thunk]
-const mockStore = configureMockStore(middlewares)
-
-// const endpoint ='https://ah-jumanji-staging.herokuapp.com/api/users/login';
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 
 describe('actions', () => {
     it('should create an action LoginSucess', () => {
@@ -60,7 +58,7 @@ describe('async actions', () => {
          error_message
     }];
 
-    const store = mockStore({ user: {} })
+    const store = mockStore({ user: {} });
 
     return store.dispatch(actions.authenticateUser()).then(() => {
       // return of async actions
