@@ -19,84 +19,98 @@ exports[`MainPreloader should render correctly in "debug" mode 1`] = `
         <span
           className="letters-loading"
           data-text-preloader="A"
+          key="A"
         >
           A
         </span>
         <span
           className="letters-loading"
           data-text-preloader="u"
+          key="u"
         >
           u
         </span>
         <span
           className="letters-loading"
           data-text-preloader="t"
+          key="t"
         >
           t
         </span>
         <span
           className="letters-loading"
           data-text-preloader="h"
+          key="h"
         >
           h
         </span>
         <span
           className="letters-loading"
           data-text-preloader="o"
+          key="o"
         >
           o
         </span>
         <span
           className="letters-loading"
           data-text-preloader="r"
+          key="r"
         >
           r
         </span>
         <span
           className="letters-loading"
           data-text-preloader="'"
+          key="'"
         >
           '
         </span>
         <span
           className="letters-loading"
           data-text-preloader="s"
+          key="s"
         >
           s
         </span>
         <span
           className="letters-loading"
-          data-text-preloader=" "
+          data-text-preloader=" "
+          key=" "
         >
-           
+           
         </span>
         <span
           className="letters-loading"
           data-text-preloader="H"
+          key="H"
         >
           H
         </span>
         <span
           className="letters-loading"
           data-text-preloader="a"
+          key="a"
         >
           a
         </span>
         <span
           className="letters-loading"
           data-text-preloader="v"
+          key="v"
         >
           v
         </span>
         <span
           className="letters-loading"
           data-text-preloader="e"
+          key="e"
         >
           e
         </span>
         <span
           className="letters-loading"
           data-text-preloader="n"
+          key="n"
         >
           n
         </span>

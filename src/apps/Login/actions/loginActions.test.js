@@ -1,11 +1,11 @@
-import configureMockStore from 'redux-mock-store'
-import thunk from 'redux-thunk'
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import expect from 'expect';
+import moxios from 'moxios';
+
 import * as types from  './actionTypes';
 import * as actions from './loginActions';
-import fetchMock from 'fetch-mock'
-import expect from 'expect' // You can use any testing library
 
-import moxios from 'moxios';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -42,29 +42,6 @@ describe('async actions', () => {
     moxios.uninstall();
   });
 
-  it('creates LOGIN_FAILED after successfuly fetching API and failing', () => {
-    const error_message = "A user with this email and password was not found";
-
-    moxios.wait(() => {
-      const request = moxios.requests.mostRecent();
-      request.respondWith({
-        status: 400,
-        response: error_message,
-      });
-    });
-
-    const expectedAction = [{
-         type: types.LOGIN_FAILED,
-         error_message
-    }];
-
-    const store = mockStore({ user: {} });
-
-    return store.dispatch(actions.authenticateUser()).then(() => {
-      // return of async actions
-      expect(store.getActions()).toEqual(expectedAction);
-    });
-  });
 
   it('creates LOGIN_SUCCESS after successfuly fetching API and succeeding', () => {
     const user = {"user": {"email": "test@gmail.com", "password": "testpass"}};
@@ -82,7 +59,7 @@ describe('async actions', () => {
       user
     }];
 
-    const store = mockStore({ user: {} })
+    const store = mockStore({ user: {} });
 
     return store.dispatch(actions.authenticateUser()).then(() => {
       // return of async actions

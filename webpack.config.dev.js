@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -28,6 +29,8 @@ export default {
     new CleanWebpackPlugin(['dist']),
     // enable hot reloading
     new webpack.HotModuleReplacementPlugin(),
+    // add .env
+    new Dotenv(),
     // add jquery
     new webpack.ProvidePlugin({
       $: "jquery",
