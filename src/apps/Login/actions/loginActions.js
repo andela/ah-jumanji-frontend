@@ -8,7 +8,7 @@ import * as types from  './actionTypes';
 
 import config from '../../../config/config';
 
-const endpoint = config.api.baseUrl + config.api.loginUrl;
+const endpoint = config.api.loginUrl;
 
 export function LoginSucess(user){
     return {

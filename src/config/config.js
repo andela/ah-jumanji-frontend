@@ -1,7 +1,8 @@
+const baseUrl = process.env.BASE_URL;
+
 const config = {
     api: {
-        baseUrl:'https://ah-jumanji-staging.herokuapp.com',
-        loginUrl:'/api/users/login'
+        loginUrl: baseUrl + '/api/users/login'
     }
 };
 
