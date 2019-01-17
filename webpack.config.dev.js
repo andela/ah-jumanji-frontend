@@ -2,8 +2,7 @@ import webpack from 'webpack';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export default {
   "mode": "development",
@@ -29,7 +28,7 @@ export default {
     new CleanWebpackPlugin(['dist']),
     // enable hot reloading
     new webpack.HotModuleReplacementPlugin(),
-    // add .env
+    //for .env variables
     new Dotenv(),
     // add jquery
     new webpack.ProvidePlugin({
@@ -39,6 +38,11 @@ export default {
     // extract css from sass and save it in css file.
     new MiniCssExtractPlugin({
       filename: "style.css"
+    }),
+    new webpack.DefinePlugin({
+      'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
+      'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
+      'process.env.SOCIAL_AUTH_API_URL': JSON.stringify(process.env.SOCIAL_AUTH_API_URL)
     })
   ],
   "module": {

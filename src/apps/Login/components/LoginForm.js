@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { ToastContainer } from 'react-toastify';
 
 
-import SocialAuthButtons from './SocialAuthButtons';
+import SocialAuthButtons from '../../SocialLogin/components/SocialAuth';
 import * as loginActions from '../actions/loginActions';
 import FormInput from '../../Common/components/FormInput';
 import PanelHeading from './PanelHeading';
