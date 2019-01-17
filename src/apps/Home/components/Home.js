@@ -1,10 +1,28 @@
-import React from "react";
+import React, { Component } from 'react';
 
-const Home = () => (
-  <div>
-    <h3>Welcome to Jumanjis Authors Haven</h3>
-    <p>Feel free to read anything. Navigate!!</p>
-  </div>
-);
+class WelcomeSection extends Component {
+  render() {
+    return (
+      <div className="col-md-6">
+        <div className="bg-circle-1 bg-circle" />
+        <div className="bg-circle-2 bg-circle" />
+        <div className="bg-circle-3 bg-circle" />
+        <div className="welcome">
+          <h1 className="text-muted">
+          Welcome to Author&apos;s Haven!
+          </h1>
+          <br />
+          <h4>
+            &apos;&apos;The currency of blogging is authenticity and trust&apos;&apos;
+            <br />
+          </h4>
+          <h6>
+            <i className="text-muted">~ Jason Calacanis</i>
+          </h6>
+        </div>
+      </div>
+    );
+  }
+}
 
-export default Home;
+export default WelcomeSection;

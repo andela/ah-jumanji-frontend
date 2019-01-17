@@ -3,10 +3,10 @@ import {
 } from 'redux';
 
 // import all reducers from the individual app modules
-import socialAuthReducer from './social_auth/reducers/socialReducer';
+import socialAuth from './SocialLogin/reducers/socialReducer';
 
 const rootReducer = combineReducers({
-  socialAuthReducer,
+  socialAuth,
   //Add your reducers here
 
 });
