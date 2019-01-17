@@ -1,8 +1,8 @@
 import webpack from 'webpack';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import Dotenv from 'dotenv-webpack';
 
 export default {
   "mode": "development",
@@ -35,6 +35,7 @@ export default {
       $: "jquery",
       jQuery: "jquery"
     }),
+    // extract css from sass and save it in css file.
     new MiniCssExtractPlugin({
       filename: "style.css"
     }),

@@ -28,5 +28,7 @@
 
   "transformIgnorePatterns": ["<rootDir>/node_modules/"],
 
-  "verbose": false
+  "verbose": false,
+
+  "snapshotSerializers": ["enzyme-to-json/serializer"]
 }

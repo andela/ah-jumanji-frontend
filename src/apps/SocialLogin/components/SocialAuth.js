@@ -15,7 +15,7 @@ import {
   GoogleProvider,
   FacebookProvider,
   TwitterProvider
-} from '../../../config/firebase';
+} from './firebase';
 
 import {
   FACEBOOK,

@@ -21,8 +21,8 @@
     "browser": true,
     "node": true,
     "jasmine": true,
-    "jest": true,
-    "jquery": true
+    "jquery": true,
+    "jest": true
   },
   "rules": {
     "quotes": 0,

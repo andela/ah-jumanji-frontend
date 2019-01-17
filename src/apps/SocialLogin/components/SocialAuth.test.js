@@ -139,4 +139,3 @@ describe('Social auth Props test', () => {
     });
 
 });
-

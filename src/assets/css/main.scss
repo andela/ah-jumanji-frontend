@@ -1,5 +1,6 @@
 
 @import '~bootstrap/scss/bootstrap';
+@import '~react-toastify/scss/main.scss';
 @import 'navbar';
 @import 'masonry';
 @import 'mainpreloader';
@@ -227,9 +228,6 @@ a {
   margin: 20px 10px 0;
 }
 
-.alert {
-  display: none;
-}
 
 #login-form {
   margin: 50px 90px auto 30px;

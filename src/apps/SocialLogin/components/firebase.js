@@ -1,11 +1,7 @@
 import firebase from 'firebase';
+import config from '../../../config/config';
 
-const firebase_config = {
-  apiKey: 'AIzaSyDLqlYrfTIkjXb01oA_9svo107jkV-YzAg',
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN
-};
-
-firebase.initializeApp(firebase_config);
+firebase.initializeApp(config.firebase);
 
 // Export all providers to be user
 export const auth = firebase.auth();
