@@ -9,18 +9,16 @@ const RequiredInput = (props) => {
   return (
     <div>
       <div className="form-group">
-        <label htmlFor={name}>
-          {label}
-          <input
-            type={type}
-            className="form-control"
-            id={name}
-            placeholder={placeholder}
-            required=""
-            value={value}
-            onChange={onChange}
-          />
-        </label>
+        {label}
+        <input
+          type={type}
+          className="form-control"
+          id={name}
+          placeholder={placeholder}
+          required=""
+          value={value}
+          onChange={onChange}
+        />
       </div>
     </div>
   );

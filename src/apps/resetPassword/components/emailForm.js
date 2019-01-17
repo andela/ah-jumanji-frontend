@@ -116,7 +116,7 @@ class EmailReset extends React.Component {
       <div className="panel panel-default" id="login-form">
         <ToastContainer />
         <Header label="Forgot Password" />
-        <div className="panel-body" style={{padding: " 5px 20px 20px 20px"}}>
+        <div className="panel-body">
           <form>
             <RequiredInput
               type="email"

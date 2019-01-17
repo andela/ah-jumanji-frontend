@@ -79,12 +79,17 @@
     "dotenv-webpack": "^1.6.0",
     "email-validator": "^2.0.4",
     "express": "^4.16.4",
+    "firebase": "^5.7.2",
+    "font-awesome": "^4.7.0",
+    "expect": "^23.6.0",
+    "fetch-mock": "^7.3.0",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
     "imagesloaded": "^4.1.4",
     "jquery": "^3.3.1",
     "masonry": "0.0.2",
     "mini-css-extract-plugin": "^0.5.0",
+    "node-fetch": "^2.3.0",
     "npm": "^6.5.0",
     "npm-run-all": "^4.1.5",
     "path": "^0.12.7",
@@ -93,7 +98,6 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-hot-loader": "^4.6.3",
-    "react-notify-toast": "^0.5.0",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "react-toastify": "^4.5.2",
@@ -101,6 +105,7 @@
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^5.1.1",
     "redux-thunk": "^2.3.0",
-    "redux-watch": "^1.1.1"
+    "redux-watch": "^1.1.1",
+    "sfcookies": "^1.0.2"
   }
 }

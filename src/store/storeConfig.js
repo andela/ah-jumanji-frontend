@@ -19,11 +19,8 @@ function jumanjiStore() {
   const store = createStore(
     rootReducer,
     initialState,
-    /* preloadedState, */
-    compose(
-      applyMiddleware(thunk, createLogger()),
-      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() || compose
-    )
+    compose(applyMiddleware(thunk, createLogger()),
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() || compose)
   );
   /* eslint-enable */
 
@@ -32,6 +29,7 @@ function jumanjiStore() {
   }
 
   return store;
+
 }
 
 export default jumanjiStore;

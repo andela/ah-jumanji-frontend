@@ -1,13 +1,13 @@
 import React from 'react';
-import {navPropTypes} from "./navbarItem";
+import {navPropTypes} from "./NavItem";
 
 const DropDownItem = (props) => {
 
-  const {classname, link, label} = props;
+  const {classnameOuter, classname, link, label} = props;
 
   return (
     <li>
-      <a href={link} className="dropdown-item">
+      <a href={link} className={classnameOuter}>
         <i className={classname} />
         {label}
       </a>

@@ -2,6 +2,7 @@ import React from 'react';
 import Enzyme, {shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import thunk from "redux-thunk";
+import sinon from 'sinon';
 import {Provider} from "react-redux";
 import configureMockStore from "redux-mock-store";
 import {MemoryRouter} from 'react-router-dom';
@@ -99,7 +100,7 @@ describe("Render reset email component", () => {
     expect(component.find('button')).toBeDefined();
     expect(component.find('form')).toBeDefined();
     expect(component.find('Header')).toBeDefined();
-    component = component.find('form').simulate('submit');
+    component.find('form').simulate('submit');
   });
 
   it('should reject invalid email', function () {
@@ -108,6 +109,21 @@ describe("Render reset email component", () => {
     let input = component.find('#email');
     expect(input).toBeDefined();
     input.simulate('change', {target: {value: 'Hello'}});
+  });
+
+  it('should submit data to API', function () {
+    const onButtonClick = sinon.spy();
+    let component = mountWithStore(<EmailReset />, store);
+
+    component.setState({recovery: {email: 'user@email.com', valid_email: true}});
+    expect(component.state('recovery')).toBeDefined();
+
+    component.setProps({requestPasswordReset: onButtonClick});
+    component.setProps({recoverPassword: onButtonClick});
+    component.setProps({submitForm: onButtonClick});
+    component.find('button').simulate('click');
+
+
   });
 
 });
@@ -130,11 +146,26 @@ describe("Render code collection form ", () => {
   it('should have a clickable button', function () {
 
     let component = mountWithStore(<CodeCollectionForm />, store);
+    const onButtonClick = sinon.spy();
 
     expect(component.find('button')).toBeDefined();
     expect(component.find('form')).toBeDefined();
     expect(component.find('Header')).toBeDefined();
-    component.find('form').simulate('submit');
+
+    component.setState({
+      recovery: {
+        recovery_password: "password",
+        repeat_password: "password",
+        matching_passwords: true
+      }
+    });
+    expect(component.state('recovery')).toBeDefined();
+
+    component.setProps({updatePassword: onButtonClick});
+    component.setProps({recoverPassword: onButtonClick});
+    component.setProps({submitForm: onButtonClick});
+    component.find('button').simulate('click');
+
 
   });
 

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class WelcomeSection extends Component {
   render() {
@@ -9,11 +9,11 @@ class WelcomeSection extends Component {
         <div className="bg-circle-3 bg-circle" />
         <div className="welcome">
           <h1 className="text-muted">
-            {"Welcome to Author's Haven!"}
+          Welcome to Author&apos;s Haven!
           </h1>
           <br />
           <h4>
-            {"The currency of blogging is authenticity and trust"}
+            &apos;&apos;The currency of blogging is authenticity and trust&apos;&apos;
             <br />
           </h4>
           <h6>

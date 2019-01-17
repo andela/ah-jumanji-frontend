@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndexPage should render correctly in "debug" mode 1`] = `<MainPreloader />`;
+
+exports[`MainPreloader should render correctly in "debug" mode 1`] = `
+<div
+  id="preloader"
+>
+  <div
+    className="section-preloader"
+    id="section-preloader"
+  >
+    <div
+      className="animation-preloader"
+    >
+      <div
+        className="txt-loading"
+      >
+        <span
+          className="letters-loading"
+          data-text-preloader="A"
+          key="A"
+        >
+          A
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="u"
+          key="u"
+        >
+          u
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="t"
+          key="t"
+        >
+          t
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="h"
+          key="h"
+        >
+          h
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="o"
+          key="o"
+        >
+          o
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="r"
+          key="r"
+        >
+          r
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="'"
+          key="'"
+        >
+          '
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="s"
+          key="s"
+        >
+          s
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader=" "
+          key=" "
+        >
+           
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="H"
+          key="H"
+        >
+          H
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="a"
+          key="a"
+        >
+          a
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="v"
+          key="v"
+        >
+          v
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="e"
+          key="e"
+        >
+          e
+        </span>
+        <span
+          className="letters-loading"
+          data-text-preloader="n"
+          key="n"
+        >
+          n
+        </span>
+      </div>
+    </div>
+    <div
+      className="loader-section"
+    />
+  </div>
+</div>
+`;

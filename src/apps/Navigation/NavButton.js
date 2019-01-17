@@ -1,5 +1,5 @@
 import React from 'react';
-import {navPropTypes} from "./navbarItem";
+import {navPropTypes} from "./NavItem";
 
 
 const NavButton = (props) => {

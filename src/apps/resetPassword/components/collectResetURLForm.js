@@ -116,7 +116,7 @@ class CodeCollectionForm extends Component {
       <div className="panel panel-default" id="login-form">
         <ToastContainer />
         <Header label="Enter the new password" />
-        <div className="panel-body" style={{padding: " 5px 20px 20px 20px"}}>
+        <div className="panel-body">
           <form>
             <RequiredInput
               type="password" name="password1" label="Password" onChange={this.onPasswordChange}
@@ -156,3 +156,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CodeCollectionForm));
+
+// 208
+// maurice
+// 8351

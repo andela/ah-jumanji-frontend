@@ -1,12 +1,17 @@
-import React from "react";
+import React from 'react';
 
-import { shallow } from "enzyme";
+import Enzyme, { shallow } from 'enzyme';
 
-import WelcomeSection from "./WelcomeSection";
+import Adapter from 'enzyme-adapter-react-16';
+
+import WelcomeSection from './WelcomeSection';
 
 
-describe("WelcomeSection", () => {
-  it("should render correctly in debug mode", () => {
+Enzyme.configure({ adapter: new Adapter() });
+
+
+describe('WelcomeSection', () => {
+  it('should render correctly in "debug" mode', () => {
     const component = shallow(<WelcomeSection debug />);
 
     expect(component).toMatchSnapshot();

@@ -1,9 +1,9 @@
 import axios from 'axios';
 import * as types from './actionTypes';
+import config from '../../../config/config';
 
-
-const emailEndPoint = process.env.ROOT_URL + process.env.RESET_PASSWORD;
-const resetEndpoint = process.env.ROOT_URL + process.env.RESET_PASSWORD_CONFIRM;
+const emailEndPoint = config.api.emailReset;
+const resetEndpoint = config.api.emailResetConfirm;
 
 // Define action generators here
 export function resetPassword(email) {

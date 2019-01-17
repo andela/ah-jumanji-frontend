@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 
 const NavItem = (props) => {
 
-  const {classname, link, label} = props;
+  const {classnameOuter, classname, link, label} = props;
 
   return (
     <li className="nav-item">
-      <a href={link} className="nav-link">
+      <a href={link} className={classnameOuter}>
         <i className={classname} />
         {label}
       </a>
@@ -18,6 +18,7 @@ const NavItem = (props) => {
 
 export const navPropTypes = {
   classname: PropTypes.string.isRequired,
+  classnameOuter: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired
 };
@@ -25,4 +26,3 @@ export const navPropTypes = {
 NavItem.propTypes = navPropTypes;
 
 export default NavItem;
-

@@ -2,8 +2,7 @@ import webpack from 'webpack';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export default {
   "mode": "development",
@@ -17,11 +16,6 @@ export default {
     "contentBase": './src',
     // enable hot reloading
     "hot": true,
-    // webpack options
-    "headers": {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
-    }
   },
   "output": {
     "path": __dirname + '/dist',
@@ -34,15 +28,22 @@ export default {
     new CleanWebpackPlugin(['dist']),
     // enable hot reloading
     new webpack.HotModuleReplacementPlugin(),
+    //for .env variables
+    new Dotenv(),
     // add jquery
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
     }),
+    // extract css from sass and save it in css file.
     new MiniCssExtractPlugin({
       filename: "style.css"
     }),
-    new Dotenv()
+    new webpack.DefinePlugin({
+      'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
+      'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
+      'process.env.SOCIAL_AUTH_API_URL': JSON.stringify(process.env.SOCIAL_AUTH_API_URL)
+    })
   ],
   "module": {
     "rules": [
@@ -57,6 +58,11 @@ export default {
             },
           },
         ],
+      },
+      {
+        test: /\.jsx?$/,
+        include: /node_modules/,
+        use: ['react-hot-loader/webpack'],
       },
       {
         test: /\.css$/,

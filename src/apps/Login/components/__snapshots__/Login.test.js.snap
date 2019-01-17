@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginContainer should render correctly in "debug" mode 1`] = `
+<div
+  className="row login-container"
+>
+  <WelcomeSection />
+  <Connect(LoginForm) />
+</div>
+`;
+
+exports[`LoginForm should render correctly in "debug" mode 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`SocialAuthButtons should render correctly in "debug" mode 1`] = `
+<div>
+  <h3
+    className="text-center"
+  >
+    Or
+  </h3>
+  <div
+    className="text-center"
+  >
+    <div
+      aria-label="socialauth"
+      className="btn-group"
+      role="group"
+    >
+      <button
+        className="btn btn-primary"
+        type="button"
+      >
+        <i
+          className="fab fa-facebook-square"
+        />
+         Facebook
+      </button>
+      <button
+        className="btn btn-danger"
+        type="button"
+      >
+        <i
+          className="fab fa-google"
+        />
+         Google
+      </button>
+      <button
+        className="btn btn-info"
+        type="button"
+      >
+        <i
+          className="fab fa-twitter-square"
+        />
+         Twitter
+      </button>
+    </div>
+  </div>
+  <hr />
+</div>
+`;
