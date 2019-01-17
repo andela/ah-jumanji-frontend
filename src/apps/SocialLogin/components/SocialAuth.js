@@ -110,7 +110,6 @@ class SocialAuthActions extends Component {
   actionCaller(response){
     const dataFetch = this.props;
     switch (response.type) {
-
       case FACEBOOK:
         dataFetch.FacebookAuth(response);
         break;
