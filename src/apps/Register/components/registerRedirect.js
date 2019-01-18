@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {withRouter} from 'react-router-dom';
 
 import accountOffIcon from "../../../assets/img/account-off.png";
 
@@ -22,4 +21,4 @@ class RegisterRedirect extends Component {
     );
   }
 }
-export default withRouter(RegisterRedirect);
+export default RegisterRedirect;

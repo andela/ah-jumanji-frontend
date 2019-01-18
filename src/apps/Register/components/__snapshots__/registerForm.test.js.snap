@@ -33,7 +33,7 @@ exports[`Registration form should match the snapshoot 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "s59zmr",
+              "key": "c2803q",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -47,7 +47,7 @@ exports[`Registration form should match the snapshoot 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "s59zmr",
+            "key": "c2803q",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -61,6 +61,7 @@ exports[`Registration form should match the snapshoot 1`] = `
         <RegistrationForm
           actions={
             Object {
+              "ActivateUser": [Function],
               "RegisterFail": [Function],
               "RegisterSuccess": [Function],
               "RegisterUser": [Function],

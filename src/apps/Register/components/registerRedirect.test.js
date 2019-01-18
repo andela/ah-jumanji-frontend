@@ -3,12 +3,13 @@ import {shallow} from 'enzyme';
 
 import RegisterRedirect from "./registerRedirect";
 
+
 describe('Register redirect', () => {
  const mockRegisterRedirectFn = jest.fn;
  let wrapper;
 
  beforeEach(() => {
-    wrapper = shallow(<RegisterRedirect login={mockRegisterRedirectFn} />);
+    wrapper = shallow(<RegisterRedirect registerRedirect={mockRegisterRedirectFn} />);
   });
 
   it('should match the snapshoot', () => {
@@ -17,7 +18,7 @@ describe('Register redirect', () => {
 
   it('should render register page correctly', () => {
     expect(wrapper.find('.row').exists()).toBe(true);
-    expect(wrapper.find('p').text()).toBe('You were successfully registered.Check your mailbox for a link to activate your account.');
+    expect(wrapper.find('p').text()).toBe('Almost there!Go to your mailbox and click the link we sent to you to activate your Account.');
     expect(wrapper.find('p').length).toEqual(1);
   });
 });

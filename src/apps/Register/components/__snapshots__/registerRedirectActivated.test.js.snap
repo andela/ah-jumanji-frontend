@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Register redirect should match the snapshoot 1`] = `
+exports[`<RegisterRedirectActivated /> should match the snapshoot 1`] = `
 <div
   className="row"
 >
@@ -22,10 +22,13 @@ exports[`Register redirect should match the snapshoot 1`] = `
       src={null}
     />
     <p>
-      Almost there!
-      <br />
-      Go to your mailbox and click the link we sent to you to activate your Account.
+      Account Activated!
     </p>
+    <a
+      href="/login"
+    >
+      You can now login here
+    </a>
   </div>
 </div>
 `;

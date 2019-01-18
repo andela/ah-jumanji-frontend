@@ -49,7 +49,7 @@ export const RegisterUser = (userData) => {
 };
 
 export const ActivateUser = (uid, token) => {
-  const activateWithPayload = activateUserUrl + uid + token;
+  const activateWithPayload = `${activateUserUrl}/${uid}/${token}`;
   return axios.get(activateWithPayload, {
     headers: {
       Accept: 'application/json'}
@@ -60,9 +60,8 @@ export const ActivateUser = (uid, token) => {
       console.log(response);
     })
     .catch(error => {
-      let errors = Object.entries(error.response.data.errors);
-      // Log errors
+      // Log error
       // eslint-disable-next-line no-console
-      console.log(errors);
+      console.log(error);
     });
 };

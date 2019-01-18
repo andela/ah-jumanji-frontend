@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
-import {withRouter} from 'react-router-dom';
-
+import * as registerActions from '../actions/registerActions';
 import accountOnIcon from "../../../assets/img/account-on.png";
 
-class RegisterRedirect extends Component {
+class RegisterRedirectActivated extends Component {
   render() {
     // Send request to activate user
-    this.componentDidMount(
+    document.addEventListener('DOMContentLoaded', () => {
+      // Extract user id and token from props
+      const urlParams = location.pathname.split("/");
+      const uid = urlParams[2];
+      const token = urlParams[3];
+
       // Make api request to activate user
-    );
+      registerActions.ActivateUser(uid, token);
+    });
+
     return (
       <div className="row">
         <div className="bg-circle-1 bg-circle" />
@@ -25,4 +31,4 @@ class RegisterRedirect extends Component {
     );
   }
 }
-export default withRouter(RegisterRedirect);
+export default RegisterRedirectActivated;
