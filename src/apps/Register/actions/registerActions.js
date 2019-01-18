@@ -2,8 +2,10 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import * as types from './registerTypes';
 
-const registerUrl = process.env.baseUrl + process.env.registerEndpoint;
-const activateUserUrl = process.env.baseUrl + process.env.activateUserUrl;
+import config from '../../../config/config';
+
+const registerUrl = config.api.registerUrl;
+const activateUserUrl = config.api.activateUserUrl;
 
 const successMessage = "Successfully registered!";
 
@@ -25,8 +27,7 @@ export const RegisterUser = (userData) => {
     })
       .then(response => {
         dispatch(RegisterSuccess(response.data));
-        // Call notifier
-        // ...but first remove all other notifications
+        // Remove all pop-ups
         toast.dismiss();
         toast.success(successMessage, {autoClose: 5000});
         setTimeout(function () {
@@ -35,13 +36,17 @@ export const RegisterUser = (userData) => {
       })
       .catch(error => {
         let errors = Object.entries(error.response.data.errors);
-        // Call notifier
-        // ...but first remove all other notifications
+        // Remove all pop-ups
         toast.dismiss();
         errors.map( err => {
-          toast.error(err[1][0], {
-            autoClose: 25000
-          });
+          // Display warnings beneath affected inputs
+          let associatedInput = document.querySelector(`input[name=${err[0]}]`);
+          let inputSubscript = associatedInput.parentElement.querySelector("p");
+          associatedInput.classList.add('highlight-error-input');
+
+          inputSubscript.classList.remove("hidden");
+          inputSubscript.classList.add("subscript-error");
+          inputSubscript.innerHTML = err[1];
         });
         dispatch(RegisterFail(error.response.data));
       });

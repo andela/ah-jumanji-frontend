@@ -5,7 +5,8 @@ const config = {
     loginUrl: baseUrl + '/api/users/login',
     emailReset: baseUrl + '/api/users/reset_password',
     emailResetConfirm: baseUrl + '/api/users/reset_password_confirm/',
-    registerUrl: '/api/users/register'
+    registerUrl: baseUrl + '/api/users/register',
+    activateUserUrl: baseUrl + '/api/users/activate'
   },
   firebase: {
     apiKey: process.env.FIREBASE_API_KEY || 'random',

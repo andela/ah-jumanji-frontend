@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ValidationSubscript from './validationSubscript';
 
 export const FormInput = (props) => {
 
@@ -13,6 +14,7 @@ export const FormInput = (props) => {
         type={inputType} onChange={onChange} className="form-control" name={inputName}
         placeholder={placeholder} required
       />
+      <ValidationSubscript />
     </div>
   );
 };
