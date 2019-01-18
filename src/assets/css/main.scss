@@ -274,4 +274,29 @@ a {
   color: blue;
 }
 
+label.register-labels {
+  display: block;
+}
+
+.highlight-error-input {
+  border-color: red;
+  box-shadow: 0 0 5px 2px rgb(184, 184, 184);
+}
+
+.register-redirect-modal {
+  width: 60%;
+  margin: 2% auto;
+  box-shadow: 0 0 3px 3px rgb(109, 109, 109);
+  padding: 5%;
+  text-align: center;
+  font-size: 20px;
+  color: rgb(80, 80, 80);
+  border-radius: 3px;
+}
+
+img#success-icon {
+  width: 150px;
+  height: auto;
+}
+
 @import 'mediaqueries';
