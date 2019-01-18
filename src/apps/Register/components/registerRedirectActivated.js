@@ -25,7 +25,7 @@ class RegisterRedirectActivated extends Component {
           <p>
             Account Activated!
           </p>
-          <a href="/login">You can now login here</a>
+          <a href="/">You can now login here</a>
         </div>
       </div>
     );

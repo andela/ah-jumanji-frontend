@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import RegistrationForm from './registerForm';
-import WelcomeSection from '../../Common/components/WelcomeSection';
+import WelcomeSection from '../../common/components/WelcomeSection';
 
 class RegisterContainer extends Component {
   render() {
@@ -13,4 +13,5 @@ class RegisterContainer extends Component {
     );
   }
 }
+
 export default RegisterContainer;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reset password reducer should handle FORM_SUBMIT 1`] = `
+Object {
+  "isFetching": true,
+}
+`;
+
+exports[`reset password reducer should handle RESET_PASSWORD 1`] = `
+Object {
+  "reset_email": undefined,
+}
+`;
+
+exports[`reset password reducer should handle SUBMIT_FAILED 1`] = `
+Object {
+  "error_message": undefined,
+  "isFetching": undefined,
+  "last_call": "failed",
+}
+`;
+
+exports[`reset password reducer should handle SUBMIT_SUCCESSFUL 1`] = `
+Object {
+  "isFetching": undefined,
+  "last_call": "passed",
+  "success_message": undefined,
+}
+`;

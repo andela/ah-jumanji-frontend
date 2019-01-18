@@ -25,7 +25,7 @@ exports[`<RegisterRedirectActivated /> should match the snapshoot 1`] = `
       Account Activated!
     </p>
     <a
-      href="/login"
+      href="/"
     >
       You can now login here
     </a>

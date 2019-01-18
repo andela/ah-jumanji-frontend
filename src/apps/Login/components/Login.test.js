@@ -1,15 +1,16 @@
 import React from 'react';
 import {mount, shallow} from 'enzyme';
-
-import LoginContainer from './LoginContainer';
-import LoginForm from './LoginForm';
-import SocialAuthButtons from './SocialAuthButtons';
 import Enzyme from "enzyme/build";
 import Adapter from "enzyme-adapter-react-16/build";
 import thunk from "redux-thunk";
 import configureStore from "redux-mock-store";
 import {Provider} from "react-redux";
 import {MemoryRouter} from "react-router-dom";
+
+
+import LoginContainer from './LoginContainer';
+import LoginForm from './LoginForm';
+import SocialAuthButtons from './SocialAuthButtons';
 
 Enzyme.configure({ adapter: new Adapter() });
 

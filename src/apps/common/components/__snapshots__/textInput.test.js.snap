@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Section should render correctly  1`] = `
+<div>
+  <div
+    className="form-group"
+  >
+    label
+    <input
+      className="form-control"
+      id="value"
+      onChange={[Function]}
+      placeholder="value"
+      required=""
+      type="text"
+      value="value"
+    />
+  </div>
+</div>
+`;

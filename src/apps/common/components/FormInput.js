@@ -2,14 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const FormInput = (props) => {
+export const FormInput = (props) => {
 
-  const {label, inputType, inputName, placeholder, onChange } = props;
+  const {label, inputType, inputName, placeholder, onChange} = props;
 
   return (
     <div className="form-group">
       {label}
-      <input type={inputType} onChange={onChange} className="form-control" name={inputName} placeholder={placeholder} required />
+      <input
+        type={inputType} onChange={onChange} className="form-control" name={inputName}
+        placeholder={placeholder} required
+      />
     </div>
   );
 };
@@ -24,4 +27,3 @@ export const formInputPropTypes = {
 
 FormInput.propTypes = formInputPropTypes;
 
-export default FormInput;

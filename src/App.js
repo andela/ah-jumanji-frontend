@@ -1,5 +1,7 @@
 import React from "react";
-import { hot } from "react-hot-loader/root";
+import {withRouter} from "react-router-dom";
+import "bootstrap";
+import {hot} from "react-hot-loader/root";
 import { ToastContainer } from 'react-toastify';
 
 import './assets/css/main.scss';
@@ -15,4 +17,4 @@ const App = () => (
   </div>
 );
 
-export default hot(App);
+export default hot(withRouter(App));

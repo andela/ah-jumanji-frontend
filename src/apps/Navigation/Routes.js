@@ -1,12 +1,12 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import IndexPage from "../Index/components/IndexPage";
 import RegisterContainer from "../Register/components/registerContainer";
 import RegisterRedirect from "../Register/components/registerRedirect";
 import RegisterRedirectActivated from "../Register/components/registerRedirectActivated";
-
-
 import SocialAuthentication from '../SocialLogin/components/SocialAuth';
+import ForgotPassword from "../resetPassword/components/PasswordResetComponent";
+import IndexPage from "../Index/components/IndexPage";
+import ResetCodePage from "../resetPassword/components/PasswordResetCodeComponent";
 
 const Main = () => (
   <Switch>
@@ -15,6 +15,8 @@ const Main = () => (
     <Route exact path="/login" component={SocialAuthentication} />
     <Route exact path="/register-redirect" component={RegisterRedirect} />
     <Route exact path="/activate-account/:uid/:token" component={RegisterRedirectActivated} />
+    <Route exact path="/reset_password" component={ForgotPassword} />
+    <Route exact path="/reset_code/:reset_code" component={ResetCodePage} />
   </Switch>
 );
 

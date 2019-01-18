@@ -1,16 +1,16 @@
 // Module sets up user registration
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, {Component} from 'react';
+import {NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {connect} from "react-redux";
-import { ToastContainer, toast } from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 
 import * as registerActions from '../actions/registerActions';
-import FormInput from "../../Common/components/FormInput";
+import {FormInput} from "../../common/components/FormInput";
 
 class RegistrationForm extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     // Initialize state
     this.state = {
@@ -30,10 +30,10 @@ class RegistrationForm extends Component {
 
   registerUser = e => {
     e.preventDefault();
-    const { username } = this.state;
-    const { email } = this.state;
-    const { password } = this.state;
-    const { repeatPassword } = this.state;
+    const {username} = this.state;
+    const {email} = this.state;
+    const {password} = this.state;
+    const {repeatPassword} = this.state;
 
     // Make object and use to validate user input
     const userInput = {
@@ -43,7 +43,7 @@ class RegistrationForm extends Component {
       "repeatPassword": repeatPassword
     };
 
-    for(let key in userInput){
+    for (let key in userInput) {
       let value = userInput[key];
       this.validateUserInput(key, value);
       // Set up an event listener to highlight errors
@@ -54,15 +54,14 @@ class RegistrationForm extends Component {
     }
 
     // Validate passwords
-    if(password !== repeatPassword){
+    if (password !== repeatPassword) {
       toast.error("Passwords do not match!", {autoClose: 15000});
       // Highlight these inputs
       document.querySelectorAll("input[type=password]").forEach((input) => {
         input.classList.add('highlight-error-input');
       });
-    }
-    else if(username && email && password) {
-      toast("Registering you ...", { autoClose: 10000});
+    } else if (username && email && password) {
+      toast("Registering you ...", {autoClose: 10000});
       const userData = {
         user: {
           username,
@@ -71,13 +70,13 @@ class RegistrationForm extends Component {
           repeatPassword
         },
       };
-      const { actions } = this.props;
+      const {actions} = this.props;
       actions.RegisterUser(userData);
     }
   };
 
   validateUserInput(inputName, inputValue) {
-    if(!inputValue){
+    if (!inputValue) {
       toast.error(`Please enter the ${[inputName]}`, {autoClose: 15000});
       // Highlight input that has no data
       document.querySelector(`input[name=${inputName}]`).classList.add('highlight-error-input');
@@ -96,10 +95,14 @@ class RegistrationForm extends Component {
           <div className="panel-body">
             {/* Register Form */}
             <form>
-              <FormInput inputType="username" inputName="username" placeholder="Enter username" label="Username" onChange={this.collectUserInput} />
-              <FormInput inputType="email" inputName="email" placeholder="Enter email" label="Email" onChange={this.collectUserInput} />
-              <FormInput inputType="password" inputName="password" placeholder="Enter password" label="Password" onChange={this.collectUserInput} />
-              <FormInput inputType="password" inputName="repeatPassword" placeholder="Retype the password" label="repeatPassword" onChange={this.collectUserInput} />
+              <FormInput inputType="username" inputName="username" placeholder="Enter username" label="Username"
+                         onChange={this.collectUserInput} />
+              <FormInput inputType="email" inputName="email" placeholder="Enter email" label="Email"
+                         onChange={this.collectUserInput} />
+              <FormInput inputType="password" inputName="password" placeholder="Enter password" label="Password"
+                         onChange={this.collectUserInput} />
+              <FormInput inputType="password" inputName="repeatPassword" placeholder="Retype the password"
+                         label="repeatPassword" onChange={this.collectUserInput} />
               <button type="submit" className="btn btn-success btn-block" onClick={this.registerUser}>Submit</button>
               <hr />
               Already have an account?

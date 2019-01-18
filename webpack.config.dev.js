@@ -60,6 +60,11 @@ export default {
         ],
       },
       {
+        test: /\.jsx?$/,
+        include: /node_modules/,
+        use: ['react-hot-loader/webpack'],
+      },
+      {
         test: /\.css$/,
         loader: 'style-loader'
       },
