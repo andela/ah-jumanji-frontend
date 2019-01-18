@@ -334,8 +334,8 @@ label.register-labels {
 }
 
 .highlight-error-input {
-  border-color: red;
-  box-shadow: 0 0 5px 2px rgb(184, 184, 184);
+  border-color: rgba(251, 60, 60, 0.452);
+  box-shadow: 0 0 2px 2px rgb(214, 214, 214);
 }
 
 .register-redirect-modal {
@@ -352,6 +352,19 @@ label.register-labels {
 img#success-icon {
   width: 150px;
   height: auto;
+}
+
+.subscript {
+  font-size: .7rem;
+  color: rgb(141, 141, 141);
+}
+
+.subscript-error {
+  color: red;
+}
+
+.hidden {
+  display: none;
 }
 
 @import 'mediaqueries';
