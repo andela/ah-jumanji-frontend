@@ -6,8 +6,9 @@ import { toast } from 'react-toastify';
 
 import * as types from  './actionTypes';
 
+import config from '../../../config/config';
 
-const endpoint = process.env.baseUrl + process.env.loginUrl;
+const endpoint = config.api.loginUrl;
 
 export function LoginSucess(user){
     return {

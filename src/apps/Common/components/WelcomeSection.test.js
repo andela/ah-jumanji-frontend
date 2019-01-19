@@ -1,10 +1,15 @@
 import React from 'react';
 
-import { shallow } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
+
+import Adapter from 'enzyme-adapter-react-16';
 
 import WelcomeSection from './WelcomeSection';
 
 import FormInput from './FormInput';
+
+
+Enzyme.configure({ adapter: new Adapter() });
 
 
 describe('WelcomeSection', () => {
