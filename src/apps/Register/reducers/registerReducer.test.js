@@ -1,3 +1,4 @@
+import expect from 'expect';
 import registerReducer from "./registerReducer";
 import * as types from '../actions/registerTypes';
 
@@ -5,6 +6,7 @@ describe('resister reducers', () => {
   const state = {
     user: {}
   };
+
   it('should return the initial state', () => {
     expect(registerReducer(undefined, {})).toEqual(state);
   });
