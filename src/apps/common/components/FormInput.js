@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import ValidationSubscript from './validationSubscript';
 
-const FormInput = (props) => {
+export const FormInput = (props) => {
 
   const {label, inputType, inputName, placeholder, onChange} = props;
 
@@ -29,4 +29,3 @@ export const formInputPropTypes = {
 
 FormInput.propTypes = formInputPropTypes;
 
-export default FormInput;

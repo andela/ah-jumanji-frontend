@@ -49,15 +49,18 @@ class RegistrationForm extends Component {
       // Set up an event listener to highlight errors
       document.querySelector(`input[name=${key}]`).addEventListener('focus', (e) => {
         e.target.classList.remove('highlight-error-input');
+        e.target.parentElement.querySelector("p").classList.add("hidden");
         toast.dismiss();
       });
     }
 
     // Validate passwords
     if (password !== repeatPassword) {
-      toast.error("Passwords do not match!", {autoClose: 15000});
       // Highlight these inputs
       document.querySelectorAll("input[type=password]").forEach((input) => {
+        input.parentElement.querySelector("p").innerHTML = "Passwords do not match!";
+        input.parentElement.querySelector("p").classList.remove("hidden");
+        input.parentElement.querySelector("p").classList.add("subscript-error");
         input.classList.add('highlight-error-input');
       });
     } else if (username && email && password) {
@@ -77,7 +80,12 @@ class RegistrationForm extends Component {
 
   validateUserInput(inputName, inputValue) {
     if (!inputValue) {
-      toast.error(`Please enter the ${[inputName]}`, {autoClose: 15000});
+      let warningSubscript = document.querySelector(
+        `input[name=${inputName}]`).parentElement.querySelector("p");
+
+      // Display an error beneath appropriate input
+      warningSubscript.classList.remove("hidden");
+      warningSubscript.innerHTML = "This field may not be blank";
       // Highlight input that has no data
       document.querySelector(`input[name=${inputName}]`).classList.add('highlight-error-input');
     }
@@ -96,35 +104,18 @@ class RegistrationForm extends Component {
             {/* Register Form */}
             <form>
               <FormInput
-                inputType="username"
-                inputName="username"
-                placeholder="Enter username"
-                label="Username"
-                onChange={this.collectUserInput} />
+                         inputType="username" inputName="username" placeholder="Enter username" label="Username"
+                         onChange={this.collectUserInput} />
               <FormInput
-                inputType="email"
-                inputName="email"
-                placeholder="Enter email"
-                label="Email"
-                onChange={this.collectUserInput} />
+                         inputType="email" inputName="email" placeholder="Enter email" label="Email"
+                         onChange={this.collectUserInput} />
               <FormInput
-                inputType="password"
-                inputName="password"
-                placeholder="Enter password"
-                label="Password"
-                onChange={this.collectUserInput} />
+                         inputType="password" inputName="password" placeholder="Enter password" label="Password"
+                         onChange={this.collectUserInput} />
               <FormInput
-                inputType="password"
-                inputName="repeatPassword"
-                placeholder="Retype the password"
-                label="repeatPassword"
-                onChange={this.collectUserInput} />
-              <button
-                type="submit"
-                className="btn btn-success btn-block"
-                onClick={this.registerUser}>
-                Submit
-              </button>
+                         inputType="password" inputName="repeatPassword" placeholder="Retype the password"
+                         label="repeatPassword" onChange={this.collectUserInput} />
+              <button type="submit" className="btn btn-success btn-block" onClick={this.registerUser}>Submit</button>
               <hr />
               Already have an account?
               <NavLink to="/">Login</NavLink>
