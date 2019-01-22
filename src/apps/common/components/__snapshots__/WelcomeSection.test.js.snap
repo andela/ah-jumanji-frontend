@@ -1,16 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormInput should render correctly in "debug" mode 1`] = `
-<div
-  className="form-group"
->
-  <input
-    className="form-control"
-    required={true}
-  />
-</div>
-`;
-
 exports[`WelcomeSection should render correctly in "debug" mode 1`] = `
 <div
   className="col-md-6"

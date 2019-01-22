@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import path from 'path';
 import open from 'open';
 import log from 'webpack-log';
+import cors from 'cors';
 import configuration from '../webpack.config.dev';
 
 
@@ -25,6 +26,9 @@ Application.use(require('webpack-dev-middleware')(compiler, {
 
 // use the webpack hot reloading middleware and use the compiled webpack configuration;
 Application.use(require('webpack-hot-middleware')(compiler));
+
+// enables CORS
+Application.use(cors());
 
 // define the endpoints to the entry file for our application
 Application.get('*', function (req, res) {

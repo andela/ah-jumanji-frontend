@@ -1,5 +1,11 @@
+import axios from 'axios';
+import { read_cookie } from 'sfcookies';
+import { toast } from 'react-toastify';
+
 import * as types from './actionTypes';
 
+const ratingEndpoint = "https://ah-jumanji-staging.herokuapp.com/api/articles/rate-article-bfa8-141199/rating";
+const token = read_cookie("token");
 
 export function addRatingSucess(rating) {
     return {
@@ -8,10 +14,10 @@ export function addRatingSucess(rating) {
     };
 }
 
-export function addRatingFailed(message) {
+export function addRatingFailed(rating_message) {
     return {
-        type: types.ADD_RATING_SUCCESS,
-        message
+        type: types.ADD_RATING_FAILED,
+        rating_message
     };
 }
 
@@ -21,3 +27,42 @@ export function fetchAverageRating(average_rating) {
         average_rating
     };
 }
+
+
+export function postArticleRating(ratingData) {
+    return function(dispatch) {
+        return axios.post(ratingEndpoint,
+            ratingData, {
+            headers: {
+                Accept: 'application/json',
+                Authorization: "Token " + token
+            }
+        })
+        .then(res => {
+            dispatch(addRatingSucess(res.data));
+            dispatch(fetchArticleRating());
+        })
+        .catch(error => {
+            toast.error(error.response.data.message, {autoClose: 2000});
+            dispatch(addRatingFailed(error.response.data));
+        });
+    };
+}
+
+export function fetchArticleRating() {
+    return function(dispatch) {
+        return axios.get(ratingEndpoint, {
+            headers: {
+                Accept: 'application/json',
+                Authorization: "Token " + token
+            }
+        }).then(res => {
+            //get rating
+            dispatch(fetchAverageRating(res.data));
+        });
+    };
+}
+
+
+
+

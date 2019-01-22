@@ -6,7 +6,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import jest from 'jest-mock';
 
-import FormInput from './FormInput';
+import {FormInput} from './FormInput';
 
 Enzyme.configure({ adapter: new Adapter() });
 

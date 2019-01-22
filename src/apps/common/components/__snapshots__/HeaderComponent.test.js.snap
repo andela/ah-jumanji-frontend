@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Section should render correctly  1`] = `
+<div
+  className="panel-heading"
+  style={
+    Object {
+      "padding": "20px 20px 0px 20px",
+    }
+  }
+>
+  <h3>
+    label
+  </h3>
+  <hr />
+</div>
+`;

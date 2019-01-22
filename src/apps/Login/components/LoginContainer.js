@@ -1,7 +1,7 @@
-import React, { Component} from 'react';
+import React, {Component} from 'react';
 
 import LoginForm from './LoginForm';
-import WelcomeSection from '../../Common/components/WelcomeSection';
+import WelcomeSection from '../../common/components/WelcomeSection';
 
 
 class LoginContainer extends Component {
