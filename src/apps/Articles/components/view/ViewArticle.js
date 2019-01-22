@@ -1,6 +1,7 @@
 import React,{ Component } from 'react';
 import ArticleView from './_articleview';
 import Ratings from '../../../Rating/components/Rating';
+import CommentsContainer from '../../../Comments/Components/CommentsContainer';
 
 class ArticlePage extends Component{
     constructor(props){
@@ -20,6 +21,7 @@ class ArticlePage extends Component{
               <div className="col-md-12">
                 <ArticleView slug={this.getSlug()} />
                 <Ratings />
+                <CommentsContainer />
               </div>
             </div>
           </div>

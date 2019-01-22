@@ -34,10 +34,12 @@ export function authenticateUser(userData) {
         })
         .then(res => {
             const token = res.data.user.token;
+            const username = res.data.user.username;
 
-            // add token in cookie.
+            // add token, username in cookie.
             const cookie_key = 'token';
             bake_cookie(cookie_key, token);
+            bake_cookie('loggedInUsername', username);
 
             bake_cookie('onLogin', true);
 
