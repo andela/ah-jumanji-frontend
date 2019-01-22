@@ -44,7 +44,7 @@ export function authenticateUser(userData) {
             toast.dismiss();
             toast.success( "Login Successful!", {autoClose: 3000});
             setTimeout(function(){
-              window.location.replace('/home');
+              window.location.replace('/profile');
             }, 3000);
         })
         .catch(error => {

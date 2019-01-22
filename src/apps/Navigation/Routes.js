@@ -7,6 +7,8 @@ import SocialAuthentication from '../SocialLogin/components/SocialAuth';
 import ForgotPassword from "../resetPassword/components/PasswordResetComponent";
 import IndexPage from "../Index/components/IndexPage";
 import ResetCodePage from "../resetPassword/components/PasswordResetCodeComponent";
+import Profile from "../UserProfile/components/Profile";
+import EditProfile from "../UserProfile/components/EditProfile";
 
 const Main = () => (
   <Switch>
@@ -17,6 +19,8 @@ const Main = () => (
     <Route exact path="/activate-account/:uid/:token" component={RegisterRedirectActivated} />
     <Route exact path="/reset_password" component={ForgotPassword} />
     <Route exact path="/reset_code/:reset_code" component={ResetCodePage} />
+    <Route exact path="/profile" component={Profile} />
+    <Route exact path="/profile/edit" component={EditProfile} />
   </Switch>
 );
 

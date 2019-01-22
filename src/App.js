@@ -11,7 +11,7 @@ import Navigation from "./apps/Navigation/Navbar";
 
 const App = () => (
   <div>
-    <Navigation />
+    {/* <Navigation /> */}
     <Main />
     <ToastContainer autoClose={8000} />
   </div>
