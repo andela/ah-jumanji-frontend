@@ -1,0 +1,2031 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Edit Profile component should match the snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <MemoryRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "canGo": [Function],
+          "createHref": [Function],
+          "entries": Array [
+            Object {
+              "hash": "",
+              "key": "voyoth",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+          ],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "index": 0,
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "key": "voyoth",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(EditProfile)
+        profile={
+          Object {
+            "bio": "bambino",
+            "country": "ken",
+            "first_name": "fabisch",
+            "last_name": "apeli",
+            "phone_number": "08883827832",
+            "twitter_handle": "9thMarch",
+            "website": "https://www.andela.com",
+          }
+        }
+      >
+        <EditProfile
+          fileUploadHandler={[Function]}
+          profile={
+            Object {
+              "bio": "bambino",
+              "country": "ken",
+              "first_name": "fabisch",
+              "last_name": "apeli",
+              "phone_number": "08883827832",
+              "twitter_handle": "9thMarch",
+              "website": "https://www.andela.com",
+            }
+          }
+        >
+          <div>
+            <Nav>
+              <nav
+                className="navbar navbar-expand-lg navbar-light fixed-top"
+              >
+                <div
+                  className="container"
+                >
+                  <a
+                    className="navbar-brand"
+                    href="home.html"
+                  >
+                    Author's Haven
+                  </a>
+                  <div
+                    className=""
+                    id="navbarSupportedContent"
+                  >
+                    <ul
+                      className="navbar-nav ml-auto pull-left"
+                    >
+                      <span
+                        className="sm-hide"
+                      >
+                        <NavItem
+                          classname="fas fa-home"
+                          classnameOuter="nav-link"
+                          label="Home"
+                          link="home.html"
+                        >
+                          <li
+                            className="nav-item"
+                          >
+                            <a
+                              className="nav-link"
+                              href="home.html"
+                            >
+                              <i
+                                className="fas fa-home"
+                              />
+                              Home
+                            </a>
+                          </li>
+                        </NavItem>
+                        <li
+                          className="nav-item dropdown"
+                        >
+                          <NavDrop
+                            notifications="Notifications"
+                            num="5"
+                          >
+                            <a
+                              className="dropdown-item"
+                              href="notifications.html"
+                            >
+                              <span
+                                className="badge badge-danger"
+                              >
+                                5
+                              </span>
+                              <i
+                                className="fas fa-bell"
+                              />
+                              Notifications
+                            </a>
+                          </NavDrop>
+                          <ul
+                            aria-labelledby="navbarDropdown"
+                            className="dropdown-menu"
+                          >
+                            <NavNotify
+                              link="/notifications"
+                              markread="Mark as Read"
+                              name="Edward Snowden"
+                              notification="published a new article"
+                              src="assets/img/default-avatar1.jpg"
+                              time="5 Hrs ago"
+                            >
+                              <li
+                                className="dropdown-item"
+                              >
+                                <img
+                                  alt="follower avatar"
+                                  className="followers-avatar rounded-circle"
+                                  src="assets/img/default-avatar1.jpg"
+                                />
+                                <a
+                                  href="/notifications"
+                                >
+                                  Edward Snowden
+                                </a>
+                                published a new article
+                                <span
+                                  className="float-right"
+                                >
+                                  <a
+                                    className="btn btn-light btn-sm"
+                                    href="/notifications"
+                                  >
+                                    <i
+                                      className="fas fa-check-circle"
+                                    />
+                                    Mark as Read
+                                  </a>
+                                </span>
+                                <br />
+                                <i
+                                  className="text-muted"
+                                >
+                                  <span
+                                    className="fas fa-clock"
+                                  />
+                                  5 Hrs ago
+                                </i>
+                              </li>
+                            </NavNotify>
+                            <div
+                              className="dropdown-divider"
+                            />
+                            <NavNotify
+                              link="/notifications"
+                              markread="Mark as Read"
+                              name="Edward Snowden"
+                              notification="published a new article"
+                              src="assets/img/default-avatar1.jpg"
+                              time="5 Hrs ago"
+                            >
+                              <li
+                                className="dropdown-item"
+                              >
+                                <img
+                                  alt="follower avatar"
+                                  className="followers-avatar rounded-circle"
+                                  src="assets/img/default-avatar1.jpg"
+                                />
+                                <a
+                                  href="/notifications"
+                                >
+                                  Edward Snowden
+                                </a>
+                                published a new article
+                                <span
+                                  className="float-right"
+                                >
+                                  <a
+                                    className="btn btn-light btn-sm"
+                                    href="/notifications"
+                                  >
+                                    <i
+                                      className="fas fa-check-circle"
+                                    />
+                                    Mark as Read
+                                  </a>
+                                </span>
+                                <br />
+                                <i
+                                  className="text-muted"
+                                >
+                                  <span
+                                    className="fas fa-clock"
+                                  />
+                                  5 Hrs ago
+                                </i>
+                              </li>
+                            </NavNotify>
+                            <div
+                              className="dropdown-divider"
+                            />
+                            <NavNotify
+                              link="/notifications"
+                              markread="Mark as Read"
+                              name="Edward Snowden"
+                              notification="published a new article"
+                              src="assets/img/default-avatar1.jpg"
+                              time="5 Hrs ago"
+                            >
+                              <li
+                                className="dropdown-item"
+                              >
+                                <img
+                                  alt="follower avatar"
+                                  className="followers-avatar rounded-circle"
+                                  src="assets/img/default-avatar1.jpg"
+                                />
+                                <a
+                                  href="/notifications"
+                                >
+                                  Edward Snowden
+                                </a>
+                                published a new article
+                                <span
+                                  className="float-right"
+                                >
+                                  <a
+                                    className="btn btn-light btn-sm"
+                                    href="/notifications"
+                                  >
+                                    <i
+                                      className="fas fa-check-circle"
+                                    />
+                                    Mark as Read
+                                  </a>
+                                </span>
+                                <br />
+                                <i
+                                  className="text-muted"
+                                >
+                                  <span
+                                    className="fas fa-clock"
+                                  />
+                                  5 Hrs ago
+                                </i>
+                              </li>
+                            </NavNotify>
+                            <div
+                              className="dropdown-divider"
+                            />
+                            <NavNotify
+                              link="/notifications"
+                              markread="Mark as Read"
+                              name="Edward Snowden"
+                              notification="published a new article"
+                              src="assets/img/default-avatar1.jpg"
+                              time="5 Hrs ago"
+                            >
+                              <li
+                                className="dropdown-item"
+                              >
+                                <img
+                                  alt="follower avatar"
+                                  className="followers-avatar rounded-circle"
+                                  src="assets/img/default-avatar1.jpg"
+                                />
+                                <a
+                                  href="/notifications"
+                                >
+                                  Edward Snowden
+                                </a>
+                                published a new article
+                                <span
+                                  className="float-right"
+                                >
+                                  <a
+                                    className="btn btn-light btn-sm"
+                                    href="/notifications"
+                                  >
+                                    <i
+                                      className="fas fa-check-circle"
+                                    />
+                                    Mark as Read
+                                  </a>
+                                </span>
+                                <br />
+                                <i
+                                  className="text-muted"
+                                >
+                                  <span
+                                    className="fas fa-clock"
+                                  />
+                                  5 Hrs ago
+                                </i>
+                              </li>
+                            </NavNotify>
+                            <div
+                              className="dropdown-divider"
+                            />
+                          </ul>
+                        </li>
+                        <li
+                          className="nav-item dropdown"
+                        >
+                          <a
+                            aria-expanded="false"
+                            aria-haspopup="true"
+                            className="nav-link dropdown-toggle"
+                            data-toggle="dropdown"
+                            href="/"
+                            id="navbarDropdown"
+                            role="button"
+                          >
+                            <img
+                              alt="follower avatar"
+                              className="followers-avatar navbar-avatar rounded-circle"
+                            />
+                          </a>
+                          <ul
+                            aria-labelledby="navbarDropdown"
+                            className="dropdown-menu"
+                          >
+                            <NavItem
+                              classname="fas fa-user"
+                              classnameOuter="dropdown-item"
+                              label="Profile"
+                              link="/profile"
+                            >
+                              <li
+                                className="nav-item"
+                              >
+                                <a
+                                  className="dropdown-item"
+                                  href="/profile"
+                                >
+                                  <i
+                                    className="fas fa-user"
+                                  />
+                                  Profile
+                                </a>
+                              </li>
+                            </NavItem>
+                            <div
+                              className="dropdown-divider"
+                            />
+                            <NavItem
+                              classname="fas fa-sign-out-alt"
+                              classnameOuter="dropdown-item"
+                              label="Logout"
+                              link="index.html"
+                            >
+                              <li
+                                className="nav-item"
+                              >
+                                <a
+                                  className="dropdown-item"
+                                  href="index.html"
+                                >
+                                  <i
+                                    className="fas fa-sign-out-alt"
+                                  />
+                                  Logout
+                                </a>
+                              </li>
+                            </NavItem>
+                          </ul>
+                        </li>
+                      </span>
+                      <li
+                        className="nav-item dropdown sm-dropdown"
+                      >
+                        <a
+                          aria-expanded="false"
+                          aria-haspopup="true"
+                          className="nav-link dropdown-toggle"
+                          data-toggle="dropdown"
+                          href="/notifications"
+                          id="navbarDropdown"
+                          role="button"
+                        >
+                          <i
+                            className="fas fa-align-right"
+                          />
+                        </a>
+                        <ul
+                          aria-labelledby="navbarDropdown"
+                          className="dropdown-menu"
+                        >
+                          <li>
+                            <NavDrop
+                              notifications="Notifications"
+                              num="5"
+                            >
+                              <a
+                                className="dropdown-item"
+                                href="notifications.html"
+                              >
+                                <span
+                                  className="badge badge-danger"
+                                >
+                                  5
+                                </span>
+                                <i
+                                  className="fas fa-bell"
+                                />
+                                Notifications
+                              </a>
+                            </NavDrop>
+                          </li>
+                          <NavItem
+                            classname="fas fa-user"
+                            classnameOuter="dropdown-item"
+                            label="Profile"
+                            link="/profile"
+                          >
+                            <li
+                              className="nav-item"
+                            >
+                              <a
+                                className="dropdown-item"
+                                href="/profile"
+                              >
+                                <i
+                                  className="fas fa-user"
+                                />
+                                Profile
+                              </a>
+                            </li>
+                          </NavItem>
+                          <div
+                            className="dropdown-divider"
+                          />
+                          <NavItem
+                            classname="fas fa-sign-out-alt"
+                            classnameOuter="dropdown-item"
+                            label="Logout"
+                            link="index.html"
+                          >
+                            <li
+                              className="nav-item"
+                            >
+                              <a
+                                className="dropdown-item"
+                                href="index.html"
+                              >
+                                <i
+                                  className="fas fa-sign-out-alt"
+                                />
+                                Logout
+                              </a>
+                            </li>
+                          </NavItem>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </Nav>
+            <div
+              className="container auth-container"
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="col-md-10 offset-md-1"
+                >
+                  <div
+                    className="panel panel-default"
+                  >
+                    <div
+                      className="panel-heading"
+                    />
+                    <div
+                      className=""
+                    >
+                      <form>
+                        <h3>
+                          Edit Profile.
+                        </h3>
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="col-md-6"
+                          >
+                            <EditFormInput
+                              inputName="firstName"
+                              inputType="text"
+                              label="First Name"
+                              onChange={[Function]}
+                              value="fabisch"
+                            >
+                              <div
+                                className="form-group"
+                              >
+                                First Name
+                                <input
+                                  className="form-control"
+                                  name="firstName"
+                                  onChange={[Function]}
+                                  required={true}
+                                  type="text"
+                                  value="fabisch"
+                                />
+                                <ValidationSubscript>
+                                  <p
+                                    className="subscript subscript-warning hidden"
+                                  >
+                                    Kuna kitu umekosea hapa
+                                  </p>
+                                </ValidationSubscript>
+                              </div>
+                            </EditFormInput>
+                          </div>
+                          <div
+                            className="col-md-6"
+                          >
+                            <EditFormInput
+                              inputName="lastName"
+                              inputType="text"
+                              label="Last Name"
+                              onChange={[Function]}
+                              value="apeli"
+                            >
+                              <div
+                                className="form-group"
+                              >
+                                Last Name
+                                <input
+                                  className="form-control"
+                                  name="lastName"
+                                  onChange={[Function]}
+                                  required={true}
+                                  type="text"
+                                  value="apeli"
+                                />
+                                <ValidationSubscript>
+                                  <p
+                                    className="subscript subscript-warning hidden"
+                                  >
+                                    Kuna kitu umekosea hapa
+                                  </p>
+                                </ValidationSubscript>
+                              </div>
+                            </EditFormInput>
+                          </div>
+                          <div
+                            className="col-md-6"
+                          >
+                            <div
+                              className="form-group"
+                            >
+                              <label
+                                htmlFor="country"
+                              >
+                                Country
+                              </label>
+                              <select
+                                className="form-control"
+                                id="countriesDropdown"
+                                name="country"
+                                onChange={[Function]}
+                              >
+                                <option
+                                  value="AF"
+                                >
+                                  AFGHANISTAN
+                                </option>
+                                <option
+                                  value="AX"
+                                >
+                                  ÅLAND ISLANDS
+                                </option>
+                                <option
+                                  value="AL"
+                                >
+                                  ALBANIA
+                                </option>
+                                <option
+                                  value="DZ"
+                                >
+                                  ALGERIA
+                                </option>
+                                <option
+                                  value="AS"
+                                >
+                                  AMERICAN SAMOA
+                                </option>
+                                <option
+                                  value="AD"
+                                >
+                                  ANDORRA
+                                </option>
+                                <option
+                                  value="AO"
+                                >
+                                  ANGOLA
+                                </option>
+                                <option
+                                  value="AI"
+                                >
+                                  ANGUILLA
+                                </option>
+                                <option
+                                  value="AQ"
+                                >
+                                  ANTARCTICA
+                                </option>
+                                <option
+                                  value="AG"
+                                >
+                                  ANTIGUA AND BARBUDA
+                                </option>
+                                <option
+                                  value="AR"
+                                >
+                                  ARGENTINA
+                                </option>
+                                <option
+                                  value="AM"
+                                >
+                                  ARMENIA
+                                </option>
+                                <option
+                                  value="AW"
+                                >
+                                  ARUBA
+                                </option>
+                                <option
+                                  value="AU"
+                                >
+                                  AUSTRALIA
+                                </option>
+                                <option
+                                  value="AT"
+                                >
+                                  AUSTRIA
+                                </option>
+                                <option
+                                  value="AZ"
+                                >
+                                  AZERBAIJAN
+                                </option>
+                                <option
+                                  value="BS"
+                                >
+                                  BAHAMAS
+                                </option>
+                                <option
+                                  value="BH"
+                                >
+                                  BAHRAIN
+                                </option>
+                                <option
+                                  value="BD"
+                                >
+                                  BANGLADESH
+                                </option>
+                                <option
+                                  value="BB"
+                                >
+                                  BARBADOS
+                                </option>
+                                <option
+                                  value="BY"
+                                >
+                                  BELARUS
+                                </option>
+                                <option
+                                  value="BE"
+                                >
+                                  BELGIUM
+                                </option>
+                                <option
+                                  value="BZ"
+                                >
+                                  BELIZE
+                                </option>
+                                <option
+                                  value="BJ"
+                                >
+                                  BENIN
+                                </option>
+                                <option
+                                  value="BM"
+                                >
+                                  BERMUDA
+                                </option>
+                                <option
+                                  value="BT"
+                                >
+                                  BHUTAN
+                                </option>
+                                <option
+                                  value="BO"
+                                >
+                                  BOLIVIA, PLURINATIONAL STATE OF
+                                </option>
+                                <option
+                                  value="BQ"
+                                >
+                                  BONAIRE, SINT EUSTATIUS AND SABA
+                                </option>
+                                <option
+                                  value="BA"
+                                >
+                                  BOSNIA AND HERZEGOVINA
+                                </option>
+                                <option
+                                  value="BW"
+                                >
+                                  BOTSWANA
+                                </option>
+                                <option
+                                  value="BV"
+                                >
+                                  BOUVET ISLAND
+                                </option>
+                                <option
+                                  value="BR"
+                                >
+                                  BRAZIL
+                                </option>
+                                <option
+                                  value="IO"
+                                >
+                                  BRITISH INDIAN OCEAN TERRITORY
+                                </option>
+                                <option
+                                  value="BN"
+                                >
+                                  BRUNEI DARUSSALAM
+                                </option>
+                                <option
+                                  value="BG"
+                                >
+                                  BULGARIA
+                                </option>
+                                <option
+                                  value="BF"
+                                >
+                                  BURKINA FASO
+                                </option>
+                                <option
+                                  value="BI"
+                                >
+                                  BURUNDI
+                                </option>
+                                <option
+                                  value="KH"
+                                >
+                                  CAMBODIA
+                                </option>
+                                <option
+                                  value="CM"
+                                >
+                                  CAMEROON
+                                </option>
+                                <option
+                                  value="CA"
+                                >
+                                  CANADA
+                                </option>
+                                <option
+                                  value="CV"
+                                >
+                                  CAPE VERDE
+                                </option>
+                                <option
+                                  value="KY"
+                                >
+                                  CAYMAN ISLANDS
+                                </option>
+                                <option
+                                  value="CF"
+                                >
+                                  CENTRAL AFRICAN REPUBLIC
+                                </option>
+                                <option
+                                  value="TD"
+                                >
+                                  CHAD
+                                </option>
+                                <option
+                                  value="CL"
+                                >
+                                  CHILE
+                                </option>
+                                <option
+                                  value="CN"
+                                >
+                                  CHINA
+                                </option>
+                                <option
+                                  value="CX"
+                                >
+                                  CHRISTMAS ISLAND
+                                </option>
+                                <option
+                                  value="CC"
+                                >
+                                  COCOS (KEELING) ISLANDS
+                                </option>
+                                <option
+                                  value="CO"
+                                >
+                                  COLOMBIA
+                                </option>
+                                <option
+                                  value="KM"
+                                >
+                                  COMOROS
+                                </option>
+                                <option
+                                  value="CG"
+                                >
+                                  CONGO
+                                </option>
+                                <option
+                                  value="CD"
+                                >
+                                  CONGO, THE DEMOCRATIC REPUBLIC OF THE
+                                </option>
+                                <option
+                                  value="CK"
+                                >
+                                  COOK ISLANDS
+                                </option>
+                                <option
+                                  value="CR"
+                                >
+                                  COSTA RICA
+                                </option>
+                                <option
+                                  value="CI"
+                                >
+                                  CÔTE D'IVOIRE
+                                </option>
+                                <option
+                                  value="HR"
+                                >
+                                  CROATIA
+                                </option>
+                                <option
+                                  value="CU"
+                                >
+                                  CUBA
+                                </option>
+                                <option
+                                  value="CW"
+                                >
+                                  CURAÇAO
+                                </option>
+                                <option
+                                  value="CY"
+                                >
+                                  CYPRUS
+                                </option>
+                                <option
+                                  value="CZ"
+                                >
+                                  CZECH REPUBLIC
+                                </option>
+                                <option
+                                  value="DK"
+                                >
+                                  DENMARK
+                                </option>
+                                <option
+                                  value="DJ"
+                                >
+                                  DJIBOUTI
+                                </option>
+                                <option
+                                  value="DM"
+                                >
+                                  DOMINICA
+                                </option>
+                                <option
+                                  value="DO"
+                                >
+                                  DOMINICAN REPUBLIC
+                                </option>
+                                <option
+                                  value="EC"
+                                >
+                                  ECUADOR
+                                </option>
+                                <option
+                                  value="EG"
+                                >
+                                  EGYPT
+                                </option>
+                                <option
+                                  value="SV"
+                                >
+                                  EL SALVADOR
+                                </option>
+                                <option
+                                  value="GQ"
+                                >
+                                  EQUATORIAL GUINEA
+                                </option>
+                                <option
+                                  value="ER"
+                                >
+                                  ERITREA
+                                </option>
+                                <option
+                                  value="EE"
+                                >
+                                  ESTONIA
+                                </option>
+                                <option
+                                  value="ET"
+                                >
+                                  ETHIOPIA
+                                </option>
+                                <option
+                                  value="FK"
+                                >
+                                  FALKLAND ISLANDS (MALVINAS)
+                                </option>
+                                <option
+                                  value="FO"
+                                >
+                                  FAROE ISLANDS
+                                </option>
+                                <option
+                                  value="FJ"
+                                >
+                                  FIJI
+                                </option>
+                                <option
+                                  value="FI"
+                                >
+                                  FINLAND
+                                </option>
+                                <option
+                                  value="FR"
+                                >
+                                  FRANCE
+                                </option>
+                                <option
+                                  value="GF"
+                                >
+                                  FRENCH GUIANA
+                                </option>
+                                <option
+                                  value="PF"
+                                >
+                                  FRENCH POLYNESIA
+                                </option>
+                                <option
+                                  value="TF"
+                                >
+                                  FRENCH SOUTHERN TERRITORIES
+                                </option>
+                                <option
+                                  value="GA"
+                                >
+                                  GABON
+                                </option>
+                                <option
+                                  value="GM"
+                                >
+                                  GAMBIA
+                                </option>
+                                <option
+                                  value="GE"
+                                >
+                                  GEORGIA
+                                </option>
+                                <option
+                                  value="DE"
+                                >
+                                  GERMANY
+                                </option>
+                                <option
+                                  value="GH"
+                                >
+                                  GHANA
+                                </option>
+                                <option
+                                  value="GI"
+                                >
+                                  GIBRALTAR
+                                </option>
+                                <option
+                                  value="GR"
+                                >
+                                  GREECE
+                                </option>
+                                <option
+                                  value="GL"
+                                >
+                                  GREENLAND
+                                </option>
+                                <option
+                                  value="GD"
+                                >
+                                  GRENADA
+                                </option>
+                                <option
+                                  value="GP"
+                                >
+                                  GUADELOUPE
+                                </option>
+                                <option
+                                  value="GU"
+                                >
+                                  GUAM
+                                </option>
+                                <option
+                                  value="GT"
+                                >
+                                  GUATEMALA
+                                </option>
+                                <option
+                                  value="GG"
+                                >
+                                  GUERNSEY
+                                </option>
+                                <option
+                                  value="GN"
+                                >
+                                  GUINEA
+                                </option>
+                                <option
+                                  value="GW"
+                                >
+                                  GUINEA-BISSAU
+                                </option>
+                                <option
+                                  value="GY"
+                                >
+                                  GUYANA
+                                </option>
+                                <option
+                                  value="HT"
+                                >
+                                  HAITI
+                                </option>
+                                <option
+                                  value="HM"
+                                >
+                                  HEARD ISLAND AND MCDONALD ISLANDS
+                                </option>
+                                <option
+                                  value="VA"
+                                >
+                                  HOLY SEE (VATICAN CITY STATE)
+                                </option>
+                                <option
+                                  value="HN"
+                                >
+                                  HONDURAS
+                                </option>
+                                <option
+                                  value="HK"
+                                >
+                                  HONG KONG
+                                </option>
+                                <option
+                                  value="HU"
+                                >
+                                  HUNGARY
+                                </option>
+                                <option
+                                  value="IS"
+                                >
+                                  ICELAND
+                                </option>
+                                <option
+                                  value="IN"
+                                >
+                                  INDIA
+                                </option>
+                                <option
+                                  value="ID"
+                                >
+                                  INDONESIA
+                                </option>
+                                <option
+                                  value="IR"
+                                >
+                                  IRAN, ISLAMIC REPUBLIC OF
+                                </option>
+                                <option
+                                  value="IQ"
+                                >
+                                  IRAQ
+                                </option>
+                                <option
+                                  value="IE"
+                                >
+                                  IRELAND
+                                </option>
+                                <option
+                                  value="IM"
+                                >
+                                  ISLE OF MAN
+                                </option>
+                                <option
+                                  value="IL"
+                                >
+                                  ISRAEL
+                                </option>
+                                <option
+                                  value="IT"
+                                >
+                                  ITALY
+                                </option>
+                                <option
+                                  value="JM"
+                                >
+                                  JAMAICA
+                                </option>
+                                <option
+                                  value="JP"
+                                >
+                                  JAPAN
+                                </option>
+                                <option
+                                  value="JE"
+                                >
+                                  JERSEY
+                                </option>
+                                <option
+                                  value="JO"
+                                >
+                                  JORDAN
+                                </option>
+                                <option
+                                  value="KZ"
+                                >
+                                  KAZAKHSTAN
+                                </option>
+                                <option
+                                  value="KE"
+                                >
+                                  KENYA
+                                </option>
+                                <option
+                                  value="KI"
+                                >
+                                  KIRIBATI
+                                </option>
+                                <option
+                                  value="KP"
+                                >
+                                  KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF
+                                </option>
+                                <option
+                                  value="KR"
+                                >
+                                  KOREA, REPUBLIC OF
+                                </option>
+                                <option
+                                  value="KW"
+                                >
+                                  KUWAIT
+                                </option>
+                                <option
+                                  value="KG"
+                                >
+                                  KYRGYZSTAN
+                                </option>
+                                <option
+                                  value="LA"
+                                >
+                                  LAO PEOPLE'S DEMOCRATIC REPUBLIC
+                                </option>
+                                <option
+                                  value="LV"
+                                >
+                                  LATVIA
+                                </option>
+                                <option
+                                  value="LB"
+                                >
+                                  LEBANON
+                                </option>
+                                <option
+                                  value="LS"
+                                >
+                                  LESOTHO
+                                </option>
+                                <option
+                                  value="LR"
+                                >
+                                  LIBERIA
+                                </option>
+                                <option
+                                  value="LY"
+                                >
+                                  LIBYA
+                                </option>
+                                <option
+                                  value="LI"
+                                >
+                                  LIECHTENSTEIN
+                                </option>
+                                <option
+                                  value="LT"
+                                >
+                                  LITHUANIA
+                                </option>
+                                <option
+                                  value="LU"
+                                >
+                                  LUXEMBOURG
+                                </option>
+                                <option
+                                  value="MO"
+                                >
+                                  MACAO
+                                </option>
+                                <option
+                                  value="MK"
+                                >
+                                  MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF
+                                </option>
+                                <option
+                                  value="MG"
+                                >
+                                  MADAGASCAR
+                                </option>
+                                <option
+                                  value="MW"
+                                >
+                                  MALAWI
+                                </option>
+                                <option
+                                  value="MY"
+                                >
+                                  MALAYSIA
+                                </option>
+                                <option
+                                  value="MV"
+                                >
+                                  MALDIVES
+                                </option>
+                                <option
+                                  value="ML"
+                                >
+                                  MALI
+                                </option>
+                                <option
+                                  value="MT"
+                                >
+                                  MALTA
+                                </option>
+                                <option
+                                  value="MH"
+                                >
+                                  MARSHALL ISLANDS
+                                </option>
+                                <option
+                                  value="MQ"
+                                >
+                                  MARTINIQUE
+                                </option>
+                                <option
+                                  value="MR"
+                                >
+                                  MAURITANIA
+                                </option>
+                                <option
+                                  value="MU"
+                                >
+                                  MAURITIUS
+                                </option>
+                                <option
+                                  value="YT"
+                                >
+                                  MAYOTTE
+                                </option>
+                                <option
+                                  value="MX"
+                                >
+                                  MEXICO
+                                </option>
+                                <option
+                                  value="FM"
+                                >
+                                  MICRONESIA, FEDERATED STATES OF
+                                </option>
+                                <option
+                                  value="MD"
+                                >
+                                  MOLDOVA, REPUBLIC OF
+                                </option>
+                                <option
+                                  value="MC"
+                                >
+                                  MONACO
+                                </option>
+                                <option
+                                  value="MN"
+                                >
+                                  MONGOLIA
+                                </option>
+                                <option
+                                  value="ME"
+                                >
+                                  MONTENEGRO
+                                </option>
+                                <option
+                                  value="MS"
+                                >
+                                  MONTSERRAT
+                                </option>
+                                <option
+                                  value="MA"
+                                >
+                                  MOROCCO
+                                </option>
+                                <option
+                                  value="MZ"
+                                >
+                                  MOZAMBIQUE
+                                </option>
+                                <option
+                                  value="MM"
+                                >
+                                  MYANMAR
+                                </option>
+                                <option
+                                  value="NA"
+                                >
+                                  NAMIBIA
+                                </option>
+                                <option
+                                  value="NR"
+                                >
+                                  NAURU
+                                </option>
+                                <option
+                                  value="NP"
+                                >
+                                  NEPAL
+                                </option>
+                                <option
+                                  value="NL"
+                                >
+                                  NETHERLANDS
+                                </option>
+                                <option
+                                  value="NC"
+                                >
+                                  NEW CALEDONIA
+                                </option>
+                                <option
+                                  value="NZ"
+                                >
+                                  NEW ZEALAND
+                                </option>
+                                <option
+                                  value="NI"
+                                >
+                                  NICARAGUA
+                                </option>
+                                <option
+                                  value="NE"
+                                >
+                                  NIGER
+                                </option>
+                                <option
+                                  value="NG"
+                                >
+                                  NIGERIA
+                                </option>
+                                <option
+                                  value="NU"
+                                >
+                                  NIUE
+                                </option>
+                                <option
+                                  value="NF"
+                                >
+                                  NORFOLK ISLAND
+                                </option>
+                                <option
+                                  value="MP"
+                                >
+                                  NORTHERN MARIANA ISLANDS
+                                </option>
+                                <option
+                                  value="NO"
+                                >
+                                  NORWAY
+                                </option>
+                                <option
+                                  value="OM"
+                                >
+                                  OMAN
+                                </option>
+                                <option
+                                  value="PK"
+                                >
+                                  PAKISTAN
+                                </option>
+                                <option
+                                  value="PW"
+                                >
+                                  PALAU
+                                </option>
+                                <option
+                                  value="PS"
+                                >
+                                  PALESTINE, STATE OF
+                                </option>
+                                <option
+                                  value="PA"
+                                >
+                                  PANAMA
+                                </option>
+                                <option
+                                  value="PG"
+                                >
+                                  PAPUA NEW GUINEA
+                                </option>
+                                <option
+                                  value="PY"
+                                >
+                                  PARAGUAY
+                                </option>
+                                <option
+                                  value="PE"
+                                >
+                                  PERU
+                                </option>
+                                <option
+                                  value="PH"
+                                >
+                                  PHILIPPINES
+                                </option>
+                                <option
+                                  value="PN"
+                                >
+                                  PITCAIRN
+                                </option>
+                                <option
+                                  value="PL"
+                                >
+                                  POLAND
+                                </option>
+                                <option
+                                  value="PT"
+                                >
+                                  PORTUGAL
+                                </option>
+                                <option
+                                  value="PR"
+                                >
+                                  PUERTO RICO
+                                </option>
+                                <option
+                                  value="QA"
+                                >
+                                  QATAR
+                                </option>
+                                <option
+                                  value="RE"
+                                >
+                                  RÉUNION
+                                </option>
+                                <option
+                                  value="RO"
+                                >
+                                  ROMANIA
+                                </option>
+                                <option
+                                  value="RU"
+                                >
+                                  RUSSIAN FEDERATION
+                                </option>
+                                <option
+                                  value="RW"
+                                >
+                                  RWANDA
+                                </option>
+                                <option
+                                  value="BL"
+                                >
+                                  SAINT BARTHÉLEMY
+                                </option>
+                                <option
+                                  value="SH"
+                                >
+                                  SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA
+                                </option>
+                                <option
+                                  value="KN"
+                                >
+                                  SAINT KITTS AND NEVIS
+                                </option>
+                                <option
+                                  value="LC"
+                                >
+                                  SAINT LUCIA
+                                </option>
+                                <option
+                                  value="MF"
+                                >
+                                  SAINT MARTIN (FRENCH PART)
+                                </option>
+                                <option
+                                  value="PM"
+                                >
+                                  SAINT PIERRE AND MIQUELON
+                                </option>
+                                <option
+                                  value="VC"
+                                >
+                                  SAINT VINCENT AND THE GRENADINES
+                                </option>
+                                <option
+                                  value="WS"
+                                >
+                                  SAMOA
+                                </option>
+                                <option
+                                  value="SM"
+                                >
+                                  SAN MARINO
+                                </option>
+                                <option
+                                  value="ST"
+                                >
+                                  SAO TOME AND PRINCIPE
+                                </option>
+                                <option
+                                  value="SA"
+                                >
+                                  SAUDI ARABIA
+                                </option>
+                                <option
+                                  value="SN"
+                                >
+                                  SENEGAL
+                                </option>
+                                <option
+                                  value="RS"
+                                >
+                                  SERBIA
+                                </option>
+                                <option
+                                  value="SC"
+                                >
+                                  SEYCHELLES
+                                </option>
+                                <option
+                                  value="SL"
+                                >
+                                  SIERRA LEONE
+                                </option>
+                                <option
+                                  value="SG"
+                                >
+                                  SINGAPORE
+                                </option>
+                                <option
+                                  value="SX"
+                                >
+                                  SINT MAARTEN (DUTCH PART)
+                                </option>
+                                <option
+                                  value="SK"
+                                >
+                                  SLOVAKIA
+                                </option>
+                                <option
+                                  value="SI"
+                                >
+                                  SLOVENIA
+                                </option>
+                                <option
+                                  value="SB"
+                                >
+                                  SOLOMON ISLANDS
+                                </option>
+                                <option
+                                  value="SO"
+                                >
+                                  SOMALIA
+                                </option>
+                                <option
+                                  value="ZA"
+                                >
+                                  SOUTH AFRICA
+                                </option>
+                                <option
+                                  value="GS"
+                                >
+                                  SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS
+                                </option>
+                                <option
+                                  value="SS"
+                                >
+                                  SOUTH SUDAN
+                                </option>
+                                <option
+                                  value="ES"
+                                >
+                                  SPAIN
+                                </option>
+                                <option
+                                  value="LK"
+                                >
+                                  SRI LANKA
+                                </option>
+                                <option
+                                  value="SD"
+                                >
+                                  SUDAN
+                                </option>
+                                <option
+                                  value="SR"
+                                >
+                                  SURINAME
+                                </option>
+                                <option
+                                  value="SJ"
+                                >
+                                  SVALBARD AND JAN MAYEN
+                                </option>
+                                <option
+                                  value="SZ"
+                                >
+                                  SWAZILAND
+                                </option>
+                                <option
+                                  value="SE"
+                                >
+                                  SWEDEN
+                                </option>
+                                <option
+                                  value="CH"
+                                >
+                                  SWITZERLAND
+                                </option>
+                                <option
+                                  value="SY"
+                                >
+                                  SYRIAN ARAB REPUBLIC
+                                </option>
+                                <option
+                                  value="TW"
+                                >
+                                  TAIWAN, PROVINCE OF CHINA
+                                </option>
+                                <option
+                                  value="TJ"
+                                >
+                                  TAJIKISTAN
+                                </option>
+                                <option
+                                  value="TZ"
+                                >
+                                  TANZANIA, UNITED REPUBLIC OF
+                                </option>
+                                <option
+                                  value="TH"
+                                >
+                                  THAILAND
+                                </option>
+                                <option
+                                  value="TL"
+                                >
+                                  TIMOR-LESTE
+                                </option>
+                                <option
+                                  value="TG"
+                                >
+                                  TOGO
+                                </option>
+                                <option
+                                  value="TK"
+                                >
+                                  TOKELAU
+                                </option>
+                                <option
+                                  value="TO"
+                                >
+                                  TONGA
+                                </option>
+                                <option
+                                  value="TT"
+                                >
+                                  TRINIDAD AND TOBAGO
+                                </option>
+                                <option
+                                  value="TN"
+                                >
+                                  TUNISIA
+                                </option>
+                                <option
+                                  value="TR"
+                                >
+                                  TURKEY
+                                </option>
+                                <option
+                                  value="TM"
+                                >
+                                  TURKMENISTAN
+                                </option>
+                                <option
+                                  value="TC"
+                                >
+                                  TURKS AND CAICOS ISLANDS
+                                </option>
+                                <option
+                                  value="TV"
+                                >
+                                  TUVALU
+                                </option>
+                                <option
+                                  value="UG"
+                                >
+                                  UGANDA
+                                </option>
+                                <option
+                                  value="UA"
+                                >
+                                  UKRAINE
+                                </option>
+                                <option
+                                  value="AE"
+                                >
+                                  UNITED ARAB EMIRATES
+                                </option>
+                                <option
+                                  value="GB"
+                                >
+                                  UNITED KINGDOM
+                                </option>
+                                <option
+                                  value="US"
+                                >
+                                  UNITED STATES
+                                </option>
+                                <option
+                                  value="UM"
+                                >
+                                  UNITED STATES MINOR OUTLYING ISLANDS
+                                </option>
+                                <option
+                                  value="UY"
+                                >
+                                  URUGUAY
+                                </option>
+                                <option
+                                  value="UZ"
+                                >
+                                  UZBEKISTAN
+                                </option>
+                                <option
+                                  value="VU"
+                                >
+                                  VANUATU
+                                </option>
+                                <option
+                                  value="VE"
+                                >
+                                  VENEZUELA, BOLIVARIAN REPUBLIC OF
+                                </option>
+                                <option
+                                  value="VN"
+                                >
+                                  VIET NAM
+                                </option>
+                                <option
+                                  value="VG"
+                                >
+                                  VIRGIN ISLANDS, BRITISH
+                                </option>
+                                <option
+                                  value="VI"
+                                >
+                                  VIRGIN ISLANDS, U.S.
+                                </option>
+                                <option
+                                  value="WF"
+                                >
+                                  WALLIS AND FUTUNA
+                                </option>
+                                <option
+                                  value="EH"
+                                >
+                                  WESTERN SAHARA
+                                </option>
+                                <option
+                                  value="YE"
+                                >
+                                  YEMEN
+                                </option>
+                                <option
+                                  value="ZM"
+                                >
+                                  ZAMBIA
+                                </option>
+                                <option
+                                  value="ZW"
+                                >
+                                  ZIMBABWE
+                                </option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <EditFormInput
+                          inputName="profilePhoto"
+                          inputType="file"
+                          label="Profile Photo"
+                          onChange={[Function]}
+                        >
+                          <div
+                            className="form-group"
+                          >
+                            Profile Photo
+                            <input
+                              className="form-control"
+                              name="profilePhoto"
+                              onChange={[Function]}
+                              required={true}
+                              type="file"
+                            />
+                            <ValidationSubscript>
+                              <p
+                                className="subscript subscript-warning hidden"
+                              >
+                                Kuna kitu umekosea hapa
+                              </p>
+                            </ValidationSubscript>
+                          </div>
+                        </EditFormInput>
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="col-md-6"
+                          >
+                            <EditFormInput
+                              inputName="website"
+                              inputType="text"
+                              label="Website"
+                              onChange={[Function]}
+                              value="https://www.andela.com"
+                            >
+                              <div
+                                className="form-group"
+                              >
+                                Website
+                                <input
+                                  className="form-control"
+                                  name="website"
+                                  onChange={[Function]}
+                                  required={true}
+                                  type="text"
+                                  value="https://www.andela.com"
+                                />
+                                <ValidationSubscript>
+                                  <p
+                                    className="subscript subscript-warning hidden"
+                                  >
+                                    Kuna kitu umekosea hapa
+                                  </p>
+                                </ValidationSubscript>
+                              </div>
+                            </EditFormInput>
+                          </div>
+                          <div
+                            className="col-md-6"
+                          >
+                            <EditFormInput
+                              inputName="twitterHandle"
+                              inputType="text"
+                              label="Twitter Handle"
+                              onChange={[Function]}
+                              value="9thMarch"
+                            >
+                              <div
+                                className="form-group"
+                              >
+                                Twitter Handle
+                                <input
+                                  className="form-control"
+                                  name="twitterHandle"
+                                  onChange={[Function]}
+                                  required={true}
+                                  type="text"
+                                  value="9thMarch"
+                                />
+                                <ValidationSubscript>
+                                  <p
+                                    className="subscript subscript-warning hidden"
+                                  >
+                                    Kuna kitu umekosea hapa
+                                  </p>
+                                </ValidationSubscript>
+                              </div>
+                            </EditFormInput>
+                          </div>
+                          <div
+                            className="col-md-6"
+                          >
+                            <EditFormInput
+                              inputName="phoneNumber"
+                              inputType="text"
+                              label="Phone Number"
+                              onChange={[Function]}
+                              value="08883827832"
+                            >
+                              <div
+                                className="form-group"
+                              >
+                                Phone Number
+                                <input
+                                  className="form-control"
+                                  name="phoneNumber"
+                                  onChange={[Function]}
+                                  required={true}
+                                  type="text"
+                                  value="08883827832"
+                                />
+                                <ValidationSubscript>
+                                  <p
+                                    className="subscript subscript-warning hidden"
+                                  >
+                                    Kuna kitu umekosea hapa
+                                  </p>
+                                </ValidationSubscript>
+                              </div>
+                            </EditFormInput>
+                          </div>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="bio"
+                          >
+                            Bio
+                          </label>
+                          <textarea
+                            className="form-control"
+                            cols="80"
+                            name="bio"
+                            onChange={[Function]}
+                            rows="8"
+                            value="bambino"
+                          />
+                        </div>
+                        <Link
+                          replace={false}
+                          to=""
+                        >
+                          <a
+                            href="/"
+                            onClick={[Function]}
+                          >
+                            <button
+                              className="btn btn-success"
+                              onClick={[Function]}
+                              type="submit"
+                            >
+                              Submit
+                            </button>
+                          </a>
+                        </Link>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </EditProfile>
+      </Connect(EditProfile)>
+    </Router>
+  </MemoryRouter>
+</Provider>
+`;

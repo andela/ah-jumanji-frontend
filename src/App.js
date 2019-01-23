@@ -6,12 +6,11 @@ import { ToastContainer } from 'react-toastify';
 
 import './assets/css/main.scss';
 import Main from "./apps/Navigation/Routes";
-import Navigation from "./apps/Navigation/Navbar";
+
 
 
 const App = () => (
   <div>
-    {/* <Navigation /> */}
     <Main />
     <ToastContainer autoClose={8000} />
   </div>

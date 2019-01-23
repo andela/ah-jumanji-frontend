@@ -1,39 +1,39 @@
 import * as types from '../actions/types';
 
-const initialState = {
+export const initialState = {
   profile: {},
   profileImage: {}
 };
 
-function profileReducer(state = initialState, action) {
+export function profileReducer(state = initialState, action) {
   switch (action.type) {
     case types.VIEW_PROFILE_SUCCESS:
       return {
         ...state,
         profile: action.payload
-      }
+      };
     case types.VIEW_PROFILE_FAILED:
       return {
         error: action.error
-      }
+      };
     case types.EDIT_PROFILE_SUCCESS:
       return {
         ...state,
         profile: action.payload
-      }
+      };
     case types.EDIT_PROFILE_FAILED:
       return {
         error: action.payload
-      }
+      };
     case types.SUCCESSFUL_IMAGE_UPLOAD:
       return {
-       ...state, 
+       ...state,
        profileImage: action.payload
-      }
+      };
     case types.IMAGE_UPLOAD_FAILED:
       return {
        error: action.payload
-      }
+      };
     default:
      return state;
   }

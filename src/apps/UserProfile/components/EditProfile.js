@@ -2,22 +2,37 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import { fileUploadHandler } from '../actions/cloudinary';
 import Nav from './nav';
+import countries from './countries';
+import { EditFormInput } from '../../common/components/EditFormInput';
 
+let dataValid = [];
 
 class EditProfile extends Component {
-
   constructor(props) {
     super(props);
+    const { profile } = this.props;
+    const {
+      first_name,
+      last_name,
+      profile_photo,
+      website,
+      phone_number,
+      bio,
+      country,
+      twitter_handle } = profile;
+
     this.state = {
-      username: this.props.profile.username,
-      profilePhoto: this.props.profile.profile_photo,
-      website: this.props.profile.website,
-      phoneNumber: this.props.profile.phone_number,
-      bio: this.props.profile.bio,
-      country: this.props.profile.country,
-      twitterHandle: this.props.profile.twitter_handle,
+      firstName: first_name,
+      lastName: last_name,
+      profilePhoto: profile_photo,
+      website: website,
+      phoneNumber: phone_number,
+      bio: bio,
+      country: country,
+      twitterHandle: twitter_handle,
       selectedFile: null
     };
 
@@ -27,108 +42,148 @@ class EditProfile extends Component {
   }
 
   handleSubmit = (e) => {
+    dataValid = [];
     e.preventDefault();
-
-    const { 
-      username, 
-      profilePhoto, 
-      website, 
-      phoneNumber, 
-      bio, 
-      country, 
+    const { fileUploadHandler } = this.props;
+    const {
+      firstName,
+      lastName,
+      profilePhoto,
+      website,
+      phoneNumber,
+      bio,
+      country,
       twitterHandle,
       selectedFile } = this.state;
-
-      let profile = { "profile" : {username, profile_photo: profilePhoto, website, phone_number: phoneNumber, bio, country, twitter_handle: twitterHandle} 
+    let profile = {
+          "profile" : {
+            first_name: firstName,
+            last_name: lastName,
+            profile_photo: profilePhoto,
+            website: website,
+            phone_number: phoneNumber,
+            bio: bio,
+            country: country,
+            twitter_handle: twitterHandle,
+          }
+        };
+    for (let key in profile.profile) {
+      let value = profile.profile[key];
+      let keyParams = key.split("_");
+      keyParams.length > 1 ? key = keyParams[0] + keyParams[1].charAt(0).toUpperCase() + keyParams[1].substr(1) : keyParams;
+      if(!["country", "profilePhoto", "bio" ].includes(key)) {
+        this.validateUserInput(key, value);
+        // set up an event listener to highlight errors
+        document.querySelector(`input[name=${key}]`).addEventListener('focus', (e) => {
+          e.target.classList.remove('highlight-error-input');
+          e.target.parentElement.querySelector('p').classList.add('hidden');
+          toast.dismiss();
+        });
+      }
     }
-
-      this.props.fileUploadHandler(selectedFile, profile);
-      
-
+    dataValid.includes(false) ?  false : fileUploadHandler(selectedFile, profile);
   }
 
   onChange = (e) => {
     this.setState({
       ...this.state, [e.target.name]: e.target.value
-    })
+    });
+
   }
 
   fileSelectedHandler = event => {
     this.setState({
       selectedFile: event.target.files[0]
-    })
+    });
+
+  }
+
+  validateUserInput(inputName, inputValue) {
+
+    if (!inputValue) {
+      let warningSubscript = document.querySelector(
+        `input[name=${inputName}]`).parentElement.querySelector("p");
+
+      // Display an error beneath appropriate input
+      warningSubscript.classList.remove("hidden");
+      warningSubscript.innerHTML = "This field may not be blank";
+      // Highlight input that has no data
+      document.querySelector(`input[name=${inputName}]`).classList.add('highlight-error-input');
+
+      // Mark input as false/invalid
+      dataValid.push(false);
+    }
+    else {
+      dataValid.push(true);
+    }
   }
 
   render () {
     const { profilePhoto } = this.state;
+    const {
+      firstName,
+      lastName,
+      website,
+      twitterHandle,
+      phoneNumber,
+      bio
+    } = this.state;
+
     return (
-        <div>
-          
-          <Nav profilePic={profilePhoto} />
-          <div className="container auth-container">
-            <div className="row">
-              <div className="col-md-10 offset-md-1">
-                <div className="panel panel-default">
-                  <div className="panel-heading" />
-                  <div className="">
-                    <form>
-                      <h3>Edit Profile.</h3>
-                      <div className="row">
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <label htmlFor="username">Username</label>
-                            <input type="text" name='username' className="form-control" value={this.state.username} onChange={this.onChange} />
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <label htmlFor="country">Country</label>
-                            <input type="text" className="form-control" name='country' value={this.state.country} onChange={this.onChange} />
-                          </div>
+      <div>
+        <Nav profilePic={profilePhoto} />
+        <div className="container auth-container">
+          <div className="row">
+            <div className="col-md-10 offset-md-1">
+              <div className="panel panel-default">
+                <div className="panel-heading" />
+                <div className="">
+                  <form>
+                    <h3>Edit Profile.</h3>
+                    <div className="row">
+                      <div className="col-md-6">
+                        <EditFormInput label="First Name" inputType="text" inputName="firstName" value={firstName} onChange={this.onChange} />
+                      </div>
+                      <div className="col-md-6">
+                        <EditFormInput label="Last Name" inputType="text" inputName="lastName" value={lastName} onChange={this.onChange} />
+                      </div>
+                      <div className="col-md-6">
+                        <div className="form-group">
+                          <label htmlFor="country">Country</label>
+                          <select name="country" className="form-control" onChange={this.onChange} id="countriesDropdown">
+                            {Object.keys(countries).map((key) => {
+                              return <option value={key}>{countries[key]}</option>;
+                            })}
+                          </select>
                         </div>
                       </div>
-
-                      <div className="form-group">
-                        <label htmlFor="image">Profile Photo</label>
-                        <br />
-                        <input type="file" id="image" onChange={this.fileSelectedHandler} />
+                    </div>
+                    <EditFormInput label="Profile Photo" inputType="file" inputName="profilePhoto" onChange={this.fileSelectedHandler} />
+                    <div className="row">
+                      <div className="col-md-6">
+                        <EditFormInput label="Website" inputType="text" inputName="website" value={website} onChange={this.onChange} />
                       </div>
-                      <div className="row">
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <label htmlFor="website">Website</label>
-                            <input type="text" className="form-control"  name='website' value={this.state.website} onChange={this.onChange} />
-                          </div>
-                        </div>
-                      
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <label htmlFor="twitterHandle">Twitter Handle</label>
-                            <input type="text" className="form-control"  name='twitterHandle' value={this.state.twitterHandle} onChange={this.onChange} />
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <label htmlFor="phoneNumber">Phone Number</label>
-                            <input type="text" className="form-control" name='phoneNumber' value={this.state.phoneNumber} onChange={this.onChange} />
-                          </div>
-                        </div>
+                      <div className="col-md-6">
+                        <EditFormInput label="Twitter Handle" inputType="text" inputName="twitterHandle" value={twitterHandle} onChange={this.onChange} />
                       </div>
-                      <div className="form-group">
-                        <label htmlFor="bio">Bio</label>
-                        <textarea name='bio' rows="8" cols="80" className="form-control" value={this.state.bio} onChange={this.onChange} />
+                      <div className="col-md-6">
+                        <EditFormInput label="Phone Number" inputType="text" inputName="phoneNumber" value={phoneNumber} onChange={this.onChange} />
                       </div>
-                      <Link to="/profile">
-                        <button type="submit" className="btn btn-success" onClick={this.handleSubmit}>Submit</button>
-                      </Link>
-                    </form>
-                  </div>
-
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="bio">Bio</label>
+                      <textarea name="bio" rows="8" cols="80" className="form-control" value={bio} onChange={this.onChange} />
+                    </div>
+                    <Link to="">
+                      <button type="submit" className="btn btn-success" onClick={this.handleSubmit}>Submit</button>
+                    </Link>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
     );
   }
 }
@@ -136,11 +191,8 @@ class EditProfile extends Component {
 EditProfile.propTypes = {
   profile: PropTypes.object.isRequired,
   fileUploadHandler: PropTypes.func.isRequired
-}
+};
 
-const mapStateToProps = (state) => ({
-  profile: state.profileReducer.profile
-})
-
+const mapStateToProps = ({ profileReducer }) => profileReducer;
 
 export default connect(mapStateToProps, { fileUploadHandler })(EditProfile);

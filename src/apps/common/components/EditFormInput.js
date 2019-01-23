@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 
 import ValidationSubscript from './validationSubscript';
 
-export const FormInput = (props) => {
+export const EditFormInput = (props) => {
 
-  const {label, inputType, inputName, placeholder, onChange} = props;
+  const {label, inputType, inputName, value, onChange} = props;
 
   return (
     <div className="form-group">
       {label}
       <input
         type={inputType} onChange={onChange} className="form-control" name={inputName}
-        placeholder={placeholder} required
+        value={value} required
       />
       <ValidationSubscript />
     </div>
@@ -22,10 +22,9 @@ export const FormInput = (props) => {
 export const formInputPropTypes = {
   inputType: PropTypes.string.isRequired,
   inputName: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired
 };
 
-FormInput.propTypes = formInputPropTypes;
-
+EditFormInput.propTypes = formInputPropTypes;

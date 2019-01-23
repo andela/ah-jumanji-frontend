@@ -5,7 +5,7 @@ import socialAuth from './SocialLogin/reducers/socialReducer';
 import Login from './Login/reducers/loginReducer';
 import resetAccountPassword from './resetPassword/reducers/resetPasswordReducer';
 import Register from "./Register/reducers/registerReducer";
-import profileReducer from './UserProfile/reducers/profileReducer';
+import {profileReducer} from './UserProfile/reducers/profileReducer';
 
 const rootReducer = combineReducers({
   socialAuth,
