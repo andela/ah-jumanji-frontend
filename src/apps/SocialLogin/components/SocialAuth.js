@@ -97,7 +97,8 @@ class SocialAuthActions extends Component {
         let token = response.data.social_token;
         let message = `Thank you ${userData.name} for registering with us`;
         toast.success(`🦄 ${message}`, { position: toast.POSITION.TOP_RIGHT, autoClose: 2000 });
-        bake_cookie("Jumanji_Auth_Token", token);// Set cookie
+        token = token.replace("Token","").trim();
+        bake_cookie("token", token);// Set cookie
         setTimeout(function(){window.location.replace('/home');}, 2500);
       })
       .catch((err) => {

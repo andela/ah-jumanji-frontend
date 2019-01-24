@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import * as types from './actionTypes';
 import config from '../../../config/config';
 
-const slug = `${location.pathname.split("/")[1]}`;
+const slug = `${location.pathname.split("/")[2]}`;
 const ratingEndpoint = `${config.api.ratingUrl}${slug}/rating`;
 const token = read_cookie("token");
 
