@@ -33,7 +33,7 @@ exports[`Registration form should match the snapshoot 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "j7effu",
+              "key": "ntbi59",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -47,7 +47,7 @@ exports[`Registration form should match the snapshoot 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "j7effu",
+            "key": "ntbi59",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -134,13 +134,6 @@ exports[`Registration form should match the snapshoot 1`] = `
                         required={true}
                         type="username"
                       />
-                      <ValidationSubscript>
-                        <p
-                          className="subscript subscript-warning hidden"
-                        >
-                          Kuna kitu umekosea hapa
-                        </p>
-                      </ValidationSubscript>
                     </div>
                   </FormInput>
                   <FormInput
@@ -162,13 +155,6 @@ exports[`Registration form should match the snapshoot 1`] = `
                         required={true}
                         type="email"
                       />
-                      <ValidationSubscript>
-                        <p
-                          className="subscript subscript-warning hidden"
-                        >
-                          Kuna kitu umekosea hapa
-                        </p>
-                      </ValidationSubscript>
                     </div>
                   </FormInput>
                   <FormInput
@@ -190,13 +176,6 @@ exports[`Registration form should match the snapshoot 1`] = `
                         required={true}
                         type="password"
                       />
-                      <ValidationSubscript>
-                        <p
-                          className="subscript subscript-warning hidden"
-                        >
-                          Kuna kitu umekosea hapa
-                        </p>
-                      </ValidationSubscript>
                     </div>
                   </FormInput>
                   <FormInput
@@ -218,13 +197,6 @@ exports[`Registration form should match the snapshoot 1`] = `
                         required={true}
                         type="password"
                       />
-                      <ValidationSubscript>
-                        <p
-                          className="subscript subscript-warning hidden"
-                        >
-                          Kuna kitu umekosea hapa
-                        </p>
-                      </ValidationSubscript>
                     </div>
                   </FormInput>
                   <button

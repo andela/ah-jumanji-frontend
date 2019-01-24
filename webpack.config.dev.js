@@ -25,7 +25,7 @@ export default {
   "devtool": "cheap-module-eval-source-map",
   "plugins": [
     // A webpack plugin to remove/clean the build folder(s) before building
-    new CleanWebpackPlugin(['dist']),
+    // new CleanWebpackPlugin(['dist']),
     // enable hot reloading
     new webpack.HotModuleReplacementPlugin(),
     //for .env variables
@@ -83,7 +83,7 @@ export default {
             "loader": 'file-loader',
             "options": {},
           },
-        ],
+        ]
       },
 
     ]

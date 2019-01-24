@@ -9,7 +9,12 @@ const config = {
     activateUserUrl: baseUrl + '/api/users/activate',
     getArticlesUrl: baseUrl + '/api/articles/?page=1',
     endpointArticleLikes: baseUrl + '/api/articles/reactions/',
-    articleCommentsUrl: baseUrl + '/api/articles/'
+    articleCommentsUrl: baseUrl + '/api/articles/',
+    unreadNotificationsURL: baseUrl + '/api/notifications/unread',
+    readNotificationsURL: baseUrl + '/api/notifications/read',
+    markAllRead: baseUrl + '/api/notifications/mark_read',
+    markNotificationRead: baseUrl + '/api/notifications/',
+    unmarkNotificationRead: baseUrl + '/api/notifications/unmark/'
   },
   firebase: {
     apiKey: process.env.FIREBASE_API_KEY || 'random',

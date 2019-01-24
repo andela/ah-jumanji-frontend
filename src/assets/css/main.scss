@@ -364,4 +364,20 @@ img#success-icon {
   display: none;
 }
 
+.text-muted {
+  color: #6c757d !important;
+  font-size: small;
+}
+
+.notifications {
+  min-width: 280px;
+}
+
+.read{
+  background-color:gray;
+}
+.unread{
+  background-color:orange;
+}
+
 @import 'mediaqueries';

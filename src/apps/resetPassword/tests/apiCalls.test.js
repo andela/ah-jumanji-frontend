@@ -76,8 +76,7 @@ describe('api calls to the API ', () => {
           "error": error_message,
           "type": types.SUBMIT_FAILED
         }
-      ]
-    ;
+      ];
 
     const store = mockStore({user: {}});
 

@@ -9,6 +9,8 @@ import IndexPage from "../Index/components/IndexPage";
 import Rating from "../Rating/components/Rating";
 import ResetCodePage from "../resetPassword/components/PasswordResetCodeComponent";
 import Dashboard from "../Dashboard/components/DashboardContainer";
+import NotificationHistory from "../Notifiications/components/NotificationHistoryComponent";
+
 
 const Main = () => (
   <Switch>
@@ -27,6 +29,7 @@ const Main = () => (
     <Route exact path="/reset_password" component={ForgotPassword} />
     <Route exact path="/reset_code/:reset_code" component={ResetCodePage} />
     <Route exact path="/a/home" component={Dashboard} />
+    <Route exact path="/notifications" component={NotificationHistory} />
   </Switch>
 );
 

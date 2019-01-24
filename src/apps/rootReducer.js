@@ -7,6 +7,7 @@ import resetAccountPassword from './resetPassword/reducers/resetPasswordReducer'
 import Register from "./Register/reducers/registerReducer";
 import ratingReducer from "./Rating/reducers/ratingReducer";
 import Dashboard from "./Dashboard/reducers/dashboardReducer";
+import Notifications from "./Notifiications/reducers/noticationsReducers";
 
 const rootReducer = combineReducers({
   socialAuth,
@@ -14,9 +15,9 @@ const rootReducer = combineReducers({
   Register,
   resetAccountPassword,
   ratingReducer,
-  Dashboard
+  Dashboard,
+  Notifications
   //Add your reducers here
-
 });
 
 export default rootReducer;

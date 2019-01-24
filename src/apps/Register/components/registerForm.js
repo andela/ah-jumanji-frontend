@@ -104,17 +104,17 @@ class RegistrationForm extends Component {
             {/* Register Form */}
             <form>
               <FormInput
-                         inputType="username" inputName="username" placeholder="Enter username" label="Username"
-                         onChange={this.collectUserInput} />
+                inputType="username" inputName="username" placeholder="Enter username" label="Username"
+                onChange={this.collectUserInput} />
               <FormInput
-                         inputType="email" inputName="email" placeholder="Enter email" label="Email"
-                         onChange={this.collectUserInput} />
+                inputType="email" inputName="email" placeholder="Enter email" label="Email"
+                onChange={this.collectUserInput} />
               <FormInput
-                         inputType="password" inputName="password" placeholder="Enter password" label="Password"
-                         onChange={this.collectUserInput} />
+                inputType="password" inputName="password" placeholder="Enter password" label="Password"
+                onChange={this.collectUserInput} />
               <FormInput
-                         inputType="password" inputName="repeatPassword" placeholder="Retype the password"
-                         label="repeatPassword" onChange={this.collectUserInput} />
+                inputType="password" inputName="repeatPassword" placeholder="Retype the password"
+                label="repeatPassword" onChange={this.collectUserInput} />
               <button type="submit" className="btn btn-success btn-block" onClick={this.registerUser}>Submit</button>
               <hr />
               Already have an account?

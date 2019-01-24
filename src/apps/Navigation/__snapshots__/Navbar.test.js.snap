@@ -47,6 +47,9 @@ exports[`Navigation should render correctly in "debug" mode 1`] = `
             label="Signup"
             link="/register"
           />
+          <NotificationsBadge
+            notifications_count={5}
+          />
         </span>
         <li
           className="nav-item dropdown sm-dropdown"
