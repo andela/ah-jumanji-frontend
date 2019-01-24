@@ -9,6 +9,8 @@ import ResetCodePage from "../resetPassword/components/PasswordResetCodeComponen
 import ArticlePage from "../Articles/components/create/CreateArticle";
 import ReadArticle from "../Articles/components/view/ViewArticle";
 import EditArticle from "../Articles/components/edit/EditArticle";
+import Rating from "../Rating/components/Rating";
+import Dashboard from "../Dashboard/components/DashboardContainer";
 
 const Main = () => (
   <Switch>
@@ -21,6 +23,8 @@ const Main = () => (
     <Route exact path="/new_article" component={ArticlePage} />
     <Route path="/view_article/:slug" component={ReadArticle} />
     <Route path="/edit_article/:slug" component={EditArticle} />
+    <Route exact path="/rating" component={Rating} />
+    <Route exact path="/a/home" component={Dashboard} />
   </Switch>
 );
 

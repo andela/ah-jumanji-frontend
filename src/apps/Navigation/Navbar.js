@@ -1,41 +1,47 @@
-import React from "react";
-import NavItem from "./NavItem";
-import NavButton from "./NavButton";
-import DropDownItem from "./NavDropDown";
+import React, {Component} from "react";
+import PropTypes from "prop-types";
+import 'jquery';
+
+import * as Links from './Links';
 
 
-const Navigation = () => (
-  <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-    <div className="container">
-      <a className="navbar-brand" href="/">
-        {"Author's Haven"}
-      </a>
-      <div className="" id="navbarSupportedContent">
-        <ul className="navbar-nav ml-auto pull-left">
-          <span className="sm-hide">
-            <NavItem classnameOuter="nav-link" classname="fas fa-info-circle" link="/about" label="About Us" />
-            <NavItem classnameOuter="nav-link" classname="fas fa-comments" link="/contact" label="Contact Us" />
-            <NavButton classnameOuter="nav-link" classname="btn btn-outline-warning btn-sm" link="/" label="Login" />
-            <NavButton classnameOuter="nav-link" classname="btn btn-outline-success  btn-sm" link="/register" label="Signup" />
-          </span>
-          <li className="nav-item dropdown sm-dropdown">
-            <button
-              type="button" className="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              <i className="fas fa-align-right" />
-            </button>
-            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <DropDownItem classnameOuter="dropdown-item" classname="fas fa-info-circle" link="/about" label="About Us" />
-              <DropDownItem classnameOuter="dropdown-item" classname="fas fa-comments" link="/contact" label="Contact Us" />
-              <div className="dropdown-divider" />
-              <DropDownItem classnameOuter="dropdown-item" classname="fas fa-sign-in-alt" link="/" label="Login" />
-              <DropDownItem classnameOuter="dropdown-item" classname="fas fa-sign-in-alt" link="/register" label="Signup" />
+class Navigation extends Component{
+  render() {
+    const {location} = this.props;
+    return(
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+        <div className="container">
+          <a className="navbar-brand" href={( location.pathname.indexOf('/a/') > -1) ? "/a/home" : "/"}>
+            {"Author's Haven"}
+          </a>
+          <div className="" id="navbarSupportedContent">
+            <ul className="navbar-nav ml-auto pull-left">
+              {/* hidden in a small device */}
+              <span className="sm-hide">
+                { location.pathname=='/a/home' ?
+                  <Links.HomeLinks /> :
+                  ( location.pathname.indexOf('/a/') > -1) ?
+                    <Links.AuthenticatedLinks /> :
+                    <Links.NotAuthenticatedLinks />
+                }
+              </span>
+              {/*Displayed on a small device*/}
+              { location.pathname=='/a/home' ?
+                <Links.HomeLinksSm /> :
+                ( location.pathname.indexOf('/a/') > -1) ?
+                  <Links.AuthenticatedLinksSm /> :
+                  <Links.NotAuthenticatedLinksSm />
+              }
             </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-);
+          </div>
+        </div>
+      </nav>
+    );
+  }
+}
+
+Navigation.propTypes = {
+  location: PropTypes.object.isRequired
+};
 
 export default Navigation;

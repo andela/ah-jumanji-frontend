@@ -7,6 +7,7 @@ import Login from './Login/reducers/loginReducer';
 import resetAccountPassword from './resetPassword/reducers/resetPasswordReducer';
 import Register from "./Register/reducers/registerReducer";
 import ratingReducer from "./Rating/reducers/ratingReducer";
+import Dashboard from "./Dashboard/reducers/dashboardReducer";
 
 const rootReducer = combineReducers({
   socialAuth,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   Register,
   resetAccountPassword,
   Articles,
-  ratingReducer
+  ratingReducer,
+  Dashboard
   //Add your reducers here
 });
 
