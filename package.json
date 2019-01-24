@@ -8,7 +8,13 @@
     "start": "npm-run-all --parallel open:src lint:watch",
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
-    "lint:watch": "npm run lint -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "clean-public": "npm run remove-public && mkdir public",
+    "remove-public": "node_modules/.bin/rimraf ./public",
+    "build:html": "babel-node tools/buildHtml.js",
+    "prebuild": "npm-run-all clean-public lint build:html",
+    "build": "babel-node tools/build.js",
+    "postbuild": "babel-node tools/publicServer.js"
   },
   "repository": {
     "type": "git",
@@ -77,14 +83,18 @@
     "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.2.1",
+    "cheerio": "^1.0.0-rc.2",
     "clean-webpack-plugin": "^1.0.0",
+    "colors": "^1.3.3",
+    "compression": "^1.7.3",
     "cors": "^2.8.5",
     "dotenv-webpack": "^1.6.0",
     "email-validator": "^2.0.4",
     "express": "^4.16.4",
+    "fetch-mock": "^7.3.0",
     "firebase": "^5.7.2",
     "font-awesome": "^4.7.0",
-    "fetch-mock": "^7.3.0",
+    "fs": "0.0.1-security",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
     "imagesloaded": "^4.1.4",
@@ -109,6 +119,8 @@
     "redux-promise-middleware": "^5.1.1",
     "redux-thunk": "^2.3.0",
     "redux-watch": "^1.1.1",
-    "sfcookies": "^1.0.2"
+    "serve-favicon": "^2.5.0",
+    "sfcookies": "^1.0.2",
+    "uglifyjs-webpack-plugin": "^2.1.1"
   }
 }
