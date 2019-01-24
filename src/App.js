@@ -9,9 +9,9 @@ import Main from "./apps/Navigation/Routes";
 import Navigation from "./apps/Navigation/Navbar";
 
 
-const App = () => (
+const App = (props) => (
   <div>
-    <Navigation />
+    <Navigation {...props} />
     <Main />
     <ToastContainer autoClose={8000} />
   </div>

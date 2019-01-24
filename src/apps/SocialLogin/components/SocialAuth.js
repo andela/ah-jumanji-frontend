@@ -146,9 +146,9 @@ class SocialAuthActions extends Component {
         </h3>
         <div className="text-center">
           <div className="btn-group" role="group" aria-label="socialauth">
-            { this.renderbutton(FacebookProvider, 'facebook', FACEBOOK, 'Facebook', 'fab fa-facebook-square', 'btn btn-primary') }
-            { this.renderbutton(GoogleProvider, "google-oauth2", GOOGLE, 'Google', 'fab fa-google', 'btn btn-danger') }
-            { this.renderbutton(TwitterProvider, "twitter", TWITTER, 'Twitter', 'fab fa-twitter-square', 'btn btn-info') }
+            { this.renderbutton(FacebookProvider, 'facebook', FACEBOOK, 'Facebook', 'fab fa-facebook-square', 'btn btn-facebook') }
+            { this.renderbutton(GoogleProvider, "google-oauth2", GOOGLE, 'Google', 'fab fa-google', 'btn btn-google') }
+            { this.renderbutton(TwitterProvider, "twitter", TWITTER, 'Twitter', 'fab fa-twitter-square', 'btn btn-twitter') }
           </div>
         </div>
         <hr />

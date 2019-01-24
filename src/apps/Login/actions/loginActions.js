@@ -39,18 +39,16 @@ export function authenticateUser(userData) {
             const cookie_key = 'token';
             bake_cookie(cookie_key, token);
 
+            bake_cookie('onLogin', true);
+
             dispatch(LoginSucess(res.data));
             // dismiss any existing toast first.
             toast.dismiss();
-            toast.success( "Login Successful!", {autoClose: 3000});
-            setTimeout(function(){
-              window.location.replace('/home');
-            }, 3000);
+            window.location.replace('/a/home');
         })
         .catch(error => {
             toast.error(error.response.data.errors.error[0], {autoClose: false});
             dispatch(LoginFailed(error.response.data));
-
 
         });
     };

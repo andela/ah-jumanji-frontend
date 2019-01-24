@@ -60,9 +60,9 @@ it('Social login components renders without crashing in main App', () => {
       expect(wrapper.find('button').exists()).toBe(true);
       expect(wrapper.find('.btn-group').exists()).toBe(true);
       expect(wrapper.find('.fa-facebook-square').exists()).toBe(true);
-      expect(wrapper.find('.btn-danger').exists()).toBe(true);
-      expect(wrapper.find('.btn-info').exists()).toBe(true);
-      expect(wrapper.find('.btn-primary').exists()).toBe(true);
+      expect(wrapper.find('.btn-google').exists()).toBe(true);
+      expect(wrapper.find('.btn-twitter').exists()).toBe(true);
+      expect(wrapper.find('.btn-facebook').exists()).toBe(true);
     });
   });
 
