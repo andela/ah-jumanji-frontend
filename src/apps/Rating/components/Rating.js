@@ -28,20 +28,15 @@ class Rating extends Component {
     const {Rating} = this.props;
     const rated = Rating.rating == "Article has no ratings" ? 0 : Rating.rating;
     return (
-      <div className="rating">
-        <span className="rated">
-          {rated}
-        </span>
-        <StarRatings
-          rating={rated}
-          starDimension="20px"
-          starSpacing="2px"
-          starRatedColor="orange"
-          starEmptyColor="lightgray"
-          starHoverColor="orange"
-          changeRating={this.handleClick}
-        />
-      </div>
+      <StarRatings
+        rating={rated}
+        starDimension="20px"
+        starSpacing="2px"
+        starRatedColor="orange"
+        starEmptyColor="lightgray"
+        starHoverColor="orange"
+        changeRating={this.handleClick}
+      />
     );
   }
 }
