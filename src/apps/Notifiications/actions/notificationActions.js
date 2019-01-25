@@ -2,6 +2,7 @@ import axios from "axios";
 import * as types from './actions';
 import apiConfig from "../../../config/config";
 import CacheFactory from '../utils/CacheFactory';
+import getUserCookie from "../../common/utils/readTokens";
 
 
 export const cache = new CacheFactory();
@@ -22,12 +23,55 @@ export function handleNullResponse(values) {
   }
 }
 
-export function removeNotification(id) {
-  cache.readData('unread').then(value => {
-    let unreads = value.filter(function (value) {
-      return value.id !== id;
-    });
-    cache.writeData('unread', unreads);
+// switch the location in the indexDB
+export function getCurrentStatus(status) {
+  switch (status) {
+    case true:
+      return 'unread';
+    case false:
+      return 'read';
+  }
+}
+
+// a simple opposite function
+function switchStatus(status) {
+  switch (status) {
+    case 'read':
+      return 'unread';
+    case 'unread':
+      return 'read';
+    case true:
+      return false;
+    case false:
+      return true;
+  }
+}
+
+export async function removeNotification(status, id) {
+  return cache.readData(status).then(value => {
+    // debugger;
+    // read the cache
+    if (value !== null) {
+      // get the unread content
+      let unreads = value.filter(function (value) {
+        return value.id !== id;
+      });
+      // get read notification
+      let reads = value.filter(function (value) {
+        return value.id === id;
+      });
+      //update the cache
+      cache.writeData(status, unreads).then(() => {
+        // now write the opposite store with the updated values
+        let st = switchStatus(status);
+        cache.readData(st).then((values) => {
+          // modify the reads unread status
+          reads[0].unread = switchStatus(reads[0].unread);
+          let combined = values.concat(reads);
+          cache.writeData(st, combined);
+        });
+      });
+    }
   });
 }
 
@@ -126,7 +170,7 @@ export function FetchAllNotifications(type) {
       method: "GET",
       url: url,
       headers: {
-        Authorization: 'Token ' + process.env.TOKEN
+        Authorization: 'Token ' + getUserCookie()
       },
     };
 
@@ -134,6 +178,7 @@ export function FetchAllNotifications(type) {
       await axios(config).then((response) => {
         if (response.data.hasOwnProperty('message')) {
           dispatch(loadSubmitSuccessful(response.data.message));
+          dispatch(switchAction(type, 0, []));
         } else {
           dispatch(loadSubmitSuccessful("Notifications updated"));
           dispatch(switchAction(type, response.data.count, response.data.notifications));
@@ -151,16 +196,13 @@ export function markAllNotificationsRead() {
       method: "get",
       url: apiConfig.api.markAllRead,
       headers: {
-        Authorization: 'Token ' + process.env.TOKEN
+        Authorization: 'Token ' + getUserCookie()
       },
     };
 
     await axios(config).then((response) => {
       dispatch(loadSubmitSuccessful(response.data.message));
-      FetchAllNotifications('unread');
-      FetchAllNotifications('read');
     });
-
   };
 }
 
@@ -170,7 +212,7 @@ export function toggleSpecificNotificationReadStatus(status, notification_id) {
       method: "get",
       url: switchUrl(status) + notification_id,
       headers: {
-        Authorization: 'Token ' + process.env.TOKEN
+        Authorization: 'Token ' + getUserCookie()
       },
     };
 

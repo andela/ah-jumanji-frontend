@@ -33,11 +33,13 @@ describe('fetch notifications', function () {
       });
     });
 
-    const expectedAction = [
+    const expectedAction = [{
+      "isFetching": false,
+      "message": "You have no notifications to display",
+      "type": "FETCH_NOTIFICATIONS_SUCCESSFUL"
+    },
       {
-        "isFetching": false,
-        "message": success_message,
-        "type": types.FETCH_NOTIFICATIONS_SUCCESSFUL
+        "count": 0, "notifications": [], "type": "GET_UNREAD_NOTIFICATIONS"
       }
     ];
 

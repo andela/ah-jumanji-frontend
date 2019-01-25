@@ -102,6 +102,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-hot-loader": "^4.6.3",
+    "react-loader-spinner": "^2.3.0",
     "react-notify-toast": "^0.5.0",
     "react-redux": "^6.0.0",
     "react-router": "^4.3.1",
