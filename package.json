@@ -103,6 +103,7 @@
     "react-notify-toast": "^0.5.0",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
+    "react-star-ratings": "^2.3.0",
     "react-toastify": "^4.5.2",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
