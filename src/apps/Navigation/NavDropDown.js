@@ -9,7 +9,7 @@ const DropDownItem = (props) => {
     <li>
       <a href={link} className={classnameOuter}>
         <i className={classname} />
-        {label}
+        {"  " + label}
       </a>
     </li>
   );
