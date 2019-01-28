@@ -1,6 +1,5 @@
 import React from 'react';
-import {mount, shallow} from 'enzyme';
-import Enzyme from "enzyme/build";
+import Enzyme, {mount, shallow} from 'enzyme';
 import Adapter from "enzyme-adapter-react-16/build";
 import thunk from "redux-thunk";
 import configureStore from "redux-mock-store";
@@ -36,7 +35,7 @@ describe('LoginForm', () => {
           <LoginForm />
         </MemoryRouter>
       </Provider>,
-  );
+    );
   });
 
   it('should render correctly in "debug" mode', () => {

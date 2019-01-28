@@ -1,13 +1,30 @@
 import React from 'react';
 
-import { shallow } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
+
+import Adapter from 'enzyme-adapter-react-16';
 
 import Navigation from './Navbar';
 
-describe('Navigation', () => {
-  it('should render correctly in "debug" mode', () => {
-    const component = shallow(<Navigation debug />);
+Enzyme.configure({ adapter: new Adapter() });
 
-    expect(component).toMatchSnapshot();
+function setup() {
+  const props = {
+    location: {pathname: "/a/home"}
+  };
+
+  const mountedEnzymeWrapper = shallow(<Navigation {...props} />);
+
+  return {
+    props,
+    mountedEnzymeWrapper
+  };
+}
+
+describe('Navigation', () => {
+  it('should render self and subcomponents', () => {
+    const { mountedEnzymeWrapper } = setup();
+
+    expect(mountedEnzymeWrapper.find('nav').hasClass('navbar-expand-lg')).toBe(true);
   });
 });

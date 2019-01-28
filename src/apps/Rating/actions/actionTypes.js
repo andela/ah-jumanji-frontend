@@ -1,0 +1,7 @@
+// Action types
+
+export const ADD_RATING_SUCCESS = "ADD_RATING_SUCCESS";
+export const ADD_RATING_FAILED = "ADD_RATING_FAILED";
+export const FETCH_AVERAGE_RATING = "FETCH_AVERAGE_RATING";
+
+

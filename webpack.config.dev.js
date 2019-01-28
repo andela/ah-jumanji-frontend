@@ -22,7 +22,7 @@ export default {
     "filename": "bundle.js",
     "publicPath": '/'
   },
-  "devtool": "cheap-module-eval-source-map",
+  "devtool": "eval",
   "plugins": [
     // A webpack plugin to remove/clean the build folder(s) before building
     new CleanWebpackPlugin(['dist']),
@@ -55,6 +55,7 @@ export default {
             "loader": 'babel-loader',
             "options": {
               "cacheDirectory": true,
+              presets: ['react','es2015', 'stage-2']
             },
           },
         ],
@@ -73,8 +74,24 @@ export default {
         loader: 'css-loader',
       },
       {
-        "test": /\.scss$/,
-        "use": [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        test: /\.scss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+        use: "url-loader?limit=10000&mimetype=application/font-woff"
+      }, {
+        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        use: "url-loader?limit=10000&mimetype=application/font-woff"
+      }, {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        use: "url-loader?limit=10000&mimetype=application/octet-stream"
+      }, {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        use: "file-loader"
+      }, {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        use: "url-loader?limit=10000&mimetype=image/svg+xml"
       },
       {
         "test": /\.(png|jpg|gif)$/,
@@ -83,9 +100,11 @@ export default {
             "loader": 'file-loader',
             "options": {},
           },
-        ],
+        ]
       },
-
     ]
+  },
+  resolve: {
+    modules: ['node_modules']
   }
 };

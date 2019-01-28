@@ -3,13 +3,19 @@ import {navPropTypes} from "./NavItem";
 
 const DropDownItem = (props) => {
 
-  const {classnameOuter, classname, link, label} = props;
+  const {classnameOuter, id, classname, link, label} = props;
+  const onClick = (e) => {
+    if(e.target.innerHTML.includes("Logout")){
+      localStorage.clear();
+      document.cookie = "token= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+  };
 
   return (
     <li>
-      <a href={link} className={classnameOuter}>
+      <a onClick={onClick} href={link} className={classnameOuter}>
         <i className={classname} />
-        {label}
+        {"  " + label}
       </a>
     </li>
   );

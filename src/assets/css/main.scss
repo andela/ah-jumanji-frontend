@@ -24,7 +24,9 @@
     position: inherit;
   }
 }
-
+.publish-div {
+  text-align: right;
+}
 .more {
   color: #4e4c4c !important;
 }
@@ -32,6 +34,60 @@
 .article-more {
   margin-left: 10px;
   color: #4e4c4c !important;
+}
+.btn-link {
+  padding: 0.4rem 1rem;
+  border: none;
+  background-color: transparent;
+  color: #72a57e;
+}
+
+.btn-link:hover {
+  padding: 0.4rem 1rem;
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  color: teal;
+}
+.btn-link:active{
+  padding: 0.4rem 1rem;
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-group .btn{
+  margin: 5px!important;
+}
+.btn-facebook{
+  color: #fff;
+  background-color: #4065b4;
+  border-color: #4065b4;
+}
+
+.btn-facebook:hover{
+  color: #fff;
+}
+
+.btn-google{
+  color: #fff;
+  background-color: #DB4437;
+  border-color: #DB4437;
+}
+
+.btn-google:hover{
+  color: #fff;
+}
+
+.btn-twitter{
+  color: #fff;
+  background-color: #38A1F3;
+  border-color: #38A1F3;
+}
+
+.btn-twitter:hover{
+  color: #fff;
 }
 
 .btn-more {
@@ -74,7 +130,6 @@
 
 .sm-hide {
   display: block !important;
-
   .btn-outline-success:hover {
     color: white !important;
   }
@@ -90,10 +145,6 @@
 
 #loader-data {
   display: contents;
-}
-
-#loaded-data {
-  display: none;
 }
 
 .loader-data-hide {
@@ -129,7 +180,6 @@
 
 a {
   color: #72a57e;
-
   &:hover {
     color: teal;
     text-decoration: none;
@@ -193,7 +243,6 @@ a {
 .like-comment-button-section {
   margin: -44px 10px auto auto;
   padding: 0 30px;
-
   a {
     color: white;
     margin: auto auto 5px;
@@ -315,6 +364,22 @@ img#success-icon {
 
 .hidden {
   display: none;
+}
+
+.text-muted {
+  color: #6c757d !important;
+  font-size: small;
+}
+
+.notifications {
+  min-width: 280px;
+}
+
+.read{
+  background-color:gray;
+}
+.unread{
+  background-color:orange;
 }
 
 @import 'mediaqueries';

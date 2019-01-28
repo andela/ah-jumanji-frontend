@@ -1,6 +1,7 @@
+import { types } from 'util';
 import profileReducer from './profileReducer';
 import * as profileActions from '../actions/types';
-import { types } from 'util';
+
 
 describe('profile reducers', () => {
   const initialState = {

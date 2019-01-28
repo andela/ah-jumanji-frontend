@@ -7,7 +7,6 @@ import { MemoryRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import Profile from './Profile';
 import EditProfile from './EditProfile';
-import Nav from './nav';
 import { initialState } from '../reducers/profileReducer';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -42,17 +41,10 @@ describe('Profile: ', () => {
     const editProfile = shallow(<EditProfile username="rollplanes_" />);
     expect(editProfile.instance().props.username).toBe("rollplanes_");
   });
-
-  beforeEach(() => {
-    profileContainer = shallow(<Nav />);
-  });
-
-  it('gets navigation rendered: ', () => expect(profileContainer.exists()).toEqual(true));
 });
 
 describe('<Profile />', () => {
   let store;
-  let wrapper;
 
   const props = {
     profile: {},
@@ -61,7 +53,7 @@ describe('<Profile />', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    wrapper = mount(
+    mount(
       <Provider store={store}>
         <MemoryRouter>
           <Profile {...props} />
@@ -97,7 +89,7 @@ describe('Edit Profile component', () => {
     'bio': 'bambino',
     'country': 'ken',
     'twitter_handle': '9thMarch'
-  }
+  };
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();

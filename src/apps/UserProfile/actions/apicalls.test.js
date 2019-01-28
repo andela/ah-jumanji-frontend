@@ -35,7 +35,7 @@ describe('api calls to the api ', () => {
       "modified": "2019-01-28T08:57:16.339943Z"
     }
 
-  }
+  };
 
   const serverResponse2 = {
       "user": 5,
@@ -51,7 +51,7 @@ describe('api calls to the api ', () => {
       "created": "2019-01-25T09:33:08.704145Z",
       "modified": "2019-01-28T08:57:16.339943Z"
 
-  }
+  };
 
   const imageCreds = {
       "bytes": 18288,
@@ -111,7 +111,7 @@ describe('api calls to the api ', () => {
     ];
 
     const store = mockStore({"profile": {}});
-    let file = 'image.jpg'
+    let file = 'image.jpg';
 
     return store.dispatch(cloudinaryActions.fileUploadHandler(file, serverResponse)).then(() => {
       expect(store.getActions()).toEqual(expectedAction);
@@ -145,4 +145,4 @@ describe('api calls to the api ', () => {
   });
 
 
-})
+});

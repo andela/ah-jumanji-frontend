@@ -24,7 +24,7 @@ exports[`Edit Profile component should match the snapshot 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "voyoth",
+              "key": "c9ep3q",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Edit Profile component should match the snapshot 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "voyoth",
+            "key": "c9ep3q",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -76,431 +76,6 @@ exports[`Edit Profile component should match the snapshot 1`] = `
           }
         >
           <div>
-            <Nav>
-              <nav
-                className="navbar navbar-expand-lg navbar-light fixed-top"
-              >
-                <div
-                  className="container"
-                >
-                  <a
-                    className="navbar-brand"
-                    href="home.html"
-                  >
-                    Author's Haven
-                  </a>
-                  <div
-                    className=""
-                    id="navbarSupportedContent"
-                  >
-                    <ul
-                      className="navbar-nav ml-auto pull-left"
-                    >
-                      <span
-                        className="sm-hide"
-                      >
-                        <NavItem
-                          classname="fas fa-home"
-                          classnameOuter="nav-link"
-                          label="Home"
-                          link="home.html"
-                        >
-                          <li
-                            className="nav-item"
-                          >
-                            <a
-                              className="nav-link"
-                              href="home.html"
-                            >
-                              <i
-                                className="fas fa-home"
-                              />
-                              Home
-                            </a>
-                          </li>
-                        </NavItem>
-                        <li
-                          className="nav-item dropdown"
-                        >
-                          <NavDrop
-                            notifications="Notifications"
-                            num="5"
-                          >
-                            <a
-                              className="dropdown-item"
-                              href="notifications.html"
-                            >
-                              <span
-                                className="badge badge-danger"
-                              >
-                                5
-                              </span>
-                              <i
-                                className="fas fa-bell"
-                              />
-                              Notifications
-                            </a>
-                          </NavDrop>
-                          <ul
-                            aria-labelledby="navbarDropdown"
-                            className="dropdown-menu"
-                          >
-                            <NavNotify
-                              link="/notifications"
-                              markread="Mark as Read"
-                              name="Edward Snowden"
-                              notification="published a new article"
-                              src="assets/img/default-avatar1.jpg"
-                              time="5 Hrs ago"
-                            >
-                              <li
-                                className="dropdown-item"
-                              >
-                                <img
-                                  alt="follower avatar"
-                                  className="followers-avatar rounded-circle"
-                                  src="assets/img/default-avatar1.jpg"
-                                />
-                                <a
-                                  href="/notifications"
-                                >
-                                  Edward Snowden
-                                </a>
-                                published a new article
-                                <span
-                                  className="float-right"
-                                >
-                                  <a
-                                    className="btn btn-light btn-sm"
-                                    href="/notifications"
-                                  >
-                                    <i
-                                      className="fas fa-check-circle"
-                                    />
-                                    Mark as Read
-                                  </a>
-                                </span>
-                                <br />
-                                <i
-                                  className="text-muted"
-                                >
-                                  <span
-                                    className="fas fa-clock"
-                                  />
-                                  5 Hrs ago
-                                </i>
-                              </li>
-                            </NavNotify>
-                            <div
-                              className="dropdown-divider"
-                            />
-                            <NavNotify
-                              link="/notifications"
-                              markread="Mark as Read"
-                              name="Edward Snowden"
-                              notification="published a new article"
-                              src="assets/img/default-avatar1.jpg"
-                              time="5 Hrs ago"
-                            >
-                              <li
-                                className="dropdown-item"
-                              >
-                                <img
-                                  alt="follower avatar"
-                                  className="followers-avatar rounded-circle"
-                                  src="assets/img/default-avatar1.jpg"
-                                />
-                                <a
-                                  href="/notifications"
-                                >
-                                  Edward Snowden
-                                </a>
-                                published a new article
-                                <span
-                                  className="float-right"
-                                >
-                                  <a
-                                    className="btn btn-light btn-sm"
-                                    href="/notifications"
-                                  >
-                                    <i
-                                      className="fas fa-check-circle"
-                                    />
-                                    Mark as Read
-                                  </a>
-                                </span>
-                                <br />
-                                <i
-                                  className="text-muted"
-                                >
-                                  <span
-                                    className="fas fa-clock"
-                                  />
-                                  5 Hrs ago
-                                </i>
-                              </li>
-                            </NavNotify>
-                            <div
-                              className="dropdown-divider"
-                            />
-                            <NavNotify
-                              link="/notifications"
-                              markread="Mark as Read"
-                              name="Edward Snowden"
-                              notification="published a new article"
-                              src="assets/img/default-avatar1.jpg"
-                              time="5 Hrs ago"
-                            >
-                              <li
-                                className="dropdown-item"
-                              >
-                                <img
-                                  alt="follower avatar"
-                                  className="followers-avatar rounded-circle"
-                                  src="assets/img/default-avatar1.jpg"
-                                />
-                                <a
-                                  href="/notifications"
-                                >
-                                  Edward Snowden
-                                </a>
-                                published a new article
-                                <span
-                                  className="float-right"
-                                >
-                                  <a
-                                    className="btn btn-light btn-sm"
-                                    href="/notifications"
-                                  >
-                                    <i
-                                      className="fas fa-check-circle"
-                                    />
-                                    Mark as Read
-                                  </a>
-                                </span>
-                                <br />
-                                <i
-                                  className="text-muted"
-                                >
-                                  <span
-                                    className="fas fa-clock"
-                                  />
-                                  5 Hrs ago
-                                </i>
-                              </li>
-                            </NavNotify>
-                            <div
-                              className="dropdown-divider"
-                            />
-                            <NavNotify
-                              link="/notifications"
-                              markread="Mark as Read"
-                              name="Edward Snowden"
-                              notification="published a new article"
-                              src="assets/img/default-avatar1.jpg"
-                              time="5 Hrs ago"
-                            >
-                              <li
-                                className="dropdown-item"
-                              >
-                                <img
-                                  alt="follower avatar"
-                                  className="followers-avatar rounded-circle"
-                                  src="assets/img/default-avatar1.jpg"
-                                />
-                                <a
-                                  href="/notifications"
-                                >
-                                  Edward Snowden
-                                </a>
-                                published a new article
-                                <span
-                                  className="float-right"
-                                >
-                                  <a
-                                    className="btn btn-light btn-sm"
-                                    href="/notifications"
-                                  >
-                                    <i
-                                      className="fas fa-check-circle"
-                                    />
-                                    Mark as Read
-                                  </a>
-                                </span>
-                                <br />
-                                <i
-                                  className="text-muted"
-                                >
-                                  <span
-                                    className="fas fa-clock"
-                                  />
-                                  5 Hrs ago
-                                </i>
-                              </li>
-                            </NavNotify>
-                            <div
-                              className="dropdown-divider"
-                            />
-                          </ul>
-                        </li>
-                        <li
-                          className="nav-item dropdown"
-                        >
-                          <a
-                            aria-expanded="false"
-                            aria-haspopup="true"
-                            className="nav-link dropdown-toggle"
-                            data-toggle="dropdown"
-                            href="/"
-                            id="navbarDropdown"
-                            role="button"
-                          >
-                            <img
-                              alt="follower avatar"
-                              className="followers-avatar navbar-avatar rounded-circle"
-                            />
-                          </a>
-                          <ul
-                            aria-labelledby="navbarDropdown"
-                            className="dropdown-menu"
-                          >
-                            <NavItem
-                              classname="fas fa-user"
-                              classnameOuter="dropdown-item"
-                              label="Profile"
-                              link="/profile"
-                            >
-                              <li
-                                className="nav-item"
-                              >
-                                <a
-                                  className="dropdown-item"
-                                  href="/profile"
-                                >
-                                  <i
-                                    className="fas fa-user"
-                                  />
-                                  Profile
-                                </a>
-                              </li>
-                            </NavItem>
-                            <div
-                              className="dropdown-divider"
-                            />
-                            <NavItem
-                              classname="fas fa-sign-out-alt"
-                              classnameOuter="dropdown-item"
-                              label="Logout"
-                              link="index.html"
-                            >
-                              <li
-                                className="nav-item"
-                              >
-                                <a
-                                  className="dropdown-item"
-                                  href="index.html"
-                                >
-                                  <i
-                                    className="fas fa-sign-out-alt"
-                                  />
-                                  Logout
-                                </a>
-                              </li>
-                            </NavItem>
-                          </ul>
-                        </li>
-                      </span>
-                      <li
-                        className="nav-item dropdown sm-dropdown"
-                      >
-                        <a
-                          aria-expanded="false"
-                          aria-haspopup="true"
-                          className="nav-link dropdown-toggle"
-                          data-toggle="dropdown"
-                          href="/notifications"
-                          id="navbarDropdown"
-                          role="button"
-                        >
-                          <i
-                            className="fas fa-align-right"
-                          />
-                        </a>
-                        <ul
-                          aria-labelledby="navbarDropdown"
-                          className="dropdown-menu"
-                        >
-                          <li>
-                            <NavDrop
-                              notifications="Notifications"
-                              num="5"
-                            >
-                              <a
-                                className="dropdown-item"
-                                href="notifications.html"
-                              >
-                                <span
-                                  className="badge badge-danger"
-                                >
-                                  5
-                                </span>
-                                <i
-                                  className="fas fa-bell"
-                                />
-                                Notifications
-                              </a>
-                            </NavDrop>
-                          </li>
-                          <NavItem
-                            classname="fas fa-user"
-                            classnameOuter="dropdown-item"
-                            label="Profile"
-                            link="/profile"
-                          >
-                            <li
-                              className="nav-item"
-                            >
-                              <a
-                                className="dropdown-item"
-                                href="/profile"
-                              >
-                                <i
-                                  className="fas fa-user"
-                                />
-                                Profile
-                              </a>
-                            </li>
-                          </NavItem>
-                          <div
-                            className="dropdown-divider"
-                          />
-                          <NavItem
-                            classname="fas fa-sign-out-alt"
-                            classnameOuter="dropdown-item"
-                            label="Logout"
-                            link="index.html"
-                          >
-                            <li
-                              className="nav-item"
-                            >
-                              <a
-                                className="dropdown-item"
-                                href="index.html"
-                              >
-                                <i
-                                  className="fas fa-sign-out-alt"
-                                />
-                                Logout
-                              </a>
-                            </li>
-                          </NavItem>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-            </Nav>
             <div
               className="container auth-container"
             >
@@ -548,12 +123,13 @@ exports[`Edit Profile component should match the snapshot 1`] = `
                                   type="text"
                                   value="fabisch"
                                 />
-                                <ValidationSubscript>
+                                <ValidationSubscript
+                                  classname="subscript subscript-warning hidden"
+                                  message=""
+                                >
                                   <p
                                     className="subscript subscript-warning hidden"
-                                  >
-                                    Kuna kitu umekosea hapa
-                                  </p>
+                                  />
                                 </ValidationSubscript>
                               </div>
                             </EditFormInput>
@@ -580,12 +156,13 @@ exports[`Edit Profile component should match the snapshot 1`] = `
                                   type="text"
                                   value="apeli"
                                 />
-                                <ValidationSubscript>
+                                <ValidationSubscript
+                                  classname="subscript subscript-warning hidden"
+                                  message=""
+                                >
                                   <p
                                     className="subscript subscript-warning hidden"
-                                  >
-                                    Kuna kitu umekosea hapa
-                                  </p>
+                                  />
                                 </ValidationSubscript>
                               </div>
                             </EditFormInput>
@@ -1873,12 +1450,13 @@ exports[`Edit Profile component should match the snapshot 1`] = `
                               required={true}
                               type="file"
                             />
-                            <ValidationSubscript>
+                            <ValidationSubscript
+                              classname="subscript subscript-warning hidden"
+                              message=""
+                            >
                               <p
                                 className="subscript subscript-warning hidden"
-                              >
-                                Kuna kitu umekosea hapa
-                              </p>
+                              />
                             </ValidationSubscript>
                           </div>
                         </EditFormInput>
@@ -1907,12 +1485,13 @@ exports[`Edit Profile component should match the snapshot 1`] = `
                                   type="text"
                                   value="https://www.andela.com"
                                 />
-                                <ValidationSubscript>
+                                <ValidationSubscript
+                                  classname="subscript subscript-warning hidden"
+                                  message=""
+                                >
                                   <p
                                     className="subscript subscript-warning hidden"
-                                  >
-                                    Kuna kitu umekosea hapa
-                                  </p>
+                                  />
                                 </ValidationSubscript>
                               </div>
                             </EditFormInput>
@@ -1939,12 +1518,13 @@ exports[`Edit Profile component should match the snapshot 1`] = `
                                   type="text"
                                   value="9thMarch"
                                 />
-                                <ValidationSubscript>
+                                <ValidationSubscript
+                                  classname="subscript subscript-warning hidden"
+                                  message=""
+                                >
                                   <p
                                     className="subscript subscript-warning hidden"
-                                  >
-                                    Kuna kitu umekosea hapa
-                                  </p>
+                                  />
                                 </ValidationSubscript>
                               </div>
                             </EditFormInput>
@@ -1971,12 +1551,13 @@ exports[`Edit Profile component should match the snapshot 1`] = `
                                   type="text"
                                   value="08883827832"
                                 />
-                                <ValidationSubscript>
+                                <ValidationSubscript
+                                  classname="subscript subscript-warning hidden"
+                                  message=""
+                                >
                                   <p
                                     className="subscript subscript-warning hidden"
-                                  >
-                                    Kuna kitu umekosea hapa
-                                  </p>
+                                  />
                                 </ValidationSubscript>
                               </div>
                             </EditFormInput>
@@ -2001,10 +1582,10 @@ exports[`Edit Profile component should match the snapshot 1`] = `
                         </div>
                         <Link
                           replace={false}
-                          to=""
+                          to="/a/profile"
                         >
                           <a
-                            href="/"
+                            href="/a/profile"
                             onClick={[Function]}
                           >
                             <button

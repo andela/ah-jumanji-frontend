@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { viewProfile } from '../actions/profile';
-import Nav from './nav';
 
 
 class Profile extends React.Component {
@@ -18,9 +17,7 @@ class Profile extends React.Component {
     const { profile } = this.props;
 
     return (
-
       <div>
-        <Nav profilePic={profile.profile_photo} />
         <div className="container">
           <div className="row">
             <div className="col-md-12 profile-content">

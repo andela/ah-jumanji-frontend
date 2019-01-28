@@ -28,6 +28,7 @@ export const fileUploadHandler = (file, profile) => async dispatch => {
           const secure_url = res.data.secure_url;
           dispatch(successfulImageUpload(res.data));
           profile.profile.profile_photo = secure_url;
+          localStorage.setItem("profPic", secure_url);
           // Update profile
           dispatch(editProfile(profile));
         });

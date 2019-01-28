@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import { fileUploadHandler } from '../actions/cloudinary';
-import Nav from './nav';
 import countries from './countries';
 import { EditFormInput } from '../../common/components/EditFormInput';
 
@@ -119,7 +118,6 @@ class EditProfile extends Component {
   }
 
   render () {
-    const { profilePhoto } = this.state;
     const {
       firstName,
       lastName,
@@ -131,7 +129,6 @@ class EditProfile extends Component {
 
     return (
       <div>
-        <Nav profilePic={profilePhoto} />
         <div className="container auth-container">
           <div className="row">
             <div className="col-md-10 offset-md-1">
@@ -174,7 +171,7 @@ class EditProfile extends Component {
                       <label htmlFor="bio">Bio</label>
                       <textarea name="bio" rows="8" cols="80" className="form-control" value={bio} onChange={this.onChange} />
                     </div>
-                    <Link to="">
+                    <Link to="/a/profile">
                       <button type="submit" className="btn btn-success" onClick={this.handleSubmit}>Submit</button>
                     </Link>
                   </form>

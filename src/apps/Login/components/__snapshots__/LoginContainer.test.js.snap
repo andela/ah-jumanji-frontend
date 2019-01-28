@@ -4,7 +4,6 @@ exports[`Navigation should render correctly in "debug" mode 1`] = `
 <div
   className="row login-container"
 >
-  <Navigation />
   <WelcomeSection />
   <Connect(LoginForm) />
 </div>

@@ -22,8 +22,10 @@ export const viewProfile = () => async dispatch => {
         if (response.data.profile.profile_photo === '') {
           response.data.profile.profile_photo = config.avatarImage.avatarUrl;
           dispatch(viewProfileSuccess(response.data.profile));
+          localStorage.setItem("profPic", response.data.profile.profile_photo);
         } else {
           dispatch(viewProfileSuccess(response.data.profile));
+          localStorage.setItem("profPic", response.data.profile.profile_photo);
         }
       });
   } catch (error) {
