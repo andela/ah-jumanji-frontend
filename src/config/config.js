@@ -7,7 +7,10 @@ const config = {
     emailResetConfirm: baseUrl + '/api/users/reset_password_confirm/',
     registerUrl: baseUrl + '/api/users/register',
     activateUserUrl: baseUrl + '/api/users/activate',
-    ratingUrl: baseUrl + '/api/articles/'
+    ratingUrl: baseUrl + '/api/articles/',
+    getArticlesUrl: baseUrl + '/api/articles/?page=1',
+    endpointArticleLikes: baseUrl + '/api/articles/reactions/',
+    articleCommentsUrl: baseUrl + '/api/articles/'
   },
   firebase: {
     apiKey: process.env.FIREBASE_API_KEY || 'random',
