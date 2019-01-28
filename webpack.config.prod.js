@@ -1,74 +1,65 @@
-import webpack from 'webpack';
-import Dotenv from 'dotenv-webpack';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
+import webpack from "webpack";
+
 
 export default {
-  mode: "production",
+  mode: 'production',
+  devtool: 'source-map',
   entry: [
-    'babeb-polyfill',
-    './src/index'
+    'babel-polyfill',
+    './src/index.js'
+  ],
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new MiniCssExtractPlugin({
+      filename: "style.css",
+      chunkFilename: "chunk.css"
+    }),
+    new webpack.DefinePlugin({
+      'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
+      'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
+      'process.env.SOCIAL_AUTH_API_URL': JSON.stringify(process.env.SOCIAL_AUTH_API_URL)
+    }),
+    //for .env variables
+    new Dotenv(),
   ],
   output: {
-    path: __dirname + 'public',
     filename: 'bundle.js',
+    path: __dirname + '/dist',
     publicPath: '/'
   },
-  devtool: 'source-map',
-  plugins: [
-    module.exports = {
-      optimization: {
-        minimizer: [
-          // we specify a custom UglifyJsPlugin here to get source maps in production
-          new UglifyJsPlugin({
-            cache: true,
-            parallel: true,
-            uglifyOptions: {
-              compress: false,
-              ecma: 6,
-              mangle: true
-            },
-            sourceMap: true
-          })
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+        cache: true,
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader"
         ]
-      }
-    },
-    new Dotenv(),
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
-    }),
-  ],
-  "module": {
-    "rules": [
-      {
-        "test": /.js$/,
-        "exclude": /node_modules/,
-        "use": [
-          {
-            "loader": 'babel-loader',
-            "options": {
-              "cacheDirectory": true,
-            },
-          },
-        ],
-      },
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: ['react-hot-loader/webpack'],
-      },
-      {
-        test: /\.css$/,
-        loader: 'style-loader'
-      },
-      {
-        test: /\.css$/,
-        loader: 'css-loader',
       },
       {
         "test": /\.scss$/,
         "use": [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
       },
       {
         "test": /\.(png|jpg|gif)$/,
@@ -79,7 +70,6 @@ export default {
           },
         ],
       },
-
     ]
   }
 };

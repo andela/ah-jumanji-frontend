@@ -3,18 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "11.4.0"
+  },
   "scripts": {
     "test": "jest --config ./jest.config.json --coverage",
     "start": "npm-run-all --parallel open:src lint:watch",
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "clean-public": "npm run remove-public && mkdir public",
-    "remove-public": "node_modules/.bin/rimraf ./public",
-    "build:html": "babel-node tools/buildHtml.js",
-    "prebuild": "npm-run-all clean-public lint build:html",
-    "build": "babel-node tools/build.js",
-    "postbuild": "babel-node tools/publicServer.js"
+    "build": "babel-node tools/build.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +26,6 @@
   },
   "homepage": "https://github.com/andela/ah-jumanji-frontend#readme",
   "devDependencies": {
-    "@babel/core": "^7.2.2",
     "autoprefixer": "^9.4.4",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
@@ -60,6 +57,7 @@
     "jest": "^23.6.0",
     "jest-junit": "^5.2.0",
     "jest-mock": "^23.2.0",
+    "media-query-plugin": "^1.2.0",
     "moxios": "^0.4.0",
     "node-sass": "^4.11.0",
     "open": "0.0.5",
@@ -70,11 +68,13 @@
     "sass-loader": "^7.1.0",
     "sinon": "^7.2.2",
     "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.2.1",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.2.1",
     "webpack-dev-middleware": "^3.5.0",
     "webpack-hot-middleware": "^2.24.3",
     "webpack-log": "^2.0.0",
+    "webpack-merge": "^4.2.1",
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
@@ -82,6 +82,7 @@
     "axios-mock-adapter": "^1.16.0",
     "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.26.0",
+    "babel-runtime": "^6.26.0",
     "bootstrap": "^4.2.1",
     "cheerio": "^1.0.0-rc.2",
     "clean-webpack-plugin": "^1.0.0",
@@ -104,6 +105,7 @@
     "node-fetch": "^2.3.0",
     "npm": "^6.5.0",
     "npm-run-all": "^4.1.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "path": "^0.12.7",
     "popper.js": "^1.14.6",
     "prop-types": "^15.6.2",
