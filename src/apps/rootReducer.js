@@ -8,6 +8,7 @@ import resetAccountPassword from './resetPassword/reducers/resetPasswordReducer'
 import Register from "./Register/reducers/registerReducer";
 import ratingReducer from "./Rating/reducers/ratingReducer";
 import Dashboard from "./Dashboard/reducers/dashboardReducer";
+import Notifications from "./Notifiications/reducers/noticationsReducers";
 
 const rootReducer = combineReducers({
   socialAuth,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   resetAccountPassword,
   Articles,
   ratingReducer,
-  Dashboard
+  Dashboard,
+  Notifications
   //Add your reducers here
 });
 

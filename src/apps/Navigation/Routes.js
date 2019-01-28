@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import RegisterContainer from "../Register/components/registerContainer";
 import RegisterRedirect from "../Register/components/registerRedirect";
 import RegisterRedirectActivated from "../Register/components/registerRedirectActivated";
+import SocialAuthentication from '../SocialLogin/components/SocialAuth';
 import ForgotPassword from "../resetPassword/components/PasswordResetComponent";
 import IndexPage from "../Index/components/IndexPage";
 import ResetCodePage from "../resetPassword/components/PasswordResetCodeComponent";
@@ -11,11 +12,14 @@ import ReadArticle from "../Articles/components/view/ViewArticle";
 import EditArticle from "../Articles/components/edit/EditArticle";
 import Rating from "../Rating/components/Rating";
 import Dashboard from "../Dashboard/components/DashboardContainer";
+import NotificationHistory from "../Notifiications/components/NotificationHistoryComponent";
+
 
 const Main = () => (
   <Switch>
     <Route exact path="/" component={IndexPage} />
     <Route exact path="/register" component={RegisterContainer} />
+    <Route exact path="/login" component={SocialAuthentication} />
     <Route exact path="/register-redirect" component={RegisterRedirect} />
     <Route exact path="/activate-account/:uid/:token" component={RegisterRedirectActivated} />
     <Route exact path="/reset_password" component={ForgotPassword} />
@@ -25,6 +29,7 @@ const Main = () => (
     <Route path="/edit_article/:slug" component={EditArticle} />
     <Route exact path="/rating" component={Rating} />
     <Route exact path="/a/home" component={Dashboard} />
+    <Route exact path="/a/notifications" component={NotificationHistory} />
   </Switch>
 );
 

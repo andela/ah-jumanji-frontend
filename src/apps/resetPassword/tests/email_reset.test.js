@@ -17,14 +17,14 @@ const mockStore = configureMockStore(middlewares);
 
 Enzyme.configure({adapter: new Adapter()});
 
-const shallowWithStore = (component, store) => {
+export const shallowWithStore = (component, store) => {
   const context = {
     store,
   };
   return shallow(component, {context});
 };
 
-const mountWithStore = (component, store) => {
+export const mountWithStore = (component, store) => {
   return mount(
     <Provider store={store}>
       <MemoryRouter>

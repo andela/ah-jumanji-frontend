@@ -22,7 +22,7 @@ export default {
     "filename": "bundle.js",
     "publicPath": '/'
   },
-  "devtool": "cheap-module-eval-source-map",
+  "devtool": "eval",
   "plugins": [
     // A webpack plugin to remove/clean the build folder(s) before building
     new CleanWebpackPlugin(['dist']),
@@ -100,7 +100,7 @@ export default {
             "loader": 'file-loader',
             "options": {},
           },
-        ],
+        ]
       },
     ]
   },
