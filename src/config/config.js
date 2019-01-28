@@ -15,7 +15,8 @@ const config = {
     readNotificationsURL: baseUrl + '/api/notifications/read',
     markAllRead: baseUrl + '/api/notifications/mark_read',
     markNotificationRead: baseUrl + '/api/notifications/',
-    unmarkNotificationRead: baseUrl + '/api/notifications/unmark/'
+    unmarkNotificationRead: baseUrl + '/api/notifications/unmark/',
+    articlesEndpoint: baseUrl + '/api/articles',
   },
   firebase: {
     apiKey: process.env.FIREBASE_API_KEY || 'random',
