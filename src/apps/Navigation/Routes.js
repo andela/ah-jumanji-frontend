@@ -14,6 +14,7 @@ import Rating from "../Rating/components/Rating";
 import Dashboard from "../Dashboard/components/DashboardContainer";
 import NotificationHistory from "../Notifiications/components/NotificationHistoryComponent";
 
+import CommentContainer from '../Comments/Components/CommentsContainer';
 
 const Main = () => (
   <Switch>
@@ -25,11 +26,12 @@ const Main = () => (
     <Route exact path="/reset_password" component={ForgotPassword} />
     <Route exact path="/reset_code/:reset_code" component={ResetCodePage} />
     <Route exact path="/new_article" component={ArticlePage} />
-    <Route path="/view_article/:slug" component={ReadArticle} />
-    <Route path="/edit_article/:slug" component={EditArticle} />
-    <Route exact path="/rating" component={Rating} />
+    <Route path="/a/view_article/:slug" component={ReadArticle} />
+    <Route path="/a/edit_article/:slug" component={EditArticle} />
+    <Route exact path="/a/rating" component={Rating} />
     <Route exact path="/a/home" component={Dashboard} />
     <Route exact path="/a/notifications" component={NotificationHistory} />
+    <Route exact path="/a/articles/:article_slug/comments" component={CommentContainer} />
   </Switch>
 );
 
