@@ -6,8 +6,8 @@ import RegisterRedirectActivated from "../Register/components/registerRedirectAc
 import SocialAuthentication from '../SocialLogin/components/SocialAuth';
 import ForgotPassword from "../resetPassword/components/PasswordResetComponent";
 import IndexPage from "../Index/components/IndexPage";
-import Rating from "../Rating/components/Rating";
 import ResetCodePage from "../resetPassword/components/PasswordResetCodeComponent";
+import Rating from "../Rating/components/Rating";
 import NotificationHistory from "../Notifiications/components/NotificationHistoryComponent";
 
 

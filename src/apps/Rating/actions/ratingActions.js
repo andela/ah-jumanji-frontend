@@ -3,8 +3,10 @@ import { read_cookie } from 'sfcookies';
 import { toast } from 'react-toastify';
 
 import * as types from './actionTypes';
+import config from '../../../config/config';
 
-const ratingEndpoint = "https://ah-jumanji-staging.herokuapp.com/api/articles/rate-article-bfa8-141199/rating";
+const slug = `${location.pathname.split("/")[1]}`;
+const ratingEndpoint = `${config.api.ratingUrl}${slug}/rating`;
 const token = read_cookie("token");
 
 export function addRatingSucess(rating) {
@@ -35,7 +37,7 @@ export function postArticleRating(ratingData) {
             ratingData, {
             headers: {
                 Accept: 'application/json',
-                Authorization: "Token " + token
+                Authorization: `Token ${token}`
             }
         })
         .then(res => {
@@ -54,7 +56,7 @@ export function fetchArticleRating() {
         return axios.get(ratingEndpoint, {
             headers: {
                 Accept: 'application/json',
-                Authorization: "Token " + token
+                Authorization: `Token ${token}`
             }
         }).then(res => {
             //get rating
