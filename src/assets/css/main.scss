@@ -503,6 +503,8 @@ ul#likes-list {
     font-style: normal;
 }
 
+// Reactions on comments
+
 .icons-row {
   width: 70%;
   margin: auto;
@@ -511,5 +513,32 @@ ul#likes-list {
   padding: 1%;
 }
 
+.reactor-info {
+  width: 90%;
+  color: rgb(80, 80, 80);
+  padding: .5%;
+  margin: 2% auto;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.reactions-container {
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.19);
+  padding: 1%;
+  margin: 1%;
+  width: 50%;
+}
+
+.reactors-names {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.reactors-header {
+  color: rgb(80, 80, 80);
+  border-bottom: 1px solid rgb(189, 189, 189);
+  padding: 1%;
+  width: 100%;
+}
 
 @import 'mediaqueries';

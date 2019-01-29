@@ -9,13 +9,15 @@ import AddCommentComponent from './AddComment';
 import config from '../../../config/config';
 
 // Bring in ReactionIcons
-import ReactionIcons from '../../UserReactions/Components/ReactionsComponent';
+import ReactionIcons from '../../UserReactions/Components/ReactionIconsComponent';
+import ReactorsContainer from '../../UserReactions/Components/ReactorsContainerComponent';
 
 class CommentComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
       comment: props.comment,
+      // reactionType: localStorage.reactionType,
     };
   }
 
@@ -84,6 +86,11 @@ class CommentComponent extends Component {
             {loggedInAs === username ?
               <EditDeleteBtnsComponent />
               : <span />
+            }
+          </div>
+          <div className="hidden">
+            {
+              <ReactorsContainer reactionType="like" />
             }
           </div>
         </li>
