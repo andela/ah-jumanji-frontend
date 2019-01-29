@@ -149,7 +149,7 @@ class EditProfile extends Component {
                           <label htmlFor="country">Country</label>
                           <select name="country" className="form-control" onChange={this.onChange} id="countriesDropdown">
                             {Object.keys(countries).map((key) => {
-                              return <option value={key}>{countries[key]}</option>;
+                              return <option value={key} key={key}>{countries[key]}</option>;
                             })}
                           </select>
                         </div>

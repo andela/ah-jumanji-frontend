@@ -105,7 +105,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-froala-wysiwyg": "^2.9.1-1",
+    "react-froala-wysiwyg": "^2.9.1",
     "react-hot-loader": "^4.6.3",
     "react-loader-spinner": "^2.3.0",
     "react-notify-toast": "^0.5.0",

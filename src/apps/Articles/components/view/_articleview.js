@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {
     connect
   } from 'react-redux';
+  import { read_cookie } from 'sfcookies';
 // Require Editor JS files.
 import 'froala-editor/js/froala_editor.pkgd.min';
 
@@ -29,7 +30,20 @@ class EditorView extends React.Component{
 
     componentDidMount(){
         startFunction(this.state, this.props);
-        return 'mounted';
+    }
+
+
+    button = (link, slug, type, value) =>{
+        return(
+          <li className="publish-nav-item">
+            <a
+              href={link} onClick={()=>{
+                window.location.replace(`/a/edit_article/${slug}`);
+              }} className={type}>
+              { value }
+            </a>
+          </li>
+          );
     }
 
     render(){
@@ -43,11 +57,14 @@ class EditorView extends React.Component{
                 model={myState.model}
                 />
               </div>
-                );
+              );
         }else{
         //Articles Prop has something
         return(
           <div>
+            <div className="publish-div">
+              {read_cookie('loggedInUsername') === read_cookie("article_author") ? this.button("#", myProps.slug, "btn btn-outline-warning  btn-sm", "Edit Story"): ""}
+            </div>
             <br />
             <FroalaEditorView
             model={myProps.Articles.body}

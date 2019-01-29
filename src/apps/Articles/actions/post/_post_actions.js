@@ -22,7 +22,7 @@ export const postArticle = (body) =>dispatch=> {
             }).then((response) => {
             //Posting success
             dispatch(postedArticle(response.data));
-            toast.success(`🦄 ${response.data.article.slug} has been posted`, { position: toast.POSITION.TOP_RIGHT, autoClose: 3500 });
+            setTimeout(function(){window.location.replace(`/a/view_article/${response.data.article.slug}`);}, 800);
           }).catch((err) => {
               dispatch(postingError(err));
               toast.error('🦄 Could not post that article!',{ position: toast.POSITION.TOP_RIGHT });

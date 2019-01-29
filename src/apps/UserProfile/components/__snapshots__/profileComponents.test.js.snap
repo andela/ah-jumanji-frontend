@@ -24,7 +24,7 @@ exports[`Edit Profile component should match the snapshot 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "xf8f8r",
+              "key": "hir85u",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Edit Profile component should match the snapshot 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "xf8f8r",
+            "key": "hir85u",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -185,1246 +185,1495 @@ exports[`Edit Profile component should match the snapshot 1`] = `
                                 onChange={[Function]}
                               >
                                 <option
+                                  key="AF"
                                   value="AF"
                                 >
                                   AFGHANISTAN
                                 </option>
                                 <option
+                                  key="AX"
                                   value="AX"
                                 >
                                   ÅLAND ISLANDS
                                 </option>
                                 <option
+                                  key="AL"
                                   value="AL"
                                 >
                                   ALBANIA
                                 </option>
                                 <option
+                                  key="DZ"
                                   value="DZ"
                                 >
                                   ALGERIA
                                 </option>
                                 <option
+                                  key="AS"
                                   value="AS"
                                 >
                                   AMERICAN SAMOA
                                 </option>
                                 <option
+                                  key="AD"
                                   value="AD"
                                 >
                                   ANDORRA
                                 </option>
                                 <option
+                                  key="AO"
                                   value="AO"
                                 >
                                   ANGOLA
                                 </option>
                                 <option
+                                  key="AI"
                                   value="AI"
                                 >
                                   ANGUILLA
                                 </option>
                                 <option
+                                  key="AQ"
                                   value="AQ"
                                 >
                                   ANTARCTICA
                                 </option>
                                 <option
+                                  key="AG"
                                   value="AG"
                                 >
                                   ANTIGUA AND BARBUDA
                                 </option>
                                 <option
+                                  key="AR"
                                   value="AR"
                                 >
                                   ARGENTINA
                                 </option>
                                 <option
+                                  key="AM"
                                   value="AM"
                                 >
                                   ARMENIA
                                 </option>
                                 <option
+                                  key="AW"
                                   value="AW"
                                 >
                                   ARUBA
                                 </option>
                                 <option
+                                  key="AU"
                                   value="AU"
                                 >
                                   AUSTRALIA
                                 </option>
                                 <option
+                                  key="AT"
                                   value="AT"
                                 >
                                   AUSTRIA
                                 </option>
                                 <option
+                                  key="AZ"
                                   value="AZ"
                                 >
                                   AZERBAIJAN
                                 </option>
                                 <option
+                                  key="BS"
                                   value="BS"
                                 >
                                   BAHAMAS
                                 </option>
                                 <option
+                                  key="BH"
                                   value="BH"
                                 >
                                   BAHRAIN
                                 </option>
                                 <option
+                                  key="BD"
                                   value="BD"
                                 >
                                   BANGLADESH
                                 </option>
                                 <option
+                                  key="BB"
                                   value="BB"
                                 >
                                   BARBADOS
                                 </option>
                                 <option
+                                  key="BY"
                                   value="BY"
                                 >
                                   BELARUS
                                 </option>
                                 <option
+                                  key="BE"
                                   value="BE"
                                 >
                                   BELGIUM
                                 </option>
                                 <option
+                                  key="BZ"
                                   value="BZ"
                                 >
                                   BELIZE
                                 </option>
                                 <option
+                                  key="BJ"
                                   value="BJ"
                                 >
                                   BENIN
                                 </option>
                                 <option
+                                  key="BM"
                                   value="BM"
                                 >
                                   BERMUDA
                                 </option>
                                 <option
+                                  key="BT"
                                   value="BT"
                                 >
                                   BHUTAN
                                 </option>
                                 <option
+                                  key="BO"
                                   value="BO"
                                 >
                                   BOLIVIA, PLURINATIONAL STATE OF
                                 </option>
                                 <option
+                                  key="BQ"
                                   value="BQ"
                                 >
                                   BONAIRE, SINT EUSTATIUS AND SABA
                                 </option>
                                 <option
+                                  key="BA"
                                   value="BA"
                                 >
                                   BOSNIA AND HERZEGOVINA
                                 </option>
                                 <option
+                                  key="BW"
                                   value="BW"
                                 >
                                   BOTSWANA
                                 </option>
                                 <option
+                                  key="BV"
                                   value="BV"
                                 >
                                   BOUVET ISLAND
                                 </option>
                                 <option
+                                  key="BR"
                                   value="BR"
                                 >
                                   BRAZIL
                                 </option>
                                 <option
+                                  key="IO"
                                   value="IO"
                                 >
                                   BRITISH INDIAN OCEAN TERRITORY
                                 </option>
                                 <option
+                                  key="BN"
                                   value="BN"
                                 >
                                   BRUNEI DARUSSALAM
                                 </option>
                                 <option
+                                  key="BG"
                                   value="BG"
                                 >
                                   BULGARIA
                                 </option>
                                 <option
+                                  key="BF"
                                   value="BF"
                                 >
                                   BURKINA FASO
                                 </option>
                                 <option
+                                  key="BI"
                                   value="BI"
                                 >
                                   BURUNDI
                                 </option>
                                 <option
+                                  key="KH"
                                   value="KH"
                                 >
                                   CAMBODIA
                                 </option>
                                 <option
+                                  key="CM"
                                   value="CM"
                                 >
                                   CAMEROON
                                 </option>
                                 <option
+                                  key="CA"
                                   value="CA"
                                 >
                                   CANADA
                                 </option>
                                 <option
+                                  key="CV"
                                   value="CV"
                                 >
                                   CAPE VERDE
                                 </option>
                                 <option
+                                  key="KY"
                                   value="KY"
                                 >
                                   CAYMAN ISLANDS
                                 </option>
                                 <option
+                                  key="CF"
                                   value="CF"
                                 >
                                   CENTRAL AFRICAN REPUBLIC
                                 </option>
                                 <option
+                                  key="TD"
                                   value="TD"
                                 >
                                   CHAD
                                 </option>
                                 <option
+                                  key="CL"
                                   value="CL"
                                 >
                                   CHILE
                                 </option>
                                 <option
+                                  key="CN"
                                   value="CN"
                                 >
                                   CHINA
                                 </option>
                                 <option
+                                  key="CX"
                                   value="CX"
                                 >
                                   CHRISTMAS ISLAND
                                 </option>
                                 <option
+                                  key="CC"
                                   value="CC"
                                 >
                                   COCOS (KEELING) ISLANDS
                                 </option>
                                 <option
+                                  key="CO"
                                   value="CO"
                                 >
                                   COLOMBIA
                                 </option>
                                 <option
+                                  key="KM"
                                   value="KM"
                                 >
                                   COMOROS
                                 </option>
                                 <option
+                                  key="CG"
                                   value="CG"
                                 >
                                   CONGO
                                 </option>
                                 <option
+                                  key="CD"
                                   value="CD"
                                 >
                                   CONGO, THE DEMOCRATIC REPUBLIC OF THE
                                 </option>
                                 <option
+                                  key="CK"
                                   value="CK"
                                 >
                                   COOK ISLANDS
                                 </option>
                                 <option
+                                  key="CR"
                                   value="CR"
                                 >
                                   COSTA RICA
                                 </option>
                                 <option
+                                  key="CI"
                                   value="CI"
                                 >
                                   CÔTE D'IVOIRE
                                 </option>
                                 <option
+                                  key="HR"
                                   value="HR"
                                 >
                                   CROATIA
                                 </option>
                                 <option
+                                  key="CU"
                                   value="CU"
                                 >
                                   CUBA
                                 </option>
                                 <option
+                                  key="CW"
                                   value="CW"
                                 >
                                   CURAÇAO
                                 </option>
                                 <option
+                                  key="CY"
                                   value="CY"
                                 >
                                   CYPRUS
                                 </option>
                                 <option
+                                  key="CZ"
                                   value="CZ"
                                 >
                                   CZECH REPUBLIC
                                 </option>
                                 <option
+                                  key="DK"
                                   value="DK"
                                 >
                                   DENMARK
                                 </option>
                                 <option
+                                  key="DJ"
                                   value="DJ"
                                 >
                                   DJIBOUTI
                                 </option>
                                 <option
+                                  key="DM"
                                   value="DM"
                                 >
                                   DOMINICA
                                 </option>
                                 <option
+                                  key="DO"
                                   value="DO"
                                 >
                                   DOMINICAN REPUBLIC
                                 </option>
                                 <option
+                                  key="EC"
                                   value="EC"
                                 >
                                   ECUADOR
                                 </option>
                                 <option
+                                  key="EG"
                                   value="EG"
                                 >
                                   EGYPT
                                 </option>
                                 <option
+                                  key="SV"
                                   value="SV"
                                 >
                                   EL SALVADOR
                                 </option>
                                 <option
+                                  key="GQ"
                                   value="GQ"
                                 >
                                   EQUATORIAL GUINEA
                                 </option>
                                 <option
+                                  key="ER"
                                   value="ER"
                                 >
                                   ERITREA
                                 </option>
                                 <option
+                                  key="EE"
                                   value="EE"
                                 >
                                   ESTONIA
                                 </option>
                                 <option
+                                  key="ET"
                                   value="ET"
                                 >
                                   ETHIOPIA
                                 </option>
                                 <option
+                                  key="FK"
                                   value="FK"
                                 >
                                   FALKLAND ISLANDS (MALVINAS)
                                 </option>
                                 <option
+                                  key="FO"
                                   value="FO"
                                 >
                                   FAROE ISLANDS
                                 </option>
                                 <option
+                                  key="FJ"
                                   value="FJ"
                                 >
                                   FIJI
                                 </option>
                                 <option
+                                  key="FI"
                                   value="FI"
                                 >
                                   FINLAND
                                 </option>
                                 <option
+                                  key="FR"
                                   value="FR"
                                 >
                                   FRANCE
                                 </option>
                                 <option
+                                  key="GF"
                                   value="GF"
                                 >
                                   FRENCH GUIANA
                                 </option>
                                 <option
+                                  key="PF"
                                   value="PF"
                                 >
                                   FRENCH POLYNESIA
                                 </option>
                                 <option
+                                  key="TF"
                                   value="TF"
                                 >
                                   FRENCH SOUTHERN TERRITORIES
                                 </option>
                                 <option
+                                  key="GA"
                                   value="GA"
                                 >
                                   GABON
                                 </option>
                                 <option
+                                  key="GM"
                                   value="GM"
                                 >
                                   GAMBIA
                                 </option>
                                 <option
+                                  key="GE"
                                   value="GE"
                                 >
                                   GEORGIA
                                 </option>
                                 <option
+                                  key="DE"
                                   value="DE"
                                 >
                                   GERMANY
                                 </option>
                                 <option
+                                  key="GH"
                                   value="GH"
                                 >
                                   GHANA
                                 </option>
                                 <option
+                                  key="GI"
                                   value="GI"
                                 >
                                   GIBRALTAR
                                 </option>
                                 <option
+                                  key="GR"
                                   value="GR"
                                 >
                                   GREECE
                                 </option>
                                 <option
+                                  key="GL"
                                   value="GL"
                                 >
                                   GREENLAND
                                 </option>
                                 <option
+                                  key="GD"
                                   value="GD"
                                 >
                                   GRENADA
                                 </option>
                                 <option
+                                  key="GP"
                                   value="GP"
                                 >
                                   GUADELOUPE
                                 </option>
                                 <option
+                                  key="GU"
                                   value="GU"
                                 >
                                   GUAM
                                 </option>
                                 <option
+                                  key="GT"
                                   value="GT"
                                 >
                                   GUATEMALA
                                 </option>
                                 <option
+                                  key="GG"
                                   value="GG"
                                 >
                                   GUERNSEY
                                 </option>
                                 <option
+                                  key="GN"
                                   value="GN"
                                 >
                                   GUINEA
                                 </option>
                                 <option
+                                  key="GW"
                                   value="GW"
                                 >
                                   GUINEA-BISSAU
                                 </option>
                                 <option
+                                  key="GY"
                                   value="GY"
                                 >
                                   GUYANA
                                 </option>
                                 <option
+                                  key="HT"
                                   value="HT"
                                 >
                                   HAITI
                                 </option>
                                 <option
+                                  key="HM"
                                   value="HM"
                                 >
                                   HEARD ISLAND AND MCDONALD ISLANDS
                                 </option>
                                 <option
+                                  key="VA"
                                   value="VA"
                                 >
                                   HOLY SEE (VATICAN CITY STATE)
                                 </option>
                                 <option
+                                  key="HN"
                                   value="HN"
                                 >
                                   HONDURAS
                                 </option>
                                 <option
+                                  key="HK"
                                   value="HK"
                                 >
                                   HONG KONG
                                 </option>
                                 <option
+                                  key="HU"
                                   value="HU"
                                 >
                                   HUNGARY
                                 </option>
                                 <option
+                                  key="IS"
                                   value="IS"
                                 >
                                   ICELAND
                                 </option>
                                 <option
+                                  key="IN"
                                   value="IN"
                                 >
                                   INDIA
                                 </option>
                                 <option
+                                  key="ID"
                                   value="ID"
                                 >
                                   INDONESIA
                                 </option>
                                 <option
+                                  key="IR"
                                   value="IR"
                                 >
                                   IRAN, ISLAMIC REPUBLIC OF
                                 </option>
                                 <option
+                                  key="IQ"
                                   value="IQ"
                                 >
                                   IRAQ
                                 </option>
                                 <option
+                                  key="IE"
                                   value="IE"
                                 >
                                   IRELAND
                                 </option>
                                 <option
+                                  key="IM"
                                   value="IM"
                                 >
                                   ISLE OF MAN
                                 </option>
                                 <option
+                                  key="IL"
                                   value="IL"
                                 >
                                   ISRAEL
                                 </option>
                                 <option
+                                  key="IT"
                                   value="IT"
                                 >
                                   ITALY
                                 </option>
                                 <option
+                                  key="JM"
                                   value="JM"
                                 >
                                   JAMAICA
                                 </option>
                                 <option
+                                  key="JP"
                                   value="JP"
                                 >
                                   JAPAN
                                 </option>
                                 <option
+                                  key="JE"
                                   value="JE"
                                 >
                                   JERSEY
                                 </option>
                                 <option
+                                  key="JO"
                                   value="JO"
                                 >
                                   JORDAN
                                 </option>
                                 <option
+                                  key="KZ"
                                   value="KZ"
                                 >
                                   KAZAKHSTAN
                                 </option>
                                 <option
+                                  key="KE"
                                   value="KE"
                                 >
                                   KENYA
                                 </option>
                                 <option
+                                  key="KI"
                                   value="KI"
                                 >
                                   KIRIBATI
                                 </option>
                                 <option
+                                  key="KP"
                                   value="KP"
                                 >
                                   KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF
                                 </option>
                                 <option
+                                  key="KR"
                                   value="KR"
                                 >
                                   KOREA, REPUBLIC OF
                                 </option>
                                 <option
+                                  key="KW"
                                   value="KW"
                                 >
                                   KUWAIT
                                 </option>
                                 <option
+                                  key="KG"
                                   value="KG"
                                 >
                                   KYRGYZSTAN
                                 </option>
                                 <option
+                                  key="LA"
                                   value="LA"
                                 >
                                   LAO PEOPLE'S DEMOCRATIC REPUBLIC
                                 </option>
                                 <option
+                                  key="LV"
                                   value="LV"
                                 >
                                   LATVIA
                                 </option>
                                 <option
+                                  key="LB"
                                   value="LB"
                                 >
                                   LEBANON
                                 </option>
                                 <option
+                                  key="LS"
                                   value="LS"
                                 >
                                   LESOTHO
                                 </option>
                                 <option
+                                  key="LR"
                                   value="LR"
                                 >
                                   LIBERIA
                                 </option>
                                 <option
+                                  key="LY"
                                   value="LY"
                                 >
                                   LIBYA
                                 </option>
                                 <option
+                                  key="LI"
                                   value="LI"
                                 >
                                   LIECHTENSTEIN
                                 </option>
                                 <option
+                                  key="LT"
                                   value="LT"
                                 >
                                   LITHUANIA
                                 </option>
                                 <option
+                                  key="LU"
                                   value="LU"
                                 >
                                   LUXEMBOURG
                                 </option>
                                 <option
+                                  key="MO"
                                   value="MO"
                                 >
                                   MACAO
                                 </option>
                                 <option
+                                  key="MK"
                                   value="MK"
                                 >
                                   MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF
                                 </option>
                                 <option
+                                  key="MG"
                                   value="MG"
                                 >
                                   MADAGASCAR
                                 </option>
                                 <option
+                                  key="MW"
                                   value="MW"
                                 >
                                   MALAWI
                                 </option>
                                 <option
+                                  key="MY"
                                   value="MY"
                                 >
                                   MALAYSIA
                                 </option>
                                 <option
+                                  key="MV"
                                   value="MV"
                                 >
                                   MALDIVES
                                 </option>
                                 <option
+                                  key="ML"
                                   value="ML"
                                 >
                                   MALI
                                 </option>
                                 <option
+                                  key="MT"
                                   value="MT"
                                 >
                                   MALTA
                                 </option>
                                 <option
+                                  key="MH"
                                   value="MH"
                                 >
                                   MARSHALL ISLANDS
                                 </option>
                                 <option
+                                  key="MQ"
                                   value="MQ"
                                 >
                                   MARTINIQUE
                                 </option>
                                 <option
+                                  key="MR"
                                   value="MR"
                                 >
                                   MAURITANIA
                                 </option>
                                 <option
+                                  key="MU"
                                   value="MU"
                                 >
                                   MAURITIUS
                                 </option>
                                 <option
+                                  key="YT"
                                   value="YT"
                                 >
                                   MAYOTTE
                                 </option>
                                 <option
+                                  key="MX"
                                   value="MX"
                                 >
                                   MEXICO
                                 </option>
                                 <option
+                                  key="FM"
                                   value="FM"
                                 >
                                   MICRONESIA, FEDERATED STATES OF
                                 </option>
                                 <option
+                                  key="MD"
                                   value="MD"
                                 >
                                   MOLDOVA, REPUBLIC OF
                                 </option>
                                 <option
+                                  key="MC"
                                   value="MC"
                                 >
                                   MONACO
                                 </option>
                                 <option
+                                  key="MN"
                                   value="MN"
                                 >
                                   MONGOLIA
                                 </option>
                                 <option
+                                  key="ME"
                                   value="ME"
                                 >
                                   MONTENEGRO
                                 </option>
                                 <option
+                                  key="MS"
                                   value="MS"
                                 >
                                   MONTSERRAT
                                 </option>
                                 <option
+                                  key="MA"
                                   value="MA"
                                 >
                                   MOROCCO
                                 </option>
                                 <option
+                                  key="MZ"
                                   value="MZ"
                                 >
                                   MOZAMBIQUE
                                 </option>
                                 <option
+                                  key="MM"
                                   value="MM"
                                 >
                                   MYANMAR
                                 </option>
                                 <option
+                                  key="NA"
                                   value="NA"
                                 >
                                   NAMIBIA
                                 </option>
                                 <option
+                                  key="NR"
                                   value="NR"
                                 >
                                   NAURU
                                 </option>
                                 <option
+                                  key="NP"
                                   value="NP"
                                 >
                                   NEPAL
                                 </option>
                                 <option
+                                  key="NL"
                                   value="NL"
                                 >
                                   NETHERLANDS
                                 </option>
                                 <option
+                                  key="NC"
                                   value="NC"
                                 >
                                   NEW CALEDONIA
                                 </option>
                                 <option
+                                  key="NZ"
                                   value="NZ"
                                 >
                                   NEW ZEALAND
                                 </option>
                                 <option
+                                  key="NI"
                                   value="NI"
                                 >
                                   NICARAGUA
                                 </option>
                                 <option
+                                  key="NE"
                                   value="NE"
                                 >
                                   NIGER
                                 </option>
                                 <option
+                                  key="NG"
                                   value="NG"
                                 >
                                   NIGERIA
                                 </option>
                                 <option
+                                  key="NU"
                                   value="NU"
                                 >
                                   NIUE
                                 </option>
                                 <option
+                                  key="NF"
                                   value="NF"
                                 >
                                   NORFOLK ISLAND
                                 </option>
                                 <option
+                                  key="MP"
                                   value="MP"
                                 >
                                   NORTHERN MARIANA ISLANDS
                                 </option>
                                 <option
+                                  key="NO"
                                   value="NO"
                                 >
                                   NORWAY
                                 </option>
                                 <option
+                                  key="OM"
                                   value="OM"
                                 >
                                   OMAN
                                 </option>
                                 <option
+                                  key="PK"
                                   value="PK"
                                 >
                                   PAKISTAN
                                 </option>
                                 <option
+                                  key="PW"
                                   value="PW"
                                 >
                                   PALAU
                                 </option>
                                 <option
+                                  key="PS"
                                   value="PS"
                                 >
                                   PALESTINE, STATE OF
                                 </option>
                                 <option
+                                  key="PA"
                                   value="PA"
                                 >
                                   PANAMA
                                 </option>
                                 <option
+                                  key="PG"
                                   value="PG"
                                 >
                                   PAPUA NEW GUINEA
                                 </option>
                                 <option
+                                  key="PY"
                                   value="PY"
                                 >
                                   PARAGUAY
                                 </option>
                                 <option
+                                  key="PE"
                                   value="PE"
                                 >
                                   PERU
                                 </option>
                                 <option
+                                  key="PH"
                                   value="PH"
                                 >
                                   PHILIPPINES
                                 </option>
                                 <option
+                                  key="PN"
                                   value="PN"
                                 >
                                   PITCAIRN
                                 </option>
                                 <option
+                                  key="PL"
                                   value="PL"
                                 >
                                   POLAND
                                 </option>
                                 <option
+                                  key="PT"
                                   value="PT"
                                 >
                                   PORTUGAL
                                 </option>
                                 <option
+                                  key="PR"
                                   value="PR"
                                 >
                                   PUERTO RICO
                                 </option>
                                 <option
+                                  key="QA"
                                   value="QA"
                                 >
                                   QATAR
                                 </option>
                                 <option
+                                  key="RE"
                                   value="RE"
                                 >
                                   RÉUNION
                                 </option>
                                 <option
+                                  key="RO"
                                   value="RO"
                                 >
                                   ROMANIA
                                 </option>
                                 <option
+                                  key="RU"
                                   value="RU"
                                 >
                                   RUSSIAN FEDERATION
                                 </option>
                                 <option
+                                  key="RW"
                                   value="RW"
                                 >
                                   RWANDA
                                 </option>
                                 <option
+                                  key="BL"
                                   value="BL"
                                 >
                                   SAINT BARTHÉLEMY
                                 </option>
                                 <option
+                                  key="SH"
                                   value="SH"
                                 >
                                   SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA
                                 </option>
                                 <option
+                                  key="KN"
                                   value="KN"
                                 >
                                   SAINT KITTS AND NEVIS
                                 </option>
                                 <option
+                                  key="LC"
                                   value="LC"
                                 >
                                   SAINT LUCIA
                                 </option>
                                 <option
+                                  key="MF"
                                   value="MF"
                                 >
                                   SAINT MARTIN (FRENCH PART)
                                 </option>
                                 <option
+                                  key="PM"
                                   value="PM"
                                 >
                                   SAINT PIERRE AND MIQUELON
                                 </option>
                                 <option
+                                  key="VC"
                                   value="VC"
                                 >
                                   SAINT VINCENT AND THE GRENADINES
                                 </option>
                                 <option
+                                  key="WS"
                                   value="WS"
                                 >
                                   SAMOA
                                 </option>
                                 <option
+                                  key="SM"
                                   value="SM"
                                 >
                                   SAN MARINO
                                 </option>
                                 <option
+                                  key="ST"
                                   value="ST"
                                 >
                                   SAO TOME AND PRINCIPE
                                 </option>
                                 <option
+                                  key="SA"
                                   value="SA"
                                 >
                                   SAUDI ARABIA
                                 </option>
                                 <option
+                                  key="SN"
                                   value="SN"
                                 >
                                   SENEGAL
                                 </option>
                                 <option
+                                  key="RS"
                                   value="RS"
                                 >
                                   SERBIA
                                 </option>
                                 <option
+                                  key="SC"
                                   value="SC"
                                 >
                                   SEYCHELLES
                                 </option>
                                 <option
+                                  key="SL"
                                   value="SL"
                                 >
                                   SIERRA LEONE
                                 </option>
                                 <option
+                                  key="SG"
                                   value="SG"
                                 >
                                   SINGAPORE
                                 </option>
                                 <option
+                                  key="SX"
                                   value="SX"
                                 >
                                   SINT MAARTEN (DUTCH PART)
                                 </option>
                                 <option
+                                  key="SK"
                                   value="SK"
                                 >
                                   SLOVAKIA
                                 </option>
                                 <option
+                                  key="SI"
                                   value="SI"
                                 >
                                   SLOVENIA
                                 </option>
                                 <option
+                                  key="SB"
                                   value="SB"
                                 >
                                   SOLOMON ISLANDS
                                 </option>
                                 <option
+                                  key="SO"
                                   value="SO"
                                 >
                                   SOMALIA
                                 </option>
                                 <option
+                                  key="ZA"
                                   value="ZA"
                                 >
                                   SOUTH AFRICA
                                 </option>
                                 <option
+                                  key="GS"
                                   value="GS"
                                 >
                                   SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS
                                 </option>
                                 <option
+                                  key="SS"
                                   value="SS"
                                 >
                                   SOUTH SUDAN
                                 </option>
                                 <option
+                                  key="ES"
                                   value="ES"
                                 >
                                   SPAIN
                                 </option>
                                 <option
+                                  key="LK"
                                   value="LK"
                                 >
                                   SRI LANKA
                                 </option>
                                 <option
+                                  key="SD"
                                   value="SD"
                                 >
                                   SUDAN
                                 </option>
                                 <option
+                                  key="SR"
                                   value="SR"
                                 >
                                   SURINAME
                                 </option>
                                 <option
+                                  key="SJ"
                                   value="SJ"
                                 >
                                   SVALBARD AND JAN MAYEN
                                 </option>
                                 <option
+                                  key="SZ"
                                   value="SZ"
                                 >
                                   SWAZILAND
                                 </option>
                                 <option
+                                  key="SE"
                                   value="SE"
                                 >
                                   SWEDEN
                                 </option>
                                 <option
+                                  key="CH"
                                   value="CH"
                                 >
                                   SWITZERLAND
                                 </option>
                                 <option
+                                  key="SY"
                                   value="SY"
                                 >
                                   SYRIAN ARAB REPUBLIC
                                 </option>
                                 <option
+                                  key="TW"
                                   value="TW"
                                 >
                                   TAIWAN, PROVINCE OF CHINA
                                 </option>
                                 <option
+                                  key="TJ"
                                   value="TJ"
                                 >
                                   TAJIKISTAN
                                 </option>
                                 <option
+                                  key="TZ"
                                   value="TZ"
                                 >
                                   TANZANIA, UNITED REPUBLIC OF
                                 </option>
                                 <option
+                                  key="TH"
                                   value="TH"
                                 >
                                   THAILAND
                                 </option>
                                 <option
+                                  key="TL"
                                   value="TL"
                                 >
                                   TIMOR-LESTE
                                 </option>
                                 <option
+                                  key="TG"
                                   value="TG"
                                 >
                                   TOGO
                                 </option>
                                 <option
+                                  key="TK"
                                   value="TK"
                                 >
                                   TOKELAU
                                 </option>
                                 <option
+                                  key="TO"
                                   value="TO"
                                 >
                                   TONGA
                                 </option>
                                 <option
+                                  key="TT"
                                   value="TT"
                                 >
                                   TRINIDAD AND TOBAGO
                                 </option>
                                 <option
+                                  key="TN"
                                   value="TN"
                                 >
                                   TUNISIA
                                 </option>
                                 <option
+                                  key="TR"
                                   value="TR"
                                 >
                                   TURKEY
                                 </option>
                                 <option
+                                  key="TM"
                                   value="TM"
                                 >
                                   TURKMENISTAN
                                 </option>
                                 <option
+                                  key="TC"
                                   value="TC"
                                 >
                                   TURKS AND CAICOS ISLANDS
                                 </option>
                                 <option
+                                  key="TV"
                                   value="TV"
                                 >
                                   TUVALU
                                 </option>
                                 <option
+                                  key="UG"
                                   value="UG"
                                 >
                                   UGANDA
                                 </option>
                                 <option
+                                  key="UA"
                                   value="UA"
                                 >
                                   UKRAINE
                                 </option>
                                 <option
+                                  key="AE"
                                   value="AE"
                                 >
                                   UNITED ARAB EMIRATES
                                 </option>
                                 <option
+                                  key="GB"
                                   value="GB"
                                 >
                                   UNITED KINGDOM
                                 </option>
                                 <option
+                                  key="US"
                                   value="US"
                                 >
                                   UNITED STATES
                                 </option>
                                 <option
+                                  key="UM"
                                   value="UM"
                                 >
                                   UNITED STATES MINOR OUTLYING ISLANDS
                                 </option>
                                 <option
+                                  key="UY"
                                   value="UY"
                                 >
                                   URUGUAY
                                 </option>
                                 <option
+                                  key="UZ"
                                   value="UZ"
                                 >
                                   UZBEKISTAN
                                 </option>
                                 <option
+                                  key="VU"
                                   value="VU"
                                 >
                                   VANUATU
                                 </option>
                                 <option
+                                  key="VE"
                                   value="VE"
                                 >
                                   VENEZUELA, BOLIVARIAN REPUBLIC OF
                                 </option>
                                 <option
+                                  key="VN"
                                   value="VN"
                                 >
                                   VIET NAM
                                 </option>
                                 <option
+                                  key="VG"
                                   value="VG"
                                 >
                                   VIRGIN ISLANDS, BRITISH
                                 </option>
                                 <option
+                                  key="VI"
                                   value="VI"
                                 >
                                   VIRGIN ISLANDS, U.S.
                                 </option>
                                 <option
+                                  key="WF"
                                   value="WF"
                                 >
                                   WALLIS AND FUTUNA
                                 </option>
                                 <option
+                                  key="EH"
                                   value="EH"
                                 >
                                   WESTERN SAHARA
                                 </option>
                                 <option
+                                  key="YE"
                                   value="YE"
                                 >
                                   YEMEN
                                 </option>
                                 <option
+                                  key="ZM"
                                   value="ZM"
                                 >
                                   ZAMBIA
                                 </option>
                                 <option
+                                  key="ZW"
                                   value="ZW"
                                 >
                                   ZIMBABWE

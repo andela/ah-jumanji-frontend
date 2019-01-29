@@ -22,7 +22,8 @@ export const updateArticle = (body,slug) =>dispatch=> {
           }).then((response) => {
             //Update successfull
             dispatch(updatedArticle(response.data));
-            toast.success(`🦄 ${response.data.article.slug} has been updated`, { position: toast.POSITION.TOP_RIGHT, autoClose: 3500 });
+            toast.success(`🦄 Updated`, { position: toast.POSITION.TOP_RIGHT, autoClose: 800 });
+            setTimeout(function(){window.location.replace(`/a/view_article/${slug}`);}, 1000);
           }).catch((err) => {
               dispatch(updateError(err));
               toast.error('🦄 Could not update that article!',{ position: toast.POSITION.TOP_RIGHT });

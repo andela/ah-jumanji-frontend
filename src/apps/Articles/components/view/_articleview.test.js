@@ -10,7 +10,7 @@ import {
   Provider
 } from "react-redux";
 
-import Viewpage from'./_articleview';
+import Viewpage, {mapStateToProps} from'./_articleview';
 
 Enzyme.configure({ adapter: new Adapter() });
 const middlewares = [thunk];
@@ -61,4 +61,27 @@ describe('If state is undefined', () => {
     expect(wrapper.find('div').exists()).toBe(true);
   });
 
+});
+
+describe('Social auth Props test', () => {
+  let expectedData = null;
+
+    it('should show previous', () => {
+        let myProps = {"slug": "this is le slug"};
+        const initialState = {
+          Articles:{
+            read_article: {
+              author: "Granson",
+              body: "This is a test article"}
+            }
+          };
+        const returnState = {
+            author: "Granson",
+            body: "This is a test article"
+        };
+
+        // Just call the method directly passing in sample data
+        expectedData = {"myProps": myProps, "Articles": returnState};
+        expect(mapStateToProps(initialState,myProps)).toEqual(expectedData);
+    });
 });

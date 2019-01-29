@@ -1,20 +1,22 @@
+// Require Editor JS files.
+import 'froala-editor/js/froala_editor.pkgd.min';
+// Require Editor CSS files.
+import 'froala-editor/css/froala_style.min.css';
+import 'froala-editor/css/froala_editor.pkgd.min.css';
+import FroalaEditor from 'react-froala-wysiwyg';
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
     connect
   } from 'react-redux';
-  import { toast } from 'react-toastify';
-// Require Editor JS files.
-import 'froala-editor/js/froala_editor.pkgd.min';
+import { toast } from 'react-toastify';
+import {read_cookie} from 'sfcookies';
 
-// Require Editor CSS files.
-import 'froala-editor/css/froala_style.min.css';
-import 'froala-editor/css/froala_editor.pkgd.min.css';
-
-import FroalaEditor from 'react-froala-wysiwyg';
 import { getArticles } from '../../actions/fetch/_get_actions';
 import { updateArticle, updateRealtime } from '../../actions/update/_update_actions';
 import { deleteArticle } from '../../actions/delete/_delete_actions';
+
 
 
 class EditorEditView extends React.Component{
@@ -24,6 +26,7 @@ class EditorEditView extends React.Component{
 
         this.onButtonPressed = this.onButtonPressed.bind(this);
         this.handleEditChange = this.handleEditChange.bind(this);
+        this.userAction = this.userAction.bind(this);
         this.button = this.button.bind(this);
 
         const { slug } = props;
@@ -40,18 +43,11 @@ class EditorEditView extends React.Component{
     onButtonPressed(action){
         let myState = this.state;
         let myProps = this.props;
-        switch (action) {
-            case "update":
-                //update state
-                myProps.updateArticle(myProps.Articles.body, myState.slug);
-                break;
-            case "delete":
-                //update state
-                myProps.deleteArticle(myState.slug);
-                break;
-            default:
-                break;
-        }
+
+        read_cookie('loggedInUsername') === read_cookie("article_author") ?
+        this.userAction(action, myState, myProps)
+        :
+        toast.warn('🦄 You cant perform this!',{ position: toast.POSITION.TOP_RIGHT });
     }
 
     button = (link, call, type, value) =>{
@@ -66,7 +62,20 @@ class EditorEditView extends React.Component{
           </li>
           );
     }
-
+    userAction(action, myState, this_props){
+        switch (action) {
+            case "update":
+                //update state
+                this_props.updateArticle(this_props.Articles.body, myState.slug);
+                break;
+            case "delete":
+                //update state
+                this_props.deleteArticle(myState.slug);
+                break;
+            default:
+                break;
+        }
+    }
     handleEditChange(model) {
         let myProps = this.props;
         myProps.updateRealtime(model);
@@ -108,10 +117,11 @@ class EditorEditView extends React.Component{
                 config={{placeholderText: "Nothing here to edit...",
                 charCounterCount: false,toolbarInline: true,imageUploadParam: 'image_file',
                 imageUploadURL: 'https://ah-jumanji-staging.herokuapp.com/api/articles/image/upload',
-                imageUploadMethod: 'POST',requestWithCORS: true,
+                imageUploadMethod: 'POST',
+                requestWithCORS: true,
                 imageMaxSize: 5 * 1024 * 1024,imageAllowedTypes: ['jpeg', 'jpg', 'png'],
                 events: {'froalaEditor.image.error': function (e, editor, error, response) {
-                        if (error) {toast.error(error + " " + response,{ position: toast.POSITION.BOTTOM_CENTER });}
+                        if (error) {toast.error(`Could not upload image.(${response})`,{ position: toast.POSITION.BOTTOM_CENTER });}
                     }}
                }}
                />

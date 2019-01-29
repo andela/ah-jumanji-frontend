@@ -1,13 +1,8 @@
 import React from 'react';
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from "enzyme-adapter-react-16";
-import configureStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
+import Edit, {mapStateToProps} from'./_articleedit';
 
-import Edit from'./_articleedit';
-
-Enzyme.configure({ adapter: new Adapter() });
-const middlewares = [thunk];
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -17,4 +12,28 @@ describe('EditPage', () => {
 
     expect(component).toMatchSnapshot();
   });
+});
+
+
+describe('Article Edit Props test', () => {
+  let expectedData = null;
+
+    it('should show previous', () => {
+        let myProps = {"slug": "this is le slug"};
+        const initialState = {
+          Articles:{
+            read_article: {
+              author: "Granson",
+              body: "This is a test article"}
+            }
+          };
+        const returnState = {
+            author: "Granson",
+            body: "This is a test article"
+        };
+
+        // Just call the method directly passing in sample data
+        expectedData = {"myProps": myProps, "Articles": returnState};
+        expect(mapStateToProps(initialState,myProps)).toEqual(expectedData);
+    });
 });

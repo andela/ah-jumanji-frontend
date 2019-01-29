@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { read_cookie } from 'sfcookies';
+import { read_cookie, bake_cookie } from 'sfcookies';
 import { GOT_ARTICLE, ERROR_GETTING_ARTICLE} from '../actionTypes';
 
 export const getArticles = (slug) =>dispatch=> {
@@ -15,9 +15,9 @@ export const getArticles = (slug) =>dispatch=> {
             crossDomain: true
         })
         .then((response) => {
+          bake_cookie("article_author", response.data.articles.author.user);
           dispatch(gotArticle(response.data.articles));
-          toast.success(`🦄 ${response.data.articles.slug} has been fetched`, { position: toast.POSITION.TOP_RIGHT, autoClose: 3500 });
-        })
+         })
         .catch((err) => {
             dispatch(getError(err));
             toast.error('🦄 Could not get that article!',{ position: toast.POSITION.TOP_RIGHT });

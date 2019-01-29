@@ -13,7 +13,7 @@
     "\\.(css|scss)$": "<rootDir>/src/assets/js/styleMock.js"
   },
 
-  "setupFiles": ["./enzyme.config.js"],
+  "setupFiles": ["./enzyme.config.js","./setup-jest.js"],
 
   "testEnvironment": "jsdom",
 

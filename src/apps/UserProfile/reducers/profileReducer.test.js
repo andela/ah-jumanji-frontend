@@ -1,5 +1,5 @@
 import { types } from 'util';
-import profileReducer from './profileReducer';
+import ProfileReducer from './profileReducer';
 import * as profileActions from '../actions/types';
 
 
@@ -25,7 +25,7 @@ describe('profile reducers', () => {
   };
 
   it('should return the initial state', () => {
-    expect(profileReducer(undefined, {})).toEqual(initialState);
+    expect(ProfileReducer(undefined, {})).toEqual(initialState);
   });
 
   it('should handle VIEW_PROFILE_SUCCESS', () => {
@@ -38,14 +38,14 @@ describe('profile reducers', () => {
       profile
     };
 
-    expect(profileReducer({}, action)).toEqual(expectedState);
+    expect(ProfileReducer({}, action)).toEqual(expectedState);
   });
 
   it('should handle VIEW_PROFILE_FAILED', () => {
     const action = {
       type: types.VIEW_PROFILE_FAILED
     };
-    expect(profileReducer({}, action)).toEqual({});
+    expect(ProfileReducer({}, action)).toEqual({});
   });
 
   it('should handle EDIT_PROFILE_SUCCESS', () => {
@@ -58,7 +58,18 @@ describe('profile reducers', () => {
     const expectedState = {
       profile
     };
-    expect(profileReducer(expectedState, action)).toEqual(expectedState);
+    expect(ProfileReducer(expectedState, action)).toEqual(expectedState);
+  });
+
+  it('should handle EDIT_PROFILE_FAILED', () => {
+    const action = {
+      type: types.EDIT_PROFILE_FAILED,
+      payload:"Could not update profile"
+    };
+
+    let expected = {};
+
+    expect(ProfileReducer({}, action)).toEqual(expected);
   });
 
 });

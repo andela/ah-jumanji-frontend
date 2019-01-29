@@ -17,7 +17,8 @@ export const deleteArticle = (slug) =>dispatch=> {
         })
         .then((response) => {
             dispatch(deletedArticle(response.data));
-            toast.success(`🦄 ${slug} has been deleted`, { position: toast.POSITION.TOP_RIGHT, autoClose: 3500 });
+            toast.success(`🦄 Article deleted`, { position: toast.POSITION.TOP_RIGHT, autoClose: 1000 });
+            setTimeout(function(){window.location.replace(`/a/home`);}, 1200);
         })
         .catch((err) => {
             dispatch(deleteError(err));
