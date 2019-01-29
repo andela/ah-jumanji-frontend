@@ -42,12 +42,12 @@ class EditDeleteBtnsComponent extends Component {
       <div id="e-d-icons" className="edit-delete-icons">
         <Icon
           id="edit-icon"
-          iconType="edit"
+          iconType="fas fa-edit"
           onClick={this.onClick}
         />
         <Icon
           id="delete-icon"
-          iconType="trash-alt"
+          iconType="fas fa-trash-alt"
           onClick={this.onClick}
         />
       </div>
