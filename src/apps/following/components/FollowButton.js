@@ -10,7 +10,6 @@ constructor(props){
     };
     this.handleFollow = this.handleFollow.bind(this);
 }
-
 handleFollow(){
     const { following } = this.state;
     if (following == true) {

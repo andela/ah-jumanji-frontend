@@ -17,7 +17,6 @@ import Dashboard from "../Dashboard/components/DashboardContainer";
 import NotificationHistory from "../Notifiications/components/NotificationHistoryComponent";
 
 import CommentContainer from '../Comments/Components/CommentsContainer';
-import FollowButton from "../following/components/FollowButton";
 
 const Main = () => (
   <Switch>
@@ -37,7 +36,6 @@ const Main = () => (
     <Route exact path="/a/home" component={Dashboard} />
     <Route exact path="/a/notifications" component={NotificationHistory} />
     <Route exact path="/a/articles/:article_slug/comments" component={CommentContainer} />
-    <Route exact path="/follow" component={FollowButton} />
   </Switch>
 );
 
