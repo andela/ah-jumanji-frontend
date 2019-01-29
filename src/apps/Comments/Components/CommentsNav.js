@@ -14,7 +14,7 @@ const CommentsNav = (props) => {
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#likes" data-toggle="tab" role="tab" aria-controls="likes">
-              {`${numberOfLikes} Like(s)`}
+              {`${numberOfLikes || "No"} Like${numberOfLikes > 1 ? "s ": " "}`}
               <i className="far fa-thumbs-up" />
             </a>
           </li>

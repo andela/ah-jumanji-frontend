@@ -45,7 +45,7 @@ describe('Mocking register request', () => {
     moxios.uninstall();
   });
 
- it('should create REGISTER_SUCCESS action', () => {
+ it('should create REGISTER_SUCCESS actions', () => {
    moxios.wait(() => {
      let request = moxios.requests.mostRecent();
      request.respondWith({

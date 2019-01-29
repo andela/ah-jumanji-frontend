@@ -6,6 +6,7 @@ import { read_cookie } from 'sfcookies';
 
 import EditDeleteBtnsComponent from './EditDeleteBtns';
 import AddCommentComponent from './AddComment';
+import config from '../../../config/config';
 
 // import { addComment, editComment } from '../Actions/CommentActions';
 
@@ -47,16 +48,13 @@ class CommentComponent extends Component {
 
     const loggedInAs = read_cookie('loggedInUsername');
 
-    // Default img - for experimentation ONLY.
-    const imgFlani = "https://cdn-images-1.medium.com/max/1200/1*MccriYX-ciBniUzRKAUsAw.png";
-
     return (
       <div>
         <li id={id} className="list-group-item">
           <div className="row">
             {/* Commenter img */}
             <div className="col-md-1 col-sm-2 col-2">
-              <img src={image || imgFlani} alt="follower avatar" className="followers-avatar message-avatar rounded-circle" />
+              <img src={image || config.defaultImage} alt="follower avatar" className="followers-avatar message-avatar rounded-circle" />
             </div>
 
             {/* The comment */}

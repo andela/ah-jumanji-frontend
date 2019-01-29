@@ -17,11 +17,15 @@ const config = {
     markNotificationRead: baseUrl + '/api/notifications/',
     unmarkNotificationRead: baseUrl + '/api/notifications/unmark/',
     articlesEndpoint: baseUrl + '/api/articles',
+    likeUrl: baseUrl + '/api/articles/reactions',
+    getLikesUrl: baseUrl + '/api/articles/reactions/mr-ruby',
   },
   firebase: {
     apiKey: process.env.FIREBASE_API_KEY || 'random',
     authDomain: process.env.FIREBASE_AUTH_DOMAIN
-  }
+  },
+
+  defaultImage : "https://cdn-images-1.medium.com/max/1200/1*MccriYX-ciBniUzRKAUsAw.png"
 };
 
 export default config;

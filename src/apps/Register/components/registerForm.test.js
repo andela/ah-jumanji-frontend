@@ -35,10 +35,6 @@ describe('Registration form', () => {
   );
   });
 
-  it('should match the snapshoot', () => {
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('should render register page correctly', () => {
     expect(wrapper.find('.panel-heading').exists()).toBe(true);
     expect(wrapper.find('h3').text()).toBe('Create Account');
