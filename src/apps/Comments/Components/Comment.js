@@ -8,17 +8,18 @@ import EditDeleteBtnsComponent from './EditDeleteBtns';
 import AddCommentComponent from './AddComment';
 import config from '../../../config/config';
 
-// Bring in ReactionIcons
-import ReactionIcons from '../../UserReactions/Components/ReactionIconsComponent';
 import ReactorsContainer from '../../UserReactions/Components/ReactorsContainerComponent';
+import ReactionIcons from '../../UserReactions/Components/ReactionIconsComponent';
 
 class CommentComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      comment: props.comment,
-      // reactionType: localStorage.reactionType,
+      reactionType: "dislike"
     };
+
+    this.updateReactionType = this.updateReactionType.bind(this);
+
   }
 
   formatTime = (time) => {
@@ -32,9 +33,17 @@ class CommentComponent extends Component {
     return shortForm;
   };
 
+  // Change state on mouse over ReactionIcons
+  updateReactionType (reactionType) {
+    this.setState({reactionType: reactionType});
+  }
+
   render() {
+    // Destructure props and state for necessary data
+    const { reactionType } = this.state;
+    const { comment, reactions } = this.props;
+
     // Extract data from comment object passed to this
-    const { comment } = this.state;
     // Extract comment params
     let { id, createdAt, body, author } = comment;
     // Structure the time
@@ -81,18 +90,14 @@ class CommentComponent extends Component {
             </div>
           </div>
           <div className="icons-row">
-            <ReactionIcons />
-            <span />
+            <ReactionIcons updateReactionType={this.updateReactionType} />
+            <p />
             {loggedInAs === username ?
               <EditDeleteBtnsComponent />
               : <span />
             }
           </div>
-          <div className="hidden">
-            {
-              <ReactorsContainer reactionType={"like"} />
-            }
-          </div>
+          <ReactorsContainer reactionType={reactionType} reactions={reactions} />
         </li>
         <AddCommentComponent actionToExecute="edit" specialClass="hidden" />
         <hr />
@@ -103,6 +108,7 @@ class CommentComponent extends Component {
 
 CommentComponent.propTypes = {
   comment: PropTypes.object.isRequired,
+  reactions: PropTypes.array.isRequired,
 };
 
 export default CommentComponent;

@@ -12,6 +12,7 @@ import Dashboard from "./Dashboard/reducers/dashboardReducer";
 import Notifications from "./Notifiications/reducers/noticationsReducers";
 import LikeReducer from "./Like/reducers/likeReducer";
 import commentListReducer from './Comments/Reducers/CommentListReducer';
+import commentsReactionsReducer from './UserReactions/Reducers/CommentReactionsReducer';
 
 const rootReducer = combineReducers({
   socialAuth,
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
   Dashboard,
   Notifications,
   commentListReducer,
-  LikeReducer
+  LikeReducer,
+  commentsReactionsReducer,
   //Add your reducers here
 });
 

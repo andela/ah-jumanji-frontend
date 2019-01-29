@@ -1,43 +1,58 @@
-import React from 'react';
+/* eslint-disable react/no-did-mount-set-state */
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { read_cookie } from 'sfcookies';
 
 import ReactorInfo from './ReactorInfoComponent';
 
-const ReactorsContainer = (props) => {
+// Get current logged in User
+const loggedInuser = read_cookie('loggedInUsername');
 
-  const { reactionType } =  props;
+class ReactorsContainer extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-  const reactions = {
-    like: ["Dennis", "Mithamo", "Khalegi", "Flani", "Mzee"],
-    dislike: ["Paul", "James", "Ann", "Salma", "Fabish", "Granson"]
-  };
+  render() {
+    let { reactionType, reactions} = this.props;
+    let likers = [];
+    let dislikers = [];
+    reactions.map(rxn => (rxn.reaction === 1 ? likers.push(rxn.user.username) : dislikers.push(rxn.user.username)));
 
-  const reactors = reactions[`${reactionType}`];
+    reactions = {
+      like: likers.map(liker => liker === loggedInuser ? "You" : liker),
+      dislike: dislikers.map(disliker => disliker === loggedInuser ? "You" : dislikers),
+    };
 
-  const pluralise = () => (
-    reactors.length > 1 ? "s" : ""
-  );
+    const reactors = reactions[`${reactionType || "dislike"}`];
 
-  const pluraliseVerb = () => (
-    reactors.length > 1 ? "" : "s"
-  );
+    const pluralise = () => (
+      reactors.length > 1 ? "s" : ""
+    );
 
-  return (
-    <div className="reactions-container">
-      <p className="reactors-header">{`${reactors.length ? reactors.length : "No"} user${pluralise()} ${reactionType}${pluraliseVerb()} this comment`}</p>
-      <div className="reactors-names">
-        {
-          reactors.map(reactor => (
-            // eslint-disable-next-line react/jsx-key
-            <ReactorInfo key={reactors.indexOf(reactor)} reactor={reactor} />))
-        }
+    const pluraliseVerb = () => (
+      reactors.length > 1 ? "" : "s"
+    );
+
+    return (
+      <div className="reactions-container hidden">
+        <p className="reactors-header">{`${reactors.length ? reactors.length : "No"} user${pluralise()} ${reactionType}${pluraliseVerb()} this comment`}</p>
+        <div className="reactors-names">
+          {
+            reactors.map(reactor => (
+              // eslint-disable-next-line react/jsx-key
+              <ReactorInfo key={reactors.indexOf(reactor)} reactor={reactor} />))
+          }
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 ReactorsContainer.propTypes = {
   reactionType: PropTypes.string.isRequired,
+  reactions: PropTypes.array.isRequired,
 };
+
 
 export default ReactorsContainer;
