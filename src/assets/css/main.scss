@@ -366,17 +366,22 @@ img#success-icon {
   border: none;
 }
 
-.edit-delete-icons {
-  width: 10%;
-  margin: .2% 90%;
-  padding: .5%;
+.edit-delete-icons,
+.reaction-icons {
+  width: 90%;
+  margin: 1% 10% 1% 0;
+  padding: .8%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
+.edit-delete-icons {
+  margin: 1% 0 1% 10%;
+}
+
 .icons {
-  font-size: 1.1rem;
-  width: 85%;
+  font-size: 1.2rem;
+  width: 75%;
   margin: auto;
   color: rgb(170, 170, 170);
   transition: all .2s;
@@ -384,15 +389,17 @@ img#success-icon {
   text-align: center;
 }
 
+.icons:hover {
+  font-size: 1.5em;
+  color: black;
+}
+
 .icons#edit-icon:hover {
-  font-size: 1.5rem;
   color: rgb(0, 0, 0);
 }
 
 .icons#delete-icon:hover {
-  font-size: 1.5rem;
   color: rgb(253, 0, 0);
-  margin-left: 1%;
 }
 
 ul#comments-list {
@@ -494,6 +501,44 @@ ul#likes-list {
     letter-spacing: 0;
     font-weight: 400;
     font-style: normal;
+}
+
+// Reactions on comments
+
+.icons-row {
+  width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  padding: 1%;
+}
+
+.reactor-info {
+  width: 90%;
+  color: rgb(80, 80, 80);
+  padding: .5%;
+  margin: 2% auto;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.reactions-container {
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.19);
+  padding: 1%;
+  margin: 1%;
+  width: 50%;
+}
+
+.reactors-names {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.reactors-header {
+  color: rgb(80, 80, 80);
+  border-bottom: 1px solid rgb(189, 189, 189);
+  padding: 1%;
+  width: 100%;
 }
 
 @import 'mediaqueries';

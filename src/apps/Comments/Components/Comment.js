@@ -8,14 +8,16 @@ import EditDeleteBtnsComponent from './EditDeleteBtns';
 import AddCommentComponent from './AddComment';
 import config from '../../../config/config';
 
-// import { addComment, editComment } from '../Actions/CommentActions';
-
+// Bring in ReactionIcons
+import ReactionIcons from '../../UserReactions/Components/ReactionIconsComponent';
+import ReactorsContainer from '../../UserReactions/Components/ReactorsContainerComponent';
 
 class CommentComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
       comment: props.comment,
+      // reactionType: localStorage.reactionType,
     };
   }
 
@@ -78,10 +80,19 @@ class CommentComponent extends Component {
               </div>
             </div>
           </div>
-          {loggedInAs === username ?
-            <EditDeleteBtnsComponent />
-            : false
-          }
+          <div className="icons-row">
+            <ReactionIcons />
+            <span />
+            {loggedInAs === username ?
+              <EditDeleteBtnsComponent />
+              : <span />
+            }
+          </div>
+          <div className="hidden">
+            {
+              <ReactorsContainer reactionType={"like"} />
+            }
+          </div>
         </li>
         <AddCommentComponent actionToExecute="edit" specialClass="hidden" />
         <hr />
