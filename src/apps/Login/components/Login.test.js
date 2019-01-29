@@ -35,7 +35,7 @@ describe('LoginForm', () => {
           <LoginForm />
         </MemoryRouter>
       </Provider>,
-  );
+    );
   });
 
   it('should render correctly in "debug" mode', () => {

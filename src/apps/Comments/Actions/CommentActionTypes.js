@@ -1,0 +1,9 @@
+/* eslint-disable import/prefer-default-export */
+export const FETCH_COMMENTS = 'FETCH_COMMENTS';
+export const FETCH_COMMENTS_FAILURE = 'FETCH_COMMENTS_FAILURE';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const ADD_COMMENT_FAILURE = 'ADD_COMMENT_FAILURE';
+export const DELETE_COMMENT = 'DELETE_COMMENT';
+export const DELETE_COMMENT_FAILURE = 'DELETE_COMMENT_FAILURE';
+export const EDIT_COMMENT = 'EDIT_COMMENT';
+export const EDIT_COMMENT_FAILURE = 'EDIT_COMMENT_FAILURE';

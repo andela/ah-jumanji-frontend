@@ -1,16 +1,26 @@
 import {combineReducers} from 'redux';
 
 // import all reducers from the individual app modules
+import Articles from './Articles/reducers/ArticlesReducer';
 import socialAuth from './SocialLogin/reducers/socialReducer';
 import Login from './Login/reducers/loginReducer';
 import resetAccountPassword from './resetPassword/reducers/resetPasswordReducer';
 import Register from "./Register/reducers/registerReducer";
+import ratingReducer from "./Rating/reducers/ratingReducer";
+import Dashboard from "./Dashboard/reducers/dashboardReducer";
+import Notifications from "./Notifiications/reducers/noticationsReducers";
+import commentListReducer from './Comments/Reducers/CommentListReducer';
 
 const rootReducer = combineReducers({
   socialAuth,
   Login,
   Register,
-  resetAccountPassword
+  resetAccountPassword,
+  Articles,
+  ratingReducer,
+  Dashboard,
+  Notifications,
+  commentListReducer,
   //Add your reducers here
 });
 

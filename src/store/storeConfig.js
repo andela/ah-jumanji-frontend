@@ -8,7 +8,7 @@ import {
   createLogger
 } from 'redux-logger';
 
-// import promise from 'redux-promise-middleware';
+// import promise from 'redux-promise-middleware'
 
 import initialState from './initialState';
 import rootReducer from '../apps/rootReducer';
@@ -25,7 +25,7 @@ function jumanjiStore() {
   /* eslint-enable */
 
   if (process.env.NODE_ENV !== 'production' && module.hot) {
-    module.hot.accept('../rootReducers', () => store.replaceReducer(rootReducer));
+    module.hot.accept('../apps/rootReducer', () => store.replaceReducer(rootReducer));
   }
 
   return store;
