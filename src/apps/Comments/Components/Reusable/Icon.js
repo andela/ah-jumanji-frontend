@@ -6,13 +6,13 @@ import PropTypes from 'prop-types';
 const Icon = (props) => {
   const { id, iconType, onClick } = props;
   return (
-    <div>
+    <React.Fragment>
       <i
         id={id}
-        className={`fas fa-${iconType} icons`}
+        className={`${iconType} icons`}
         onClick={onClick}
       />
-    </div>
+    </React.Fragment>
   );
 };
 
