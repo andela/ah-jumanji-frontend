@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { viewProfile } from '../actions/profile';
+import countries from './countries';
 
 
 class Profile extends React.Component {
@@ -15,6 +16,8 @@ class Profile extends React.Component {
   render() {
 
     const { profile } = this.props;
+    const { country } = profile;
+    const fullCountryName = countries[country];
 
     return (
       <div>
@@ -40,20 +43,25 @@ class Profile extends React.Component {
                     <li style={{ listStyleType: "none" }}>
                       <strong>
                         {profile.first_name}
+                        &nbsp;
                         {profile.last_name}
                       </strong>
                     </li>
                     <li style={{ listStyleType: "none" }}>
-                      {profile.country}
+                      {profile.bio}
                     </li>
                     <li style={{ listStyleType: "none" }}>
+                      <i className="fas fa-globe-africa" />
+                      &nbsp;
+                      {fullCountryName}
+                    </li>
+                    <li style={{ listStyleType: "none" }}>
+                      <i className="fas fa-phone" />
+                      &nbsp;
                       {profile.phone_number}
                     </li>
                     <li style={{ listStyleType: "none" }}>
                       {profile.twitter_handle}
-                    </li>
-                    <li style={{ listStyleType: "none" }}>
-                      {profile.bio}
                     </li>
                     <li style={{ listStyleType: "none" }}>
                       <a href={profile.website}>{profile.website}</a>

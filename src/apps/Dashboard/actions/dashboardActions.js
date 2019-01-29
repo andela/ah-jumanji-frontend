@@ -45,7 +45,7 @@ export function fetchArticle() {
               // add likes, comments and rating of each article in the payload
               axios.all([fetchArticleLikes(slug), fetchArticleComments(slug), fetchArticleRating(slug), fetchProfiles()]).then(
                 axios.spread(
-                  (likes, comments, ratings, profiles) =>{
+                  (likes, comments, ratings) =>{
                   r[i]['likes'] = likes;
                   r[i]['comments'] = comments;
                   r[i]['ratings'] = ratings;

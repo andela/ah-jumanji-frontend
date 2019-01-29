@@ -70,7 +70,7 @@ class EditProfile extends Component {
       let value = profile.profile[key];
       let keyParams = key.split("_");
       keyParams.length > 1 ? key = keyParams[0] + keyParams[1].charAt(0).toUpperCase() + keyParams[1].substr(1) : keyParams;
-      if(!["country", "profilePhoto", "bio" ].includes(key)) {
+      if(!["country", "profilePhoto", "website", "twitterHandle", "bio" ].includes(key)) {
         this.validateUserInput(key, value);
         // set up an event listener to highlight errors
         document.querySelector(`input[name=${key}]`).addEventListener('focus', (e) => {

@@ -39,7 +39,7 @@ export const editProfile = (profileData) => async dispatch => {
   let endpoint = config.api.editProfileUrl;
   const token = read_cookie('token');
   try {
-      await axios.put(endpoint, profileData, { headers: { Authorization: `Token ${token}`}})
+      await axios.put(endpoint, profileData, { headers: { Authorization: `Token ${token}`} })
       .then(response => {
       dispatch(editProfileSuccess(response.data));
       toast.dismiss();

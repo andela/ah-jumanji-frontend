@@ -8,7 +8,7 @@ import {
   createLogger
 } from 'redux-logger';
 
-// import promise from 'redux-promise-middleware';
+// import promise from 'redux-promise-middleware'
 
 import initialState from './initialState';
 import rootReducer from '../apps/rootReducer';

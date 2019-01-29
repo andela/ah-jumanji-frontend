@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CommentComponent /> render all expected bits of a commnet 1`] = `
+<div>
+  <li
+    className="list-group-item"
+    id={100}
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-1 col-sm-2 col-2"
+      >
+        <img
+          alt="follower avatar"
+          className="followers-avatar message-avatar rounded-circle"
+          src="https://cdn-images-1.medium.com/max/1200/1*MccriYX-ciBniUzRKAUsAw.png"
+        />
+      </div>
+      <div
+        className="col-md-11 col-sm-10 col-10"
+      >
+        <div
+          className="message"
+        >
+          <Link
+            replace={false}
+            to="/ah-jumanji/profile/dmithamo"
+          >
+            Dmithamo
+          </Link>
+          <span
+            className="float-right text-muted"
+          >
+            <i
+              className="fas fa-clock"
+            />
+             Date undefined undefined
+          </span>
+          <br />
+          <span
+            className="comment-body"
+          >
+            fake body
+          </span>
+        </div>
+      </div>
+    </div>
+  </li>
+  <Connect(AddCommentComponent)
+    actionToExecute="edit"
+    specialClass="hidden"
+  />
+  <hr />
+</div>
+`;

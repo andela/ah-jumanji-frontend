@@ -10,6 +10,7 @@ import { profileReducer } from './UserProfile/reducers/profileReducer';
 import ratingReducer from "./Rating/reducers/ratingReducer";
 import Dashboard from "./Dashboard/reducers/dashboardReducer";
 import Notifications from "./Notifiications/reducers/noticationsReducers";
+import commentListReducer from './Comments/Reducers/CommentListReducer';
 
 const rootReducer = combineReducers({
   socialAuth,
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
   Articles,
   ratingReducer,
   Dashboard,
-  Notifications
+  Notifications,
+  commentListReducer,
   //Add your reducers here
 });
 
