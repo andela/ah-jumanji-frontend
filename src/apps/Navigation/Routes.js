@@ -7,6 +7,8 @@ import SocialAuthentication from '../SocialLogin/components/SocialAuth';
 import ForgotPassword from "../resetPassword/components/PasswordResetComponent";
 import IndexPage from "../Index/components/IndexPage";
 import ResetCodePage from "../resetPassword/components/PasswordResetCodeComponent";
+import Profile from "../UserProfile/components/Profile";
+import EditProfile from "../UserProfile/components/EditProfile";
 import ArticlePage from "../Articles/components/create/CreateArticle";
 import ReadArticle from "../Articles/components/view/ViewArticle";
 import EditArticle from "../Articles/components/edit/EditArticle";
@@ -15,6 +17,7 @@ import Dashboard from "../Dashboard/components/DashboardContainer";
 import NotificationHistory from "../Notifiications/components/NotificationHistoryComponent";
 
 import CommentContainer from '../Comments/Components/CommentsContainer';
+import FollowButton from "../following/components/FollowButton";
 
 const Main = () => (
   <Switch>
@@ -25,6 +28,8 @@ const Main = () => (
     <Route exact path="/activate-account/:uid/:token" component={RegisterRedirectActivated} />
     <Route exact path="/reset_password" component={ForgotPassword} />
     <Route exact path="/reset_code/:reset_code" component={ResetCodePage} />
+    <Route exact path="/a/profile" component={Profile} />
+    <Route exact path="/a/profile/edit" component={EditProfile} />
     <Route exact path="/new_article" component={ArticlePage} />
     <Route path="/a/view_article/:slug" component={ReadArticle} />
     <Route path="/a/edit_article/:slug" component={EditArticle} />
@@ -32,6 +37,7 @@ const Main = () => (
     <Route exact path="/a/home" component={Dashboard} />
     <Route exact path="/a/notifications" component={NotificationHistory} />
     <Route exact path="/a/articles/:article_slug/comments" component={CommentContainer} />
+    <Route exact path="/follow" component={FollowButton} />
   </Switch>
 );
 

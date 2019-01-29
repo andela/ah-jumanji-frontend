@@ -2,6 +2,7 @@ import React,{ Component } from 'react';
 import ArticleView from './_articleview';
 import Ratings from '../../../Rating/components/Rating';
 import CommentsContainer from '../../../Comments/Components/CommentsContainer';
+import LikeButton from "../../../Like/components/LikeButton";
 
 class ArticlePage extends Component{
     constructor(props){
@@ -20,7 +21,13 @@ class ArticlePage extends Component{
             <div className="row">
               <div className="col-md-12">
                 <ArticleView slug={this.getSlug()} />
-                <Ratings />
+                <div className="row article-bottom">
+                  <div className="col-md-12">
+                    <LikeButton />
+                    &nbsp;&nbsp;
+                    <Ratings />
+                  </div>
+                </div>
                 <CommentsContainer />
               </div>
             </div>
