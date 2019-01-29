@@ -13,17 +13,7 @@ exports[`ViewPage article page should render correctly in "debug" mode 1`] = `
       <Connect(EditorView)
         slug="Yes-is-me"
       />
-      <div
-        className="row article-bottom"
-      >
-        <div
-          className="col-md-12"
-        >
-          <Connect(LikeButton) />
-            
-          <Connect(Rating) />
-        </div>
-      </div>
+      <Connect(Rating) />
       <Connect(CommentsContainer) />
     </div>
   </div>
