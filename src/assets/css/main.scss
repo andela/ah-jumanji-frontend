@@ -402,6 +402,13 @@ ul#comments-list {
   margin-bottom: 15%;
 }
 
+ul#likes-list {
+  width: 50%;
+  margin-left: 10%;
+  margin-right: auto;
+  margin-bottom: 15%;
+}
+
 .text-info-custom {
   padding: 0.1em 0.6em;
   font-size: 11px;
@@ -427,6 +434,66 @@ ul#comments-list {
 }
 .unread{
   background-color:orange;
+}
+
+.reaction {
+  color: grey !important;
+
+  &.active {
+    color: orange !important;
+  }
+}
+#overlay {
+    position: fixed;
+    overflow: auto;
+    overflow-x: auto;
+    overflow-y: auto;
+    //text-align: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 900;
+    background-color: rgba(255,255,255,.97);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+#overlay-text {
+  //position: fixed;
+  width: 300px;
+  height: 40px;
+  margin: 100px auto;
+  font-size: 12px;
+  //transform: translate(400%,20%);
+  //-ms-transform: translate(100%,100%);
+  //background-color: rgb(189, 194, 203);
+}
+
+#load-more {
+  color: #0074D9;
+  text-align: center;
+}
+
+#follow-btn {
+    display: inline-block;
+    position: relative;
+    color: rgba(0,0,0,.54);
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    vertical-align: bottom;
+    box-sizing: border-box;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-style: normal;
 }
 
 @import 'mediaqueries';

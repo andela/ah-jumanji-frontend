@@ -10,6 +10,7 @@ import { profileReducer } from './UserProfile/reducers/profileReducer';
 import ratingReducer from "./Rating/reducers/ratingReducer";
 import Dashboard from "./Dashboard/reducers/dashboardReducer";
 import Notifications from "./Notifiications/reducers/noticationsReducers";
+import LikeReducer from "./Like/reducers/likeReducer";
 import commentListReducer from './Comments/Reducers/CommentListReducer';
 
 const rootReducer = combineReducers({
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
   Dashboard,
   Notifications,
   commentListReducer,
+  LikeReducer
   //Add your reducers here
 });
 

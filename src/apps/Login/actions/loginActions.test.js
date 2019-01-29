@@ -11,7 +11,7 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 describe('actions', () => {
-    it('should create an action LoginSucess', () => {
+    it('should create an actions LoginSucess', () => {
         const user = {"user": {"email": "test@gmail.com", "password": "testpass"}};
         const expectedAction = {
           type: types.LOGIN_SUCCESS,
@@ -20,7 +20,7 @@ describe('actions', () => {
         expect(actions.LoginSucess(user)).toEqual(expectedAction);
     });
 
-    it ('should create an action LoginFailed', () => {
+    it ('should create an actions LoginFailed', () => {
         const error_message = "A user with this email and password was not found";
         const expectedAction = {
         type: types.LOGIN_FAILED,
