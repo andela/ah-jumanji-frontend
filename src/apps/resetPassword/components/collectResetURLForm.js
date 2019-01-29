@@ -6,6 +6,7 @@ import {withRouter} from "react-router-dom";
 import RequiredInput from "../../common/components/textInput";
 import Header from "../../common/components/HeaderComponent";
 import {comparePasswords, formSubmit, RequestResetPassword} from "../actions/passwordResetActions";
+import ValidationSubscript from "../../common/components/validationSubscript";
 
 class CodeCollectionForm extends Component {
   constructor(props) {
@@ -16,7 +17,9 @@ class CodeCollectionForm extends Component {
         recovery_password: "",
         repeat_password: "",
         matching_passwords: ""
-      }
+      },
+      error_message: "",
+      error_message_classname: "subscript subscript-error hidden"
     };
     this.onPasswordChange = this.onPasswordChange.bind(this);
     this.onRepeatPasswordChange = this.onRepeatPasswordChange.bind(this);
@@ -34,14 +37,16 @@ class CodeCollectionForm extends Component {
     if (recovery.isFetching === false && prevProps.recovery.isFetching === true) {
       switch (recovery.last_call) {
         case "failed":
-          recovery.error_message.forEach((error) => {
-            toast.error(
-              error,
-              {autoClose: 5000}
-            );
+          this.setState({
+            "error_message": recovery.error_message[0],
+            "error_message_classname": "subscript subscript-error highlight-error-input"
           });
           break;
         case "passed":
+          this.setState({
+            "error_message": recovery.success_message,
+            "error_message_classname": "subscript subscript-warning highlight-error-input"
+          });
           toast.success(
             recovery.success_message,
             {autoClose: 5000}
@@ -99,25 +104,25 @@ class CodeCollectionForm extends Component {
       this.onPasswordComparison(false);
       props.comparePassword(recovery.matching_passwords);
 
-      toast.warn(
-        'The passwords entered do not match!',
-        {autoClose: 2000}
-      );
+      this.setState({
+        "error_message": 'The passwords entered do not match!',
+        "error_message_classname": "subscript subscript-error highlight-error-input"
+      });
     } else {
       this.onPasswordComparison(true);
       props.comparePassword(recovery.matching_passwords);
-
     }
   }
 
   render() {
-    const {recovery} = this.state;
+    const {recovery, error_message, error_message_classname} = this.state;
     return (
       <div className="panel panel-default" id="login-form">
         <ToastContainer />
         <Header label="Enter the new password" />
         <div className="panel-body">
           <form>
+            <ValidationSubscript message={error_message} classname={error_message_classname} />
             <RequiredInput
               type="password" name="password1" label="Password" onChange={this.onPasswordChange}
               value={recovery.recovery_password} placeholder="password" />

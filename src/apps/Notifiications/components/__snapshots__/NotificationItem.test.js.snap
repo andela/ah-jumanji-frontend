@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Collect password updates should render  1`] = `
+<div
+  className="row login-container"
+>
+  <div
+    className="col-md-6 offset-md-3"
+  >
+    <div
+      className="bg-circle-1 bg-circle"
+    />
+    <div
+      className="bg-circle-2 bg-circle"
+    />
+    <div
+      className="bg-circle-3 bg-circle"
+    />
+    <Connect(withRouter(CodeCollectionForm))
+      reset_code=""
+    />
+  </div>
+</div>
+`;
+
+exports[`ForgotPasswordComponent should render   1`] = `
+<div
+  className="row login-container"
+>
+  <div
+    className="col-md-6 offset-md-3"
+  >
+    <div
+      className="bg-circle-1 bg-circle"
+    />
+    <div
+      className="bg-circle-2 bg-circle"
+    />
+    <div
+      className="bg-circle-3 bg-circle"
+    />
+    <Connect(withRouter(EmailReset)) />
+  </div>
+</div>
+`;
+
+exports[`Render code collection form  should render the form 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`Render reset email component should render the form 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;

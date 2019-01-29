@@ -3,12 +3,10 @@ import TerserPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import Dotenv from 'dotenv-webpack';
-import webpack from "webpack";
 
 
 export default {
   mode: 'production',
-  devtool: 'source-map',
   entry: [
     'babel-polyfill',
     './src/index.js'
@@ -19,13 +17,8 @@ export default {
       filename: "style.css",
       chunkFilename: "chunk.css"
     }),
-    new webpack.DefinePlugin({
-      'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
-      'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
-      'process.env.SOCIAL_AUTH_API_URL': JSON.stringify(process.env.SOCIAL_AUTH_API_URL)
-    }),
     //for .env variables
-    new Dotenv(),
+    new Dotenv()
   ],
   output: {
     filename: 'bundle.js',
