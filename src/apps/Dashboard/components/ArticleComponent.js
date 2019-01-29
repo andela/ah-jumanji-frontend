@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StarRatings from 'react-star-ratings';
+import SocialIcons from '../../SocialShare/components/SocialShareIcons';
 
 
 const ArticleComponent = (props) => {
@@ -49,6 +50,7 @@ const ArticleComponent = (props) => {
                 <i className="far fa-bookmark"  />
                 &nbsp;Bookmark
               </button>
+              <SocialIcons />
               <hr />
               <button className="dropdown-item more btn-link" type="button" data-toggle="modal" data-target="#report">
                 <i className="fas fa-exclamation-circle"  />

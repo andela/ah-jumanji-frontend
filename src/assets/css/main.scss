@@ -496,4 +496,26 @@ ul#likes-list {
     font-style: normal;
 }
 
+#share-text {
+  margin-left: 15px;
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+.facebook-icon {
+  color: #3b5999;
+}
+
+.twitter-icon {
+  color: #55acee;
+}
+
+.email-icon {
+  color: #CD5C5C; 
+}
+
+.share-icons {
+  cursor: pointer;
+}
+
 @import 'mediaqueries';

@@ -72,7 +72,7 @@ describe('components', () => {
           </MemoryRouter>
         </Provider>,);
       expect(enzymeWrapper.find('ArticleComponent')).toBeDefined();
-      expect(enzymeWrapper.find('div')).toHaveLength(13);
+      expect(enzymeWrapper.find('div')).toHaveLength(15);
     });
 });
 });
