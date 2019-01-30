@@ -2,7 +2,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { read_cookie } from 'sfcookies';
 import {UPDATING_ARTICLE, UPDATED_ARTICLE, UPDATED_ERROR,UPDATING_CURRENT} from '../actionTypes';
-import {articleCreator} from '../post/_post_actions';
+import {articleCreator, redirectUrl} from '../post/_post_actions';
 
 export const updateArticle = (body,slug) =>dispatch=> {
     const token = read_cookie("token");
@@ -22,7 +22,8 @@ export const updateArticle = (body,slug) =>dispatch=> {
           }).then((response) => {
             //Update successfull
             dispatch(updatedArticle(response.data));
-            toast.success(`🦄 ${response.data.article.slug} has been updated`, { position: toast.POSITION.TOP_RIGHT, autoClose: 3500 });
+            toast.success(`🦄 Updated`, { position: toast.POSITION.TOP_RIGHT, autoClose: 800 });
+            redirectUrl(`/a/view_article/${slug}`);
           }).catch((err) => {
               dispatch(updateError(err));
               toast.error('🦄 Could not update that article!',{ position: toast.POSITION.TOP_RIGHT });

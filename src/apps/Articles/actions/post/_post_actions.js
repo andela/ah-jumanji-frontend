@@ -10,7 +10,7 @@ export const postArticle = (body) =>dispatch=> {
         "body": body,"tagList": "[default]"};
 
       if(article_data.title === ""){
-        toast.warn('🦄 You need a title',{ position: toast.POSITION.TOP_RIGHT, autoClose: 3500 });
+        toastNotification("warn", "you need a title");
       }else{
         //dispatch(postingArticle(article_data));
         let url = "https://ah-jumanji-staging.herokuapp.com/api/articles/";
@@ -22,7 +22,8 @@ export const postArticle = (body) =>dispatch=> {
             }).then((response) => {
             //Posting success
             dispatch(postedArticle(response.data));
-            toast.success(`🦄 ${response.data.article.slug} has been posted`, { position: toast.POSITION.TOP_RIGHT, autoClose: 3500 });
+            toast.success(`🦄 Posted`, { position: toast.POSITION.TOP_RIGHT, autoClose: 800 });
+            redirectUrl(`/a/view_article/${response.data.article.slug}`);
           }).catch((err) => {
               dispatch(postingError(err));
               toast.error('🦄 Could not post that article!',{ position: toast.POSITION.TOP_RIGHT });
@@ -70,4 +71,28 @@ export function postingError(err){
         type: ERROR_POSTING_ARTICLE,
         payload:err
     };
+}
+
+export function redirectUrl(url){
+    setTimeout(function(){ openWindow(url); }, 1200);
+}
+
+export function openWindow(url){
+    window.location.replace(url);
+}
+
+export function toastNotification(type, message){
+    switch (type) {
+        case "success":
+        return toast.success(`🦄 ${message}`, { position: toast.POSITION.TOP_RIGHT, autoClose: 800 });
+
+        case "warn":
+        return toast.warn(`🦄 ${message}`, { position: toast.POSITION.TOP_RIGHT, autoClose: 800 });
+
+        case "error":
+        return toast.error(`🦄 ${message}`, { position: toast.POSITION.TOP_RIGHT, autoClose: 800 });
+
+        default:
+        return toast("hello");
+    }
 }

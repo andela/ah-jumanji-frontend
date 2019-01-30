@@ -76,7 +76,7 @@ export const HomeLinks = () => {
           <DropDownItem classnameOuter="dropdown-item" classname="fas fa-sign-out-alt" link="/" label="Logout" />
         </ul>
       </li>
-      <NavButton classnameOuter="nav-link" classname="btn btn-success btn-sm fas fa-plus-square" link="/a/new_article" label="&nbsp;Add Post" />
+      <NavButton classnameOuter="nav-link" classname="btn btn-success btn-sm fas fa-plus-square" link="/a/createarticle" label="&nbsp;Add Post" />
     </React.Fragment>
   );
 };

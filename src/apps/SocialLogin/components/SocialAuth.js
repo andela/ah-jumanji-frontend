@@ -22,6 +22,7 @@ import {
   GOOGLE,
   TWITTER
 } from '../actions/actionTypes';
+import {redirectUrl} from '../../Articles/actions/post/_post_actions';
 
 class SocialAuthActions extends Component {
   constructor(props) {
@@ -93,13 +94,10 @@ class SocialAuthActions extends Component {
       })
       .then((response) => {
         passedData.receivedUsers(response.data);
-        let userData = passedData.socialAuth.userDetails;
         let token = response.data.social_token;
-        let message = `Thank you ${userData.name} for registering with us`;
-        toast.success(`🦄 ${message}`, { position: toast.POSITION.TOP_RIGHT, autoClose: 2000 });
         token = token.replace("Token","").trim();
         bake_cookie("token", token);// Set cookie
-        setTimeout(function(){window.location.replace('/home');}, 2500);
+        redirectUrl('/a/home');
       })
       .catch((err) => {
         passedData.failedCall(err);

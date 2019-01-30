@@ -15,8 +15,7 @@ export const getArticles = (slug) =>dispatch=> {
             crossDomain: true
         })
         .then((response) => {
-          dispatch(gotArticle(response.data.articles));
-          toast.success(`🦄 ${response.data.articles.slug} has been fetched`, { position: toast.POSITION.TOP_RIGHT, autoClose: 3500 });
+            dispatch(gotArticle(response.data.articles));
         })
         .catch((err) => {
             dispatch(getError(err));

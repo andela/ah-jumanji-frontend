@@ -2,6 +2,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { read_cookie } from 'sfcookies';
 import {DELETING_ARTICLE, ERROR_DELETING_ARTICLE, DELETED_ARTICLE} from '../actionTypes';
+import {redirectUrl} from '../post/_post_actions';
 
 export const deleteArticle = (slug) =>dispatch=> {
 
@@ -17,7 +18,8 @@ export const deleteArticle = (slug) =>dispatch=> {
         })
         .then((response) => {
             dispatch(deletedArticle(response.data));
-            toast.success(`🦄 ${slug} has been deleted`, { position: toast.POSITION.TOP_RIGHT, autoClose: 3500 });
+            toast.success(`🦄 Article deleted`, { position: toast.POSITION.TOP_RIGHT, autoClose: 800 });
+            redirectUrl(`/a/home`);
         })
         .catch((err) => {
             dispatch(deleteError(err));
