@@ -12,8 +12,7 @@
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "build": "babel-node tools/build.js",
-    "postinstall": "babel-node tools/build.js"
+    "build": "babel-node tools/build.js"
   },
   "repository": {
     "type": "git",
@@ -69,8 +68,8 @@
     "sass-loader": "^7.1.0",
     "sinon": "^7.2.3",
     "style-loader": "^0.23.1",
-    "webpack": "^4.28.3",
     "terser-webpack-plugin": "^1.2.1",
+    "webpack": "^4.28.3",
     "webpack-cli": "^3.2.1",
     "webpack-dev-middleware": "^3.5.1",
     "webpack-hot-middleware": "^2.24.3",

@@ -43,7 +43,7 @@ export function fetchArticle() {
             for (const i in r) {
               let slug = r[i].slug;
               // add likes, comments and rating of each article in the payload
-              axios.all([fetchArticleLikes(slug), fetchArticleComments(slug), fetchArticleRating(slug)]).then(
+              axios.all([fetchArticleLikes(slug), fetchArticleComments(slug), fetchArticleRating(slug), fetchProfiles()]).then(
                 axios.spread(
                   (likes, comments, ratings) =>{
                   r[i]['likes'] = likes;
@@ -110,6 +110,23 @@ const fetchArticleRating = (slug) => {
       return(newResponse);
   })
   .catch(error => {
+    return(error);
+  });
+};
+
+const fetchProfiles = () => {
+  let endpoint = config.api.getProfileUrl;
+  return axios.get(endpoint, {
+    headers: {
+      Accept: 'application/json',
+      Authorization: 'Token '+token
+    }
+  })
+  .then(response => {
+    localStorage.setItem('profPic', response.data.profile.profile_photo);
+    return(response.data.profile);
+  })
+  .catch( error => {
     return(error);
   });
 };
