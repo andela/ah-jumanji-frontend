@@ -15,7 +15,7 @@ import EditArticle from "../Articles/components/edit/EditArticle";
 import Rating from "../Rating/components/Rating";
 import Dashboard from "../Dashboard/components/DashboardContainer";
 import NotificationHistory from "../Notifiications/components/NotificationHistoryComponent";
-
+import Bookmarks from "../Bookmarks/components/Bookmarks";
 import CommentContainer from '../Comments/Components/CommentsContainer';
 
 const Main = () => (
@@ -36,6 +36,7 @@ const Main = () => (
     <Route exact path="/a/home" component={Dashboard} />
     <Route exact path="/a/notifications" component={NotificationHistory} />
     <Route exact path="/a/articles/:article_slug/comments" component={CommentContainer} />
+    <Route exact path="/a/bookmarks" component={Bookmarks} />
   </Switch>
 );
 
