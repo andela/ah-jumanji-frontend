@@ -22,6 +22,9 @@ exports[`ViewPage article page should render correctly in "debug" mode 1`] = `
           <Connect(LikeButton) />
             
           <Connect(Rating) />
+          <SocialIcons
+            title="Yes"
+          />
         </div>
       </div>
       <Connect(CommentsContainer) />

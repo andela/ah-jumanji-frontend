@@ -8,6 +8,11 @@ import config from '../../../config/config';
 export const viewProfile = () => async dispatch => {
   let endpoint = config.api.getProfileUrl;
   const token = read_cookie('token');
+  if(token == false) {
+    toast.dismiss();
+    toast.success('You are not logged in', { autoClose: 1000});
+    window.location.replace('/');
+  }
 
   try {
     await axios.get(
