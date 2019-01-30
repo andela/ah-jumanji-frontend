@@ -50,12 +50,11 @@ describe('components', () => {
       const enzymeWrapper = mount(
         <Provider store={store}>
           <MemoryRouter>
-            <DashboardContainer />
+            <DashboardContainer currentPage={1} />
           </MemoryRouter>
         </Provider>,);
       expect(enzymeWrapper.find('DashboardContainer')).toBeDefined();
       expect(enzymeWrapper.find('div')).toHaveLength(332);
-      expect(enzymeWrapper.contains(<Articles />)).toBe(true);
     });
 });
 });
