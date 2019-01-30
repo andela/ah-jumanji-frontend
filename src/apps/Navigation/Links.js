@@ -71,11 +71,12 @@ export const HomeLinks = () => {
         <ProfPic />
         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
           <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
+          <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />
           <div className="dropdown-divider" />
           <DropDownItem classnameOuter="dropdown-item" classname="fas fa-sign-out-alt" link="/" label="Logout" />
         </ul>
       </li>
-      <NavButton classnameOuter="nav-link" classname="btn btn-success btn-sm fas fa-plus-square" link="/a/createarticle" label="&nbsp;Add Post" />
+      <NavButton classnameOuter="nav-link" classname="btn btn-success btn-sm fas fa-plus-square" link="/a/new_article" label="&nbsp;Add Post" />
     </React.Fragment>
   );
 };
@@ -87,7 +88,7 @@ export const HomeLinksSm = () => (
         <i className="fas fa-align-right" />
       </button>
       <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-        <DropDownItem classnameOuter="dropdown-item" classname="fas fa-plus-square" link="/a/createarticle" label="Add Post" />
+        <DropDownItem classnameOuter="dropdown-item" classname="fas fa-plus-square" link="/a/new_article" label="Add Post" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-plus-square" link="javascript:;" data-toggle="modal" data-target="#search" label="Search" />
         <li>
           <a href="/a/notifications" className="dropdown-item">
@@ -99,6 +100,7 @@ export const HomeLinksSm = () => (
           </a>
         </li>
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
+        <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />
         <div className="dropdown-divider" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-sign-out-alt" link="/" label="Logout" />
       </ul>
@@ -143,6 +145,7 @@ export const AuthenticatedLinks = () => (
       </button>
       <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
+        <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />
         <div className="dropdown-divider" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-sign-out-alt" link="/" label="Logout" />
       </ul>
@@ -159,6 +162,7 @@ export const AuthenticatedLinksSm = () => (
       <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
         <NotificationLink />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
+        <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />
         <div className="dropdown-divider" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-sign-out-alt" link="/" label="Logout" />
       </ul>
