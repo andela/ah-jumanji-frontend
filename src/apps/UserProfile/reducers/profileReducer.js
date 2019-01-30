@@ -2,10 +2,11 @@ import * as types from '../actions/types';
 
 export const initialState = {
   profile: {},
-  profileImage: {}
+  profileImage: {},
+  authorProfile: {}
 };
 
-export function profileReducer(state = initialState, action) {
+function profileReducer(state = initialState, action) {
   switch (action.type) {
     case types.VIEW_PROFILE_SUCCESS:
       return {
@@ -33,6 +34,11 @@ export function profileReducer(state = initialState, action) {
     case types.IMAGE_UPLOAD_FAILED:
       return {
        error: action.payload
+      };
+    case types.VIEW_AUTHOR_PROFILE:
+      return {
+        ...state,
+        authorProfile: action.author_profile
       };
     default:
      return state;
