@@ -71,6 +71,7 @@ export const HomeLinks = () => {
         <ProfPic />
         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
           <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
+          <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />
           <div className="dropdown-divider" />
           <DropDownItem classnameOuter="dropdown-item" classname="fas fa-sign-out-alt" link="/" label="Logout" />
         </ul>
@@ -99,6 +100,7 @@ export const HomeLinksSm = () => (
           </a>
         </li>
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
+        <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />
         <div className="dropdown-divider" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-sign-out-alt" link="/" label="Logout" />
       </ul>
@@ -143,6 +145,7 @@ export const AuthenticatedLinks = () => (
       </button>
       <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
+        <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />
         <div className="dropdown-divider" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-sign-out-alt" link="/" label="Logout" />
       </ul>
@@ -159,6 +162,7 @@ export const AuthenticatedLinksSm = () => (
       <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
         <NotificationLink />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
+        <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />
         <div className="dropdown-divider" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-sign-out-alt" link="/" label="Logout" />
       </ul>
