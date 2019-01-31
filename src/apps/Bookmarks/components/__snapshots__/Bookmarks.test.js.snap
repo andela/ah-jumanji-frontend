@@ -44,7 +44,7 @@ exports[`<Bookmarks /> should match the snapshot 1`] = `
                   type="button"
                 >
                   <i
-                    className="far fa-trash"
+                    className="fas fa-trash-alt"
                   />
                    Remove
                 </button>
@@ -67,7 +67,7 @@ exports[`<Bookmarks /> should match the snapshot 1`] = `
                   type="button"
                 >
                   <i
-                    className="far fa-trash"
+                    className="fas fa-trash-alt"
                   />
                    Remove
                 </button>
