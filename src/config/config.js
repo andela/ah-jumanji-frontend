@@ -22,7 +22,9 @@ const config = {
     articlesEndpoint: baseUrl + '/api/articles',
     likeUrl: baseUrl + '/api/articles/reactions',
     getLikesUrl: baseUrl + '/api/articles/reactions/mr-ruby',
-    authorProfileUrl: baseUrl + '/api/profiles/'
+    authorProfileUrl: baseUrl + '/api/profiles/',
+    bookmarksUrl: baseUrl + '/api/articles/bookmarks/all/',
+    singleBookmarksUrl: baseUrl + '/api/articles/bookmarks/single/',
   },
   firebase: {
     apiKey: process.env.FIREBASE_API_KEY || 'random',

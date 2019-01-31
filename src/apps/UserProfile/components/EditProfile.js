@@ -146,10 +146,10 @@ class EditProfile extends Component {
                       </div>
                       <div className="col-md-6">
                         <div className="form-group">
-                          <label htmlFor="country">Country</label>
+                          <label htmlFor="countriesDropdown">Country</label>
                           <select name="country" className="form-control" onChange={this.onChange} id="countriesDropdown">
                             {Object.keys(countries).map((key) => {
-                              return <option value={key}>{countries[key]}</option>;
+                              return <option key={key} value={key}>{countries[key]}</option>;
                             })}
                           </select>
                         </div>
@@ -169,7 +169,7 @@ class EditProfile extends Component {
                     </div>
                     <div className="form-group">
                       <label htmlFor="bio">Bio</label>
-                      <textarea name="bio" rows="8" cols="80" className="form-control" value={bio} onChange={this.onChange} />
+                      <textarea name="bio" id="bio" rows="8" cols="80" className="form-control" value={bio} onChange={this.onChange} />
                     </div>
                     <Link to="/a/profile">
                       <button type="submit" className="btn btn-success" onClick={this.handleSubmit}>Submit</button>

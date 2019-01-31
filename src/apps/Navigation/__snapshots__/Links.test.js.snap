@@ -1,0 +1,322 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AuthenticatedLinks /> should match the snapshot 1`] = `
+<Fragment>
+  <NavItem
+    classname="fas fa-home"
+    classnameOuter="nav-link"
+    label="Home"
+    link="/a/home"
+  />
+  <li
+    className="nav-item dropdown"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="true"
+      className="nav-link dropdown-toggle btn-link"
+      data-toggle="dropdown"
+      id="navbarDropdown"
+      type="button"
+    >
+      <img
+        alt="follower avatar"
+        className="followers-avatar navbar-avatar rounded-circle"
+      />
+    </button>
+    <ul
+      aria-labelledby="navbarDropdown"
+      className="dropdown-menu"
+    >
+      <DropDownItem
+        classname="fas fa-user"
+        classnameOuter="dropdown-item"
+        label="Profile"
+        link="/a/profile"
+      />
+      <DropDownItem
+        classname="fas fa-bookmark"
+        classnameOuter="dropdown-item"
+        label="Bookmarks"
+        link="/a/bookmarks"
+      />
+      <div
+        className="dropdown-divider"
+      />
+      <DropDownItem
+        classname="fas fa-sign-out-alt"
+        classnameOuter="dropdown-item"
+        label="Logout"
+        link="/"
+      />
+    </ul>
+  </li>
+</Fragment>
+`;
+
+exports[`<AuthenticatedLinksSm /> should match the snapshot 1`] = `
+<Fragment>
+  <li
+    className="nav-item dropdown sm-dropdown"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="true"
+      className="nav-link dropdown-toggle"
+      data-toggle="dropdown"
+      id="navbarDropdown"
+      type="button"
+    >
+      <i
+        className="fas fa-align-right"
+      />
+    </button>
+    <ul
+      aria-labelledby="navbarDropdown"
+      className="dropdown-menu"
+    >
+      <NotificationLink />
+      <DropDownItem
+        classname="fas fa-user"
+        classnameOuter="dropdown-item"
+        label="Profile"
+        link="/a/profile"
+      />
+      <DropDownItem
+        classname="fas fa-bookmark"
+        classnameOuter="dropdown-item"
+        label="Bookmarks"
+        link="/a/bookmarks"
+      />
+      <div
+        className="dropdown-divider"
+      />
+      <DropDownItem
+        classname="fas fa-sign-out-alt"
+        classnameOuter="dropdown-item"
+        label="Logout"
+        link="/"
+      />
+    </ul>
+  </li>
+</Fragment>
+`;
+
+exports[`<HomeLinks /> should match the snapshot 1`] = `
+<Fragment>
+  <NavItem
+    classname="fas fa-home"
+    classnameOuter="nav-link active"
+    label="Home"
+    link="/a/home"
+  />
+  <NavItem
+    classname="fas fa-search"
+    classnameOuter="nav-link"
+    data-target="#search"
+    data-toggle="modal"
+    label="Search"
+    link="javascript:;"
+  />
+  <NotificationLink />
+  <li
+    className="nav-item dropdown"
+  >
+    <ProfPic />
+    <ul
+      aria-labelledby="navbarDropdown"
+      className="dropdown-menu"
+    >
+      <DropDownItem
+        classname="fas fa-user"
+        classnameOuter="dropdown-item"
+        label="Profile"
+        link="/a/profile"
+      />
+      <div
+        className="dropdown-divider"
+      />
+      <DropDownItem
+        classname="fas fa-sign-out-alt"
+        classnameOuter="dropdown-item"
+        label="Logout"
+        link="/"
+      />
+    </ul>
+  </li>
+  <NavButton
+    classname="btn btn-success btn-sm fas fa-plus-square"
+    classnameOuter="nav-link"
+    label=" Add Post"
+    link="/a/createarticle"
+  />
+</Fragment>
+`;
+
+exports[`<HomeLinksSm /> should match the snapshot 1`] = `
+<Fragment>
+  <li
+    className="nav-item dropdown sm-dropdown"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="true"
+      className="nav-link dropdown-toggle btn-link"
+      data-toggle="dropdown"
+      id="navbarDropdown"
+      type="button"
+    >
+      <i
+        className="fas fa-align-right"
+      />
+    </button>
+    <ul
+      aria-labelledby="navbarDropdown"
+      className="dropdown-menu"
+    >
+      <DropDownItem
+        classname="fas fa-plus-square"
+        classnameOuter="dropdown-item"
+        label="Add Post"
+        link="/a/createarticle"
+      />
+      <DropDownItem
+        classname="fas fa-plus-square"
+        classnameOuter="dropdown-item"
+        data-target="#search"
+        data-toggle="modal"
+        label="Search"
+        link="javascript:;"
+      />
+      <li>
+        <a
+          className="dropdown-item"
+          href="/a/notifications"
+        >
+          <span
+            className="badge badge-danger"
+          >
+            5
+          </span>
+          <i
+            className="fas fa-bell"
+          />
+          Notifications
+        </a>
+      </li>
+      <DropDownItem
+        classname="fas fa-user"
+        classnameOuter="dropdown-item"
+        label="Profile"
+        link="/a/profile"
+      />
+      <DropDownItem
+        classname="fas fa-bookmark"
+        classnameOuter="dropdown-item"
+        label="Bookmarks"
+        link="/a/bookmarks"
+      />
+      <div
+        className="dropdown-divider"
+      />
+      <DropDownItem
+        classname="fas fa-sign-out-alt"
+        classnameOuter="dropdown-item"
+        label="Logout"
+        link="/"
+      />
+    </ul>
+  </li>
+</Fragment>
+`;
+
+exports[`<NotAuthenticatedLinks /> should match the snapshot 1`] = `
+<Fragment>
+  <NavItem
+    classname="fas fa-info-circle"
+    classnameOuter="nav-link"
+    label="About Us"
+    link="/about"
+  />
+  <NavItem
+    classname="fas fa-comments"
+    classnameOuter="nav-link"
+    label="Contact Us"
+    link="/contact"
+  />
+  <NavButton
+    classname="btn btn-outline-warning btn-sm"
+    classnameOuter="nav-link"
+    label="Login"
+    link="/"
+  />
+  <NavButton
+    classname="btn btn-outline-success  btn-sm"
+    classnameOuter="nav-link"
+    label="Signup"
+    link="/register"
+  />
+</Fragment>
+`;
+
+exports[`<NotAuthenticatedLinksSm /> should match the snapshot 1`] = `
+<Fragment>
+  <li
+    className="nav-item dropdown sm-dropdown"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="true"
+      className="nav-link dropdown-toggle"
+      data-toggle="dropdown"
+      id="navbarDropdown"
+      type="button"
+    >
+      <i
+        className="fas fa-align-right"
+      />
+    </button>
+    <ul
+      aria-labelledby="navbarDropdown"
+      className="dropdown-menu"
+    >
+      <DropDownItem
+        classname="fas fa-info-circle"
+        classnameOuter="dropdown-item"
+        label="About Us"
+        link="/about"
+      />
+      <DropDownItem
+        classname="fas fa-comments"
+        classnameOuter="dropdown-item"
+        label="Contact Us"
+        link="/contact"
+      />
+      <div
+        className="dropdown-divider"
+      />
+      <DropDownItem
+        classname="fas fa-sign-in-alt"
+        classnameOuter="dropdown-item"
+        label="Login"
+        link="/"
+      />
+      <DropDownItem
+        classname="fas fa-sign-in-alt"
+        classnameOuter="dropdown-item"
+        label="Signup"
+        link="/register"
+      />
+    </ul>
+  </li>
+</Fragment>
+`;
+
+exports[`<NotificationLink /> should match the snapshot 1`] = `
+<Loader
+  color="#00BFFF"
+  height="80"
+  type="ThreeDots"
+  width="80"
+/>
+`;
