@@ -5,6 +5,7 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import Navigation from './Navbar';
+import ProfPic from './profPic';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -27,4 +28,14 @@ describe('Navigation', () => {
 
     expect(mountedEnzymeWrapper.find('nav').hasClass('navbar-expand-lg')).toBe(true);
   });
+});
+
+describe('ProfPic: ', () => {
+  let profPic;
+  beforeEach(() => {
+    profPic = shallow(<ProfPic />);
+  });
+
+  it('gets profile photo: ', () => expect(profPic.exists()).toEqual(true));
+
 });

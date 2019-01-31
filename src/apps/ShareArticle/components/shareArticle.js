@@ -6,6 +6,7 @@ class SocialIcons extends Component {
 
   render () {
     const { title } = this.props;
+    // change here later to heroku link
     const shareUrl = process.env.BASE_URL_FRONTEND + location.pathname;
     return (
       <Icons shareUrl={shareUrl} title={title} />

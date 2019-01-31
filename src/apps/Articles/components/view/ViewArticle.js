@@ -1,6 +1,4 @@
 import React,{ Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import ArticleView from './_articleview';
 import Ratings from '../../../Rating/components/Rating';
 import CommentsContainer from '../../../Comments/Components/CommentsContainer';
@@ -18,13 +16,18 @@ class ArticlePage extends Component{
         const myProps = this.props;
         return myProps.match.params.slug;
     }
+
+    articleTitle () {
+      let title = this.getSlug();
+      let arr = title.split('-');
+      let arr2 = arr.slice(0, arr.length - 2);
+      let fisrtChar = arr[0].charAt(0).toUpperCase() + arr[0].slice(1);
+      arr2[0] = fisrtChar;
+      let passTitle = arr2.join(' ');
+      return passTitle;
+    }
     render(){
-        let title = this.getSlug();
-        let arr = title.split('-');
-        let arr2 = arr.slice(0, arr.length - 2);
-        let fisrtChar = arr[0].charAt(0).toUpperCase() + arr[0].slice(1);
-        arr2[0] = fisrtChar;
-        let passTitle = arr2.join(' ');
+        let title = this.articleTitle();
         return(
           <div className="container auth-container">
             <div className="row">
@@ -35,7 +38,7 @@ class ArticlePage extends Component{
                     <LikeButton />
                     &nbsp;&nbsp;
                     <Ratings />
-                    <SocialIcons title={passTitle} />
+                    <SocialIcons title={title} />
                   </div>
                 </div>
                 <CommentsContainer />
@@ -46,10 +49,4 @@ class ArticlePage extends Component{
     }
 }
 
-ArticlePage.propTypes = {
-  read_article: PropTypes.object.isRequired
-};
-
-const mapStateToProps = ({ Articles }) => Articles;
-
-export default connect(mapStateToProps, null)(ArticlePage);
+export default ArticlePage;

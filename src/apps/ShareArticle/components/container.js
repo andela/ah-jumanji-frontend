@@ -11,6 +11,8 @@ import {
   LinkedinIcon
 } from 'react-share';
 
+const template = 'Article from Authors Haven';
+
 const Icons = (props) => {
   const { shareUrl, title } = props;
   return (
@@ -32,8 +34,8 @@ const Icons = (props) => {
       &nbsp;
       &nbsp;
       <EmailShareButton
-        url={shareUrl}
-        title={title}
+        subject={template}
+        body={title + ' ' + shareUrl}
         className="share-icon">
         <EmailIcon size={40} round />
       </EmailShareButton>

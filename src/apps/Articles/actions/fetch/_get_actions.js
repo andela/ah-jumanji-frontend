@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { read_cookie } from 'sfcookies';
 import {toastNotification } from '../common/common';
 import { GOT_ARTICLE, ERROR_GETTING_ARTICLE} from '../actionTypes';
+import getUserCookie from '../../../common/utils/readTokens';
 
 export const getArticles = (slug) =>dispatch=> {
 
-    const token = read_cookie("token");
+      const token = getUserCookie();
       let url = `https://ah-jumanji-staging.herokuapp.com/api/articles/${slug}/`;
       let fetch = axios.get(url, {
           headers: {

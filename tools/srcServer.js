@@ -1,16 +1,13 @@
 import express from 'express';
 import webpack from 'webpack';
 import path from 'path';
-import open from 'open';
-import log from 'webpack-log';
 import cors from 'cors';
 import configuration from '../webpack.config.dev';
+import listenServer from "./utils";
 
 
-// set up a logger that does not violate es-linting rules
-const Logger = log({name: 'AuthorsHaven'});
 // define the default port for the application to run
-const port = 3000;
+const port = process.env.PORT || 3000;
 // create an express server instance
 const Application = express();
 // load the webpack configuration as defined in the root directory
@@ -36,11 +33,4 @@ Application.get('*', function (req, res) {
 });
 
 
-// now express server listens to the port defined logging any error on the console
-Application.listen(port, function (error) {
-  if (error) {
-    Logger.error(error);
-  } else {
-    open(`http://localhost:${port}`);
-  }
-});
+listenServer(Application, port);
