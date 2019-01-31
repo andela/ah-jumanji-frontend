@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { toast } from 'react-toastify';
 import { read_cookie } from 'sfcookies';
+import {redirectUrl, toastNotification } from '../common/common';
 import {POSTING_ARTICLE, POSTED_ARTICLE, ERROR_POSTING_ARTICLE} from '../actionTypes';
 
 export const postArticle = (body) =>dispatch=> {
@@ -10,7 +10,7 @@ export const postArticle = (body) =>dispatch=> {
         "body": body,"tagList": "[default]"};
 
       if(article_data.title === ""){
-        toast.warn('🦄 You need a title',{ position: toast.POSITION.TOP_RIGHT, autoClose: 3500 });
+        toastNotification("warn", "You need a title");
       }else{
         //dispatch(postingArticle(article_data));
         let url = "https://ah-jumanji-staging.herokuapp.com/api/articles/";
@@ -22,10 +22,11 @@ export const postArticle = (body) =>dispatch=> {
             }).then((response) => {
             //Posting success
             dispatch(postedArticle(response.data));
-            toast.success(`🦄 ${response.data.article.slug} has been posted`, { position: toast.POSITION.TOP_RIGHT, autoClose: 3500 });
+            toastNotification("success", "Article Posted");
+            redirectUrl(`/a/view_article/${response.data.article.slug}`);
           }).catch((err) => {
               dispatch(postingError(err));
-              toast.error('🦄 Could not post that article!',{ position: toast.POSITION.TOP_RIGHT });
+              toastNotification("success", "Could not post that article!");
           });
       }
 };
@@ -65,9 +66,9 @@ export function postedArticle(data){
     };
 }
 
-export function postingError(err){
+export function postingError(){
     return{
         type: ERROR_POSTING_ARTICLE,
-        payload:err
+        payload:"Could not post"
     };
 }

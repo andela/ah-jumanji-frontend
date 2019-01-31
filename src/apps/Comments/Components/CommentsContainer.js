@@ -38,7 +38,7 @@ class CommentsContainer extends Component {
                     <Comment
                       key={comm.id}
                       comment={comm}
-                      reactions={reactions.filter(rxn => rxn.comment === comm.id)}
+                      reactions={reactions.filter(rxn => rxn.comment === comm.id) || []}
                     />
                   )) : <InfoSubscript extraClasses="hidden" text="No comments on this one. Yet." />
                 }

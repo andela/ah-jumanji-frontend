@@ -47,6 +47,29 @@ exports[`<CommentComponent /> render all expected bits of a commnet 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="icons-row"
+    >
+      <Connect(ReactionIcons)
+        updateReactionType={[Function]}
+      />
+      <p />
+      <span />
+    </div>
+    <ReactorsContainer
+      reactionType="dislike"
+      reactions={
+        Array [
+          Object {
+            "comment": 9,
+            "reaction": 1,
+            "user": Object {
+              "username": "mithamo",
+            },
+          },
+        ]
+      }
+    />
   </li>
   <Connect(AddCommentComponent)
     actionToExecute="edit"

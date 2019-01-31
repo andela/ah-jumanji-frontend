@@ -1,3 +1,7 @@
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import moxios from 'moxios';
+
 import * as get_actions from './_get_actions';
 import {GOT_ARTICLE, ERROR_GETTING_ARTICLE} from '../actionTypes';
 
@@ -18,20 +22,47 @@ it('return state data when article is fetched', () => {
 
 
 it('return state data when article fetching is errored', () => {
-    const passed_payload = "Cannot fetch";
+    const passed_payload = "Could not get that article";
     const returnedData = {
-        "payload": "Cannot fetch",
+        "payload": "Could not get that article",
         "type": ERROR_GETTING_ARTICLE
     };
     expect(get_actions.getError(passed_payload)).toEqual(returnedData);
   });
 
-//Testing async tests
-describe("Test for the fetch async function", ()=>{
-    it("Should return a fetched success slug",() => {
-        let fetchData = get_actions.getArticles('this-is-string-963376');
-        fetchData().then(response => {
-            expect(response.data.articles.slug).toEqual("string-e678-963376");
-        });
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
+
+describe('getDelete actions', () => {
+
+  let  store = mockStore({});
+  beforeEach(function () {
+    moxios.install();
+  store = mockStore({ posts: {} });
+  });
+
+  afterEach(function () {
+    moxios.uninstall();
+  });
+
+  it('creates GET_POSTS_SUCCESS after successfuly fetching postse', () => {
+  let getPostsMock = {articles: "this is slug"};
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 200,
+        response: getPostsMock,
+      });
     });
+
+    const expectedActions = [
+        { type: GOT_ARTICLE, payload:{read_article: "this is slug", posting: false, fetching: false }},
+        ];
+
+
+    return store.dispatch(get_actions.getArticles("this is slug")).then(() => {
+      // return of async actions
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
 });

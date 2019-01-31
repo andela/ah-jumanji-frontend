@@ -11,6 +11,7 @@ import config from '../../../config/config';
 import ReactorsContainer from '../../UserReactions/Components/ReactorsContainerComponent';
 import ReactionIcons from '../../UserReactions/Components/ReactionIconsComponent';
 
+const { viewProfile } = config.api;
 class CommentComponent extends Component {
   constructor(props) {
     super(props);
@@ -73,7 +74,7 @@ class CommentComponent extends Component {
 
               {/* Commenter username */}
               <div className="message">
-                <Link to={`/ah-jumanji/profile/${username}`}>{username.charAt(0).toUpperCase() + username.substr(1)}</Link>
+                <a href={`${viewProfile}/${username}`}>{username.charAt(0).toUpperCase() + username.substr(1)}</a>
 
                 {/* Commented on */}
                 <span className="float-right text-muted">

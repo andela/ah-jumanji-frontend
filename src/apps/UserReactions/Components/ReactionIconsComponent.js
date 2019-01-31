@@ -32,7 +32,11 @@ import { postCommentReaction } from '../Actions/CommentRxnActions';
   //  Mouse Leave Handler
   onMouseLeave = (e) => {
     let reactionsCont = e.target.parentElement.parentElement.nextElementSibling;
-    reactionsCont.classList.add("hidden");
+
+    // If user moves mouse away from Container, container disapperas. Magic
+    reactionsCont.addEventListener("mouseleave", () => {
+      reactionsCont.classList.add("hidden");
+    });
   };
 
   render () {

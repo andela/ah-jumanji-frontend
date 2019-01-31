@@ -1,5 +1,6 @@
 const baseUrl = process.env.BASE_URL;
 
+
 const config = {
   api: {
     loginUrl: baseUrl + '/api/users/login',
@@ -22,6 +23,7 @@ const config = {
     likeUrl: baseUrl + '/api/articles/reactions',
     getLikesUrl: baseUrl + '/api/articles/reactions/mr-ruby',
     commentReactionsEndpoint: baseUrl + '/api/comments/reactions',
+    viewProfile: 'https://ah-jumanji-frontend.herokuapp.com/a/profile',
   },
   firebase: {
     apiKey: process.env.FIREBASE_API_KEY || 'random',
