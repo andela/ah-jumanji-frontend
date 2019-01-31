@@ -1,14 +1,14 @@
 import axios from 'axios';
-import { toast } from 'react-toastify';
 import { read_cookie } from 'sfcookies';
+import {redirectUrl,toastNotification } from '../common/common';
 import {DELETING_ARTICLE, ERROR_DELETING_ARTICLE, DELETED_ARTICLE} from '../actionTypes';
 
 export const deleteArticle = (slug) =>dispatch=> {
 
     const token = read_cookie("token");
-    //dispatch(deletingArticle());
+    dispatch(deletingArticle(slug));
     let url = `https://ah-jumanji-staging.herokuapp.com/api/articles/${slug}/`;
-    return axios.delete(url, {
+    let Call =  axios.delete(url, {
         headers: {
             Accept: "application/json", //transfer type
             Authorization: `Token ${token}`
@@ -17,13 +17,14 @@ export const deleteArticle = (slug) =>dispatch=> {
         })
         .then((response) => {
             dispatch(deletedArticle(response.data));
-            toast.success(`🦄 ${slug} has been deleted`, { position: toast.POSITION.TOP_RIGHT, autoClose: 3500 });
+            toastNotification("success","Article Deleted");
+            redirectUrl(`/a/home${response.data.article.slug}`);
         })
         .catch((err) => {
             dispatch(deleteError(err));
-            toast.error('🦄 Could not delete that article!',{ position: toast.POSITION.TOP_RIGHT });
+            toastNotification("error","Could not delete that article!");
         });
-
+        return Call;
 };
 
 export function deletingArticle(data){
@@ -47,9 +48,9 @@ export function deletedArticle(data){
     };
 }
 
-export function deleteError(err){
+export function deleteError(){
     return{
         type: ERROR_DELETING_ARTICLE,
-        payload:err
+        payload:"Cannot delete"
     };
 }

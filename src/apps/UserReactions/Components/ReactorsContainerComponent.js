@@ -15,8 +15,7 @@ class ReactorsContainer extends Component {
 
   render() {
     let { reactionType, reactions} = this.props;
-    let likers = [];
-    let dislikers = [];
+    let dislikers = [], likers = [];
     reactions.map(rxn => (rxn.reaction === 1 ? likers.push(rxn.user.username) : dislikers.push(rxn.user.username)));
 
     reactions = {
