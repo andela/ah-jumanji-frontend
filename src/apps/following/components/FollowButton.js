@@ -1,26 +1,29 @@
-/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {bindActionCreators} from 'redux';
+
+//Local imports
+import * as followActions from '../actions/followActions';
 
 
 class FollowButton extends Component {
 constructor(props){
     super(props);
-    this.state = {
-        following: false
-    };
     this.handleFollow = this.handleFollow.bind(this);
 }
 handleFollow(){
-    const { following } = this.state;
-    if (following == true) {
-        this.setState({
-            following: false
-        });
+    let following = false;
+    const { actions } = this.props;
+    const { username } = this.props;
+
+    if (following === true) {
+        actions.unfollowUser(username);
+        following;
     }
     else{
-        this.setState({
-            following: true
-        });
+        actions.followUser(username);
+        following = true;
     }
 }
 render() {
@@ -32,5 +35,15 @@ render() {
     );
 }
 }
-export default FollowButton;
+FollowButton.propTypes = {
+    actions: PropTypes.object.isRequired,
+    username: PropTypes.string.isRequired
+};
 
+function mapDispatchToProps(dispatch) {
+    return {
+      actions: bindActionCreators(followActions, dispatch)
+    };
+  }
+
+export default connect(null, mapDispatchToProps)(FollowButton);
