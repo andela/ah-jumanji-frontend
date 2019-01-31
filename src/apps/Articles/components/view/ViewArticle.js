@@ -1,6 +1,4 @@
 import React,{ Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import ArticleView from './_articleview';
 import Ratings from '../../../Rating/components/Rating';
 import CommentsContainer from '../../../Comments/Components/CommentsContainer';
@@ -46,10 +44,4 @@ class ArticlePage extends Component{
     }
 }
 
-ArticlePage.propTypes = {
-  read_article: PropTypes.object.isRequired
-};
-
-const mapStateToProps = ({ Articles }) => Articles;
-
-export default connect(mapStateToProps, null)(ArticlePage);
+export default ArticlePage;

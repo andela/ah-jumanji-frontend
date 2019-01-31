@@ -1,18 +1,13 @@
 import axios from 'axios';
-import { read_cookie } from 'sfcookies';
 import { toast } from 'react-toastify';
+import getUserCookie from '../../common/utils/readTokens';
 import * as types from './types';
 import config from '../../../config/config';
 
 
 export const viewProfile = () => async dispatch => {
   let endpoint = config.api.getProfileUrl;
-  const token = read_cookie('token');
-  if(token == false) {
-    toast.dismiss();
-    toast.success('You are not logged in', { autoClose: 1000});
-    window.location.replace('/');
-  }
+  const token = getUserCookie();
 
   try {
     await axios.get(
@@ -42,7 +37,7 @@ export const viewProfile = () => async dispatch => {
 
 export const editProfile = (profileData) => async dispatch => {
   let endpoint = config.api.editProfileUrl;
-  const token = read_cookie('token');
+  const token = getUserCookie();
   try {
       await axios.put(endpoint, profileData, { headers: { Authorization: `Token ${token}`} })
       .then(response => {

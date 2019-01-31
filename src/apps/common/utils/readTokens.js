@@ -5,7 +5,8 @@ export default function getUserCookie() {
   let token = read_cookie('token');
   if (token.length === 0) {
     toast(
-      "Welcome to our platform. Please login", {autoClose: 3000}
+      "Welcome to our platform. Please login", {autoClose: 3000},
+      window.location.replace('/')
     );
   }
   return token;

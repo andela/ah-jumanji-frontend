@@ -13,26 +13,9 @@ class EditProfile extends Component {
   constructor(props) {
     super(props);
     const { profile } = this.props;
-    const {
-      first_name,
-      last_name,
-      profile_photo,
-      website,
-      phone_number,
-      bio,
-      country,
-      twitter_handle } = profile;
+    const { first_name, last_name, profile_photo, website, phone_number, bio, country, twitter_handle } = profile;
 
-    this.state = {
-      firstName: first_name,
-      lastName: last_name,
-      profilePhoto: profile_photo,
-      website: website,
-      phoneNumber: phone_number,
-      bio: bio,
-      country: country,
-      twitterHandle: twitter_handle,
-      selectedFile: null
+    this.state = { firstName: first_name, lastName: last_name, profilePhoto: profile_photo, website: website, phoneNumber: phone_number, bio: bio, country: country, twitterHandle: twitter_handle, selectedFile: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,10 +27,7 @@ class EditProfile extends Component {
     dataValid = [];
     e.preventDefault();
     const { fileUploadHandler } = this.props;
-    const {
-      firstName,
-      lastName,
-      profilePhoto,
+    const { firstName, lastName, profilePhoto,
       website,
       phoneNumber,
       bio,
@@ -71,6 +51,8 @@ class EditProfile extends Component {
       let keyParams = key.split("_");
       keyParams.length > 1 ? key = keyParams[0] + keyParams[1].charAt(0).toUpperCase() + keyParams[1].substr(1) : keyParams;
       if(!["country", "profilePhoto", "website", "twitterHandle", "bio" ].includes(key)) {
+        console.log(key)
+        console.log(value)
         this.validateUserInput(key, value);
         // set up an event listener to highlight errors
         document.querySelector(`input[name=${key}]`).addEventListener('focus', (e) => {
@@ -79,7 +61,12 @@ class EditProfile extends Component {
           toast.dismiss();
         });
       }
+
+      if(["phoneNumber"].includes(key)) {
+        this.validatePhoneNumber(key, value);
+      }
     }
+
     dataValid.includes(false) ?  false : fileUploadHandler(selectedFile, profile);
   }
 
@@ -97,6 +84,21 @@ class EditProfile extends Component {
 
   }
 
+  validatePhoneNumber(inputName, inputValue) {
+    if(inputValue.length < 10) {
+      let warningSubscript = document.querySelector(
+        `input[name=${inputName}]`).parentElement.querySelector("p");
+
+      // Display an error beneath appropriate input
+      warningSubscript.classList.remove("hidden");
+      warningSubscript.innerHTML = "Input a standard phone number";
+      // Highlight input that has no data
+      document.querySelector(`input[name=${inputName}]`).classList.add('highlight-error-input');
+      dataValid.push(false);
+    }
+    dataValid.push(true);
+  }
+
   validateUserInput(inputName, inputValue) {
 
     if (!inputValue) {
@@ -111,8 +113,7 @@ class EditProfile extends Component {
 
       // Mark input as false/invalid
       dataValid.push(false);
-    }
-    else {
+    } else {
       dataValid.push(true);
     }
   }
@@ -124,6 +125,7 @@ class EditProfile extends Component {
       website,
       twitterHandle,
       phoneNumber,
+      country,
       bio
     } = this.state;
 
@@ -148,9 +150,9 @@ class EditProfile extends Component {
                         <div className="form-group">
                           <label htmlFor="country">Country</label>
                           <select name="country" className="form-control" onChange={this.onChange} id="countriesDropdown">
-                            {Object.keys(countries).map((key) => {
-                              return <option value={key}>{countries[key]}</option>;
-                            })}
+                            {Object.keys(countries).map((key) => (
+                              <option key={key} value={key} selected={key === country ? true : false}>{countries[key]}</option>
+                            ))}
                           </select>
                         </div>
                       </div>
