@@ -1,5 +1,11 @@
-/* eslint-disable react/no-unused-state */
+/* eslint-disable react/require-default-props */
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {bindActionCreators} from 'redux';
+
+//Local imports
+import * as followActions from '../actions/followActions';
 
 
 class FollowButton extends Component {
@@ -12,12 +18,17 @@ constructor(props){
 }
 handleFollow(){
     const { following } = this.state;
-    if (following == true) {
+    const { actions } = this.props;
+    const { username } = this.props;
+
+    if (following === true) {
+        actions.unfollowUser(username);
         this.setState({
             following: false
         });
     }
     else{
+        actions.followUser(username);
         this.setState({
             following: true
         });
@@ -32,5 +43,15 @@ render() {
     );
 }
 }
-export default FollowButton;
+FollowButton.propTypes = {
+    actions: PropTypes.object.isRequired,
+    username: PropTypes.string
+};
 
+function mapDispatchToProps(dispatch) {
+    return {
+      actions: bindActionCreators(followActions, dispatch)
+    };
+  }
+
+export default connect(null, mapDispatchToProps)(FollowButton);
