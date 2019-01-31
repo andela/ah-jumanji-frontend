@@ -33,7 +33,7 @@ exports[`Registration form should match the snapshoot 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "jya6bo",
+              "key": "vd0lup",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -47,7 +47,7 @@ exports[`Registration form should match the snapshoot 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "jya6bo",
+            "key": "vd0lup",
             "pathname": "/",
             "search": "",
             "state": undefined,

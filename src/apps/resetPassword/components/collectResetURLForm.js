@@ -30,6 +30,7 @@ class CodeCollectionForm extends Component {
 
 
   async componentDidUpdate(prevProps) {
+    /*eslint-disable  react/no-did-update-set-state*/
     const {recovery} = this.props;
     const {history} = this.props;
     const delay = ms => new Promise(res => setTimeout(res, ms));
@@ -162,6 +163,3 @@ function mapDispatchToProps(dispatch) {
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CodeCollectionForm));
 
-// 208
-// maurice
-// 8351

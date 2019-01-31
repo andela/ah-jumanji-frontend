@@ -49,7 +49,7 @@ class EditorView extends React.Component{
         return(
           <div>
             <br />
-            <FroalaEditorView
+            {/*<FroalaEditorView*/}
             model={myProps.Articles.body}
             />
           </div>

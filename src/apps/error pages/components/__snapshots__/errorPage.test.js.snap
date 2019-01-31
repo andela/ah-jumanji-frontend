@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Page test should match the snapshot 1`] = `
+<Fragment>
+  <PageBackground />
+  <div
+    className="container h-100 d-flex"
+  >
+    <div
+      className="jumbotron-fluid register-redirect-modal my-auto position-relative"
+    >
+      <em>
+        <h1>
+          404
+        </h1>
+      </em>
+      <strong>
+        <h5>
+          Looks Like the page you are looking for was not found
+        </h5>
+      </strong>
+      <withRouter(BackButton) />
+    </div>
+  </div>
+</Fragment>
+`;

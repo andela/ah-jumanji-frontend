@@ -4,7 +4,6 @@ import Loader from 'react-loader-spinner';
 import NavItem from "./NavItem";
 import NavButton from "./NavButton";
 import DropDownItem from './NavDropDown';
-import DropDownNotification from './NavDropDownNotification';
 import defaultUserIcon from '../../assets/img/default-avatar.jpg';
 import {getUnreadNotificationsCount, handleNullResponse} from "../Notifiications/actions/notificationActions";
 import NotificationsBadge from "../Notifiications/components/navBarNotificationsComponent";
@@ -22,7 +21,7 @@ class NotificationLink extends React.Component {
   }
 
   componentDidMount() {
-    let {_asyncRequest} = this;
+    let {_asyncRequest: _asyncRequest} = this;
     _asyncRequest = getUnreadNotificationsCount().then(value => {
       value = handleNullResponse(value);
       _asyncRequest = null;
@@ -58,15 +57,7 @@ export const HomeLinks = () => (
   <React.Fragment>
     <NavItem classnameOuter="nav-link active" classname="fas fa-home" link="/a/home" label="Home" />
     <NavItem classnameOuter="nav-link" classname="fas fa-search" data-toggle="modal" data-target="#search" link="javascript:;" label="Search" />
-    <li className="nav-item dropdown">
-      <NotificationLink />
-      <ul className="dropdown-menu" id="dropDownNotifications" aria-labelledby="navbarDropdown">
-        <DropDownNotification imgSrc={defaultUserIcon} userName="Edward Snowden" message="published an article" period="5 hrs" />
-        <div className="dropdown-divider" />
-        <DropDownNotification imgSrc={defaultUserIcon} userName="Edward Snowden" message="published an article" period="5 hrs" />
-        <div className="dropdown-divider" />
-      </ul>
-    </li>
+    <NotificationLink />
     <li className="nav-item dropdown">
       <button className="nav-link dropdown-toggle btn-link" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <img src={defaultUserIcon} alt="follower avatar" className="followers-avatar navbar-avatar rounded-circle" />

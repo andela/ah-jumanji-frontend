@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
+import ReactDOM from 'react-dom';
 import profileAvatar from '../../../assets/img/profile-avatar.png';
 import * as notificationActions from "../actions/notificationActions";
 
@@ -45,8 +46,11 @@ class NotificationItem extends React.Component {
         slug = slug.replace("/", "");
         return "/a/article/" + slug;
       case "object":
-        if (notification.action_object.hasOwnProperty("follower")) {
+        if (notification.hasOwnProperty('action_object') && notification.action_object.hasOwnProperty("follower")) {
           return '/a/followers';
+        } else {
+          // unmount the component if this object does not exist
+          ReactDOM.unmountComponentAtNode(this);
         }
     }
   }
@@ -89,7 +93,9 @@ class NotificationItem extends React.Component {
         {" ⟿ "}
         <a href={this.getActionObjectLink()}><i className="small">take me there</i></a>
         <span className="float-right">
-          <button type="button" data-toggle="tooltip" data-placement="top" title={this.switchCase(tooltips)} className={this.switchCase(btnClasses)} onClick={this.onClick}>
+          <button
+            type="button" data-toggle="tooltip" data-placement="top" title={this.switchCase(tooltips)}
+                  className={this.switchCase(btnClasses)} onClick={this.onClick}>
             <i className="fas fa-check-circle" />
             {notification.status}
           </button>

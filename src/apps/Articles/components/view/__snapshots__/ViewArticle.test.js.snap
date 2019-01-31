@@ -14,6 +14,7 @@ exports[`ViewPage article page should render correctly in "debug" mode 1`] = `
         slug="Yes-is-me"
       />
       <Connect(Rating) />
+      <Connect(CommentsContainer) />
     </div>
   </div>
 </div>
