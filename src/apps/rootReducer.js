@@ -6,7 +6,7 @@ import socialAuth from './SocialLogin/reducers/socialReducer';
 import Login from './Login/reducers/loginReducer';
 import resetAccountPassword from './resetPassword/reducers/resetPasswordReducer';
 import Register from "./Register/reducers/registerReducer";
-import { profileReducer } from './UserProfile/reducers/profileReducer';
+import profileReducer  from './UserProfile/reducers/profileReducer';
 import ratingReducer from "./Rating/reducers/ratingReducer";
 import Dashboard from "./Dashboard/reducers/dashboardReducer";
 import Notifications from "./Notifiications/reducers/noticationsReducers";
