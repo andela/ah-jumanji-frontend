@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import profileAvatar from '../../../assets/img/profile-avatar.png';
+import profileAvatar from '../../../assets/img/default-avatar.jpg';
 import * as notificationActions from "../actions/notificationActions";
 
 
@@ -45,7 +45,9 @@ class NotificationItem extends React.Component {
         slug = slug.replace("/", "");
         return "/a/article/" + slug;
       case "object":
-        if (notification.action_object.hasOwnProperty("follower")) {
+      if (notification.action_object == null){
+        return '/a/followers';
+      } else if (notification.action_object.hasOwnProperty("follower")) {
           return '/a/followers';
         }
     }

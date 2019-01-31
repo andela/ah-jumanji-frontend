@@ -1,3 +1,7 @@
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import moxios from 'moxios';
+
 import * as update_actions from './_update_actions';
 import {
   UPDATING_ARTICLE,
@@ -33,7 +37,7 @@ it('return state data when article is posted', () => {
     type: UPDATED_ARTICLE,
     payload: {
       data,
-      posting: false,
+      updating: false,
       fetching: false
     }
   };
@@ -43,9 +47,9 @@ it('return state data when article is posted', () => {
 
 
 it('return state data when article updating is errored', () => {
-  const passed_payload = "Cannot update";
+  const passed_payload = "Could not update";
   const returnedData = {
-    "payload": "Cannot update",
+    "payload": "Could not update",
     "type": UPDATED_ERROR
   };
   expect(update_actions.updateError(passed_payload)).toEqual(returnedData);
@@ -77,3 +81,44 @@ describe("Test for the updating async function", ()=>{
   });
 
 });
+
+
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
+
+describe('getDelete actions', () => {
+
+  let  store = mockStore({});
+  beforeEach(function () {
+    moxios.install();
+    store = mockStore({ posts: {} });
+  });
+
+  afterEach(function () {
+    moxios.uninstall();
+  });
+
+  it('creates GET_POSTS_SUCCESS after successfuly fetching postse', () => {
+  let getPostsMock = {articles: "this is article data"};
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 200,
+        response: getPostsMock,
+      });
+    });
+
+    const expectedActions = [
+        //{ type: UPDATING_ARTICLE, payload:{data: getPostsMock, updating:true, fetching: false }},
+        { type: UPDATED_ARTICLE, payload:{data: getPostsMock, updating:false, fetching: false }},
+        { type: UPDATED_ERROR, payload:"Could not update" },
+        ];
+
+
+    return store.dispatch(update_actions.updateArticle("<p>This is the body</p><p>I love body!</p>","this is slug")).then(() => {
+      // return of async actions
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+});
+

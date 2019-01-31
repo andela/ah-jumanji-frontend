@@ -7,7 +7,7 @@ import { bake_cookie } from 'sfcookies';
 import {
   connect
 } from 'react-redux';
-
+import {redirectUrl} from '../../Articles/actions/common/common';
 import * as SocialFunc from '../actions/SocialActions';
 
 import {
@@ -93,13 +93,10 @@ class SocialAuthActions extends Component {
       })
       .then((response) => {
         passedData.receivedUsers(response.data);
-        let userData = passedData.socialAuth.userDetails;
         let token = response.data.social_token;
-        let message = `Thank you ${userData.name} for registering with us`;
-        toast.success(`🦄 ${message}`, { position: toast.POSITION.TOP_RIGHT, autoClose: 2000 });
         token = token.replace("Token","").trim();
         bake_cookie("token", token);// Set cookie
-        setTimeout(function(){window.location.replace('/home');}, 2500);
+        redirectUrl('/a/home');
       })
       .catch((err) => {
         passedData.failedCall(err);

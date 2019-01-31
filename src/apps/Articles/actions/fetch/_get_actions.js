@@ -1,13 +1,13 @@
 import axios from 'axios';
-import { toast } from 'react-toastify';
 import { read_cookie } from 'sfcookies';
+import {toastNotification } from '../common/common';
 import { GOT_ARTICLE, ERROR_GETTING_ARTICLE} from '../actionTypes';
 
 export const getArticles = (slug) =>dispatch=> {
 
     const token = read_cookie("token");
       let url = `https://ah-jumanji-staging.herokuapp.com/api/articles/${slug}/`;
-      return axios.get(url, {
+      let fetch = axios.get(url, {
           headers: {
             Accept: "application/json",
             Authorization: `Token ${token}`
@@ -16,13 +16,12 @@ export const getArticles = (slug) =>dispatch=> {
         })
         .then((response) => {
           dispatch(gotArticle(response.data.articles));
-          toast.success(`🦄 ${response.data.articles.slug} has been fetched`, { position: toast.POSITION.TOP_RIGHT, autoClose: 3500 });
         })
         .catch((err) => {
             dispatch(getError(err));
-            toast.error('🦄 Could not get that article!',{ position: toast.POSITION.TOP_RIGHT });
+            toastNotification("error", "Could not get that article!");
         });
-
+    return fetch;
 };
 
 export function gotArticle(data){
@@ -36,9 +35,9 @@ export function gotArticle(data){
     };
 }
 
-export function getError(err){
+export function getError(){
     return{
         type: ERROR_GETTING_ARTICLE,
-        payload:err
+        payload: "Could not get that article"
     };
 }
