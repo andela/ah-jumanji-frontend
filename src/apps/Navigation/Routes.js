@@ -29,7 +29,7 @@ const Main = () => (
     <Route exact path="/reset_code/:reset_code" component={ResetCodePage} />
     <Route exact path="/a/profile" component={Profile} />
     <Route exact path="/a/profile/edit" component={EditProfile} />
-    <Route exact path="/a/new_article" component={ArticlePage} />
+    <Route exact path="/a/createarticle" component={ArticlePage} />
     <Route path="/a/view_article/:slug" component={ReadArticle} />
     <Route path="/a/edit_article/:slug" component={EditArticle} />
     <Route exact path="/a/rating" component={Rating} />
