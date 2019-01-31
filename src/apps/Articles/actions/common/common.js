@@ -1,4 +1,4 @@
-import { toast} from 'react-toastify';
+import {toast} from 'react-toastify';
 
 export function redirectUrl(url){
     setTimeout(function(){ openWindow(url); }, 1000);
@@ -22,4 +22,22 @@ export function toastNotification(type, message){
          default:
         return toast("hello");
     }
+}
+
+export function onButtonPressed(action, body, slug, le_props){
+    switch (action) {
+        case "update":
+            //update state
+            le_props.updateArticle(body, slug);
+            return "update";
+
+        case "delete":
+            //update state
+            le_props.deleteArticle(slug);
+            return "delete";
+
+        default:
+            return "nothing";
+    }
+
 }

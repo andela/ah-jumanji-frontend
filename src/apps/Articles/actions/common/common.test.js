@@ -1,7 +1,8 @@
 import React from 'react';
-import {mount} from 'enzyme';
+import {mount, shallow} from 'enzyme';
 import { toast, ToastContainer } from 'react-toastify';
 import * as commonActions from './common';
+import Edit from '../../components/edit/_articleedit';
 
 'use strict';
 
@@ -46,4 +47,29 @@ describe('Toast function tests', () => {
      expect(toast.isActive(er)).toBe(true);
      expect(toast.isActive(ot)).toBe(true);
    });
+});
+
+describe("pressed button", ()=>{
+
+  it("calls on other", ()=>{
+    expect(commonActions.onButtonPressed("else", "This is delete", "le slug")).toEqual("nothing");
+  });
+
+  const updated = (body, slug) => {
+     return "Body : " + body + " and slug " + slug;
+  };
+
+  const deleted = (body, slug) => {
+    return "Body : " + body + " and slug " + slug;
+  };
+
+  let props = {updateArticle: updated, deleteArticle: deleted};
+
+  it("calls on update", ()=>{
+    expect(commonActions.onButtonPressed("update", "This is update", "le slug", props)).toEqual("update");
+  });
+
+  it("calls on delete", ()=>{
+    expect(commonActions.onButtonPressed("delete", "This is delete", "le slug", props)).toEqual("delete");
+  });
 });
