@@ -1,24 +1,25 @@
 // Component to house each comment
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { read_cookie } from 'sfcookies';
 
 import EditDeleteBtnsComponent from './EditDeleteBtns';
 import AddCommentComponent from './AddComment';
 import config from '../../../config/config';
 
-// Bring in ReactionIcons
-import ReactionIcons from '../../UserReactions/Components/ReactionIconsComponent';
 import ReactorsContainer from '../../UserReactions/Components/ReactorsContainerComponent';
+import ReactionIcons from '../../UserReactions/Components/ReactionIconsComponent';
 
+const { viewProfile } = config.api;
 class CommentComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      comment: props.comment,
-      // reactionType: localStorage.reactionType,
+      reactionType: "dislike"
     };
+
+    this.updateReactionType = this.updateReactionType.bind(this);
+
   }
 
   formatTime = (time) => {
@@ -32,9 +33,22 @@ class CommentComponent extends Component {
     return shortForm;
   };
 
+  // Change state on mouse over ReactionIcons
+  updateReactionType (reactionType) {
+    this.setState({reactionType: reactionType});
+  }
+
   render() {
+    // Destructure props and state for necessary data
+    const { reactionType } = this.state;
+    const { comment, reactions } = this.props;
+
+    const reactionsCount = {
+      likers: reactions.filter(rxn => rxn.reaction === 1),
+      dislikers: reactions.filter(rxn => rxn.reaction === -1)
+    };
+
     // Extract data from comment object passed to this
-    const { comment } = this.state;
     // Extract comment params
     let { id, createdAt, body, author } = comment;
     // Structure the time
@@ -64,7 +78,7 @@ class CommentComponent extends Component {
 
               {/* Commenter username */}
               <div className="message">
-                <Link to={`/ah-jumanji/profile/${username}`}>{username.charAt(0).toUpperCase() + username.substr(1)}</Link>
+                <a href={`${viewProfile}/${username}`}>{username.charAt(0).toUpperCase() + username.substr(1)}</a>
 
                 {/* Commented on */}
                 <span className="float-right text-muted">
@@ -81,18 +95,14 @@ class CommentComponent extends Component {
             </div>
           </div>
           <div className="icons-row">
-            <ReactionIcons />
-            <span />
+            <ReactionIcons reactionsCount={{likeCount: reactionsCount.likers.map(liker => liker.user.username), dislikeCount: reactionsCount.dislikers.map(disliker => disliker.user.username)}} updateReactionType={this.updateReactionType} />
+            <p />
             {loggedInAs === username ?
               <EditDeleteBtnsComponent />
               : <span />
             }
           </div>
-          <div className="hidden">
-            {
-              <ReactorsContainer reactionType="like" />
-            }
-          </div>
+          <ReactorsContainer reactionType={reactionType} reactions={reactions} />
         </li>
         <AddCommentComponent actionToExecute="edit" specialClass="hidden" />
         <hr />
@@ -103,6 +113,7 @@ class CommentComponent extends Component {
 
 CommentComponent.propTypes = {
   comment: PropTypes.object.isRequired,
+  reactions: PropTypes.array.isRequired,
 };
 
 export default CommentComponent;

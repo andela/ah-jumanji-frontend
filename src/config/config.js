@@ -22,7 +22,8 @@ const config = {
     articlesEndpoint: baseUrl + '/api/articles',
     likeUrl: baseUrl + '/api/articles/reactions',
     getLikesUrl: baseUrl + '/api/articles/reactions/mr-ruby',
-    authorProfileUrl: baseUrl + '/api/profiles/'
+    commentReactionsEndpoint: baseUrl + '/api/comments/reactions',
+    viewProfile: 'https://ah-jumanji-frontend.herokuapp.com/a/profile'
   },
   firebase: {
     apiKey: process.env.FIREBASE_API_KEY || 'random',

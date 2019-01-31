@@ -24,12 +24,11 @@ exports[`<CommentComponent /> render all expected bits of a commnet 1`] = `
         <div
           className="message"
         >
-          <Link
-            replace={false}
-            to="/ah-jumanji/profile/dmithamo"
+          <a
+            href="https://ah-jumanji-frontend.herokuapp.com/a/profile/dmithamo"
           >
             Dmithamo
-          </Link>
+          </a>
           <span
             className="float-right text-muted"
           >
@@ -47,6 +46,37 @@ exports[`<CommentComponent /> render all expected bits of a commnet 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="icons-row"
+    >
+      <Connect(ReactionIcons)
+        reactionsCount={
+          Object {
+            "dislikeCount": Array [],
+            "likeCount": Array [
+              "mithamo",
+            ],
+          }
+        }
+        updateReactionType={[Function]}
+      />
+      <p />
+      <span />
+    </div>
+    <ReactorsContainer
+      reactionType="dislike"
+      reactions={
+        Array [
+          Object {
+            "comment": 9,
+            "reaction": 1,
+            "user": Object {
+              "username": "mithamo",
+            },
+          },
+        ]
+      }
+    />
   </li>
   <Connect(AddCommentComponent)
     actionToExecute="edit"

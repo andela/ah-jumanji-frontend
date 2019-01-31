@@ -390,7 +390,6 @@ img#success-icon {
 }
 
 .icons:hover {
-  font-size: 1.5em;
   color: black;
 }
 
@@ -407,6 +406,10 @@ ul#comments-list {
   margin-left: 10%;
   margin-right: auto;
   margin-bottom: 15%;
+}
+
+ul#comments-list>li {
+  position: relative;
 }
 
 ul#likes-list {
@@ -509,24 +512,32 @@ ul#likes-list {
   width: 70%;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   padding: 1%;
 }
 
 .reactor-info {
   width: 90%;
-  color: rgb(80, 80, 80);
   padding: .5%;
+  font-weight: bold;
   margin: 2% auto;
   text-transform: capitalize;
   cursor: pointer;
 }
 
 .reactions-container {
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.19);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.92);
+  transition: all 0.8s cubic-bezier(.25,.8,.25,1);
+  color: rgb(212, 212, 212);
+  background-color: rgb(0, 0, 0);
   padding: 1%;
   margin: 1%;
-  width: 50%;
+  width: 40%;
+  position: absolute;
+  top: 80%;
+  left: 5%;
+  z-index: 1000;
+  font-size: 0.8rem;
 }
 
 .reactors-names {
@@ -534,11 +545,49 @@ ul#likes-list {
   grid-template-columns: repeat(4, 1fr);
 }
 
+.reactors-names>a {
+  padding: 10px !important;
+  color: rgb(43, 255, 43) !important;
+  font-weight: bold !important;
+}
+
 .reactors-header {
-  color: rgb(80, 80, 80);
   border-bottom: 1px solid rgb(189, 189, 189);
   padding: 1%;
   width: 100%;
 }
+
+.icons-div {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.reaction-count {
+  position: absolute;
+  top: -10px;
+  left: -1px;
+  z-index: 300;
+  font-size: .7rem;
+  color: rgb(49, 49, 49);
+  font-weight: bolder;
+}
+
+.liked {
+  color: rgb(245, 165, 18) !important;
+  font-weight: bold;
+}
+
+
+.disliked {
+  color: rgb(255, 0, 0) !important;
+  font-weight: bold;
+}
+
+.unreacted {
+  color: rgb(192, 192, 192) !important;
+  font-weight: normal !important;
+}
+
 
 @import 'mediaqueries';

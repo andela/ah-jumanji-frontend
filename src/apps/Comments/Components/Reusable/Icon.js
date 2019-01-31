@@ -4,16 +4,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Icon = (props) => {
-  const { id, iconType, onClick, onMouseEnter, onMouseLeave } = props;
+  const { id, iconType, onClick, onMouseEnter, onMouseLeave, specialStyle } = props;
   return (
     <React.Fragment>
       <i
         id={id}
-        className={`${iconType} icons`}
+        className={`${iconType} icons ${specialStyle}`}
         onClick={onClick}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         onFocus={onMouseEnter}
+        specialStyle={specialStyle}
       />
     </React.Fragment>
   );
@@ -22,6 +23,7 @@ const Icon = (props) => {
 Icon.defaultProps = {
   onMouseEnter: null,
   onMouseLeave: null,
+  specialStyle: null,
 };
 
 Icon.propTypes = {
@@ -30,6 +32,7 @@ Icon.propTypes = {
   onClick: PropTypes.func.isRequired,
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func,
+  specialStyle: PropTypes.string,
 };
 
 export default Icon;
