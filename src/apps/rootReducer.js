@@ -15,6 +15,7 @@ import LikeReducer from "./Like/reducers/likeReducer";
 import commentListReducer from './Comments/Reducers/CommentListReducer';
 import followingReducer from './following/reducers/followingReducer';
 import Errors from "./error pages/reducers/errorMessageReducer";
+import Bookmarks from "./Bookmarks/reducers/bookmarksReducer";
 
 export default (history) => combineReducers({
   router: connectRouter(history),
@@ -31,7 +32,6 @@ export default (history) => combineReducers({
   LikeReducer,
   followingReducer,
   Errors,
+  Bookmarks,
   //Add your reducers here
 });
-
-

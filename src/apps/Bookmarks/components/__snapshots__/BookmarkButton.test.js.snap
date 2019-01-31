@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ViewPage article page should render correctly in "debug" mode 1`] = `
+exports[`<BookmarkButton /> should match the snapshot 1`] = `
 <ContextConsumer>
   <Component />
 </ContextConsumer>

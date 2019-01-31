@@ -1,0 +1,4 @@
+// Actions types
+
+export const BOOKMARK_SUCCESS="BOOKMARK_SUCCESS";
+export const BOOKMARK_FAILED="BOOKMARK_FAILED";

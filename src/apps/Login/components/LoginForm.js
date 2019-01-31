@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
-import {ToastContainer} from 'react-toastify';
 
 
 import SocialAuthButtons from '../../SocialLogin/components/SocialAuth';
@@ -43,7 +42,6 @@ class LoginForm extends Component {
   render() {
     return (
       <div className="col-md-6">
-        <ToastContainer />
         <div className="panel panel-default" id="login-form">
           <PanelHeading title="Login" />
           <div className="panel-body">

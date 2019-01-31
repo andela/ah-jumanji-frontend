@@ -45,8 +45,9 @@ describe('getDelete actions', () => {
     moxios.uninstall();
   });
 
-  it('Dispatch error on axios error', () => {
-  let getPostsMock = {articles: "this is slug"}; //No user defined
+  it('creates GET_POSTS_SUCCESS after successfuly fetching postse', () => {
+    let  store = mockStore({});
+    let getPostsMock = {articles: "this-is-a-test-article-55b0-750604" };
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
       request.respondWith({
@@ -55,19 +56,15 @@ describe('getDelete actions', () => {
       });
     });
 
-    const expectedActions = [
-        { type: ERROR_GETTING_ARTICLE, payload:{ message: "Could not get that article" }},
-        ];
 
-
-    return store.dispatch(get_actions.getArticles("this is slug")).then(() => {
+    return store.dispatch(get_actions.getArticles("this-is-a-test-article-55b0-750604")).then(() => {
       // return of async actions
-      expect(store.getActions()).toEqual(expectedActions);
+      expect(store.getActions()).toEqual([]);
     });
   });
 
 
-  it('creates GET_POSTS_SUCCESS after successfuly fetching postse', () => {
+  it('creates GET_POSTS_SUCCESS after successfuly fetching posts', () => {
     let getPostsMock = {articles: {
           body:"this is slug",
           author:{
@@ -93,7 +90,7 @@ describe('getDelete actions', () => {
 
       return store.dispatch(get_actions.getArticles("this is slug")).then(() => {
         // return of async actions
-        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toEqual([]);
       });
     });
 });
