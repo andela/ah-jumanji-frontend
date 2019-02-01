@@ -33,11 +33,19 @@ const fakeCommentThree = {
   "body": "One more story"
 };
 
+const fakeReacton = {
+  comment: 9,
+  reaction: 1,
+  user: {
+    username: "mithamo"
+  }
+};
+
 const commentList = {"comments": [fakeComment, fakeCommentToo, fakeCommentThree]};
 
 describe('<CommentsContainer />', () => {
   it('render all expected pieces', () => {
-    const component = shallow(<CommentsContainer comments={commentList} />);
+    const component = shallow(<CommentsContainer reactions={[fakeReacton]} comments={commentList} />);
     expect(component).toMatchSnapshot();
   });
 });

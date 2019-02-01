@@ -22,6 +22,8 @@ const config = {
     articlesEndpoint: baseUrl + '/api/articles',
     likeUrl: baseUrl + '/api/articles/reactions',
     getLikesUrl: baseUrl + '/api/articles/reactions/mr-ruby',
+    commentReactionsEndpoint: baseUrl + '/api/comments/reactions',
+    viewProfile: 'https://ah-jumanji-frontend.herokuapp.com/a/profile',
     authorProfileUrl: baseUrl + '/api/profiles/',
     followUrl: baseUrl + '/api/profiles/',
     bookmarksUrl: baseUrl + '/api/articles/bookmarks/all/',

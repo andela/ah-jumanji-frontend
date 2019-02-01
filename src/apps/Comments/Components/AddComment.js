@@ -14,7 +14,6 @@ let elem = "";
 let infoSub = "";
 let errorSubscript = "";
 let commentID;
-// eslint-disable-next-line no-var
 let commentLIText = "";
 
 class AddCommentComponent extends Component {
