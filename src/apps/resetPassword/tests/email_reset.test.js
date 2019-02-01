@@ -4,6 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import thunk from "redux-thunk";
 import sinon from 'sinon';
 import {Provider} from "react-redux";
+import { bake_cookie } from 'sfcookies';
 import configureMockStore from "redux-mock-store";
 import {MemoryRouter} from 'react-router-dom';
 import ForgotPassword from '../components/PasswordResetComponent';
@@ -14,6 +15,9 @@ import CodeCollectionForm from "../components/collectResetURLForm";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+
+// set a global cookie
+bake_cookie('token',"jknckx`,ncjknx`");
 
 Enzyme.configure({adapter: new Adapter()});
 

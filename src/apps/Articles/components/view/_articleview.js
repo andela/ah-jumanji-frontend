@@ -59,9 +59,7 @@ class EditorView extends React.Component{
             return(
               <div>
                 <br />
-                <FroalaEditorView
-                model={myState.model}
-                />
+                <FroalaEditorView model={myState.model} />
               </div>
                 );
         }else{

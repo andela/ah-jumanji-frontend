@@ -31,11 +31,13 @@ const fakeStore = configureStore(middlewares);
 it('Social login components renders without crashing in main App', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <BrowserRouter>
-        <App>
-          <AuthClass />
-        </App>
-      </BrowserRouter>, div);
+      <Provider store={fakeStore({})}>
+        <BrowserRouter>
+          <App>
+            <AuthClass />
+          </App>
+        </BrowserRouter>
+      </Provider>, div);
   });
 
   describe('<SocialAuth /> snapshot', () => {

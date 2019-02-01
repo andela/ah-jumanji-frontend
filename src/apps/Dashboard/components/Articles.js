@@ -26,8 +26,7 @@ class Articles extends Component {
 
   componentDidMount() {
     let onLogin = read_cookie('onLogin');
-
-    if (onLogin==true) {
+    if (onLogin === true) {
       toast.success( "Login Successful!", {autoClose: 3000});
     }
 
