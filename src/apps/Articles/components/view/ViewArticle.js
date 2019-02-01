@@ -1,4 +1,4 @@
-import React,{ Component } from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
@@ -11,50 +11,59 @@ import CommentsContainer from '../../../Comments/Components/CommentsContainer';
 import LikeButton from "../../../Like/components/LikeButton";
 import BookmarkButton from '../../../Bookmarks/components/BookmarkButton';
 // import { fetchBookmark } from '../../../Dashboard/actions/dashboardActions'
+import SocialIcons from '../../../ShareArticle/components/shareArticle';
 
-class ArticlePage extends Component{
-    constructor(props){
-        super(props);
-        this.getSlug = this.getSlug.bind(this);
+class ArticlePage extends Component {
+  constructor(props) {
+    super(props);
+    this.getSlug = this.getSlug.bind(this);
+  }
+
+  getSlug() {
+    //Get slug from ulr
+    const myProps = this.props;
+    return myProps.match.params.slug;
+  }
+
+  render() {
+    let slug = this.getSlug();
+    let bookmarked = false;
+    let {Articles} = this.props;
+    if (Articles) {
+      bookmarked = Articles.bookmarked;
     }
 
-    getSlug(){
-        //Get slug from ulr
-        const myProps = this.props;
-        return myProps.match.params.slug;
-    }
+    let title = this.getSlug();
+    let arr = title.split('-');
+    let arr2 = arr.slice(0, arr.length - 2);
+    let fisrtChar = arr[0].charAt(0).toUpperCase() + arr[0].slice(1);
+    arr2[0] = fisrtChar;
+    let passTitle = arr2.join(' ');
 
-    render(){
-        let slug = this.getSlug();
-        let bookmarked = false;
-        let { Articles } = this.props;
-        if (Articles) {
-          bookmarked = Articles.bookmarked;
-        }
-
-        return(
-          <div className="container auth-container">
-            <div className="row">
-              <div className="col-md-12">
-                <ArticleView slug={slug} />
-              </div>
-            </div>
-            <div className="row article-bottom">
-              <div className="col-md-12">
-                <LikeButton />
-                &nbsp;&nbsp;
-                <Ratings />
-                <span className="float-right">
+    return (
+      <div className="container auth-container">
+        <div className="row">
+          <div className="col-md-12">
+            <ArticleView slug={slug} />
+          </div>
+        </div>
+        <div className="row article-bottom">
+          <div className="col-md-12">
+            <LikeButton />
+            &nbsp;&nbsp;
+            <Ratings />
+            <SocialIcons title={passTitle} />
+            <span className="float-right">
                   <BookmarkButton slug={slug} bookmarked={bookmarked} />
                 </span>
-              </div>
-              <div className="col-md-12">
-                <CommentsContainer />
-              </div>
-            </div>
           </div>
-        );
-    }
+          <div className="col-md-12">
+            <CommentsContainer />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 //export default ArticlePage;

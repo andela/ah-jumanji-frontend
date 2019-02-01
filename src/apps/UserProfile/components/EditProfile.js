@@ -13,26 +13,9 @@ class EditProfile extends Component {
   constructor(props) {
     super(props);
     const { profile } = this.props;
-    const {
-      first_name,
-      last_name,
-      profile_photo,
-      website,
-      phone_number,
-      bio,
-      country,
-      twitter_handle } = profile;
+    const { first_name, last_name, profile_photo, website, phone_number, bio, country, twitter_handle } = profile;
 
-    this.state = {
-      firstName: first_name,
-      lastName: last_name,
-      profilePhoto: profile_photo,
-      website: website,
-      phoneNumber: phone_number,
-      bio: bio,
-      country: country,
-      twitterHandle: twitter_handle,
-      selectedFile: null
+    this.state = { firstName: first_name, lastName: last_name, profilePhoto: profile_photo, website: website, phoneNumber: phone_number, bio: bio, country: country, twitterHandle: twitter_handle, selectedFile: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,10 +27,7 @@ class EditProfile extends Component {
     dataValid = [];
     e.preventDefault();
     const { fileUploadHandler } = this.props;
-    const {
-      firstName,
-      lastName,
-      profilePhoto,
+    const { firstName, lastName, profilePhoto,
       website,
       phoneNumber,
       bio,
@@ -79,7 +59,12 @@ class EditProfile extends Component {
           toast.dismiss();
         });
       }
+
+      if(["phoneNumber"].includes(key)) {
+        this.validatePhoneNumber(key, value);
+      }
     }
+
     dataValid.includes(false) ?  false : fileUploadHandler(selectedFile, profile);
   }
 
@@ -97,6 +82,21 @@ class EditProfile extends Component {
 
   }
 
+  validatePhoneNumber(inputName, inputValue) {
+    if(inputValue.length < 10) {
+      let warningSubscript = document.querySelector(
+        `input[name=${inputName}]`).parentElement.querySelector("p");
+
+      // Display an error beneath appropriate input
+      warningSubscript.classList.remove("hidden");
+      warningSubscript.innerHTML = "Input a standard phone number";
+      // Highlight input that has no data
+      document.querySelector(`input[name=${inputName}]`).classList.add('highlight-error-input');
+      dataValid.push(false);
+    }
+    dataValid.push(true);
+  }
+
   validateUserInput(inputName, inputValue) {
 
     if (!inputValue) {
@@ -111,8 +111,7 @@ class EditProfile extends Component {
 
       // Mark input as false/invalid
       dataValid.push(false);
-    }
-    else {
+    } else {
       dataValid.push(true);
     }
   }
@@ -124,6 +123,7 @@ class EditProfile extends Component {
       website,
       twitterHandle,
       phoneNumber,
+      country,
       bio
     } = this.state;
 
@@ -146,11 +146,11 @@ class EditProfile extends Component {
                       </div>
                       <div className="col-md-6">
                         <div className="form-group">
-                          <label htmlFor="countriesDropdown">Country</label>
+                          <label htmlFor="country">Country</label>
                           <select name="country" className="form-control" onChange={this.onChange} id="countriesDropdown">
-                            {Object.keys(countries).map((key) => {
-                              return <option key={key} value={key}>{countries[key]}</option>;
-                            })}
+                            {Object.keys(countries).map((key) => (
+                              <option key={key} value={key} selected={key === country ? true : false}>{countries[key]}</option>
+                            ))}
                           </select>
                         </div>
                       </div>
@@ -169,7 +169,7 @@ class EditProfile extends Component {
                     </div>
                     <div className="form-group">
                       <label htmlFor="bio">Bio</label>
-                      <textarea name="bio" id="bio" rows="8" cols="80" className="form-control" value={bio} onChange={this.onChange} />
+                      <textarea name="bio" rows="8" cols="80" className="form-control" value={bio} onChange={this.onChange} />
                     </div>
                     <Link to="/a/profile">
                       <button type="submit" className="btn btn-success" onClick={this.handleSubmit}>Submit</button>
