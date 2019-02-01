@@ -20,9 +20,9 @@ class LikesViewContainer extends Component {
         <div className="col-md-12">
           <ul id="likes-list" className="list-group list-group-flush likers">
             {
-              reactions.map(rxn => (
+              reactions ? reactions.map(rxn => (
                 <LikesViewComponent key={rxn.id} reaction={rxn} />
-              ))
+              )) : <span />
             }
             <br />
           </ul>

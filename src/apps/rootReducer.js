@@ -14,6 +14,7 @@ import Notifications from "./Notifiications/reducers/noticationsReducers";
 import LikeReducer from "./Like/reducers/likeReducer";
 import commentListReducer from './Comments/Reducers/CommentListReducer';
 import followingReducer from './following/reducers/followingReducer';
+import commentsReactionsReducer from './UserReactions/Reducers/CommentReactionsReducer';
 import Errors from "./error pages/reducers/errorMessageReducer";
 
 export default (history) => combineReducers({
@@ -29,6 +30,7 @@ export default (history) => combineReducers({
   Notifications,
   commentListReducer,
   LikeReducer,
+  commentsReactionsReducer,
   followingReducer,
   Errors,
   //Add your reducers here
