@@ -1,8 +1,16 @@
 import React,{ Component } from 'react';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {bindActionCreators} from 'redux';
+
+import * as articlePageActions from '../../actions/fetch/_get_actions';
+
 import ArticleView from './_articleview';
 import Ratings from '../../../Rating/components/Rating';
 import CommentsContainer from '../../../Comments/Components/CommentsContainer';
 import LikeButton from "../../../Like/components/LikeButton";
+import BookmarkButton from '../../../Bookmarks/components/BookmarkButton';
+// import { fetchBookmark } from '../../../Dashboard/actions/dashboardActions'
 
 class ArticlePage extends Component{
     constructor(props){
@@ -15,19 +23,32 @@ class ArticlePage extends Component{
         const myProps = this.props;
         return myProps.match.params.slug;
     }
+
     render(){
+        let slug = this.getSlug();
+        let bookmarked = false;
+        let { Articles } = this.props;
+        if (Articles) {
+          bookmarked = Articles.bookmarked;
+        }
+
         return(
           <div className="container auth-container">
             <div className="row">
               <div className="col-md-12">
-                <ArticleView slug={this.getSlug()} />
-                <div className="row article-bottom">
-                  <div className="col-md-12">
-                    <LikeButton />
-                    &nbsp;&nbsp;
-                    <Ratings />
-                  </div>
-                </div>
+                <ArticleView slug={slug} />
+              </div>
+            </div>
+            <div className="row article-bottom">
+              <div className="col-md-12">
+                <LikeButton />
+                &nbsp;&nbsp;
+                <Ratings />
+                <span className="float-right">
+                  <BookmarkButton slug={slug} bookmarked={bookmarked} />
+                </span>
+              </div>
+              <div className="col-md-12">
                 <CommentsContainer />
               </div>
             </div>
@@ -36,4 +57,21 @@ class ArticlePage extends Component{
     }
 }
 
-export default ArticlePage;
+//export default ArticlePage;
+ArticlePage.propTypes = {
+  Articles: PropTypes.object.isRequired,
+};
+
+function mapStateToProps(state) {
+  return {
+    Articles: state.Articles.read_article,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(articlePageActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArticlePage);

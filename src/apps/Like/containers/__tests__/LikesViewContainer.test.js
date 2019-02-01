@@ -22,7 +22,6 @@ describe('<LikesViewContainer />', () => {
 
 describe('<LikeViewContainer />', () => {
   let store;
-  let wrapper;
 
   const props = {
     likeCount: 2,
@@ -46,7 +45,7 @@ describe('<LikeViewContainer />', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    wrapper = mount(
+    let wrapper = mount(
       <Provider store={store}>
         <MemoryRouter>
           <LikesViewContainer {...props} />
