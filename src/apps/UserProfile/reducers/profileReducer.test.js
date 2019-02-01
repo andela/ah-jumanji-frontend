@@ -1,12 +1,12 @@
-import { types } from 'util';
+import * as types from '../actions/types';
 import profileReducer from './profileReducer';
-import * as profileActions from '../actions/types';
 
 
 describe('profile reducers', () => {
   const initialState = {
     profile: {},
-    profileImage: {}
+    profileImage: {},
+    authorProfile: {}
   };
 
   const profile = {
@@ -30,15 +30,17 @@ describe('profile reducers', () => {
 
   it('should handle VIEW_PROFILE_SUCCESS', () => {
     const action = {
-      type: profileActions.VIEW_PROFILE_SUCCESS,
+      type: types.VIEW_PROFILE_SUCCESS,
       payload: profile
     };
 
     const expectedState = {
-      profile
+      profile,
+      profileImage: {},
+      authorProfile: {}
     };
 
-    expect(profileReducer({}, action)).toEqual(expectedState);
+    expect(profileReducer(initialState, action)).toEqual(expectedState);
   });
 
   it('should handle VIEW_PROFILE_FAILED', () => {
@@ -56,9 +58,29 @@ describe('profile reducers', () => {
     };
 
     const expectedState = {
-      profile
+      profile,
+      profileImage: {},
+      authorProfile: {}
     };
-    expect(profileReducer(expectedState, action)).toEqual(expectedState);
+    expect(profileReducer(initialState, action)).toEqual(expectedState);
   });
 
+  it ('should handle VIEW_AUTHOR_PROFILE', () => {
+    const action = {
+      type: types.VIEW_AUTHOR_PROFILE,
+      author_profile: {
+        user: "test.user",
+        bio: "Test bio"
+      }
+      };
+      const expectedState = {
+        profile: {},
+        profileImage: {},
+        authorProfile: {
+          user: "test.user",
+          bio: "Test bio"
+        }
+      };
+      expect(profileReducer(initialState, action)).toEqual(expectedState);
+    });
 });

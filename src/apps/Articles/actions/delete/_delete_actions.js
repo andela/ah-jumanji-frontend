@@ -9,16 +9,16 @@ export const deleteArticle = (slug) =>dispatch=> {
     dispatch(deletingArticle(slug));
     let url = `https://ah-jumanji-staging.herokuapp.com/api/articles/${slug}/`;
     let Call =  axios.delete(url, {
-        headers: {
-            Accept: "application/json", //transfer type
-            Authorization: `Token ${token}`
-        },
+            headers: {
+                Accept: "application/json", //transfer type
+                Authorization: `Token ${token}`
+            },
             crossDomain: true //allow from different servers
         })
         .then((response) => {
             dispatch(deletedArticle(response.data));
             toastNotification("success","Article Deleted");
-            redirectUrl(`/a/home${response.data.article.slug}`);
+            redirectUrl(`/a/home`);
         })
         .catch((err) => {
             dispatch(deleteError(err));
@@ -51,6 +51,8 @@ export function deletedArticle(data){
 export function deleteError(){
     return{
         type: ERROR_DELETING_ARTICLE,
-        payload:"Cannot delete"
+        payload: {
+            message: "Cannot delete"
+        }
     };
 }

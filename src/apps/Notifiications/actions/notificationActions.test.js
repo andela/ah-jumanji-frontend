@@ -7,6 +7,12 @@ import moxios from 'moxios';
 import * as actions from "./notificationActions";
 import * as types from "./actions";
 
+jest.mock('sfcookies', () => ({
+  read_cookie: () => {
+    return "nnnnnnnn";
+  }
+}));
+
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 

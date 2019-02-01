@@ -1,11 +1,12 @@
 import {read_cookie} from 'sfcookies';
-import {toast} from 'react-toastify';
 
 export default function getUserCookie() {
   let token = read_cookie('token');
   if (token.length === 0) {
-    toast(
-      "Welcome to our platform. Please login", {autoClose: 3000}
+    const ApplicationError = require("../Exceptions/ApplicationError");
+    throw new ApplicationError(
+      "You are not authorised to view this page.Please Login!!",
+      401
     );
   }
   return token;
