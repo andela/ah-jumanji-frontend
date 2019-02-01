@@ -55,3 +55,9 @@ exports[`Render reset email component should render the form 1`] = `
   <Component />
 </ContextConsumer>
 `;
+
+exports[`Tests notifications item should render correctly 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;

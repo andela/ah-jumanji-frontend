@@ -11,19 +11,26 @@ class FollowButton extends Component {
 constructor(props){
     super(props);
     this.handleFollow = this.handleFollow.bind(this);
+    this.state = {
+        following: false
+    };
 }
 handleFollow(){
-    let following = false;
+    const { following } = this.state;
     const { actions } = this.props;
     const { username } = this.props;
 
     if (following === true) {
         actions.unfollowUser(username);
-        following;
+        this.setState({
+            following: false
+        });
     }
     else{
         actions.followUser(username);
-        following = true;
+        this.setState({
+            following: true
+        });
     }
 }
 render() {

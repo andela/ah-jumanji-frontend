@@ -5,6 +5,9 @@ import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
 import {mountWithStore} from "../../resetPassword/tests/email_reset.test";
 import NotificationHistory from "./NotificationHistoryComponent";
+import TestRenderer from "react-test-renderer";
+import {Provider} from "react-redux";
+import NotificationItem from "./NotificationItem.test";
 
 Enzyme.configure({adapter: new Adapter()});
 
@@ -22,6 +25,16 @@ describe('Tests notifications history', function () {
     expect(wrapper.find('nav')).toBeDefined();
     expect(wrapper.find('nav-tab')).toBeDefined();
     expect(wrapper.find('tab-pane')).toBeDefined();
+    wrapper = wrapper.update();
+    wrapper.unmount();
+  });
+  it('should render again correctly', function () {
+    const component = TestRenderer.create(
+      <Provider store={mockStore({})}>
+        <NotificationHistory />
+      </Provider>
+    );
+    component.unmount();
   });
 
 
