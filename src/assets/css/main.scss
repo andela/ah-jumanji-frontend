@@ -25,7 +25,20 @@
   }
 }
 .publish-div {
+  width: 25%;
   text-align: right;
+  position: absolute;
+  right: 0;
+}
+.profile-div {
+  width: 75%;
+  text-align: left;
+  left: 0;
+  margin-bottom: 2%;
+}
+.follow-div{
+  margin-left: 7%;
+  height: 30px;
 }
 .more {
   color: #4e4c4c !important;

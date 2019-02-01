@@ -5,7 +5,7 @@ exports[`FollowButton Container should render correctly in "debug" mode 1`] = `
   className="button"
 >
   <button
-    className="btn btn-outline-success"
+    className="btn btn-outline-success btn-sm"
     onClick={[Function]}
     type="button"
   >
