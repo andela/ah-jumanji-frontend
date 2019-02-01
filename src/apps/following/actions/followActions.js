@@ -20,6 +20,19 @@ export function unfollow(message) {
         message
     };
 }
+export function myFollowers(followers){
+    return {
+        type: types.GET_FOLLOWERS,
+        followers
+    };
+}
+
+export function myFollowed(followed){
+    return {
+        type: types.GET_FOLLOWED,
+        followed
+    };
+}
 
 export function followUser(username) {
     let followEndpoint = `${config.api.followUrl}${username}/follow`;
@@ -51,7 +64,32 @@ export function unfollowUser(username) {
         });
     };
 }
+export function getFollowers() {
+    let FollowersUrl = config.api.getFollowersUrl;
+    return function(dispatch) {
+        return axios.get(FollowersUrl, {
+            headers: {
+                Accept: 'application/json',
+                Authorization: `Token ${token}`
+            }
+        })
+        .then(res => {
+            dispatch(myFollowers(res.data));
+        });
+    };
+}
 
-
-
+export function getFollowed() {
+    let FollowedUrl = config.api.getFollowedUrl;
+    return function(dispatch) {
+        return axios.get(FollowedUrl, {
+            headers: {
+                Accept: 'application/json',
+                Authorization: `Token ${token}`
+            }
+        }).then(res => {
+            dispatch(myFollowed(res.data));
+        });
+    };
+}
 

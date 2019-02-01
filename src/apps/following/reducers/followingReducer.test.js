@@ -6,17 +6,23 @@ describe('rating reducer', () => {
 
   const initialState = {
     followUser: {},
-    unfollowUser: {}
+    unfollowUser: {},
+    followers: {},
+    following: {}
   };
 
   it('should return the initial state', () => {
     expect(
      followingReducer(undefined, {
         followUser: {},
-        unfollowUser: {}
+        unfollowUser: {},
+        followers: {},
+        following: {}
     })).toEqual({
         followUser: {},
-        unfollowUser: {}
+        unfollowUser: {},
+        followers: {},
+        following: {}
     });
   });
 
@@ -32,7 +38,9 @@ describe('rating reducer', () => {
         followUser: {
           "user": "test.user"
         },
-        unfollowUser: {}
+        unfollowUser: {},
+        followers: {},
+        following: {}
     };
 
     expect(followingReducer({
@@ -52,7 +60,9 @@ describe('rating reducer', () => {
         followUser: {},
         unfollowUser: {
             "message": "You have unfollowed test user"
-        }
+        },
+        followers: {},
+        following: {}
     };
     expect(followingReducer({
         ...initialState

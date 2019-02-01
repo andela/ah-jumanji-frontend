@@ -23,7 +23,9 @@ const config = {
     likeUrl: baseUrl + '/api/articles/reactions',
     getLikesUrl: baseUrl + '/api/articles/reactions/mr-ruby',
     authorProfileUrl: baseUrl + '/api/profiles/',
-    followUrl: baseUrl + '/api/profiles/'
+    followUrl: baseUrl + '/api/profiles/',
+    getFollowersUrl: baseUrl + '/api/profiles/followers/',
+    getFollowedUrl: baseUrl + '/api/profiles/followed/'
   },
   firebase: {
     apiKey: process.env.FIREBASE_API_KEY || 'random',

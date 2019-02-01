@@ -49,7 +49,7 @@ class Articles extends Component {
         msnry.reloadItems();
       });
 
-    }, 3600);
+    }, 10600);
 
   }
 

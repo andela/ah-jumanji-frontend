@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { viewProfile } from '../actions/profile';
 import countries from './countries';
+import Follow from '../../following/components/followersComponent';
 
 
 class Profile extends React.Component {
@@ -73,8 +74,8 @@ class Profile extends React.Component {
             </div>
           </div>
         </div>
+        <Follow />
       </div>
-
     );
   }
 }
