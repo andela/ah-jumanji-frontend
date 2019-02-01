@@ -3,7 +3,7 @@ import {navPropTypes} from "./NavItem";
 
 const DropDownItem = (props) => {
 
-  const {classnameOuter, id, classname, link, label} = props;
+  const {classnameOuter, classname, link, label} = props;
   const onClick = (e) => {
     if(e.target.innerHTML.includes("Logout")){
       localStorage.clear();

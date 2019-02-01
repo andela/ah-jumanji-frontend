@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StarRatings from 'react-star-ratings';
-
+import BookmarkButton from '../../Bookmarks/components/BookmarkButton';
 
 const ArticleComponent = (props) => {
 
-  const {articleImage, articleSlug, articleLikes, articleComments, articleRatings, articleAvatar, authorName, articleTitle} = props;
+  const {articleImage, articleSlug, bookmarked, articleLikes, articleComments, articleRatings, articleAvatar, authorName, articleTitle } = props;
 
   return (
     <div className="grid-item">
@@ -45,10 +45,7 @@ const ArticleComponent = (props) => {
                 <i className="fas fa-star"  />
                 Favourite
               </button>
-              <button className="dropdown-item more btn-link" type="button">
-                <i className="far fa-bookmark"  />
-                &nbsp;Bookmark
-              </button>
+              <BookmarkButton slug={articleSlug} bookmarked={bookmarked} />
               <hr />
               <button className="dropdown-item more btn-link" type="button" data-toggle="modal" data-target="#report">
                 <i className="fas fa-exclamation-circle"  />
@@ -84,7 +81,8 @@ export const articleComponentPropTypes = {
   articleRatings: PropTypes.number.isRequired,
   articleAvatar: PropTypes.string.isRequired,
   authorName: PropTypes.string.isRequired,
-  articleTitle: PropTypes.string.isRequired
+  articleTitle: PropTypes.string.isRequired,
+  bookmarked: PropTypes.bool.isRequired,
 };
 
 ArticleComponent.propTypes = articleComponentPropTypes;

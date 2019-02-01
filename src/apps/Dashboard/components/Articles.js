@@ -15,6 +15,7 @@ import defaultUserIcon from '../../../assets/img/default-avatar.jpg';
 import articlePlaceholder from '../../../assets/img/placeholder.png';
 import ArticleComponent from './ArticleComponent';
 
+
 class Articles extends Component {
 
   constructor(props) {
@@ -84,6 +85,8 @@ class Articles extends Component {
     }, 3600);
   }
 
+
+
   data = () => {
     const { articles } = this.props;
 
@@ -110,6 +113,7 @@ class Articles extends Component {
             articleAvatar={f[i].author.profile_photo !== '' ? f[i].author.profile_photo : defaultUserIcon}
             authorName={f[i].author.user}
             articleTitle={f[i].title}
+            bookmarked={f[i].bookmarked}
           />
         );
         r.push(t);

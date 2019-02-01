@@ -10,8 +10,9 @@ const endpointGetArticles = config.api.getArticlesUrl;
 const endpointArticleLikes = config.api.endpointArticleLikes;
 const endpointArticleComments = config.api.articleCommentsUrl;
 const endpointRating = config.api.ratingUrl;
+const endpointSingleBookmark = config.api.singleBookmarksUrl;
 const token = read_cookie('token');
-
+const loggedInUsername = read_cookie('loggedInUsername');
 
 export function FetchSucess(articles) {
   return {
@@ -153,4 +154,30 @@ const fetchCount = () => {
         return (error);
       });
   };
+};
+
+export const fetchBookmark = (slug) => {
+  return axios.get(endpointSingleBookmark+slug, {
+    headers: {
+      Accept: 'application/json',
+      Authorization: 'Token '+token
+    }
+  })
+  .then(res => {
+      let bookmarked = false;
+      let bookmarkArray = res.data.bookmarks;
+      if (bookmarkArray) {
+        for (const i in bookmarkArray) {
+          if (bookmarkArray[i].user.username==loggedInUsername) {
+            bookmarked = true;
+            return (bookmarked);
+          }
+        }
+      }
+
+      return (bookmarked);
+  })
+  .catch( error => {
+    return(error);
+  });
 };
