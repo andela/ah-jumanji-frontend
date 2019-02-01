@@ -91,4 +91,10 @@ export function mapStateToProps(state, myProps) {
     myProps
   };
 }
-export default connect (mapStateToProps, {postArticle})(CreateArticle);
+export function mapDispatchToProps(dispatch) {
+    return {
+      // Authentication functions
+      postArticle: (data) => dispatch(postArticle(data)),
+    };
+  }
+export default connect (mapStateToProps, mapDispatchToProps)(CreateArticle);

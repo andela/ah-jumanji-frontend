@@ -93,6 +93,9 @@ class SocialAuthActions extends Component {
       })
       .then((response) => {
         passedData.receivedUsers(response.data);
+        let username = response.data.login_data.username;
+        bake_cookie("loggedInUsername", username);// Set username cookie
+
         let token = response.data.social_token;
         token = token.replace("Token","").trim();
         bake_cookie("token", token);// Set cookie

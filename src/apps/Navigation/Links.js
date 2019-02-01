@@ -4,7 +4,6 @@ import Loader from 'react-loader-spinner';
 import NavItem from "./NavItem";
 import NavButton from "./NavButton";
 import DropDownItem from './NavDropDown';
-import defaultUserIcon from '../../assets/img/default-avatar.jpg';
 import {getUnreadNotificationsCount, handleNullResponse} from "../Notifiications/actions/notificationActions";
 import NotificationsBadge from "../Notifiications/components/navBarNotificationsComponent";
 import ProfPic from './profPic';

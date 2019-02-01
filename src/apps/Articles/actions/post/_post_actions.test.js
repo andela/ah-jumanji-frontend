@@ -64,7 +64,7 @@ describe("Test for the posting async function", ()=>{
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe('getDelete actions', () => {
+describe('Post ations actions', () => {
 
   let  store = mockStore({});
   beforeEach(function () {
@@ -98,4 +98,3 @@ describe('getDelete actions', () => {
     });
   });
 });
-
