@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { read_cookie } from 'sfcookies';
+import { read_cookie, bake_cookie } from 'sfcookies';
 import {toastNotification } from '../common/common';
 import { GOT_ARTICLE, ERROR_GETTING_ARTICLE} from '../actionTypes';
 
@@ -15,7 +15,8 @@ export const getArticles = (slug) =>dispatch=> {
             crossDomain: true
         })
         .then((response) => {
-          dispatch(gotArticle(response.data.articles));
+            bake_cookie("article_author", response.data.articles.author.user);
+            dispatch(gotArticle(response.data.articles));
         })
         .catch((err) => {
             dispatch(getError(err));
@@ -38,6 +39,6 @@ export function gotArticle(data){
 export function getError(){
     return{
         type: ERROR_GETTING_ARTICLE,
-        payload: "Could not get that article"
+        payload: {message: "Could not get that article"}
     };
 }

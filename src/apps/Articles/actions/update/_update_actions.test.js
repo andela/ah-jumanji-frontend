@@ -49,7 +49,7 @@ it('return state data when article is posted', () => {
 it('return state data when article updating is errored', () => {
   const passed_payload = "Could not update";
   const returnedData = {
-    "payload": "Could not update",
+    "payload": {"message": "Could not update"},
     "type": UPDATED_ERROR
   };
   expect(update_actions.updateError(passed_payload)).toEqual(returnedData);
@@ -98,7 +98,7 @@ describe('getDelete actions', () => {
     moxios.uninstall();
   });
 
-  it('creates GET_POSTS_SUCCESS after successfuly fetching postse', () => {
+  it(' after successfuly deleteing postse', () => {
   let getPostsMock = {articles: "this is article data"};
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
@@ -111,7 +111,7 @@ describe('getDelete actions', () => {
     const expectedActions = [
         //{ type: UPDATING_ARTICLE, payload:{data: getPostsMock, updating:true, fetching: false }},
         { type: UPDATED_ARTICLE, payload:{data: getPostsMock, updating:false, fetching: false }},
-        { type: UPDATED_ERROR, payload:"Could not update" },
+        { type: UPDATED_ERROR, payload:{ message: "Could not update"} },
         ];
 
 
@@ -121,4 +121,3 @@ describe('getDelete actions', () => {
     });
   });
 });
-

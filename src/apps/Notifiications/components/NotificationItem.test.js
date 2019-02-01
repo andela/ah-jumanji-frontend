@@ -2,9 +2,11 @@ import React from 'react';
 import Enzyme from "enzyme/build";
 import Adapter from "enzyme-adapter-react-16/build";
 import thunk from "redux-thunk";
+import TestRenderer from 'react-test-renderer';
 import configureMockStore from "redux-mock-store";
 import {shallowWithStore} from "../../resetPassword/tests/email_reset.test";
 import NotificationItem from "./NotificationItem";
+import {Provider} from "react-redux";
 
 
 Enzyme.configure({adapter: new Adapter()});
@@ -53,6 +55,16 @@ describe('Tests notifications item', function () {
     expect(wrapper.find('nav')).toBeDefined();
     expect(wrapper.find('.followers-avatar')).toBeDefined();
     expect(wrapper.find('.btn')).toBeDefined();
-    // wrapper.find('.btn').simulate('click');
+    expect(wrapper).toMatchSnapshot();
+  });
+  it('should render again correctly', function () {
+    const component = TestRenderer.create(
+      <Provider store={mockStore({})}>
+        <NotificationItem notification={notification} listClass="list" />
+      </Provider>
+    );
+
+
+    component.unmount();
   });
 });

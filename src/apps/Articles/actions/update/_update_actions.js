@@ -56,7 +56,7 @@ export function updatedArticle(data){
 export function updateError(){
     return{
         type: UPDATED_ERROR,
-        payload: "Could not update"
+        payload: {message: "Could not update"}
     };
 }
 

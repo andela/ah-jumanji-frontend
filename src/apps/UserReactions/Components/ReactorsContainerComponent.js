@@ -22,8 +22,8 @@ class ReactorsContainer extends Component {
     reactions.map(rxn => (rxn.reaction === 1 ? likers.push(rxn.user.username) : dislikers.push(rxn.user.username)));
 
     reactions = {
-      like: likers.map(liker => liker === loggedInuser ? "You" : liker),
-      dislike: dislikers.map(disliker => disliker === loggedInuser ? "You" : dislikers),
+      like: likers,
+      dislike: dislikers
     };
 
     const reactors = reactions[`${reactionType || "dislike"}`];

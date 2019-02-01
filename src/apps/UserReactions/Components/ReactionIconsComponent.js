@@ -31,7 +31,6 @@ const loggedInuser = read_cookie('loggedInUsername');
     let reactionsCont = e.target.parentElement.parentElement.parentElement.nextElementSibling;
     reactionsCont.classList.remove("hidden");
     updateReactionType(e.target.id);
-    console.log(this.props.reactionsCount.likeCount.includes("dmithamo"))
   };
 
   //  Mouse Leave Handler
