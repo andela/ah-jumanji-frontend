@@ -1,31 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ViewPage article page should render correctly in "debug" mode 1`] = `
-<div
-  className="container auth-container"
->
-  <div
-    className="row"
-  >
-    <div
-      className="col-md-12"
-    >
-      <Connect(EditorView)
-        slug="Yes-is-me"
-      />
-      <div
-        className="row article-bottom"
-      >
-        <div
-          className="col-md-12"
-        >
-          <Connect(LikeButton) />
-            
-          <Connect(Rating) />
-        </div>
-      </div>
-      <Connect(CommentsContainer) />
-    </div>
-  </div>
-</div>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

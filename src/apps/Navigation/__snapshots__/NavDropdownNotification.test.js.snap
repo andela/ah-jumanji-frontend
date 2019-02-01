@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DropDownNotification /> should match the snapshot 1`] = `
+<li
+  className="dropdown-item"
+>
+  <img
+    alt="follower avatar"
+    className="followers-avatar rounded-circle"
+  />
+  <button
+    className="btn-link"
+    type="button"
+  >
+     
+  </button>
+   
+  <span
+    className="float-right"
+  >
+    <button
+      className="btn-sm btn-link"
+      type="button"
+    >
+      <i
+        className="fas fa-check-circle"
+      />
+      Mark As Read
+    </button>
+  </span>
+  <br />
+  <i
+    className="text-muted"
+  >
+    <span
+      className="fas fa-clock "
+    />
+     
+     ago
+  </i>
+</li>
+`;

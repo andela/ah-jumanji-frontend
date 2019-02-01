@@ -8,7 +8,7 @@ import {getUnreadNotificationsCount, handleNullResponse} from "../Notifiications
 import NotificationsBadge from "../Notifiications/components/navBarNotificationsComponent";
 import ProfPic from './profPic';
 
-class NotificationLink extends React.Component {
+export class NotificationLink extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

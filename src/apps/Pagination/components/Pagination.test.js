@@ -6,7 +6,6 @@ import {Provider} from 'react-redux';
 import {MemoryRouter} from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import Pagination from "./Pagination";
-import PropTypes from "prop-types";
 
 Enzyme.configure({adapter: new Adapter()});
 const middlewares = [thunk];

@@ -128,10 +128,10 @@ class Pagination extends Component {
       <Fragment>
         <nav aria-label="Articles Pagination">
           <ul className="pagination pagination-sm" id="paginate">
-            {pages.map((page, index) => {
+            {pages.map((page) => {
               if (page === LEFT_PAGE)
                 return (
-                  <li key={index} className="page-item">
+                  <li key={page.id} className="page-item">
                     <button
                       className="page-link"
                       type="button"
@@ -146,7 +146,7 @@ class Pagination extends Component {
 
               if (page === RIGHT_PAGE)
                 return (
-                  <li key={index} className="page-item">
+                  <li key={page.id} className="page-item">
                     <button
                       className="page-link"
                       type="button"
@@ -161,7 +161,7 @@ class Pagination extends Component {
 
               return (
                 <li
-                  key={index}
+                  key={page.id}
                   className={`page-item${
                     currentPage === page ? " active" : ""
                   }`}

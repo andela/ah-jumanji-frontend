@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme from "enzyme/build";
+import Enzyme, {shallow} from "enzyme/build";
 import Adapter from "enzyme-adapter-react-16/build";
 import thunk from "redux-thunk";
 import TestRenderer from 'react-test-renderer';
@@ -66,5 +66,12 @@ describe('Tests notifications item', function () {
 
 
     component.unmount();
+  });
+
+  describe('<NotificationItem />', () => {
+    it('should match the snapshot', () => {
+      const component = shallow(<NotificationItem debug />);
+      expect(component).toMatchSnapshot();
+    });
   });
 });
