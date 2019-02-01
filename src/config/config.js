@@ -11,7 +11,7 @@ const config = {
     getProfileUrl: baseUrl + '/api/profiles/users/profiles',
     editProfileUrl: baseUrl + '/api/profiles/users/profiles',
     ratingUrl: baseUrl + '/api/articles/',
-    getArticlesUrl: baseUrl + '/api/articles/?page=1',
+    getArticlesUrl: baseUrl + '/api/articles',
     endpointArticleLikes: baseUrl + '/api/articles/reactions/',
     articleCommentsUrl: baseUrl + '/api/articles/',
     unreadNotificationsURL: baseUrl + '/api/notifications/unread',

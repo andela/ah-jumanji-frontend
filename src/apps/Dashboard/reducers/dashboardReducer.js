@@ -9,6 +9,9 @@ export default function dashboardReducer(state = {}, action){
         case types.FETCH_FAILED:
             return Object.assign({}, state, action.error);
 
+      case types.FETCH_COUNT:
+          return {...state, articleCount: action.articleCount};
+
         default:
             return state;
     }
