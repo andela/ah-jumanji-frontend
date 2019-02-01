@@ -7,7 +7,6 @@ import Dotenv from 'dotenv-webpack';
 
 export default {
   mode: 'production',
-  devtool: 'source-map',
   entry: [
     'babel-polyfill',
     './src/index.js'
@@ -19,7 +18,7 @@ export default {
       chunkFilename: "chunk.css"
     }),
     //for .env variables
-    new Dotenv(),
+    new Dotenv()
   ],
   output: {
     filename: 'bundle.js',

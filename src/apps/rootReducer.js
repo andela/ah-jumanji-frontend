@@ -7,9 +7,11 @@ import socialAuth from './SocialLogin/reducers/socialReducer';
 import Login from './Login/reducers/loginReducer';
 import resetAccountPassword from './resetPassword/reducers/resetPasswordReducer';
 import Register from "./Register/reducers/registerReducer";
+import profileReducer  from './UserProfile/reducers/profileReducer';
 import ratingReducer from "./Rating/reducers/ratingReducer";
 import Dashboard from "./Dashboard/reducers/dashboardReducer";
 import Notifications from "./Notifiications/reducers/noticationsReducers";
+import LikeReducer from "./Like/reducers/likeReducer";
 import commentListReducer from './Comments/Reducers/CommentListReducer';
 import Errors from "./error pages/reducers/errorMessageReducer";
 
@@ -19,11 +21,13 @@ export default (history) => combineReducers({
   Login,
   Register,
   resetAccountPassword,
+  profileReducer,
   Articles,
   ratingReducer,
   Dashboard,
   Notifications,
   commentListReducer,
+  LikeReducer,
   Errors,
   //Add your reducers here
 });

@@ -7,7 +7,7 @@ import listenServer from "./utils";
 
 
 // define the default port for the application to run
-const port = 3000;
+const port = process.env.PORT || 3000;
 // create an express server instance
 const Application = express();
 // load the webpack configuration as defined in the root directory

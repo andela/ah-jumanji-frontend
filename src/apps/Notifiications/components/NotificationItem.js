@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import ReactDOM from 'react-dom';
-import profileAvatar from '../../../assets/img/profile-avatar.png';
+import profileAvatar from '../../../assets/img/default-avatar.jpg';
 import * as notificationActions from "../actions/notificationActions";
 
 
@@ -44,13 +43,12 @@ class NotificationItem extends React.Component {
       case "string":
         slug = notification.action_object.replace("/api/articles/", "");
         slug = slug.replace("/", "");
-        return "/a/article/" + slug;
+        return "/a/view_article/" + slug;
       case "object":
-        if (notification.hasOwnProperty('action_object') && notification.action_object.hasOwnProperty("follower")) {
+        if (notification.action_object == null){
           return '/a/followers';
-        } else {
-          // unmount the component if this object does not exist
-          ReactDOM.unmountComponentAtNode(this);
+        } else if (notification.action_object.hasOwnProperty("follower")) {
+          return '/a/followers';
         }
     }
   }
@@ -93,9 +91,7 @@ class NotificationItem extends React.Component {
         {" ⟿ "}
         <a href={this.getActionObjectLink()}><i className="small">take me there</i></a>
         <span className="float-right">
-          <button
-            type="button" data-toggle="tooltip" data-placement="top" title={this.switchCase(tooltips)}
-                  className={this.switchCase(btnClasses)} onClick={this.onClick}>
+          <button type="button" data-toggle="tooltip" data-placement="top" title={this.switchCase(tooltips)} className={this.switchCase(btnClasses)} onClick={this.onClick}>
             <i className="fas fa-check-circle" />
             {notification.status}
           </button>

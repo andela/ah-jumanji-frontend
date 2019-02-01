@@ -7,7 +7,7 @@ import DropDownItem from './NavDropDown';
 import defaultUserIcon from '../../assets/img/default-avatar.jpg';
 import {getUnreadNotificationsCount, handleNullResponse} from "../Notifiications/actions/notificationActions";
 import NotificationsBadge from "../Notifiications/components/navBarNotificationsComponent";
-
+import ProfPic from './profPic';
 
 class NotificationLink extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class NotificationLink extends React.Component {
   }
 
   componentDidMount() {
-    let {_asyncRequest: _asyncRequest} = this;
+    let {_asyncRequest} = this;
     _asyncRequest = getUnreadNotificationsCount().then(value => {
       value = handleNullResponse(value);
       _asyncRequest = null;
@@ -59,9 +59,7 @@ export const HomeLinks = () => (
     <NavItem classnameOuter="nav-link" classname="fas fa-search" data-toggle="modal" data-target="#search" link="javascript:;" label="Search" />
     <NotificationLink />
     <li className="nav-item dropdown">
-      <button className="nav-link dropdown-toggle btn-link" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img src={defaultUserIcon} alt="follower avatar" className="followers-avatar navbar-avatar rounded-circle" />
-      </button>
+      <ProfPic />
       <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
         <div className="dropdown-divider" />
@@ -91,6 +89,7 @@ export const HomeLinksSm = () => (
           </a>
         </li>
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
+        <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />
         <div className="dropdown-divider" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-sign-out-alt" link="/" label="Logout" />
       </ul>
@@ -131,10 +130,11 @@ export const AuthenticatedLinks = () => (
     <NavItem classnameOuter="nav-link" classname="fas fa-home" link="/a/home" label="Home" />
     <li className="nav-item dropdown">
       <button className="nav-link dropdown-toggle btn-link" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img src={defaultUserIcon} alt="follower avatar" className="followers-avatar navbar-avatar rounded-circle" />
+        <img src={localStorage.profPic} alt="follower avatar" className="followers-avatar navbar-avatar rounded-circle" />
       </button>
       <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
+        <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />
         <div className="dropdown-divider" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-sign-out-alt" link="/" label="Logout" />
       </ul>
@@ -151,6 +151,7 @@ export const AuthenticatedLinksSm = () => (
       <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
         <NotificationLink />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
+        <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />
         <div className="dropdown-divider" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-sign-out-alt" link="/" label="Logout" />
       </ul>

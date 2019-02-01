@@ -66,3 +66,6 @@ typings/
 
 package-lock.json
 
+# ignore build binaries and assets
+.DS_Store
+

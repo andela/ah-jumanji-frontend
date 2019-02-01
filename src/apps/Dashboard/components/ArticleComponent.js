@@ -61,7 +61,7 @@ const ArticleComponent = (props) => {
           <img className="img img-responsive article-avatar" src={articleAvatar} alt=""  />
         </div>
         <div className="col-md-10 article-text">
-          <a href="/userprofile">
+          <a href={"/a/profile/" + authorName}>
             {authorName}
           </a>
           <a href={"/a/view_article/" + articleSlug}>
