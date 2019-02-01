@@ -14,7 +14,7 @@ import 'froala-editor/css/froala_editor.pkgd.min.css';
 
 import FroalaEditor from 'react-froala-wysiwyg';
 import { getArticles } from '../../actions/fetch/_get_actions';
-import Button from '../common/_components';
+import { Button } from '../common/_components';
 import { updateRealtime, updateArticle } from '../../actions/update/_update_actions';
 import { deleteArticle } from '../../actions/delete/_delete_actions';
 
