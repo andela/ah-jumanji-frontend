@@ -47,6 +47,8 @@ describe('LoginForm', () => {
     expect(wrapper.find('.panel').exists()).toBe(true);
     expect(wrapper.find('.panel-body').exists()).toBe(true);
     expect(wrapper.find('TextInput')).toBeDefined();
+    expect (wrapper.find('button')).toBeDefined();
+
   });
 });
 

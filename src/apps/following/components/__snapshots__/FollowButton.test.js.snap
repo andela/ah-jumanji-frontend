@@ -1,15 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FollowButton Container should render correctly in "debug" mode 1`] = `
-<div
-  className="button"
->
-  <button
-    className="btn btn-outline-success"
-    onClick={[Function]}
-    type="button"
-  >
-    Follow
-  </button>
-</div>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

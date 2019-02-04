@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import getUserCookie from '../../common/utils/readTokens';
+import { read_cookie } from 'sfcookies';
+// import getUserCookie from '../../common/utils/readTokens';
 import * as types from './types';
 import config from '../../../config/config';
 
-
+// const token = getUserCookie();
+const token = read_cookie('token');
 export const viewProfile = () => async dispatch => {
   let endpoint = config.api.getProfileUrl;
-  const token = getUserCookie();
-
   try {
     await axios.get(
       endpoint,
@@ -37,7 +37,6 @@ export const viewProfile = () => async dispatch => {
 
 export const editProfile = (profileData) => async dispatch => {
   let endpoint = config.api.editProfileUrl;
-  const token = getUserCookie();
   try {
       await axios.put(endpoint, profileData, { headers: { Authorization: `Token ${token}`} })
       .then(response => {
@@ -96,3 +95,25 @@ export const editProfileFailed = (error) => {
     payload: error
   };
 };
+
+export const viewAuthorProfile = (author_profile) => {
+  return {
+    type: types.VIEW_AUTHOR_PROFILE,
+    author_profile
+  };
+};
+export function fetchAuthorProfile() {
+  const username = `${location.pathname.split("/")[3]}`;
+  const AuthorProfileUrl = `${config.api.authorProfileUrl}${username}`;
+  return function(dispatch) {
+      return axios.get(AuthorProfileUrl, {
+          headers: {
+              Accept: 'application/json',
+              Authorization: `Token ${token}`
+          }
+      }).then(res => {
+          //gets author Profile
+          dispatch(viewAuthorProfile(res.data));
+      });
+  };
+}

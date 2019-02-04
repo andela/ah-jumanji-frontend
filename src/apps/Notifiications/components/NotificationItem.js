@@ -43,11 +43,11 @@ class NotificationItem extends React.Component {
       case "string":
         slug = notification.action_object.replace("/api/articles/", "");
         slug = slug.replace("/", "");
-        return "/a/article/" + slug;
+        return "/a/view_article/" + slug;
       case "object":
-      if (notification.action_object == null){
-        return '/a/followers';
-      } else if (notification.action_object.hasOwnProperty("follower")) {
+        if (notification.action_object == null){
+          return '/a/followers';
+        } else if (notification.action_object.hasOwnProperty("follower")) {
           return '/a/followers';
         }
     }

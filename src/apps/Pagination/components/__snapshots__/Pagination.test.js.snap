@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination /> should match the snapshot 1`] = `
+<Fragment>
+  <nav
+    aria-label="Articles Pagination"
+  >
+    <ul
+      className="pagination pagination-sm"
+      id="paginate"
+    >
+      <li
+        className="page-item active"
+      >
+        <button
+          className="page-link"
+          onClick={[Function]}
+          type="button"
+        >
+          1
+        </button>
+      </li>
+      <li
+        className="page-item"
+      >
+        <button
+          className="page-link"
+          onClick={[Function]}
+          type="button"
+        >
+          2
+        </button>
+      </li>
+      <li
+        className="page-item"
+      >
+        <button
+          className="page-link"
+          onClick={[Function]}
+          type="button"
+        >
+          3
+        </button>
+      </li>
+      <li
+        className="page-item"
+      >
+        <button
+          className="page-link"
+          onClick={[Function]}
+          type="button"
+        >
+          4
+        </button>
+      </li>
+    </ul>
+  </nav>
+</Fragment>
+`;

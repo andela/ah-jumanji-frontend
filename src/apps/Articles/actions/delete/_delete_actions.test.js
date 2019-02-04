@@ -36,7 +36,7 @@ it('return state data when article is deleted', () => {
 it('return state data when article delete is errored', () => {
     const passed_payload = "Cannot delete";
     const returnedData = {
-        "payload": "Cannot delete",
+        "payload": { message: "Cannot delete"},
         "type": ERROR_DELETING_ARTICLE
     };
     expect(delete_actions.deleteError(passed_payload)).toEqual(returnedData);
@@ -57,7 +57,7 @@ it('return state data when article delete is errored', () => {
       moxios.uninstall();
     });
 
-    it('creates GET_POSTS_SUCCESS after successfuly fetching postse', () => {
+    it('creates DELETED_ARTICLE after successfuly deleting post', () => {
     let getPostsMock = {response: "This is the response"};
       moxios.wait(() => {
         const request = moxios.requests.mostRecent();
@@ -70,7 +70,28 @@ it('return state data when article delete is errored', () => {
       const expectedActions = [
         { type: DELETING_ARTICLE, payload:{deleted: "this is slug", deleting:true} },
         { type: DELETED_ARTICLE, payload:{deleted: getPostsMock, posting: false, fetching: false}},
-        { type: ERROR_DELETING_ARTICLE, payload:"Cannot delete"},
+      ];
+
+
+      return store.dispatch(delete_actions.deleteArticle("this is slug")).then(() => {
+        // return of async actions
+        expect(store.getActions()).toEqual(expectedActions);
+      });
+    });
+
+    it('On error returned from call', () => {
+    let getPostsMock = {error: "This is the response"};
+      moxios.wait(() => {
+        const request = moxios.requests.mostRecent();
+        request.respondWith({
+          status: 400,
+          response: getPostsMock,
+        });
+      });
+
+      const expectedActions = [
+        { type: DELETING_ARTICLE, payload:{deleted: "this is slug", deleting:true}},
+        { type: ERROR_DELETING_ARTICLE, payload:{ message: "Cannot delete" }},
       ];
 
 

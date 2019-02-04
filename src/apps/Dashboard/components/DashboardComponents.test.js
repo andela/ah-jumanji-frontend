@@ -12,6 +12,7 @@ import Articles from './Articles';
 import LoaderData from '../../common/components/LoaderData';
 import DashboardContainer from './DashboardContainer';
 import ArticleComponent from './ArticleComponent';
+import ArticleLikesButton from './ArticleLikes';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -43,6 +44,13 @@ describe('<Articles />', () => {
   });
 });
 
+describe('<ArticleLikesButton />', () => {
+  it('should match the snapshot', () => {
+    const component = shallow(<ArticleLikesButton debug />);
+    expect(component).toMatchSnapshot();
+  });
+});
+
 describe('components', () => {
   describe('DashboardContainer', () => {
     it('should render self and subcomponents', () => {
@@ -50,29 +58,11 @@ describe('components', () => {
       const enzymeWrapper = mount(
         <Provider store={store}>
           <MemoryRouter>
-            <DashboardContainer />
+            <DashboardContainer currentPage={1} />
           </MemoryRouter>
         </Provider>,);
       expect(enzymeWrapper.find('DashboardContainer')).toBeDefined();
       expect(enzymeWrapper.find('div')).toHaveLength(332);
-      expect(enzymeWrapper.contains(<Articles />)).toBe(true);
-    });
-});
-});
-
-
-describe('components', () => {
-  describe('ArticleComponent', () => {
-    it('should render self and subcomponents', () => {
-      const store = mockStore({});
-      const enzymeWrapper = mount(
-        <Provider store={store}>
-          <MemoryRouter>
-            <ArticleComponent />
-          </MemoryRouter>
-        </Provider>,);
-      expect(enzymeWrapper.find('ArticleComponent')).toBeDefined();
-      expect(enzymeWrapper.find('div')).toHaveLength(13);
     });
 });
 });

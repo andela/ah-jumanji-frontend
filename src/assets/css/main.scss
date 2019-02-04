@@ -6,6 +6,10 @@
 @import 'preloader';
 @import '~react-toastify/dist/ReactToastify.css';
 
+.fa-active{
+  color: orange;
+}
+
 .login-container {
   width: 100%;
   height: 100vh;
@@ -366,17 +370,22 @@ img#success-icon {
   border: none;
 }
 
-.edit-delete-icons {
-  width: 10%;
-  margin: .2% 90%;
-  padding: .5%;
+.edit-delete-icons,
+.reaction-icons {
+  width: 90%;
+  margin: 1% 10% 1% 0;
+  padding: .8%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
+.edit-delete-icons {
+  margin: 1% 0 1% 10%;
+}
+
 .icons {
-  font-size: 1.1rem;
-  width: 85%;
+  font-size: 1.2rem;
+  width: 75%;
   margin: auto;
   color: rgb(170, 170, 170);
   transition: all .2s;
@@ -384,15 +393,16 @@ img#success-icon {
   text-align: center;
 }
 
+.icons:hover {
+  color: black;
+}
+
 .icons#edit-icon:hover {
-  font-size: 1.5rem;
   color: rgb(0, 0, 0);
 }
 
 .icons#delete-icon:hover {
-  font-size: 1.5rem;
   color: rgb(253, 0, 0);
-  margin-left: 1%;
 }
 
 ul#comments-list {
@@ -400,6 +410,10 @@ ul#comments-list {
   margin-left: 10%;
   margin-right: auto;
   margin-bottom: 15%;
+}
+
+ul#comments-list>li {
+  position: relative;
 }
 
 ul#likes-list {
@@ -510,5 +524,133 @@ ul#likes-list {
   color: darkred;
 }
 
+// Reactions on comments
+
+.icons-row {
+  width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 1%;
+}
+
+.reactor-info {
+  width: 90%;
+  padding: .5%;
+  font-weight: bold;
+  margin: 2% auto;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.reactions-container {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.92);
+  transition: all 0.8s cubic-bezier(.25,.8,.25,1);
+  color: rgb(212, 212, 212);
+  background-color: rgb(0, 0, 0);
+  padding: 1%;
+  margin: 1%;
+  width: 40%;
+  position: absolute;
+  top: 80%;
+  left: 5%;
+  z-index: 1000;
+  font-size: 0.8rem;
+}
+
+.reactors-names {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.reactors-names>a {
+  padding: 10px !important;
+  color: rgb(43, 255, 43) !important;
+  font-weight: bold !important;
+}
+
+.reactors-header {
+  border-bottom: 1px solid rgb(189, 189, 189);
+  padding: 1%;
+  width: 100%;
+}
+
+.icons-div {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.reaction-count {
+  position: absolute;
+  top: -10px;
+  left: -1px;
+  z-index: 300;
+  font-size: .7rem;
+  color: rgb(49, 49, 49);
+  font-weight: bolder;
+}
+
+.liked {
+  color: rgb(245, 165, 18) !important;
+  font-weight: bold;
+}
+
+
+.disliked {
+  color: rgb(255, 0, 0) !important;
+  font-weight: bold;
+}
+
+.unreacted {
+  color: rgb(192, 192, 192) !important;
+  font-weight: normal !important;
+}
+
+
+#paginate {
+  float: right;
+}
+
+.pageLink {
+  margin: 2px;
+  display: inline-block;
+  padding: 2px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.currentLink {
+  background-color: #0074c2;
+  color: #FFFFFF;
+}
+
+.currentLink a:link { color: #FFFFFF; }
+.currentLink a:visited { color: #FFFFFF; }
+.currentLink a:active { color: #FFFFFF; }
+
+.notfound .notfound-404 {
+  height: 280px;
+  position: relative;
+  z-index: -1;
+}
+
+.notfound .notfound-404 h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 200px;
+  margin: 0px;
+  font-weight: 900;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  //background: url('../img/bg.jpg') no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
+  background-position: center;
+}
 
 @import 'mediaqueries';

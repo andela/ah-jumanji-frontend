@@ -29,9 +29,17 @@ const fakeComment = {
   "body": "fake body"
 };
 
+const fakeReacton = {
+  comment: 9,
+  reaction: 1,
+  user: {
+    username: "mithamo"
+  }
+};
+
 describe('<CommentComponent />', () => {
   it('render all expected bits of a commnet', () => {
-    const component = shallow(<CommentComponent comment={fakeComment} />);
+    const component = shallow(<CommentComponent reactions={[fakeReacton]} comment={fakeComment} />);
     expect(component).toMatchSnapshot();
   });
 });
@@ -45,14 +53,14 @@ describe('<CommentComponent />', () => {
     wrapper = mount(
       <Provider store={store}>
         <MemoryRouter>
-          <CommentComponent comment={fakeComment} />
+          <CommentComponent reactions={[fakeReacton]} comment={fakeComment} />
         </MemoryRouter>
       </Provider>
     );
   });
 
   it('renders without crashing', () => {
-    shallowWithStore(<CommentComponent comment={fakeComment} />, store);
+    shallowWithStore(<CommentComponent reactions={[fakeReacton]} comment={fakeComment} />, store);
   });
 
   it('renders the body of the comment ', () => {
@@ -66,3 +74,5 @@ describe('<CommentComponent />', () => {
   });
 
 });
+
+

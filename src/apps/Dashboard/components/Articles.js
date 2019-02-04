@@ -15,26 +15,29 @@ import defaultUserIcon from '../../../assets/img/default-avatar.jpg';
 import articlePlaceholder from '../../../assets/img/placeholder.png';
 import ArticleComponent from './ArticleComponent';
 
+
 class Articles extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
+      currentPage: this.props.currentPage,
+      newPage: this.props.currentPage
     };
   }
 
   componentDidMount() {
     let onLogin = read_cookie('onLogin');
-
-    if (onLogin==true) {
+    if (onLogin === true) {
       toast.success( "Login Successful!", {autoClose: 3000});
     }
 
     bake_cookie('onLogin', false);
 
     const {actions} = this.props;
-    actions.fetchArticle();
+    const {currentPage} = this.state;
+    actions.fetchArticle(`?page=${currentPage}`);
 
     setTimeout(() => {
       this.setState({ isLoading: false });
@@ -50,8 +53,40 @@ class Articles extends Component {
       });
 
     }, 3600);
-
   }
+
+  static getDerivedStateFromProps(nextProps, prevState){
+    if (nextProps.currentPage!==prevState.currentPage){
+      return {currentPage: nextProps.currentPage};
+    }
+    else return null;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const {currentPage} = this.state;
+    if (prevState.currentPage !== currentPage) {
+      const {actions} = this.props;
+      const {currentPage} = this.state;
+      actions.fetchArticle(`?page=${currentPage}`);
+    }
+
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+      // check if all images are loaded first
+      // then instantiate the masonry layout.
+      imagesLoaded('.grid', function() {
+        let msnry = new Masonry( '.grid',{
+          // options
+          itemSelector: '.grid-item',
+          columnWidth: '.grid-sizer'
+        });
+        msnry.reloadItems();
+      });
+
+    }, 3600);
+  }
+
+
 
   data = () => {
     const { articles } = this.props;
@@ -79,17 +114,17 @@ class Articles extends Component {
             articleAvatar={f[i].author.profile_photo !== '' ? f[i].author.profile_photo : defaultUserIcon}
             authorName={f[i].author.user}
             articleTitle={f[i].title}
+            bookmarked={f[i].bookmarked}
           />
         );
         r.push(t);
       }
       return (r);
     }
-  }
+  };
 
   render() {
     let { isLoading } = this.state;
-
     return ( isLoading ? ( <LoaderData />) : (
       <div className="grid" id="grid">
         <div className="grid-sizer" />
@@ -102,7 +137,8 @@ class Articles extends Component {
 
 Articles.propTypes = {
   actions: PropTypes.object.isRequired,
-  articles: PropTypes.object.isRequired
+  articles: PropTypes.object.isRequired,
+  currentPage: PropTypes.number.isRequired
 };
 
 

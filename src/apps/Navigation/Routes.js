@@ -17,6 +17,9 @@ import Dashboard from "../Dashboard/components/DashboardContainer";
 import NotificationHistory from "../Notifiications/components/NotificationHistoryComponent";
 import Bookmarks from "../Bookmarks/components/Bookmarks";
 import CommentContainer from '../Comments/Components/CommentsContainer';
+import AuthorProfile from "../UserProfile/components/authorProfile";
+import ErrorPage from "../error pages/components/error404Page";
+import LoginButton from "../error pages/components/loginButton";
 
 const Main = () => (
   <Switch>
@@ -37,6 +40,13 @@ const Main = () => (
     <Route exact path="/a/notifications" component={NotificationHistory} />
     <Route exact path="/a/articles/:article_slug/comments" component={CommentContainer} />
     <Route exact path="/a/bookmarks" component={Bookmarks} />
+    <Route exact path="/a/profile/:authorName" component={AuthorProfile} />
+    {/*// Make sure this url remains at the very bottom of this block*/}
+    <Route
+      exact
+      path="/authenticate"
+      render={(props) => <ErrorPage {...props} message="You must be logged in to view this page" button={<LoginButton />} header="401" />} />
+    <Route component={ErrorPage} />
   </Switch>
 );
 

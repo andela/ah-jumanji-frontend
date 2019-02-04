@@ -33,11 +33,32 @@ const fakeCommentThree = {
   "body": "One more story"
 };
 
+const fakeReacton = {
+  comment: 9,
+  reaction: 1,
+  user: {
+    username: "mithamo"
+  }
+};
+
 const commentList = {"comments": [fakeComment, fakeCommentToo, fakeCommentThree]};
 
 describe('<CommentsContainer />', () => {
   it('render all expected pieces', () => {
-    const component = shallow(<CommentsContainer comments={commentList} />);
+    const component = shallow(<CommentsContainer reactions={[fakeReacton]} comments={commentList} />);
     expect(component).toMatchSnapshot();
+  });
+});
+
+describe('<CommentsContainer /> ', () => {
+  let container;
+  beforeEach(() => {
+    container = shallow(<CommentsContainer />);
+  });
+
+  it('renders correctly', () => expect(container.exists()).toEqual(true));
+  it('renders props', () => {
+    const cont = shallow(<CommentsContainer button="like" />);
+    expect(cont.instance().props.button).toBe("like");
   });
 });
