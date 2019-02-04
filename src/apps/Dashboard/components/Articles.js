@@ -21,7 +21,6 @@ class Articles extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true,
       currentPage: this.props.currentPage,
       newPage: this.props.currentPage
     };
@@ -38,21 +37,6 @@ class Articles extends Component {
     const {actions} = this.props;
     const {currentPage} = this.state;
     actions.fetchArticle(`?page=${currentPage}`);
-
-    setTimeout(() => {
-      this.setState({ isLoading: false });
-      // check if all images are loaded first
-      // then instantiate the masonry layout.
-      imagesLoaded('.grid', function() {
-        let msnry = new Masonry( '.grid',{
-          // options
-          itemSelector: '.grid-item',
-          columnWidth: '.grid-sizer'
-        });
-        msnry.reloadItems();
-      });
-
-    }, 3600);
   }
 
   static getDerivedStateFromProps(nextProps, prevState){
@@ -69,21 +53,6 @@ class Articles extends Component {
       const {currentPage} = this.state;
       actions.fetchArticle(`?page=${currentPage}`);
     }
-
-    setTimeout(() => {
-      this.setState({ isLoading: false });
-      // check if all images are loaded first
-      // then instantiate the masonry layout.
-      imagesLoaded('.grid', function() {
-        let msnry = new Masonry( '.grid',{
-          // options
-          itemSelector: '.grid-item',
-          columnWidth: '.grid-sizer'
-        });
-        msnry.reloadItems();
-      });
-
-    }, 3600);
   }
 
 
@@ -91,10 +60,12 @@ class Articles extends Component {
   data = () => {
     const { articles } = this.props;
 
-    if (articles.articles !== undefined) {
+    if (articles !== undefined) {
       const f = articles.articles;
       const r = [];
+      let counter = 0;
       let articleImg = '';
+
       for (const i in f) {
         if (f[i].body.indexOf('src') > -1) {
           const imageSplit = f[i].body.substring(f[i].body.indexOf('src=') + 1);
@@ -118,17 +89,47 @@ class Articles extends Component {
           />
         );
         r.push(t);
+        counter += 1;
       }
-      return (r);
+      if (counter==12) {
+        return (r);
+      }
+
     }
   };
 
+  masonryLoader = () => {
+    return (imagesLoaded('.grid', function() {
+      let msnry = new Masonry( '.grid',{
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer'
+      });
+      msnry.reloadItems();
+    }));
+  }
+
   render() {
-    let { isLoading } = this.state;
-    return ( isLoading ? ( <LoaderData />) : (
+    let articlesLoaded = this.data();
+    let loaded = false;
+    this.masonryLoader();
+
+    if (articlesLoaded!==undefined && articlesLoaded.length==12) {
+      setTimeout(function(){
+        imagesLoaded('.grid', function() {
+          let msnry = new Masonry( '.grid',{
+            itemSelector: '.grid-item',
+            columnWidth: '.grid-sizer'
+          });
+          msnry.reloadItems();
+        });
+      }, 300);
+      loaded = true;
+    }
+
+    return ( !loaded ? ( <LoaderData />) : (
       <div className="grid" id="grid">
         <div className="grid-sizer" />
-        {this.data()}
+        {articlesLoaded}
       </div>
       )
     );
@@ -138,7 +139,7 @@ class Articles extends Component {
 Articles.propTypes = {
   actions: PropTypes.object.isRequired,
   articles: PropTypes.object.isRequired,
-  currentPage: PropTypes.number.isRequired
+  currentPage: PropTypes.number.isRequired,
 };
 
 

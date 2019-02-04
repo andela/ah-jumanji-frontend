@@ -23,10 +23,15 @@ describe('components', () => {
   describe('Articles', () => {
     it('should render self and subcomponents', () => {
       const store = mockStore({});
+      const props = {
+        articles: {
+          articles: ""
+        }
+      }
       const enzymeWrapper = mount(
         <Provider store={store}>
           <MemoryRouter>
-            <Articles />
+            <Articles {...props}/>
           </MemoryRouter>
         </Provider>,);
       expect(enzymeWrapper.find('Articles')).toBeDefined();
