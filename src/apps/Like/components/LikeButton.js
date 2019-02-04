@@ -27,10 +27,9 @@ class LikeButton extends Component{
   };
 
   render() {
-    const { likeCount, liked } = this.props;
+    const { liked } = this.props;
     return(
       <React.Fragment>
-        <span>{ likeCount }</span>
         <a
           id="like-btn"
           className="article-more">

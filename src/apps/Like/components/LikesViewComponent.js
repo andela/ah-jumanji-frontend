@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 import config from "../../../config/config";
+import FollowButton from "../../following/components/FollowButton";
 
 class LikesViewComponent extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class LikesViewComponent extends Component {
           {username.charAt(0).toUpperCase() + username.substr(1)}
         </Link>
         <span className="float-right text-muted">
-          <button type="button" id="follow-btn">Follow</button>
+          <FollowButton />
         </span>
       </li>
     );
