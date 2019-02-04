@@ -24,7 +24,7 @@ exports[`Edit Profile component should match the snapshot 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "jw1r1r",
+              "key": "la2bwt",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Edit Profile component should match the snapshot 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "jw1r1r",
+            "key": "la2bwt",
             "pathname": "/",
             "search": "",
             "state": undefined,
