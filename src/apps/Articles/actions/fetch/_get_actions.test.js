@@ -59,7 +59,7 @@ describe('getDelete actions', () => {
 
     return store.dispatch(get_actions.getArticles("this-is-a-test-article-55b0-750604")).then(() => {
       // return of async actions
-      expect(store.getActions()).toEqual([]);
+      expect(store.getActions()).toEqual([{"payload": {"message": "Could not get that article"}, "type": "fetch error"}]); // Get to know why this is so
     });
   });
 

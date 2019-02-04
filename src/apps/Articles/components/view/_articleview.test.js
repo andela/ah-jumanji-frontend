@@ -28,7 +28,11 @@ describe('if state has all requirements', () => {
   const store = fakeStore({
     Articles:{
       read_article:{
-        body:"This is body"
+        body:"This is body",
+        author:{
+            profile_photo:"this is photo",
+            user: "the user"
+        }
       }
     }
   });

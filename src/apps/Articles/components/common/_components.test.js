@@ -1,8 +1,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import Button from './_components';
+import {Button, FollowComponent} from './_components';
 
+// Button tests
 it("Should render a button", ()=>{
     // in your test:
     const renderer = new ShallowRenderer();
@@ -35,6 +36,25 @@ describe('simulating another call', () => {
       const wrapper = shallow(<Button onChange={onClickingButton} />); // Passing the mocked onChangeImage as prop
       wrapper.find('a').simulate('click');
 
-      expect(onButtonPressed).not.toBeCalled();
+      expect(onButtonPressed).not.toBeCalled();// this is a mess
     });
   });
+
+// followComponent tests
+it("Should render the followComponent", ()=>{
+    const renderer = new ShallowRenderer();
+    renderer.render(<FollowComponent />);
+    const result = renderer.getRenderOutput();
+
+    expect(result.type).toBe('div');
+});
+
+it('find elements in component', () => {
+    const wrapper = shallow(<FollowComponent />);
+    expect(wrapper.find('.profile-div')).toHaveLength(1);
+    expect(wrapper.find('.article-pre-details')).toHaveLength(1);
+    expect(wrapper.find('.follow-div')).toHaveLength(1);
+    expect(wrapper.find('a')).toHaveLength(1);
+    expect(wrapper.find('li')).toHaveLength(1);
+    expect(wrapper.find('ul')).toHaveLength(1);
+});
