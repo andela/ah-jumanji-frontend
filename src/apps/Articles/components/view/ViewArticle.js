@@ -9,8 +9,6 @@ import ArticleView from './_articleview';
 import Ratings from '../../../Rating/components/Rating';
 import CommentsContainer from '../../../Comments/Components/CommentsContainer';
 import LikeButton from "../../../Like/components/LikeButton";
-import BookmarkButton from '../../../Bookmarks/components/BookmarkButton';
-// import { fetchBookmark } from '../../../Dashboard/actions/dashboardActions'
 
 class ArticlePage extends Component{
     constructor(props){
@@ -26,11 +24,6 @@ class ArticlePage extends Component{
 
     render(){
         let slug = this.getSlug();
-        let bookmarked = false;
-        let { Articles } = this.props;
-        if (Articles) {
-          bookmarked = Articles.bookmarked;
-        }
 
         return(
           <div className="container auth-container">
@@ -44,9 +37,6 @@ class ArticlePage extends Component{
                 <LikeButton />
                 &nbsp;&nbsp;
                 <Ratings />
-                <span className="float-right">
-                  <BookmarkButton slug={slug} bookmarked={bookmarked} />
-                </span>
               </div>
               <div className="col-md-12">
                 <CommentsContainer />
