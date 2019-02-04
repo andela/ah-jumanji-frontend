@@ -57,7 +57,7 @@ class Profile extends React.Component {
                         </span>: <span />}
                     </li>
                     <li style={{ listStyleType: "none" }}>
-                      {profile.twitter_handle ?
+                      {profile.phone_number ?
                         <span>
                           <i className="fas fa-phone mobile-phone" />
                           &nbsp;

@@ -21,7 +21,7 @@ const Icons = (props) => {
         url={shareUrl}
         title={title}
         className="share-icon">
-        <TwitterIcon size={40} round />
+        <TwitterIcon size={35} round />
       </TwitterShareButton>
       &nbsp;
       &nbsp;
@@ -29,7 +29,7 @@ const Icons = (props) => {
         url={shareUrl}
         quote={title}
         className="share-icon">
-        <FacebookIcon size={40} round />
+        <FacebookIcon size={35} round />
       </FacebookShareButton>
       &nbsp;
       &nbsp;
@@ -37,7 +37,7 @@ const Icons = (props) => {
         subject={template}
         body={title + ' ' + shareUrl}
         className="share-icon">
-        <EmailIcon size={40} round />
+        <EmailIcon size={35} round />
       </EmailShareButton>
       &nbsp;
       &nbsp;
@@ -45,7 +45,7 @@ const Icons = (props) => {
         url={shareUrl}
         title={title}
         className="share-icon">
-        <LinkedinIcon size={40} round />
+        <LinkedinIcon size={35} round />
       </LinkedinShareButton>
     </span>
   );
