@@ -15,11 +15,9 @@ class Profile extends React.Component {
   }
 
   render() {
-
     const { profile } = this.props;
     const { country } = profile;
     const fullCountryName = countries[country];
-
     return (
       <div>
         <div className="container">
@@ -51,18 +49,31 @@ class Profile extends React.Component {
                     <li style={{ listStyleType: "none" }}>
                       {profile.bio}
                     </li>
-                    <li style={{ listStyleType: "none" }}>
-                      <i className="fas fa-globe-africa" />
-                      &nbsp;
-                      {fullCountryName}
+                    <li style={{ listStyleType: "none", textTransform: "capitalize"}}>
+                      {fullCountryName ?
+                        <span>
+                          <i className="fas fa-globe africa-icon" />
+                          &nbsp;
+                          {fullCountryName}
+                        </span>: <span />}
                     </li>
                     <li style={{ listStyleType: "none" }}>
-                      <i className="fas fa-phone" />
-                      &nbsp;
-                      {profile.phone_number}
+                      {profile.phone_number ?
+                        <span>
+                          <i className="fas fa-phone mobile-phone" />
+                          &nbsp;
+                          {profile.phone_number}
+                        </span> : <span />}
                     </li>
                     <li style={{ listStyleType: "none" }}>
-                      {profile.twitter_handle}
+                      {profile.twitter_handle ?
+                        <span>
+                          <i className="fab fa-twitter twitter-icon" />
+                          &nbsp;
+                          <a style={{ listStyleType: "none" }} href={`https://twitter.com/${profile.twitter_handle}`}>
+                            {profile.twitter_handle}
+                          </a>
+                        </span> : <span />}
                     </li>
                     <li style={{ listStyleType: "none" }}>
                       <a href={profile.website}>{profile.website}</a>

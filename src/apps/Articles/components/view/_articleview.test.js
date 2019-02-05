@@ -10,6 +10,7 @@ import {
   Provider
 } from "react-redux";
 
+import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView';
 import Viewpage from'./_articleview';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -27,7 +28,11 @@ describe('if state has all requirements', () => {
   const store = fakeStore({
     Articles:{
       read_article:{
-        body:"This is body"
+        body:"This is body",
+        author:{
+            profile_photo:"this is photo",
+            user: "the user"
+        }
       }
     }
   });
@@ -41,6 +46,7 @@ describe('if state has all requirements', () => {
 
   it('should render all div', () => {
     expect(wrapper.find('div').exists()).toBe(true);
+    expect(wrapper.find('.publish-div').exists()).toBe(true);
   });
 
 });
@@ -59,6 +65,13 @@ describe('If state is undefined', () => {
 
   it('should render all div', () => {
     expect(wrapper.find('div').exists()).toBe(true);
+    expect(wrapper.find('.publish-div').exists()).not.toBe(true);
   });
 
 });
+
+it('FroalaEditorView is present', () => {
+  const component = shallow(<FroalaEditorView />);
+  expect(component.exists()).toBe(true);
+});
+

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {read_cookie} from 'sfcookies';
 import {
     connect
   } from 'react-redux';
@@ -13,6 +14,8 @@ import 'froala-editor/css/froala_editor.pkgd.min.css';
 import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView';
 import { getArticles } from '../../actions/fetch/_get_actions';
 import { startFunction } from '../edit/_articleedit';
+import { openWindow } from '../../actions/common/common';
+import { FollowComponent } from '../common/_components';
 
 
 class EditorView extends React.Component{
@@ -20,6 +23,8 @@ class EditorView extends React.Component{
     constructor(props){
         super(props);
 
+        this.button = this.button.bind(this);
+        this.onEditPressed = this.onEditPressed.bind(this);
         const { slug } = props;
         this.state = {
             model:'Wait for it...',
@@ -32,6 +37,22 @@ class EditorView extends React.Component{
         return 'mounted';
     }
 
+    onEditPressed(slug){
+        openWindow(`/a/edit_article/${slug}`);
+    }
+
+    button = (link, slug, type, value) =>{
+        return(
+          <li className="publish-nav-item">
+            <a
+              href={link} onClick={()=>{
+                openWindow(`/a/edit_article/${slug}`);
+              }} className={type}>
+              { value }
+            </a>
+          </li>
+          );
+    }
     render(){
         const myProps = this.props;
         const myState = this.state;
@@ -39,9 +60,7 @@ class EditorView extends React.Component{
             return(
               <div>
                 <br />
-                <FroalaEditorView
-                model={myState.model}
-                />
+                <FroalaEditorView model={myState.model} />
               </div>
                 );
         }else{
@@ -49,9 +68,16 @@ class EditorView extends React.Component{
         return(
           <div>
             <br />
+            <div className="publish-div">
+              { read_cookie('loggedInUsername') === read_cookie("article_author") ?
+                this.button("#", myProps.slug, "btn btn-outline-warning  btn-sm", "Edit Story"): ""}
+            </div>
+            { read_cookie('loggedInUsername') !== read_cookie("article_author") ?
+                FollowComponent(myProps.Articles.author) : ""}
             <FroalaEditorView
             model={myProps.Articles.body}
             />
+            <br />
           </div>
           );
         }

@@ -32,6 +32,28 @@ describe('follow actions', () => {
         };
         expect(actions.unfollow(message)).toEqual(expectedAction);
     });
+
+    it ('should create an action myfollowers', () => {
+        const followers = {
+            "user": "test.user"
+        };
+        const expectedAction = {
+          type: types.GET_FOLLOWERS,
+          followers
+        };
+        expect(actions.myFollowers(followers)).toEqual(expectedAction);
+    });
+
+    it ('should create an action myfollowing', () => {
+      const followed = {
+          "user": "test.user"
+      };
+      const expectedAction = {
+        type: types.GET_FOLLOWED,
+        followed
+      };
+      expect(actions.myFollowed(followed)).toEqual(expectedAction);
+  });
 });
 
 

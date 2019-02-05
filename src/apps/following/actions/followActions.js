@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { read_cookie } from 'sfcookies';
-import { toast } from 'react-toastify';
 
 import * as types from './types';
 import config from '../../../config/config';
@@ -44,7 +43,6 @@ export function followUser(username) {
             }
         })
         .then(res => {
-            toast.success(res.data.message, {autoClose: 2000});
             dispatch(follow(res.data));
         });
     };
@@ -59,7 +57,6 @@ export function unfollowUser(username) {
                 Authorization: `Token ${token}`
             }
         }).then(res => {
-            toast.success(res.data.message, {autoClose: 2000});
             dispatch(unfollowUser(res.data));
         });
     };

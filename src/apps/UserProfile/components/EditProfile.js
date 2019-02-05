@@ -13,26 +13,9 @@ class EditProfile extends Component {
   constructor(props) {
     super(props);
     const { profile } = this.props;
-    const {
-      first_name,
-      last_name,
-      profile_photo,
-      website,
-      phone_number,
-      bio,
-      country,
-      twitter_handle } = profile;
+    const { first_name, last_name, profile_photo, website, phone_number, bio, country, twitter_handle } = profile;
 
-    this.state = {
-      firstName: first_name,
-      lastName: last_name,
-      profilePhoto: profile_photo,
-      website: website,
-      phoneNumber: phone_number,
-      bio: bio,
-      country: country,
-      twitterHandle: twitter_handle,
-      selectedFile: null
+    this.state = { firstName: first_name, lastName: last_name, profilePhoto: profile_photo, website: website, phoneNumber: phone_number, bio: bio, country: country, twitterHandle: twitter_handle, selectedFile: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,28 +27,8 @@ class EditProfile extends Component {
     dataValid = [];
     e.preventDefault();
     const { fileUploadHandler } = this.props;
-    const {
-      firstName,
-      lastName,
-      profilePhoto,
-      website,
-      phoneNumber,
-      bio,
-      country,
-      twitterHandle,
-      selectedFile } = this.state;
-    let profile = {
-          "profile" : {
-            first_name: firstName,
-            last_name: lastName,
-            profile_photo: profilePhoto,
-            website: website,
-            phone_number: phoneNumber,
-            bio: bio,
-            country: country,
-            twitter_handle: twitterHandle,
-          }
-        };
+    const { firstName, lastName, profilePhoto, website, phoneNumber, bio, country, twitterHandle, selectedFile } = this.state;
+    let profile = {"profile" : {first_name: firstName, last_name: lastName, profile_photo: profilePhoto, website: website, phone_number: phoneNumber, bio: bio, country: country, twitter_handle: twitterHandle}};
     for (let key in profile.profile) {
       let value = profile.profile[key];
       let keyParams = key.split("_");
@@ -78,6 +41,9 @@ class EditProfile extends Component {
           e.target.parentElement.querySelector('p').classList.add('hidden');
           toast.dismiss();
         });
+      }
+      if(["phoneNumber"].includes(key)) {
+        this.validatePhoneNumber(key, value);
       }
     }
     dataValid.includes(false) ?  false : fileUploadHandler(selectedFile, profile);
@@ -97,36 +63,37 @@ class EditProfile extends Component {
 
   }
 
+  validatePhoneNumber(inputName, inputValue) {
+    if(inputValue.length < 10) {
+      let warningSubscript = document.querySelector(
+        `input[name=${inputName}]`).parentElement.querySelector("p");
+      warningSubscript.classList.remove("hidden");
+      warningSubscript.innerHTML = "Input a standard phone number";
+      document.querySelector(`input[name=${inputName}]`).classList.add('highlight-error-input');
+      dataValid.push(false);
+    }
+    dataValid.push(true);
+  }
+
   validateUserInput(inputName, inputValue) {
 
     if (!inputValue) {
       let warningSubscript = document.querySelector(
         `input[name=${inputName}]`).parentElement.querySelector("p");
-
       // Display an error beneath appropriate input
       warningSubscript.classList.remove("hidden");
       warningSubscript.innerHTML = "This field may not be blank";
       // Highlight input that has no data
       document.querySelector(`input[name=${inputName}]`).classList.add('highlight-error-input');
-
       // Mark input as false/invalid
       dataValid.push(false);
-    }
-    else {
+    } else {
       dataValid.push(true);
     }
   }
 
   render () {
-    const {
-      firstName,
-      lastName,
-      website,
-      twitterHandle,
-      phoneNumber,
-      bio
-    } = this.state;
-
+    const {firstName, lastName, website, twitterHandle, phoneNumber, country, bio} = this.state;
     return (
       <div>
         <div className="container auth-container">
@@ -146,11 +113,11 @@ class EditProfile extends Component {
                       </div>
                       <div className="col-md-6">
                         <div className="form-group">
-                          <label htmlFor="country">Country</label>
+                          <label htmlFor="countriesDropdown">Country</label>
                           <select name="country" className="form-control" onChange={this.onChange} id="countriesDropdown">
-                            {Object.keys(countries).map((key) => {
-                              return <option value={key}>{countries[key]}</option>;
-                            })}
+                            {Object.keys(countries).map((key) => (
+                              <option key={key} value={key} selected={key === country ? true : false}>{countries[key]}</option>
+                            ))}
                           </select>
                         </div>
                       </div>
@@ -167,9 +134,9 @@ class EditProfile extends Component {
                         <EditFormInput label="Phone Number" inputType="text" inputName="phoneNumber" value={phoneNumber} onChange={this.onChange} />
                       </div>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group last-div">
                       <label htmlFor="bio">Bio</label>
-                      <textarea name="bio" rows="8" cols="80" className="form-control" value={bio} onChange={this.onChange} />
+                      <textarea name="bio" id="bio" rows="8" cols="80" className="form-control" value={bio} onChange={this.onChange} />
                     </div>
                     <Link to="/a/profile">
                       <button type="submit" className="btn btn-success" onClick={this.handleSubmit}>Submit</button>

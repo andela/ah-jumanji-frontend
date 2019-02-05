@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProfPic /> should match the snapshot 1`] = `
+<button
+  aria-expanded="false"
+  aria-haspopup="true"
+  className="nav-link dropdown-toggle btn-link"
+  data-toggle="dropdown"
+  id="navbarDropdown"
+  type="button"
+>
+  <img
+    alt="avatar"
+    className="followers-avatar navbar-avatar rounded-circle"
+    src="https://cdn-images-1.medium.com/max/1200/1*MccriYX-ciBniUzRKAUsAw.png"
+  />
+</button>
+`;

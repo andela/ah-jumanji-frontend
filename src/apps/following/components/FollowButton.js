@@ -12,6 +12,7 @@ import * as followActions from '../actions/followActions';
 class FollowButton extends Component {
 constructor(props){
     super(props);
+    this.handleFollow = this.handleFollow.bind(this);
     this.state = {
         storedMyFollowing: {},
         following: false
@@ -37,10 +38,10 @@ checkIfFolllowed(){
     const {myfollowing, username} = this.props;
     if(username === undefined) return;
 
-    if (myfollowing !== undefined){
-        if(myfollowing.followed === undefined) return;
+    if (myfollowing.following !== undefined){
+        if(myfollowing.following.followed === undefined) return;
 
-        const foundUser = myfollowing.followed.find(user => user.followed.username === username);
+        const foundUser = myfollowing.following.followed.find(user => user.followed.username === username);
         if(foundUser === undefined) return;
 
         this.setState({following: true});
@@ -65,7 +66,7 @@ render() {
     const {following} = this.state;
     return (
       <div className="button">
-        <button type="button" className="btn btn-outline-success" onClick={this.handleFollow}>{following ? "Following": "Follow"}</button>
+        <button type="button" className="btn btn-outline-success btn-sm" onClick={this.handleFollow}>{following ? "Following": "Follow"}</button>
       </div>
     );
 }
@@ -78,13 +79,14 @@ FollowButton.propTypes = {
 
 function mapStateToProps(state) {
     return {
-        myfollowing: state.followingReducer.following
+        myfollowing: state.followingReducer
     };
-  }
+}
+
 function mapDispatchToProps(dispatch) {
     return {
       actions: bindActionCreators(followActions, dispatch)
     };
   }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FollowButton);
+  export default connect(mapStateToProps, mapDispatchToProps)(FollowButton);

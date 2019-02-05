@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {read_cookie} from 'sfcookies';
 import {
     connect
   } from 'react-redux';
@@ -13,7 +14,8 @@ import 'froala-editor/css/froala_editor.pkgd.min.css';
 
 import FroalaEditor from 'react-froala-wysiwyg';
 import { getArticles } from '../../actions/fetch/_get_actions';
-import { updateArticle, updateRealtime } from '../../actions/update/_update_actions';
+import { Button } from '../common/_components';
+import { updateRealtime, updateArticle } from '../../actions/update/_update_actions';
 import { deleteArticle } from '../../actions/delete/_delete_actions';
 
 
@@ -22,9 +24,8 @@ class EditorEditView extends React.Component{
     constructor(props){
         super(props);
 
-        this.onButtonPressed = this.onButtonPressed.bind(this);
         this.handleEditChange = this.handleEditChange.bind(this);
-        this.button = this.button.bind(this);
+        this.authorCheck = this.authorCheck.bind(this);
 
         const { slug } = props;
         this.state = {
@@ -37,36 +38,6 @@ class EditorEditView extends React.Component{
         startFunction(this.state,this.props);
     }
 
-    onButtonPressed(action){
-        let myState = this.state;
-        let myProps = this.props;
-        switch (action) {
-            case "update":
-                //update state
-                myProps.updateArticle(myProps.Articles.body, myState.slug);
-                break;
-            case "delete":
-                //update state
-                myProps.deleteArticle(myState.slug);
-                break;
-            default:
-                break;
-        }
-    }
-
-    button = (link, call, type, value) =>{
-        return(
-          <li className="publish-nav-item">
-            <a
-              href={link} onClick={()=>{
-              this.onButtonPressed(call);
-              }} className={type}>
-              { value }
-            </a>
-          </li>
-          );
-    }
-
     handleEditChange(model) {
         let myProps = this.props;
         myProps.updateRealtime(model);
@@ -75,16 +46,24 @@ class EditorEditView extends React.Component{
         });
       }
 
+    authorCheck(type, bootstrap, value, article_body, slug){
+        if(read_cookie('loggedInUsername') === read_cookie("article_author")) {
+            return Button("#", type, bootstrap, value, article_body, slug, this.props);
+        }else{
+            return "";
+       }
+    }
+
     render(){
         const myProps = this.props;
         const myState = this.state;
-
         if(myProps.Articles === undefined){
             return(
               <div>
                 <br />
                 <FroalaEditor
                 model={myState.model}
+                tag="textarea"
                 config={{placeholderText: "Nothing here to edit...",
                 charCounterCount: false,toolbarInline: true,}}
                 />
@@ -98,8 +77,8 @@ class EditorEditView extends React.Component{
               <div>
                 <br />
                 <div className="publish-div">
-                  { this.button("#", "update", "btn btn-outline-warning  btn-sm", "Update Story")}
-                  { this.button("#", "delete", "btn btn-outline-danger  btn-sm", "Delete Story")}
+                  { this.authorCheck("update", "btn btn-outline-warning  btn-sm", "Update Story", article_body, myState.slug)}
+                  { this.authorCheck( "delete", "btn btn-outline-danger  btn-sm", "Delete Story", article_body, myState.slug)}
                 </div>
                 <FroalaEditor
                 tag="textarea"
@@ -121,7 +100,6 @@ class EditorEditView extends React.Component{
     }
 }
 
-
 export function startFunction(le_state, le_props){
     let articleSlug = le_state.slug;
     le_props.getArticles(articleSlug);
@@ -137,4 +115,15 @@ export function mapStateToProps(state, myProps) {
         myProps
     };
   }
-export default connect (mapStateToProps, {getArticles, updateArticle, updateRealtime,deleteArticle})(EditorEditView);
+
+  export function mapDispatchToProps(dispatch) {
+    return {
+      // Authentication functions
+      getArticles: (data) => dispatch(getArticles(data)),
+      updateArticle: (body, slug) => dispatch(updateArticle(body, slug)),
+      updateRealtime: (data) => dispatch(updateRealtime(data)),
+      deleteArticle: (data) => dispatch(deleteArticle(data)),
+    };
+  }
+
+export default connect (mapStateToProps, mapDispatchToProps)(EditorEditView);
