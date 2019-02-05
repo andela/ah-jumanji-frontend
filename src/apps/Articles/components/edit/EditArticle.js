@@ -1,9 +1,15 @@
 import React,{ Component } from 'react';
+import { read_cookie } from 'sfcookies';
 import ArticleEdit from './_articleedit';
+import { openWindow} from '../../actions/common/common';
 
 class ArticlePage extends Component{
     constructor(props){
         super(props);
+        const token = read_cookie('token');
+        if(token.length === 0){
+          openWindow(`/`);
+        }
     }
 
     getSlug(){
@@ -15,7 +21,7 @@ class ArticlePage extends Component{
     render(){
         return(
           <div className="container auth-container">
-            <div className="row">
+            <div className="article-view col-md-10">
               <div className="col-md-12">
                 <ArticleEdit slug={this.getSlug()} />
               </div>

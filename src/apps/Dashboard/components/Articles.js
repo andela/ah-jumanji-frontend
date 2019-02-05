@@ -100,11 +100,10 @@ class Articles extends Component {
 
   masonryLoader = () => {
     return (imagesLoaded('.grid', function() {
-      let msnry = new Masonry( '.grid',{
+      new Masonry( '.grid',{
         itemSelector: '.grid-item',
         columnWidth: '.grid-sizer'
       });
-      msnry.reloadItems();
     }));
   }
 
@@ -112,26 +111,25 @@ class Articles extends Component {
     let articlesLoaded = this.data();
     let loaded = false;
     this.masonryLoader();
-
     if (articlesLoaded!==undefined && articlesLoaded.length==12) {
-      setTimeout(function(){
-        imagesLoaded('.grid', function() {
-          let msnry = new Masonry( '.grid',{
-            itemSelector: '.grid-item',
-            columnWidth: '.grid-sizer'
-          });
-          msnry.reloadItems();
-        });
-      }, 300);
       loaded = true;
-    }
-
-    return ( !loaded ? ( <LoaderData />) : (
-      <div className="grid" id="grid">
-        <div className="grid-sizer" />
-        {articlesLoaded}
-      </div>
-      )
+      document.getElementById("overlay").style.display = "block";
+      setTimeout(function(){
+        document.getElementById("overlay").style.display = "none";
+        imagesLoaded('.grid', function() {
+          new Masonry( '.grid',{itemSelector: '.grid-item',olumnWidth: '.grid-sizer'});
+        });
+      }, 1200);}
+    return (
+      <React.Fragment>
+        <div id="overlay" />
+        { !loaded ? ( <LoaderData />) : (
+          <div className="grid" id="grid">
+            <div className="grid-sizer" />
+            {articlesLoaded}
+          </div>
+        )}
+      </React.Fragment>
     );
   }
 }

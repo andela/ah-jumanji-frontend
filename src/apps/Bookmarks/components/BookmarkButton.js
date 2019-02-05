@@ -40,17 +40,23 @@ class BookmarkButton extends Component {
        }
 
      } else {
-       if (bookmark.bookmarks!==undefined) {
-         if (bookmark.bookmarks.message =="Bookmark successfully made.") {
-           classIcon = "fas fa-bookmark fa-active";
-           labelBookmark = "Unbookmark";
-         } else {
-           classIcon = "far fa-bookmark";
-           labelBookmark = "Bookmark";
-         }
-       } else {
+       if(bookmark === undefined){
+         //Do nothing
          classIcon = "far fa-bookmark";
          labelBookmark = "Bookmark";
+       }else{
+        if (bookmark.bookmarks!==undefined) {
+          if (bookmark.bookmarks.message =="Bookmark successfully made.") {
+            classIcon = "fas fa-bookmark fa-active";
+            labelBookmark = "Unbookmark";
+          } else {
+            classIcon = "far fa-bookmark";
+            labelBookmark = "Bookmark";
+          }
+        } else {
+          classIcon = "far fa-bookmark";
+          labelBookmark = "Bookmark";
+        }
        }
      }
 

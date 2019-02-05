@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Link} from "react-router-dom";
+import {read_cookie} from 'sfcookies';
+import FollowButton from '../../following/components/FollowButton';
+
 import config from "../../../config/config";
 
 class LikesViewComponent extends Component {
@@ -27,12 +29,15 @@ class LikesViewComponent extends Component {
           src={image || config.defaultImage}
           alt="follower avatar"
           className="followers-avatar message-avatar rounded-circle" />
-        <Link to={`/ah-jumanji/profile/${username}`}>
+        <a href={`/a/profile/${username}`}>
           {username.charAt(0).toUpperCase() + username.substr(1)}
-        </Link>
-        <span className="float-right text-muted">
-          <button type="button" id="follow-btn">Follow</button>
-        </span>
+        </a>
+        { read_cookie('loggedInUsername') !== username ?
+                (
+                  <span className="float-right text-muted">
+                    <FollowButton username={username} />
+                  </span>
+                ): (false)}
       </li>
     );
   }

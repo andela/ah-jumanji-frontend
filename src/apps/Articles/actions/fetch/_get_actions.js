@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { read_cookie, bake_cookie } from 'sfcookies';
+import { redirectUrl } from '../common/common';
 import { GOT_ARTICLE, ERROR_GETTING_ARTICLE} from '../actionTypes';
 import getUserCookie from '../../../common/utils/readTokens';
 
@@ -23,13 +24,12 @@ export const getArticles = (slug) =>dispatch=> {
         .then((response) => {
           let r = response.data.articles;
           let slug = response.data.articles.slug;
-
+          bake_cookie("article_author", r.author.user);
           axios.all([fetchBookmark(slug)]).then(
             axios.spread(
               (bookmarked) =>{
                 Object.assign(r, {"bookmarked": bookmarked});
                 dispatch(gotArticle(r));
-
               }
             )
           );
@@ -37,7 +37,7 @@ export const getArticles = (slug) =>dispatch=> {
         })
         .catch((err) => {
             dispatch(getError(err));
-            window.location.replace('/');
+            redirectUrl(`/not_found/${slug}`);
         });
     return fetch;
 };

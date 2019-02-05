@@ -1,4 +1,5 @@
 import {toast} from 'react-toastify';
+import article_date from 'number-to-date-month-name';
 
 export function redirectUrl(url){
     setTimeout(function(){ openWindow(url); }, 1000);
@@ -41,3 +42,24 @@ export function onButtonPressed(action, body, slug, le_props){
     }
 
 }
+
+export const articleTime = (time) => {
+    let publish_date = time.split("-");
+    let year = parseInt(publish_date[0]);
+    let month = article_date.toMonth(parseInt(publish_date[1]), 's');
+    let day = parseInt(publish_date[2].substr(0,2));
+  return `${month} ${day} ${year}`;
+};
+
+
+export const readTime = (time) => {
+    const sec = 60;
+    let result  = time / sec;
+    if(result < 1){
+        return Math.ceil(result) +" sec";
+    }else if(time > 3599){
+        return "1 hr plus";
+    }else{
+        return Math.ceil(result) + " min";
+    }
+};
