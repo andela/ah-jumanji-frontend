@@ -1,4 +1,5 @@
 import React from 'react';
+import {bake_cookie} from 'sfcookies';
 import Enzyme, { mount, shallow} from 'enzyme';
 import Adapter from "enzyme-adapter-react-16";
 import {
@@ -25,6 +26,7 @@ describe('_viewage', () => {
 });
 
 describe('if state has all requirements', () => {
+  bake_cookie("token",'This is a test token');
   const store = fakeStore({
     Articles:{
       read_article:{

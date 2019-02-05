@@ -12,10 +12,10 @@ import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
 
 import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView';
+import FollowButton from '../../../following/components/FollowButton';
 import { getArticles } from '../../actions/fetch/_get_actions';
 import { startFunction } from '../edit/_articleedit';
 import { openWindow } from '../../actions/common/common';
-import { FollowComponent } from '../common/_components';
 
 
 class EditorView extends React.Component{
@@ -72,8 +72,20 @@ class EditorView extends React.Component{
               { read_cookie('loggedInUsername') === read_cookie("article_author") ?
                 this.button("#", myProps.slug, "btn btn-outline-warning  btn-sm", "Edit Story"): ""}
             </div>
-            { read_cookie('loggedInUsername') !== read_cookie("article_author") ?
-                FollowComponent(myProps.Articles.author) : ""}
+
+            <div className="profile-div">
+              <ul className="list-group list-group-flush">
+                <li className="article-pre-details">
+                  <img src={myProps.Articles.author.profile_photo} alt="jumanji" className="followers-avatar rounded-circle" />
+                  <a href={`/a/profile/${myProps.Articles.author.user}`}>{"  " + myProps.Articles.author.user}</a>
+                  <br />
+                </li>
+              </ul>
+              <div className="follow-div">
+                <FollowButton username={myProps.Articles.author.user} />
+              </div>
+            </div>
+            <p className="article-title">{myProps.Articles.title}</p>
             <FroalaEditorView
             model={myProps.Articles.body}
             />
