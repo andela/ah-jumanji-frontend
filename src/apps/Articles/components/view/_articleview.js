@@ -15,6 +15,7 @@ import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView';
 import { getArticles } from '../../actions/fetch/_get_actions';
 import { startFunction } from '../edit/_articleedit';
 import { openWindow } from '../../actions/common/common';
+import { FollowComponent } from '../common/_components';
 
 
 class EditorView extends React.Component{
@@ -71,9 +72,12 @@ class EditorView extends React.Component{
               { read_cookie('loggedInUsername') === read_cookie("article_author") ?
                 this.button("#", myProps.slug, "btn btn-outline-warning  btn-sm", "Edit Story"): ""}
             </div>
+            { read_cookie('loggedInUsername') !== read_cookie("article_author") ?
+                FollowComponent(myProps.Articles.author) : ""}
             <FroalaEditorView
             model={myProps.Articles.body}
             />
+            <br />
           </div>
           );
         }
