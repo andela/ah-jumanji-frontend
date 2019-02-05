@@ -1,14 +1,14 @@
 import axios from 'axios';
-import { read_cookie } from 'sfcookies';
 import { toast } from 'react-toastify';
+import { read_cookie } from 'sfcookies';
+// import getUserCookie from '../../common/utils/readTokens';
 import * as types from './types';
 import config from '../../../config/config';
 
-
+// const token = getUserCookie();
 const token = read_cookie('token');
 export const viewProfile = () => async dispatch => {
   let endpoint = config.api.getProfileUrl;
-
   try {
     await axios.get(
       endpoint,

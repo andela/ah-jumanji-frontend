@@ -317,11 +317,4 @@ exports[`<NotAuthenticatedLinksSm /> should match the snapshot 1`] = `
 </Fragment>
 `;
 
-exports[`<NotificationLink /> should match the snapshot 1`] = `
-<Loader
-  color="#00BFFF"
-  height="80"
-  type="ThreeDots"
-  width="80"
-/>
-`;
+exports[`<NotificationLink /> should match the snapshot 1`] = `""`;

@@ -1,5 +1,4 @@
 import React from "react";
-import Loader from 'react-loader-spinner';
 
 import NavItem from "./NavItem";
 import NavButton from "./NavButton";
@@ -41,7 +40,7 @@ export class NotificationLink extends React.Component {
     const {notifications} = this.state;
 
     if (!notifications.fetched) {
-      return (<Loader type="ThreeDots" color="#00BFFF" height="80" width="80" />);
+      return ("");
     } else {
       return (
         <React.Fragment>
@@ -50,6 +49,15 @@ export class NotificationLink extends React.Component {
       );
     }
   }
+}
+
+function notificationDropdownLink() {
+  return(
+    <a href="/a/notifications" className="dropdown-item">
+      <i className="fas fa-bell" />
+      Notifications
+    </a>
+  );
 }
 
 export const HomeLinks = () => (
@@ -79,10 +87,7 @@ export const HomeLinksSm = () => (
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-plus-square" link="/a/createarticle" label="Add Post" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-plus-square" link="javascript:;" data-toggle="modal" data-target="#search" label="Search" />
         <li>
-          <a href="/a/notifications" className="dropdown-item">
-            <i className="fas fa-bell" />
-            Notifications
-          </a>
+          {notificationDropdownLink()}
         </li>
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />
@@ -146,10 +151,7 @@ export const AuthenticatedLinksSm = () => (
       </button>
       <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
         <li>
-          <a href="/a/notifications" className="dropdown-item">
-            <i className="fas fa-bell" />
-            Notifications
-          </a>
+          {notificationDropdownLink()}
         </li>
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />

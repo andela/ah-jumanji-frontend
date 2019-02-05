@@ -104,3 +104,4 @@ describe('Edit Profile component', () => {
   });
 
 });
+
