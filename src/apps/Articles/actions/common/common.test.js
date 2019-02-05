@@ -1,8 +1,7 @@
 import React from 'react';
-import {mount, shallow} from 'enzyme';
+import {mount} from 'enzyme';
 import { toast, ToastContainer } from 'react-toastify';
 import * as commonActions from './common';
-import Edit from '../../components/edit/_articleedit';
 
 'use strict';
 

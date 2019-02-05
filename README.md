@@ -27,9 +27,8 @@ This project has the following core dependencies:
 - express (node server)
 - bootstrap/popper.js for styling
 
-The project is linted using eslint and the linting rules are defined in
-the `.eslintrc.json` file in the root directory. HMR (Hot Module Replacement)
-is enabled by default and allows for a seamless build experience during development.
+The project is linted using eslint and the linting rules are defined in the `.eslintrc.json` file in the root directory. HMR (Hot Module Replacement) is enabled by default and allows for a seamless build experience during development.
+
 
 To set it up , clone the repo and install the dependencies as follows:
 ```

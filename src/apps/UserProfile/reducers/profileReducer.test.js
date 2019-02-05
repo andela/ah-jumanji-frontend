@@ -9,6 +9,21 @@ describe('profile reducers', () => {
     authorProfile: {}
   };
 
+  const imageCreds = {
+    "bytes": 18288,
+    "created_at": "2019-01-24T21:14:47Z",
+    "etag": "b3de80f76a46d22d89948d8cef9ee741",
+    "existing": false,
+    "format": "jpg",
+    "height": 295,
+    "original_filename": "50eb87568743c099a7a65b004388b036",
+    "placeholder": false,
+    "public_id": "50eb87568743c099a7a65b004388b036_inizvz",
+    "resource_type": "image",
+    "secure_url": "https://res.cloudinary.com/authors-haven-jumanji/",
+    "signature": "c17f55e300eaf1f6c483da36ddb3697fa3c1b681"
+};
+
   const profile = {
     'bio': 'Bambino Kittens',
     'country': 'KEN',
@@ -43,6 +58,23 @@ describe('profile reducers', () => {
     expect(profileReducer(initialState, action)).toEqual(expectedState);
   });
 
+  it('should handle editing profile failed', () => {
+    const action = {
+      type: types.EDIT_PROFILE_FAILED
+    };
+
+    expect(profileReducer({}, action)).toEqual({});
+  });
+
+  it('should handle image upload failed', () => {
+    const action = {
+      type: types.IMAGE_UPLOAD_FAILED
+    };
+
+    expect(profileReducer({}, action)).toEqual({});
+  });
+
+
   it('should handle VIEW_PROFILE_FAILED', () => {
     const action = {
       type: types.VIEW_PROFILE_FAILED
@@ -63,6 +95,20 @@ describe('profile reducers', () => {
       authorProfile: {}
     };
     expect(profileReducer(initialState, action)).toEqual(expectedState);
+  });
+
+  it('should handle successful image upload', () => {
+    const initial = {};
+    const action = {
+      type: types.SUCCESSFUL_IMAGE_UPLOAD,
+      payload: imageCreds
+    };
+
+    const expectedState = {
+      profileImage: imageCreds
+    };
+
+    expect(profileReducer(initial, action)).toEqual(expectedState);
   });
 
   it ('should handle VIEW_AUTHOR_PROFILE', () => {

@@ -73,6 +73,7 @@ export function fetchArticle(pageNumber) {
       })
       .catch(error => {
         dispatch(FetchFailed(error));
+        window.location.replace('/');
       });
   };
 }

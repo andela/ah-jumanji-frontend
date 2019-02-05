@@ -1,10 +1,11 @@
 import axios from 'axios';
 import { read_cookie, bake_cookie } from 'sfcookies';
-import {toastNotification } from '../common/common';
 import { GOT_ARTICLE, ERROR_GETTING_ARTICLE} from '../actionTypes';
+// import getUserCookie from '../../../common/utils/readTokens';
 
 import config from '../../../../config/config';
 
+// const token = getUserCookie();
 const token = read_cookie('token');
 const loggedInUsername = read_cookie('loggedInUsername');
 const endpointSingleBookmark = config.api.singleBookmarksUrl;
@@ -30,7 +31,7 @@ export const getArticles = (slug) =>dispatch=> {
             ));})
         .catch((err) => {
             dispatch(getError(err));
-            toastNotification("error", "Could not get that article!"+err);
+            window.location.replace('/');
         });
     return fetch;
 };

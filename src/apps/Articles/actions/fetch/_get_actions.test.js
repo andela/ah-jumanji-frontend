@@ -62,35 +62,4 @@ describe('getDelete actions', () => {
       expect(store.getActions()).toEqual([{"payload": {"message": "Could not get that article"}, "type": "fetch error"}]); // Get to know why this is so
     });
   });
-
-
-  it('creates GET_POSTS_SUCCESS after successfuly fetching posts', () => {
-    let getPostsMock = {articles: {
-          body:"this is slug",
-          author:{
-            user :"Granson"
-          }
-        }
-      };
-      moxios.wait(() => {
-        const request = moxios.requests.mostRecent();
-        request.respondWith({
-          status: 200,
-          response: getPostsMock,
-        });
-      });
-
-      const expectedActions = [
-          { type: GOT_ARTICLE, payload:{
-            read_article: getPostsMock.articles,
-            posting: false,
-            fetching: false
-        }},
-      ];
-
-      return store.dispatch(get_actions.getArticles("this is slug")).then(() => {
-        // return of async actions
-        expect(store.getActions()).toEqual([]);
-      });
-    });
 });

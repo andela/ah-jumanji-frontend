@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import { read_cookie } from 'sfcookies';
 import {bindActionCreators} from 'redux';
 
 
@@ -18,6 +19,13 @@ class LoginForm extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    const token = read_cookie('token');
+    if(token) {
+      window.location.replace('/a/home');
+    }
   }
 
   handleChange(e) {
