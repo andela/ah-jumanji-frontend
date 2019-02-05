@@ -39,7 +39,7 @@ class ArticlePage extends Component{
 
         return(
           <div className="container auth-container">
-            <div className="row">
+            <div className="article-view col-md-10">
               <div className="col-md-12">
                 <ArticleView slug={slug} />
               </div>
