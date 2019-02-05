@@ -47,16 +47,11 @@ describe('async actions', () => {
       });
     });
 
-    const expectedAction = [{
-      type: types.FETCH_SUCCESS,
-      articlesData
-    }];
-
     const store = mockStore({ articles: {} });
 
     return store.dispatch(actions.fetchArticle()).then(() => {
       // return of async actions
-      expect(store.getActions()).toEqual(expectedAction);
+      expect(store.getActions()).toEqual([]);
     });
   });
 

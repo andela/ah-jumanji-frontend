@@ -1,5 +1,4 @@
 import React from "react";
-import Loader from 'react-loader-spinner';
 
 import NavItem from "./NavItem";
 import NavButton from "./NavButton";
@@ -41,7 +40,7 @@ export class NotificationLink extends React.Component {
     const {notifications} = this.state;
 
     if (!notifications.fetched) {
-      return (<Loader type="ThreeDots" color="#00BFFF" height="80" width="80" />);
+      return ("");
     } else {
       return (
         <React.Fragment>

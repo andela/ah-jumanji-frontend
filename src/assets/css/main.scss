@@ -30,6 +30,18 @@
 }
 .publish-div {
   text-align: right;
+  position: relative;
+  right: 0;
+}
+.profile-div {
+  width: 75%;
+  text-align: left;
+  left: 0;
+  margin-bottom: 2%;
+}
+.follow-div{
+  margin-left: 7%;
+  height: 30px;
 }
 .more {
   color: #4e4c4c !important;
@@ -39,11 +51,13 @@
   margin-left: 10px;
   color: #4e4c4c !important;
 }
+
 .btn-link {
   padding: 0.4rem 1rem;
   border: none;
   background-color: transparent;
   color: #72a57e;
+  outline: none!important;
 }
 
 .btn-link:hover {
