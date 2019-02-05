@@ -24,7 +24,7 @@ exports[`Edit Profile component should match the snapshot 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "0s78v8",
+              "key": "cvg92y",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Edit Profile component should match the snapshot 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "0s78v8",
+            "key": "cvg92y",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -186,1494 +186,1743 @@ exports[`Edit Profile component should match the snapshot 1`] = `
                               >
                                 <option
                                   key="AF"
+                                  selected={false}
                                   value="AF"
                                 >
                                   AFGHANISTAN
                                 </option>
                                 <option
                                   key="AX"
+                                  selected={false}
                                   value="AX"
                                 >
                                   ÅLAND ISLANDS
                                 </option>
                                 <option
                                   key="AL"
+                                  selected={false}
                                   value="AL"
                                 >
                                   ALBANIA
                                 </option>
                                 <option
                                   key="DZ"
+                                  selected={false}
                                   value="DZ"
                                 >
                                   ALGERIA
                                 </option>
                                 <option
                                   key="AS"
+                                  selected={false}
                                   value="AS"
                                 >
                                   AMERICAN SAMOA
                                 </option>
                                 <option
                                   key="AD"
+                                  selected={false}
                                   value="AD"
                                 >
                                   ANDORRA
                                 </option>
                                 <option
                                   key="AO"
+                                  selected={false}
                                   value="AO"
                                 >
                                   ANGOLA
                                 </option>
                                 <option
                                   key="AI"
+                                  selected={false}
                                   value="AI"
                                 >
                                   ANGUILLA
                                 </option>
                                 <option
                                   key="AQ"
+                                  selected={false}
                                   value="AQ"
                                 >
                                   ANTARCTICA
                                 </option>
                                 <option
                                   key="AG"
+                                  selected={false}
                                   value="AG"
                                 >
                                   ANTIGUA AND BARBUDA
                                 </option>
                                 <option
                                   key="AR"
+                                  selected={false}
                                   value="AR"
                                 >
                                   ARGENTINA
                                 </option>
                                 <option
                                   key="AM"
+                                  selected={false}
                                   value="AM"
                                 >
                                   ARMENIA
                                 </option>
                                 <option
                                   key="AW"
+                                  selected={false}
                                   value="AW"
                                 >
                                   ARUBA
                                 </option>
                                 <option
                                   key="AU"
+                                  selected={false}
                                   value="AU"
                                 >
                                   AUSTRALIA
                                 </option>
                                 <option
                                   key="AT"
+                                  selected={false}
                                   value="AT"
                                 >
                                   AUSTRIA
                                 </option>
                                 <option
                                   key="AZ"
+                                  selected={false}
                                   value="AZ"
                                 >
                                   AZERBAIJAN
                                 </option>
                                 <option
                                   key="BS"
+                                  selected={false}
                                   value="BS"
                                 >
                                   BAHAMAS
                                 </option>
                                 <option
                                   key="BH"
+                                  selected={false}
                                   value="BH"
                                 >
                                   BAHRAIN
                                 </option>
                                 <option
                                   key="BD"
+                                  selected={false}
                                   value="BD"
                                 >
                                   BANGLADESH
                                 </option>
                                 <option
                                   key="BB"
+                                  selected={false}
                                   value="BB"
                                 >
                                   BARBADOS
                                 </option>
                                 <option
                                   key="BY"
+                                  selected={false}
                                   value="BY"
                                 >
                                   BELARUS
                                 </option>
                                 <option
                                   key="BE"
+                                  selected={false}
                                   value="BE"
                                 >
                                   BELGIUM
                                 </option>
                                 <option
                                   key="BZ"
+                                  selected={false}
                                   value="BZ"
                                 >
                                   BELIZE
                                 </option>
                                 <option
                                   key="BJ"
+                                  selected={false}
                                   value="BJ"
                                 >
                                   BENIN
                                 </option>
                                 <option
                                   key="BM"
+                                  selected={false}
                                   value="BM"
                                 >
                                   BERMUDA
                                 </option>
                                 <option
                                   key="BT"
+                                  selected={false}
                                   value="BT"
                                 >
                                   BHUTAN
                                 </option>
                                 <option
                                   key="BO"
+                                  selected={false}
                                   value="BO"
                                 >
                                   BOLIVIA, PLURINATIONAL STATE OF
                                 </option>
                                 <option
                                   key="BQ"
+                                  selected={false}
                                   value="BQ"
                                 >
                                   BONAIRE, SINT EUSTATIUS AND SABA
                                 </option>
                                 <option
                                   key="BA"
+                                  selected={false}
                                   value="BA"
                                 >
                                   BOSNIA AND HERZEGOVINA
                                 </option>
                                 <option
                                   key="BW"
+                                  selected={false}
                                   value="BW"
                                 >
                                   BOTSWANA
                                 </option>
                                 <option
                                   key="BV"
+                                  selected={false}
                                   value="BV"
                                 >
                                   BOUVET ISLAND
                                 </option>
                                 <option
                                   key="BR"
+                                  selected={false}
                                   value="BR"
                                 >
                                   BRAZIL
                                 </option>
                                 <option
                                   key="IO"
+                                  selected={false}
                                   value="IO"
                                 >
                                   BRITISH INDIAN OCEAN TERRITORY
                                 </option>
                                 <option
                                   key="BN"
+                                  selected={false}
                                   value="BN"
                                 >
                                   BRUNEI DARUSSALAM
                                 </option>
                                 <option
                                   key="BG"
+                                  selected={false}
                                   value="BG"
                                 >
                                   BULGARIA
                                 </option>
                                 <option
                                   key="BF"
+                                  selected={false}
                                   value="BF"
                                 >
                                   BURKINA FASO
                                 </option>
                                 <option
                                   key="BI"
+                                  selected={false}
                                   value="BI"
                                 >
                                   BURUNDI
                                 </option>
                                 <option
                                   key="KH"
+                                  selected={false}
                                   value="KH"
                                 >
                                   CAMBODIA
                                 </option>
                                 <option
                                   key="CM"
+                                  selected={false}
                                   value="CM"
                                 >
                                   CAMEROON
                                 </option>
                                 <option
                                   key="CA"
+                                  selected={false}
                                   value="CA"
                                 >
                                   CANADA
                                 </option>
                                 <option
                                   key="CV"
+                                  selected={false}
                                   value="CV"
                                 >
                                   CAPE VERDE
                                 </option>
                                 <option
                                   key="KY"
+                                  selected={false}
                                   value="KY"
                                 >
                                   CAYMAN ISLANDS
                                 </option>
                                 <option
                                   key="CF"
+                                  selected={false}
                                   value="CF"
                                 >
                                   CENTRAL AFRICAN REPUBLIC
                                 </option>
                                 <option
                                   key="TD"
+                                  selected={false}
                                   value="TD"
                                 >
                                   CHAD
                                 </option>
                                 <option
                                   key="CL"
+                                  selected={false}
                                   value="CL"
                                 >
                                   CHILE
                                 </option>
                                 <option
                                   key="CN"
+                                  selected={false}
                                   value="CN"
                                 >
                                   CHINA
                                 </option>
                                 <option
                                   key="CX"
+                                  selected={false}
                                   value="CX"
                                 >
                                   CHRISTMAS ISLAND
                                 </option>
                                 <option
                                   key="CC"
+                                  selected={false}
                                   value="CC"
                                 >
                                   COCOS (KEELING) ISLANDS
                                 </option>
                                 <option
                                   key="CO"
+                                  selected={false}
                                   value="CO"
                                 >
                                   COLOMBIA
                                 </option>
                                 <option
                                   key="KM"
+                                  selected={false}
                                   value="KM"
                                 >
                                   COMOROS
                                 </option>
                                 <option
                                   key="CG"
+                                  selected={false}
                                   value="CG"
                                 >
                                   CONGO
                                 </option>
                                 <option
                                   key="CD"
+                                  selected={false}
                                   value="CD"
                                 >
                                   CONGO, THE DEMOCRATIC REPUBLIC OF THE
                                 </option>
                                 <option
                                   key="CK"
+                                  selected={false}
                                   value="CK"
                                 >
                                   COOK ISLANDS
                                 </option>
                                 <option
                                   key="CR"
+                                  selected={false}
                                   value="CR"
                                 >
                                   COSTA RICA
                                 </option>
                                 <option
                                   key="CI"
+                                  selected={false}
                                   value="CI"
                                 >
                                   CÔTE D'IVOIRE
                                 </option>
                                 <option
                                   key="HR"
+                                  selected={false}
                                   value="HR"
                                 >
                                   CROATIA
                                 </option>
                                 <option
                                   key="CU"
+                                  selected={false}
                                   value="CU"
                                 >
                                   CUBA
                                 </option>
                                 <option
                                   key="CW"
+                                  selected={false}
                                   value="CW"
                                 >
                                   CURAÇAO
                                 </option>
                                 <option
                                   key="CY"
+                                  selected={false}
                                   value="CY"
                                 >
                                   CYPRUS
                                 </option>
                                 <option
                                   key="CZ"
+                                  selected={false}
                                   value="CZ"
                                 >
                                   CZECH REPUBLIC
                                 </option>
                                 <option
                                   key="DK"
+                                  selected={false}
                                   value="DK"
                                 >
                                   DENMARK
                                 </option>
                                 <option
                                   key="DJ"
+                                  selected={false}
                                   value="DJ"
                                 >
                                   DJIBOUTI
                                 </option>
                                 <option
                                   key="DM"
+                                  selected={false}
                                   value="DM"
                                 >
                                   DOMINICA
                                 </option>
                                 <option
                                   key="DO"
+                                  selected={false}
                                   value="DO"
                                 >
                                   DOMINICAN REPUBLIC
                                 </option>
                                 <option
                                   key="EC"
+                                  selected={false}
                                   value="EC"
                                 >
                                   ECUADOR
                                 </option>
                                 <option
                                   key="EG"
+                                  selected={false}
                                   value="EG"
                                 >
                                   EGYPT
                                 </option>
                                 <option
                                   key="SV"
+                                  selected={false}
                                   value="SV"
                                 >
                                   EL SALVADOR
                                 </option>
                                 <option
                                   key="GQ"
+                                  selected={false}
                                   value="GQ"
                                 >
                                   EQUATORIAL GUINEA
                                 </option>
                                 <option
                                   key="ER"
+                                  selected={false}
                                   value="ER"
                                 >
                                   ERITREA
                                 </option>
                                 <option
                                   key="EE"
+                                  selected={false}
                                   value="EE"
                                 >
                                   ESTONIA
                                 </option>
                                 <option
                                   key="ET"
+                                  selected={false}
                                   value="ET"
                                 >
                                   ETHIOPIA
                                 </option>
                                 <option
                                   key="FK"
+                                  selected={false}
                                   value="FK"
                                 >
                                   FALKLAND ISLANDS (MALVINAS)
                                 </option>
                                 <option
                                   key="FO"
+                                  selected={false}
                                   value="FO"
                                 >
                                   FAROE ISLANDS
                                 </option>
                                 <option
                                   key="FJ"
+                                  selected={false}
                                   value="FJ"
                                 >
                                   FIJI
                                 </option>
                                 <option
                                   key="FI"
+                                  selected={false}
                                   value="FI"
                                 >
                                   FINLAND
                                 </option>
                                 <option
                                   key="FR"
+                                  selected={false}
                                   value="FR"
                                 >
                                   FRANCE
                                 </option>
                                 <option
                                   key="GF"
+                                  selected={false}
                                   value="GF"
                                 >
                                   FRENCH GUIANA
                                 </option>
                                 <option
                                   key="PF"
+                                  selected={false}
                                   value="PF"
                                 >
                                   FRENCH POLYNESIA
                                 </option>
                                 <option
                                   key="TF"
+                                  selected={false}
                                   value="TF"
                                 >
                                   FRENCH SOUTHERN TERRITORIES
                                 </option>
                                 <option
                                   key="GA"
+                                  selected={false}
                                   value="GA"
                                 >
                                   GABON
                                 </option>
                                 <option
                                   key="GM"
+                                  selected={false}
                                   value="GM"
                                 >
                                   GAMBIA
                                 </option>
                                 <option
                                   key="GE"
+                                  selected={false}
                                   value="GE"
                                 >
                                   GEORGIA
                                 </option>
                                 <option
                                   key="DE"
+                                  selected={false}
                                   value="DE"
                                 >
                                   GERMANY
                                 </option>
                                 <option
                                   key="GH"
+                                  selected={false}
                                   value="GH"
                                 >
                                   GHANA
                                 </option>
                                 <option
                                   key="GI"
+                                  selected={false}
                                   value="GI"
                                 >
                                   GIBRALTAR
                                 </option>
                                 <option
                                   key="GR"
+                                  selected={false}
                                   value="GR"
                                 >
                                   GREECE
                                 </option>
                                 <option
                                   key="GL"
+                                  selected={false}
                                   value="GL"
                                 >
                                   GREENLAND
                                 </option>
                                 <option
                                   key="GD"
+                                  selected={false}
                                   value="GD"
                                 >
                                   GRENADA
                                 </option>
                                 <option
                                   key="GP"
+                                  selected={false}
                                   value="GP"
                                 >
                                   GUADELOUPE
                                 </option>
                                 <option
                                   key="GU"
+                                  selected={false}
                                   value="GU"
                                 >
                                   GUAM
                                 </option>
                                 <option
                                   key="GT"
+                                  selected={false}
                                   value="GT"
                                 >
                                   GUATEMALA
                                 </option>
                                 <option
                                   key="GG"
+                                  selected={false}
                                   value="GG"
                                 >
                                   GUERNSEY
                                 </option>
                                 <option
                                   key="GN"
+                                  selected={false}
                                   value="GN"
                                 >
                                   GUINEA
                                 </option>
                                 <option
                                   key="GW"
+                                  selected={false}
                                   value="GW"
                                 >
                                   GUINEA-BISSAU
                                 </option>
                                 <option
                                   key="GY"
+                                  selected={false}
                                   value="GY"
                                 >
                                   GUYANA
                                 </option>
                                 <option
                                   key="HT"
+                                  selected={false}
                                   value="HT"
                                 >
                                   HAITI
                                 </option>
                                 <option
                                   key="HM"
+                                  selected={false}
                                   value="HM"
                                 >
                                   HEARD ISLAND AND MCDONALD ISLANDS
                                 </option>
                                 <option
                                   key="VA"
+                                  selected={false}
                                   value="VA"
                                 >
                                   HOLY SEE (VATICAN CITY STATE)
                                 </option>
                                 <option
                                   key="HN"
+                                  selected={false}
                                   value="HN"
                                 >
                                   HONDURAS
                                 </option>
                                 <option
                                   key="HK"
+                                  selected={false}
                                   value="HK"
                                 >
                                   HONG KONG
                                 </option>
                                 <option
                                   key="HU"
+                                  selected={false}
                                   value="HU"
                                 >
                                   HUNGARY
                                 </option>
                                 <option
                                   key="IS"
+                                  selected={false}
                                   value="IS"
                                 >
                                   ICELAND
                                 </option>
                                 <option
                                   key="IN"
+                                  selected={false}
                                   value="IN"
                                 >
                                   INDIA
                                 </option>
                                 <option
                                   key="ID"
+                                  selected={false}
                                   value="ID"
                                 >
                                   INDONESIA
                                 </option>
                                 <option
                                   key="IR"
+                                  selected={false}
                                   value="IR"
                                 >
                                   IRAN, ISLAMIC REPUBLIC OF
                                 </option>
                                 <option
                                   key="IQ"
+                                  selected={false}
                                   value="IQ"
                                 >
                                   IRAQ
                                 </option>
                                 <option
                                   key="IE"
+                                  selected={false}
                                   value="IE"
                                 >
                                   IRELAND
                                 </option>
                                 <option
                                   key="IM"
+                                  selected={false}
                                   value="IM"
                                 >
                                   ISLE OF MAN
                                 </option>
                                 <option
                                   key="IL"
+                                  selected={false}
                                   value="IL"
                                 >
                                   ISRAEL
                                 </option>
                                 <option
                                   key="IT"
+                                  selected={false}
                                   value="IT"
                                 >
                                   ITALY
                                 </option>
                                 <option
                                   key="JM"
+                                  selected={false}
                                   value="JM"
                                 >
                                   JAMAICA
                                 </option>
                                 <option
                                   key="JP"
+                                  selected={false}
                                   value="JP"
                                 >
                                   JAPAN
                                 </option>
                                 <option
                                   key="JE"
+                                  selected={false}
                                   value="JE"
                                 >
                                   JERSEY
                                 </option>
                                 <option
                                   key="JO"
+                                  selected={false}
                                   value="JO"
                                 >
                                   JORDAN
                                 </option>
                                 <option
                                   key="KZ"
+                                  selected={false}
                                   value="KZ"
                                 >
                                   KAZAKHSTAN
                                 </option>
                                 <option
                                   key="KE"
+                                  selected={false}
                                   value="KE"
                                 >
                                   KENYA
                                 </option>
                                 <option
                                   key="KI"
+                                  selected={false}
                                   value="KI"
                                 >
                                   KIRIBATI
                                 </option>
                                 <option
                                   key="KP"
+                                  selected={false}
                                   value="KP"
                                 >
                                   KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF
                                 </option>
                                 <option
                                   key="KR"
+                                  selected={false}
                                   value="KR"
                                 >
                                   KOREA, REPUBLIC OF
                                 </option>
                                 <option
                                   key="KW"
+                                  selected={false}
                                   value="KW"
                                 >
                                   KUWAIT
                                 </option>
                                 <option
                                   key="KG"
+                                  selected={false}
                                   value="KG"
                                 >
                                   KYRGYZSTAN
                                 </option>
                                 <option
                                   key="LA"
+                                  selected={false}
                                   value="LA"
                                 >
                                   LAO PEOPLE'S DEMOCRATIC REPUBLIC
                                 </option>
                                 <option
                                   key="LV"
+                                  selected={false}
                                   value="LV"
                                 >
                                   LATVIA
                                 </option>
                                 <option
                                   key="LB"
+                                  selected={false}
                                   value="LB"
                                 >
                                   LEBANON
                                 </option>
                                 <option
                                   key="LS"
+                                  selected={false}
                                   value="LS"
                                 >
                                   LESOTHO
                                 </option>
                                 <option
                                   key="LR"
+                                  selected={false}
                                   value="LR"
                                 >
                                   LIBERIA
                                 </option>
                                 <option
                                   key="LY"
+                                  selected={false}
                                   value="LY"
                                 >
                                   LIBYA
                                 </option>
                                 <option
                                   key="LI"
+                                  selected={false}
                                   value="LI"
                                 >
                                   LIECHTENSTEIN
                                 </option>
                                 <option
                                   key="LT"
+                                  selected={false}
                                   value="LT"
                                 >
                                   LITHUANIA
                                 </option>
                                 <option
                                   key="LU"
+                                  selected={false}
                                   value="LU"
                                 >
                                   LUXEMBOURG
                                 </option>
                                 <option
                                   key="MO"
+                                  selected={false}
                                   value="MO"
                                 >
                                   MACAO
                                 </option>
                                 <option
                                   key="MK"
+                                  selected={false}
                                   value="MK"
                                 >
                                   MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF
                                 </option>
                                 <option
                                   key="MG"
+                                  selected={false}
                                   value="MG"
                                 >
                                   MADAGASCAR
                                 </option>
                                 <option
                                   key="MW"
+                                  selected={false}
                                   value="MW"
                                 >
                                   MALAWI
                                 </option>
                                 <option
                                   key="MY"
+                                  selected={false}
                                   value="MY"
                                 >
                                   MALAYSIA
                                 </option>
                                 <option
                                   key="MV"
+                                  selected={false}
                                   value="MV"
                                 >
                                   MALDIVES
                                 </option>
                                 <option
                                   key="ML"
+                                  selected={false}
                                   value="ML"
                                 >
                                   MALI
                                 </option>
                                 <option
                                   key="MT"
+                                  selected={false}
                                   value="MT"
                                 >
                                   MALTA
                                 </option>
                                 <option
                                   key="MH"
+                                  selected={false}
                                   value="MH"
                                 >
                                   MARSHALL ISLANDS
                                 </option>
                                 <option
                                   key="MQ"
+                                  selected={false}
                                   value="MQ"
                                 >
                                   MARTINIQUE
                                 </option>
                                 <option
                                   key="MR"
+                                  selected={false}
                                   value="MR"
                                 >
                                   MAURITANIA
                                 </option>
                                 <option
                                   key="MU"
+                                  selected={false}
                                   value="MU"
                                 >
                                   MAURITIUS
                                 </option>
                                 <option
                                   key="YT"
+                                  selected={false}
                                   value="YT"
                                 >
                                   MAYOTTE
                                 </option>
                                 <option
                                   key="MX"
+                                  selected={false}
                                   value="MX"
                                 >
                                   MEXICO
                                 </option>
                                 <option
                                   key="FM"
+                                  selected={false}
                                   value="FM"
                                 >
                                   MICRONESIA, FEDERATED STATES OF
                                 </option>
                                 <option
                                   key="MD"
+                                  selected={false}
                                   value="MD"
                                 >
                                   MOLDOVA, REPUBLIC OF
                                 </option>
                                 <option
                                   key="MC"
+                                  selected={false}
                                   value="MC"
                                 >
                                   MONACO
                                 </option>
                                 <option
                                   key="MN"
+                                  selected={false}
                                   value="MN"
                                 >
                                   MONGOLIA
                                 </option>
                                 <option
                                   key="ME"
+                                  selected={false}
                                   value="ME"
                                 >
                                   MONTENEGRO
                                 </option>
                                 <option
                                   key="MS"
+                                  selected={false}
                                   value="MS"
                                 >
                                   MONTSERRAT
                                 </option>
                                 <option
                                   key="MA"
+                                  selected={false}
                                   value="MA"
                                 >
                                   MOROCCO
                                 </option>
                                 <option
                                   key="MZ"
+                                  selected={false}
                                   value="MZ"
                                 >
                                   MOZAMBIQUE
                                 </option>
                                 <option
                                   key="MM"
+                                  selected={false}
                                   value="MM"
                                 >
                                   MYANMAR
                                 </option>
                                 <option
                                   key="NA"
+                                  selected={false}
                                   value="NA"
                                 >
                                   NAMIBIA
                                 </option>
                                 <option
                                   key="NR"
+                                  selected={false}
                                   value="NR"
                                 >
                                   NAURU
                                 </option>
                                 <option
                                   key="NP"
+                                  selected={false}
                                   value="NP"
                                 >
                                   NEPAL
                                 </option>
                                 <option
                                   key="NL"
+                                  selected={false}
                                   value="NL"
                                 >
                                   NETHERLANDS
                                 </option>
                                 <option
                                   key="NC"
+                                  selected={false}
                                   value="NC"
                                 >
                                   NEW CALEDONIA
                                 </option>
                                 <option
                                   key="NZ"
+                                  selected={false}
                                   value="NZ"
                                 >
                                   NEW ZEALAND
                                 </option>
                                 <option
                                   key="NI"
+                                  selected={false}
                                   value="NI"
                                 >
                                   NICARAGUA
                                 </option>
                                 <option
                                   key="NE"
+                                  selected={false}
                                   value="NE"
                                 >
                                   NIGER
                                 </option>
                                 <option
                                   key="NG"
+                                  selected={false}
                                   value="NG"
                                 >
                                   NIGERIA
                                 </option>
                                 <option
                                   key="NU"
+                                  selected={false}
                                   value="NU"
                                 >
                                   NIUE
                                 </option>
                                 <option
                                   key="NF"
+                                  selected={false}
                                   value="NF"
                                 >
                                   NORFOLK ISLAND
                                 </option>
                                 <option
                                   key="MP"
+                                  selected={false}
                                   value="MP"
                                 >
                                   NORTHERN MARIANA ISLANDS
                                 </option>
                                 <option
                                   key="NO"
+                                  selected={false}
                                   value="NO"
                                 >
                                   NORWAY
                                 </option>
                                 <option
                                   key="OM"
+                                  selected={false}
                                   value="OM"
                                 >
                                   OMAN
                                 </option>
                                 <option
                                   key="PK"
+                                  selected={false}
                                   value="PK"
                                 >
                                   PAKISTAN
                                 </option>
                                 <option
                                   key="PW"
+                                  selected={false}
                                   value="PW"
                                 >
                                   PALAU
                                 </option>
                                 <option
                                   key="PS"
+                                  selected={false}
                                   value="PS"
                                 >
                                   PALESTINE, STATE OF
                                 </option>
                                 <option
                                   key="PA"
+                                  selected={false}
                                   value="PA"
                                 >
                                   PANAMA
                                 </option>
                                 <option
                                   key="PG"
+                                  selected={false}
                                   value="PG"
                                 >
                                   PAPUA NEW GUINEA
                                 </option>
                                 <option
                                   key="PY"
+                                  selected={false}
                                   value="PY"
                                 >
                                   PARAGUAY
                                 </option>
                                 <option
                                   key="PE"
+                                  selected={false}
                                   value="PE"
                                 >
                                   PERU
                                 </option>
                                 <option
                                   key="PH"
+                                  selected={false}
                                   value="PH"
                                 >
                                   PHILIPPINES
                                 </option>
                                 <option
                                   key="PN"
+                                  selected={false}
                                   value="PN"
                                 >
                                   PITCAIRN
                                 </option>
                                 <option
                                   key="PL"
+                                  selected={false}
                                   value="PL"
                                 >
                                   POLAND
                                 </option>
                                 <option
                                   key="PT"
+                                  selected={false}
                                   value="PT"
                                 >
                                   PORTUGAL
                                 </option>
                                 <option
                                   key="PR"
+                                  selected={false}
                                   value="PR"
                                 >
                                   PUERTO RICO
                                 </option>
                                 <option
                                   key="QA"
+                                  selected={false}
                                   value="QA"
                                 >
                                   QATAR
                                 </option>
                                 <option
                                   key="RE"
+                                  selected={false}
                                   value="RE"
                                 >
                                   RÉUNION
                                 </option>
                                 <option
                                   key="RO"
+                                  selected={false}
                                   value="RO"
                                 >
                                   ROMANIA
                                 </option>
                                 <option
                                   key="RU"
+                                  selected={false}
                                   value="RU"
                                 >
                                   RUSSIAN FEDERATION
                                 </option>
                                 <option
                                   key="RW"
+                                  selected={false}
                                   value="RW"
                                 >
                                   RWANDA
                                 </option>
                                 <option
                                   key="BL"
+                                  selected={false}
                                   value="BL"
                                 >
                                   SAINT BARTHÉLEMY
                                 </option>
                                 <option
                                   key="SH"
+                                  selected={false}
                                   value="SH"
                                 >
                                   SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA
                                 </option>
                                 <option
                                   key="KN"
+                                  selected={false}
                                   value="KN"
                                 >
                                   SAINT KITTS AND NEVIS
                                 </option>
                                 <option
                                   key="LC"
+                                  selected={false}
                                   value="LC"
                                 >
                                   SAINT LUCIA
                                 </option>
                                 <option
                                   key="MF"
+                                  selected={false}
                                   value="MF"
                                 >
                                   SAINT MARTIN (FRENCH PART)
                                 </option>
                                 <option
                                   key="PM"
+                                  selected={false}
                                   value="PM"
                                 >
                                   SAINT PIERRE AND MIQUELON
                                 </option>
                                 <option
                                   key="VC"
+                                  selected={false}
                                   value="VC"
                                 >
                                   SAINT VINCENT AND THE GRENADINES
                                 </option>
                                 <option
                                   key="WS"
+                                  selected={false}
                                   value="WS"
                                 >
                                   SAMOA
                                 </option>
                                 <option
                                   key="SM"
+                                  selected={false}
                                   value="SM"
                                 >
                                   SAN MARINO
                                 </option>
                                 <option
                                   key="ST"
+                                  selected={false}
                                   value="ST"
                                 >
                                   SAO TOME AND PRINCIPE
                                 </option>
                                 <option
                                   key="SA"
+                                  selected={false}
                                   value="SA"
                                 >
                                   SAUDI ARABIA
                                 </option>
                                 <option
                                   key="SN"
+                                  selected={false}
                                   value="SN"
                                 >
                                   SENEGAL
                                 </option>
                                 <option
                                   key="RS"
+                                  selected={false}
                                   value="RS"
                                 >
                                   SERBIA
                                 </option>
                                 <option
                                   key="SC"
+                                  selected={false}
                                   value="SC"
                                 >
                                   SEYCHELLES
                                 </option>
                                 <option
                                   key="SL"
+                                  selected={false}
                                   value="SL"
                                 >
                                   SIERRA LEONE
                                 </option>
                                 <option
                                   key="SG"
+                                  selected={false}
                                   value="SG"
                                 >
                                   SINGAPORE
                                 </option>
                                 <option
                                   key="SX"
+                                  selected={false}
                                   value="SX"
                                 >
                                   SINT MAARTEN (DUTCH PART)
                                 </option>
                                 <option
                                   key="SK"
+                                  selected={false}
                                   value="SK"
                                 >
                                   SLOVAKIA
                                 </option>
                                 <option
                                   key="SI"
+                                  selected={false}
                                   value="SI"
                                 >
                                   SLOVENIA
                                 </option>
                                 <option
                                   key="SB"
+                                  selected={false}
                                   value="SB"
                                 >
                                   SOLOMON ISLANDS
                                 </option>
                                 <option
                                   key="SO"
+                                  selected={false}
                                   value="SO"
                                 >
                                   SOMALIA
                                 </option>
                                 <option
                                   key="ZA"
+                                  selected={false}
                                   value="ZA"
                                 >
                                   SOUTH AFRICA
                                 </option>
                                 <option
                                   key="GS"
+                                  selected={false}
                                   value="GS"
                                 >
                                   SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS
                                 </option>
                                 <option
                                   key="SS"
+                                  selected={false}
                                   value="SS"
                                 >
                                   SOUTH SUDAN
                                 </option>
                                 <option
                                   key="ES"
+                                  selected={false}
                                   value="ES"
                                 >
                                   SPAIN
                                 </option>
                                 <option
                                   key="LK"
+                                  selected={false}
                                   value="LK"
                                 >
                                   SRI LANKA
                                 </option>
                                 <option
                                   key="SD"
+                                  selected={false}
                                   value="SD"
                                 >
                                   SUDAN
                                 </option>
                                 <option
                                   key="SR"
+                                  selected={false}
                                   value="SR"
                                 >
                                   SURINAME
                                 </option>
                                 <option
                                   key="SJ"
+                                  selected={false}
                                   value="SJ"
                                 >
                                   SVALBARD AND JAN MAYEN
                                 </option>
                                 <option
                                   key="SZ"
+                                  selected={false}
                                   value="SZ"
                                 >
                                   SWAZILAND
                                 </option>
                                 <option
                                   key="SE"
+                                  selected={false}
                                   value="SE"
                                 >
                                   SWEDEN
                                 </option>
                                 <option
                                   key="CH"
+                                  selected={false}
                                   value="CH"
                                 >
                                   SWITZERLAND
                                 </option>
                                 <option
                                   key="SY"
+                                  selected={false}
                                   value="SY"
                                 >
                                   SYRIAN ARAB REPUBLIC
                                 </option>
                                 <option
                                   key="TW"
+                                  selected={false}
                                   value="TW"
                                 >
                                   TAIWAN, PROVINCE OF CHINA
                                 </option>
                                 <option
                                   key="TJ"
+                                  selected={false}
                                   value="TJ"
                                 >
                                   TAJIKISTAN
                                 </option>
                                 <option
                                   key="TZ"
+                                  selected={false}
                                   value="TZ"
                                 >
                                   TANZANIA, UNITED REPUBLIC OF
                                 </option>
                                 <option
                                   key="TH"
+                                  selected={false}
                                   value="TH"
                                 >
                                   THAILAND
                                 </option>
                                 <option
                                   key="TL"
+                                  selected={false}
                                   value="TL"
                                 >
                                   TIMOR-LESTE
                                 </option>
                                 <option
                                   key="TG"
+                                  selected={false}
                                   value="TG"
                                 >
                                   TOGO
                                 </option>
                                 <option
                                   key="TK"
+                                  selected={false}
                                   value="TK"
                                 >
                                   TOKELAU
                                 </option>
                                 <option
                                   key="TO"
+                                  selected={false}
                                   value="TO"
                                 >
                                   TONGA
                                 </option>
                                 <option
                                   key="TT"
+                                  selected={false}
                                   value="TT"
                                 >
                                   TRINIDAD AND TOBAGO
                                 </option>
                                 <option
                                   key="TN"
+                                  selected={false}
                                   value="TN"
                                 >
                                   TUNISIA
                                 </option>
                                 <option
                                   key="TR"
+                                  selected={false}
                                   value="TR"
                                 >
                                   TURKEY
                                 </option>
                                 <option
                                   key="TM"
+                                  selected={false}
                                   value="TM"
                                 >
                                   TURKMENISTAN
                                 </option>
                                 <option
                                   key="TC"
+                                  selected={false}
                                   value="TC"
                                 >
                                   TURKS AND CAICOS ISLANDS
                                 </option>
                                 <option
                                   key="TV"
+                                  selected={false}
                                   value="TV"
                                 >
                                   TUVALU
                                 </option>
                                 <option
                                   key="UG"
+                                  selected={false}
                                   value="UG"
                                 >
                                   UGANDA
                                 </option>
                                 <option
                                   key="UA"
+                                  selected={false}
                                   value="UA"
                                 >
                                   UKRAINE
                                 </option>
                                 <option
                                   key="AE"
+                                  selected={false}
                                   value="AE"
                                 >
                                   UNITED ARAB EMIRATES
                                 </option>
                                 <option
                                   key="GB"
+                                  selected={false}
                                   value="GB"
                                 >
                                   UNITED KINGDOM
                                 </option>
                                 <option
                                   key="US"
+                                  selected={false}
                                   value="US"
                                 >
                                   UNITED STATES
                                 </option>
                                 <option
                                   key="UM"
+                                  selected={false}
                                   value="UM"
                                 >
                                   UNITED STATES MINOR OUTLYING ISLANDS
                                 </option>
                                 <option
                                   key="UY"
+                                  selected={false}
                                   value="UY"
                                 >
                                   URUGUAY
                                 </option>
                                 <option
                                   key="UZ"
+                                  selected={false}
                                   value="UZ"
                                 >
                                   UZBEKISTAN
                                 </option>
                                 <option
                                   key="VU"
+                                  selected={false}
                                   value="VU"
                                 >
                                   VANUATU
                                 </option>
                                 <option
                                   key="VE"
+                                  selected={false}
                                   value="VE"
                                 >
                                   VENEZUELA, BOLIVARIAN REPUBLIC OF
                                 </option>
                                 <option
                                   key="VN"
+                                  selected={false}
                                   value="VN"
                                 >
                                   VIET NAM
                                 </option>
                                 <option
                                   key="VG"
+                                  selected={false}
                                   value="VG"
                                 >
                                   VIRGIN ISLANDS, BRITISH
                                 </option>
                                 <option
                                   key="VI"
+                                  selected={false}
                                   value="VI"
                                 >
                                   VIRGIN ISLANDS, U.S.
                                 </option>
                                 <option
                                   key="WF"
+                                  selected={false}
                                   value="WF"
                                 >
                                   WALLIS AND FUTUNA
                                 </option>
                                 <option
                                   key="EH"
+                                  selected={false}
                                   value="EH"
                                 >
                                   WESTERN SAHARA
                                 </option>
                                 <option
                                   key="YE"
+                                  selected={false}
                                   value="YE"
                                 >
                                   YEMEN
                                 </option>
                                 <option
                                   key="ZM"
+                                  selected={false}
                                   value="ZM"
                                 >
                                   ZAMBIA
                                 </option>
                                 <option
                                   key="ZW"
+                                  selected={false}
                                   value="ZW"
                                 >
                                   ZIMBABWE
@@ -1813,7 +2062,7 @@ exports[`Edit Profile component should match the snapshot 1`] = `
                           </div>
                         </div>
                         <div
-                          className="form-group"
+                          className="form-group last-div"
                         >
                           <label
                             htmlFor="bio"

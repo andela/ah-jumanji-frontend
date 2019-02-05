@@ -9,6 +9,7 @@ import ArticleView from './_articleview';
 import Ratings from '../../../Rating/components/Rating';
 import CommentsContainer from '../../../Comments/Components/CommentsContainer';
 import LikeButton from "../../../Like/components/LikeButton";
+import SocialIcons from '../../../ShareArticle/components/shareArticle';
 
 class ArticlePage extends Component{
     constructor(props){
@@ -22,7 +23,18 @@ class ArticlePage extends Component{
         return myProps.match.params.slug;
     }
 
-    render(){
+    articleTitle () {
+      let title = this.getSlug();
+      let arr = title.split('-');
+      let arr2 = arr.slice(0, arr.length - 2);
+      let fisrtChar = arr[0].charAt(0).toUpperCase() + arr[0].slice(1);
+      arr2[0] = fisrtChar;
+      let passTitle = arr2.join(' ');
+      return passTitle;
+    }
+
+    render() {
+        let title = this.articleTitle();
         let slug = this.getSlug();
 
         return(
@@ -37,6 +49,8 @@ class ArticlePage extends Component{
                 <LikeButton />
                 &nbsp;&nbsp;
                 <Ratings />
+                <SocialIcons title={title} />
+                <br />
               </div>
               <div className="col-md-12">
                 <CommentsContainer />

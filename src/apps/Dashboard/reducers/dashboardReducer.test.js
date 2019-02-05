@@ -19,6 +19,18 @@ describe('dashboard reducer', () => {
     expect( dashboardReducer( { }, action )).toEqual(expectedState );
   });
 
+  it('should handle FETCH_COUNT', () => {
+    const action = {
+      type: types.FETCH_COUNT,
+      user: {}
+    };
+
+    const expectedState = { };
+
+    expect( dashboardReducer( { }, action )).toEqual(expectedState );
+  });
+
+
   it('should handle FETCH_FAIL', () => {
     const action = {
       type: types.FETCH_FAILED
