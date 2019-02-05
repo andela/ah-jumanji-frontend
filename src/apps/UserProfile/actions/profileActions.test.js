@@ -21,18 +21,6 @@ const profileResponse = {
   }
 };
 
-// const postProfile = {
-//   "profile": {
-//       "username": "rollplanes_",
-//       "first_name": "damian",
-//       "last_name": "marley",
-//       "bio": "i love game",
-//       "country": "Ken",
-//       "phone_number": "07246783782",
-//       "twitter_handle": "@apeli"
-//   }
-// };
-
 const error = {
   "payload": {
     "response": {
