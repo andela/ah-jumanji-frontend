@@ -3,8 +3,6 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-// import Dotenv from 'dotenv-webpack';
-// import path from 'path';
 
 
 export default function (env) {

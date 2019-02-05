@@ -11,6 +11,7 @@ const endpointArticleLikes = config.api.endpointArticleLikes;
 const endpointArticleComments = config.api.articleCommentsUrl;
 const endpointRating = config.api.ratingUrl;
 const endpointSingleBookmark = config.api.singleBookmarksUrl;
+const getProfileUrl = config.api.getProfileUrl;
 const token = read_cookie('token');
 const loggedInUsername = read_cookie('loggedInUsername');
 
@@ -59,12 +60,16 @@ export function fetchArticle(pageNumber) {
                 r[i]['ratings'] = ratings;
                 r[i]['bookmarked'] = bookmarked;
                 ar.push(r[i]);
+                dispatch(FetchSucess(ar));
               }
             )
           );
         }
-        dispatch(FetchSucess(ar));
+
+
         dispatch(fetchCount());
+
+
       })
       .catch(error => {
         dispatch(FetchFailed(error));
@@ -124,7 +129,7 @@ const fetchArticleRating = (slug) => {
 };
 
 const fetchProfiles = () => {
-  return axios.get(endpointSingleBookmark, {
+  return axios.get(getProfileUrl, {
     headers: {
       Accept: 'application/json',
       Authorization: 'Token ' + token
@@ -132,7 +137,6 @@ const fetchProfiles = () => {
   })
     .then(response => {
       localStorage.setItem('profPic', response.data.profile.profile_photo);
-      return (response.data.profile);
     })
     .catch(error => {
       return (error);
