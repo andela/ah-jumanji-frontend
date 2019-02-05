@@ -69,4 +69,49 @@ describe('rating reducer', () => {
     }, action)).toEqual(expectedState);
 
   });
+
+  it('should handle fetch followers', () => {
+    const action = {
+      type: types.GET_FOLLOWERS,
+      followers: {
+          "user": "test.user"
+      }
+    };
+
+    const expectedState = {
+        followUser: {},
+        unfollowUser: {},
+        followers: {
+            "user": "test.user"
+        },
+        following: {}
+    };
+
+    expect(followingReducer({
+        ...initialState
+    }, action )).toEqual(expectedState );
+  });
+
+  it('should handle fetch following', () => {
+    const action = {
+      type: types.GET_FOLLOWED,
+      followed: {
+          "user": "test.user"
+      }
+    };
+
+    const expectedState = {
+        followUser: {},
+        unfollowUser: {},
+        followers: {},
+        following: {
+            "user": "test.user"
+        }
+    };
+
+    expect(followingReducer({
+        ...initialState
+    }, action )).toEqual(expectedState );
+  });
+
 });

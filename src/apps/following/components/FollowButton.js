@@ -66,7 +66,7 @@ render() {
     const {following} = this.state;
     return (
       <div className="button">
-        <button type="button" className="btn btn-outline-success btn-sm" onClick={this.handleFollow}>{following ? "Following": "Follow"}</button>
+        <button type="button" className="btn btn-outline-success btn-sm follow_btn" onClick={this.handleFollow}>{following ? "Following": "Follow"}</button>
       </div>
     );
 }

@@ -92,4 +92,52 @@ describe('Follow actions request', () => {
       expect(store.getActions()).toEqual(expectedAction);
     });
   });
+  it('fetches followers successfully', () => {
+    const followers = {
+      "user": "test.user"
+  };
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 200,
+        response: followers
+      });
+    });
+
+    const expectedAction = [{
+      type: types.GET_FOLLOWERS,
+      followers
+    }];
+
+    const store = mockStore();
+
+    return store.dispatch(actions.getFollowers(followers)).then(() => {
+      // return of async actions
+      expect(store.getActions()).toEqual(expectedAction);
+    });
+  });
+  it('fetches following successfully', () => {
+    const followed = {
+      "user": "test.user"
+  };
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 200,
+        response: followed
+      });
+    });
+
+    const expectedAction = [{
+      type: types.GET_FOLLOWED,
+      followed
+    }];
+
+    const store = mockStore();
+
+    return store.dispatch(actions.getFollowed(followed)).then(() => {
+      // return of async actions
+      expect(store.getActions()).toEqual(expectedAction);
+    });
+  });
 });

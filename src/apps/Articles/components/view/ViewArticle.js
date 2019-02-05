@@ -10,8 +10,6 @@ import Ratings from '../../../Rating/components/Rating';
 import CommentsContainer from '../../../Comments/Components/CommentsContainer';
 import LikeButton from "../../../Like/components/LikeButton";
 import SocialIcons from '../../../ShareArticle/components/shareArticle';
-import BookmarkButton from '../../../Bookmarks/components/BookmarkButton';
-// import { fetchBookmark } from '../../../Dashboard/actions/dashboardActions'
 
 class ArticlePage extends Component{
     constructor(props){
@@ -38,14 +36,10 @@ class ArticlePage extends Component{
     render() {
         let title = this.articleTitle();
         let slug = this.getSlug();
-        let bookmarked = false;
-        let { Articles } = this.props;
-        if (Articles) {
-          bookmarked = Articles.bookmarked;
-        }
+
         return(
           <div className="container auth-container">
-            <div className="row">
+            <div className="article-view col-md-10">
               <div className="col-md-12">
                 <ArticleView slug={slug} />
               </div>
@@ -55,9 +49,6 @@ class ArticlePage extends Component{
                 <LikeButton />
                 &nbsp;&nbsp;
                 <Ratings />
-                <span className="float-right">
-                  <BookmarkButton slug={slug} bookmarked={bookmarked} />
-                </span>
                 <SocialIcons title={title} />
                 <br />
               </div>
