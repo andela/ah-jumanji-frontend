@@ -46,7 +46,12 @@ export function authenticateUser(userData) {
             dispatch(LoginSucess(res.data));
             // dismiss any existing toast first.
             toast.dismiss();
-            window.location.replace('/a/home');
+            let d = document.referrer.split('/');
+            if(d.includes("view_article") && d.includes("a")) {
+                window.location.replace(document.referrer);
+            } else {
+                window.location.replace('/a/home');
+            }
         })
         .catch(error => {
             toast.error(error.response.data.errors.error[0], {autoClose: false});

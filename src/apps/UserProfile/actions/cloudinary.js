@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import * as types from './types';
-import {editProfile} from './profile';
+import { editProfile } from './profile';
 import config from '../../../config/config';
 
 

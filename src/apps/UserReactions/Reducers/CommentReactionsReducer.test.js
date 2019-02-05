@@ -40,4 +40,18 @@ describe('Reactions Reducers', () => {
     });
   });
 
+  it('should handle FETCH_COMMENTS_REACTIONS_FAILURE', () => {
+    const action = {
+      type: types.FETCH_COMMENTS_REACTIONS_FAILURE
+    };
+    expect(commentListReducer({}, action)).toEqual({});
+  });
+
+  it('should handle ADD_COMMENT_REACTION_FAILURE', () => {
+    const action = {
+      type: types.ADD_COMMENT_REACTION_FAILURE
+    };
+    expect(commentListReducer({}, action)).toEqual({});
+  });
+
 });
