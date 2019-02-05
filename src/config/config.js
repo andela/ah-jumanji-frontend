@@ -1,5 +1,4 @@
-const baseUrl = process.env.BASE_URL;
-
+const baseUrl = "https://ah-jumanji-staging.herokuapp.com";
 
 const config = {
   api: {
@@ -30,8 +29,8 @@ const config = {
     singleBookmarksUrl: baseUrl + '/api/articles/bookmarks/single/',
   },
   firebase: {
-    apiKey: process.env.FIREBASE_API_KEY || 'random',
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN
+    apiKey: "AIzaSyDLqlYrfTIkjXb01oA_9svo107jkV-YzAg",
+    authDomain: "ah-jumanji.firebaseapp.com"
   },
   avatarImage: {
     avatarUrl: 'https://cdn-images-1.medium.com/max/1200/1*MccriYX-ciBniUzRKAUsAw.png'
@@ -40,7 +39,7 @@ const config = {
     cloudinaryUrl: 'https://api.cloudinary.com/v1_1/authors-haven-jumanji/upload',
     cloudinaryUploadPreset: 'jcuci4hq'
   },
-  defaultImage : "https://cdn-images-1.medium.com/max/1200/1*MccriYX-ciBniUzRKAUsAw.png"
+  defaultImage: "https://cdn-images-1.medium.com/max/1200/1*MccriYX-ciBniUzRKAUsAw.png"
 };
 
 export default config;

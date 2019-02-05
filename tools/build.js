@@ -1,14 +1,13 @@
 /*eslint-disable no-console */
-import webpack from 'webpack';
-import colors from 'colors';
 import webpackConfig from '../webpack.config.prod';
+
+const webpack = require('webpack');
+const colors = require('colors');
 
 
 process.env.NODE_ENV = 'production'; // this assures the Babel dev config (for hot reloading) doesn't apply.
-
 console.log(colors.blue('Generating minified bundle for production via Webpack. This will take a moment...'));
-
-webpack(webpackConfig).run((err, stats) => {
+webpack(webpackConfig(process.env)).run((err, stats) => {
   if (err) { // so a fatal error occurred. Stop here.
     console.log(err.bold.red);
     return 1;
