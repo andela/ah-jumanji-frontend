@@ -52,10 +52,15 @@ class EditorView extends React.Component{
             </a>
           </li>
           );
-    }
+    };
     render(){
         const myProps = this.props;
         const myState = this.state;
+        let bookmarked = false;
+        let { Articles } = this.props;
+        if (Articles) {
+          bookmarked = Articles.bookmarked;
+        }
         if(myProps.Articles === undefined){
             return(
               <div>
@@ -97,7 +102,8 @@ class EditorView extends React.Component{
 }
 
 EditorView.propTypes = {
-    slug: PropTypes.string.isRequired
+    slug: PropTypes.string.isRequired,
+  Articles: PropTypes.object.isRequired,
 };
 
 export function mapStateToProps(state, myProps) {
