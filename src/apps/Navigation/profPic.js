@@ -22,7 +22,7 @@ class ProfPic extends React.Component {
     let avatar = config.avatarImage.avatarUrl;
     return (
       <button className="nav-link dropdown-toggle btn-link" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img src={isLoading ? avatar : localStorage.profPic} alt="follower avatar" className="followers-avatar navbar-avatar rounded-circle" />
+        <img src={isLoading ? avatar : localStorage.profPic} alt="avatar" className="followers-avatar navbar-avatar rounded-circle" />
       </button>
     );
   }

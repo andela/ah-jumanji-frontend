@@ -26,8 +26,8 @@ class BookmarkButton extends Component {
      let classIcon;
      let labelBookmark;
      if (bookmarked) {
-       if (bookmark!==undefined) {
-         if (bookmark.message ==="Bookmark successfully made.") {
+       if (bookmark.bookmarks!==undefined) {
+         if (bookmark.bookmarks.message =="Bookmark successfully made.") {
            classIcon = "fas fa-bookmark fa-active";
            labelBookmark = "Unbookmark";
          } else {
@@ -40,8 +40,8 @@ class BookmarkButton extends Component {
        }
 
      } else {
-       if (bookmark!==undefined) {
-         if (bookmark.message ==="Bookmark successfully made.") {
+       if (bookmark.bookmarks!==undefined) {
+         if (bookmark.bookmarks.message =="Bookmark successfully made.") {
            classIcon = "fas fa-bookmark fa-active";
            labelBookmark = "Unbookmark";
          } else {
