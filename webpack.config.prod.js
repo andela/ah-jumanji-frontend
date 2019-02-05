@@ -5,8 +5,7 @@ import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 
-export default function (env) {
-  return {
+export default {
     mode: 'production',
     entry: [
       'babel-polyfill',
@@ -25,7 +24,7 @@ export default function (env) {
       new webpack.EnvironmentPlugin({
         NODE_ENV: 'production',
         DEBUG: false,
-        BASE_URL: env.BASE_URL,
+        BASE_URL: "https://ah-jumanji-staging.herokuapp.com",
         FIREBASE_API_KEY: "AIzaSyDLqlYrfTIkjXb01oA_9svo107jkV-YzAg",
         FIREBASE_AUTH_DOMAIN: "ah-jumanji.firebaseapp.com",
         SOCIAL_AUTH_API_URL: "https://ah-jumanji-staging.herokuapp.com/api/users/social/auth"
@@ -77,4 +76,3 @@ export default function (env) {
       ]
     }
   };
-}

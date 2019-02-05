@@ -24,32 +24,6 @@ describe('_viewage', () => {
   });
 });
 
-describe('if state has all requirements', () => {
-  const store = fakeStore({
-    Articles:{
-      read_article:{
-        body:"This is body",
-        author:{
-            profile_photo:"this is photo",
-            user: "the user"
-        }
-      }
-    }
-  });
-  const wrapper = mount(
-    <Provider store={store}>
-      <MemoryRouter>
-        <Viewpage slug="This is slug" />
-      </MemoryRouter>
-    </Provider>
-  );
-
-  it('should render all div', () => {
-    expect(wrapper.find('div').exists()).toBe(true);
-    expect(wrapper.find('.publish-div').exists()).toBe(true);
-  });
-
-});
 describe('If state is undefined', () => {
   const store = fakeStore({
     Articles:{
