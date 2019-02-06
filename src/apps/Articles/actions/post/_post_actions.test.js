@@ -8,7 +8,10 @@ import {POSTING_ARTICLE, POSTED_ARTICLE, ERROR_POSTING_ARTICLE} from '../actionT
 
 it('return state data when article is being posted', () => {
 
-    const data = {article : 'posting article'};
+    const data = {
+        body : 'posting article',
+        title : "title"
+    };
     const returnedData = {
         type: POSTING_ARTICLE,
         payload:{
@@ -24,7 +27,8 @@ it('return state data when article is being posted', () => {
 
 it('return state data when article is posted', () => {
     const data = {
-        article: 'posted article'
+        body: 'posted article',
+        title: 'The titlte'
     };
     const returnedData = {
         type: POSTED_ARTICLE,
@@ -51,10 +55,14 @@ it('return state data when article posting is errored', () => {
 //Testing async tests
 describe("Test for the posting async function", ()=>{
     it("Should return a posted success slug",() => {
-        let postData = post_actions.postArticle("<p>This is the article body</p>");
+        const data = {
+            body: 'posted article',
+            title: 'The titlte'
+        };
+        let postData = post_actions.postArticle(data);
         postData().then(response => {
             expect(response.data.articles.slug).toEqual("string-e678-963376");
-            expect(mockStore.getActions()).toEqual(post_actions.postingArticle("This is the article body"));
+            expect(mockStore.getActions()).toEqual(post_actions.postingArticle(data));
         });
     });
 
@@ -78,6 +86,10 @@ describe('Post ations actions', () => {
 
   it('creates GET_POSTS_SUCCESS after successfuly fetching postse', () => {
   let getPostsMock = {articles: "this is slug"};
+          const data = {
+            body: 'posted article',
+            title: 'The titlte'
+        };
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
       request.respondWith({
@@ -92,7 +104,7 @@ describe('Post ations actions', () => {
         ];
 
 
-    return store.dispatch(post_actions.postArticle("this is slug")).then(() => {
+    return store.dispatch(post_actions.postArticle(data)).then(() => {
       // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });

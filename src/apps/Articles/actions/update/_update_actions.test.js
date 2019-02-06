@@ -31,7 +31,8 @@ it('return state data when article is being updated', () => {
 
 it('return state data when article is posted', () => {
   const data = {
-    article: 'updated article'
+    body: 'updated article',
+    title: 'le title'
   };
   const returnedData = {
     type: UPDATED_ARTICLE,
@@ -73,8 +74,12 @@ it('return state data when article updating is continuous', () => {
 
 //Testing async tests
 describe("Test for the updating async function", ()=>{
+  const data = {
+    body: 'updated article',
+    title: 'le title'
+  };
   it("Should return an update success slug",() => {
-      let postData = update_actions.updateArticle("<p>This is the article body</p>");
+      let postData = update_actions.updateArticle(data);
       postData().then(response => {
           expect(response.data.articles.slug).toEqual("string-e678-963376");
       });
@@ -100,6 +105,10 @@ describe('getDelete actions', () => {
 
   it(' after successfuly deleteing postse', () => {
   let getPostsMock = {articles: "this is article data"};
+  const data = {
+    body: 'updated article',
+    title: 'le title'
+  };
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
       request.respondWith({
@@ -115,7 +124,7 @@ describe('getDelete actions', () => {
         ];
 
 
-    return store.dispatch(update_actions.updateArticle("<p>This is the body</p><p>I love body!</p>","this is slug")).then(() => {
+    return store.dispatch(update_actions.updateArticle(data,"this is slug")).then(() => {
       // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });

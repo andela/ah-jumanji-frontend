@@ -51,6 +51,15 @@ export class NotificationLink extends React.Component {
   }
 }
 
+function notificationDropdownLink() {
+  return(
+    <a href="/a/notifications" className="dropdown-item">
+      <i className="fas fa-bell" />
+      Notifications
+    </a>
+  );
+}
+
 export const HomeLinks = () => (
   <React.Fragment>
     <NavItem classnameOuter="nav-link active" classname="fas fa-home" link="/a/home" label="Home" />
@@ -78,13 +87,7 @@ export const HomeLinksSm = () => (
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-plus-square" link="/a/createarticle" label="Add Post" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-plus-square" link="javascript:;" data-toggle="modal" data-target="#search" label="Search" />
         <li>
-          <a href="/a/notifications" className="dropdown-item">
-            <span className="badge badge-danger">
-            5
-            </span>
-            <i className="fas fa-bell" />
-            Notifications
-          </a>
+          {notificationDropdownLink()}
         </li>
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />
@@ -147,7 +150,9 @@ export const AuthenticatedLinksSm = () => (
         <i className="fas fa-align-right" />
       </button>
       <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-        <NotificationLink />
+        <li>
+          {notificationDropdownLink()}
+        </li>
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-user" link="/a/profile" label="Profile" />
         <DropDownItem classnameOuter="dropdown-item" classname="fas fa-bookmark" link="/a/bookmarks" label="Bookmarks" />
         <div className="dropdown-divider" />

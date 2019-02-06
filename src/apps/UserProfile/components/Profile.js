@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { viewProfile } from '../actions/profile';
 import countries from './countries';
+import Follow from '../../following/components/followersComponent';
 
 
 class Profile extends React.Component {
@@ -30,12 +30,12 @@ class Profile extends React.Component {
                   <br />
                   <h3>
                     {profile.username}
-                    <Link to="profile/edit">
+                    <a href="profile/edit">
                       <button type="button" className="btn btn-outline-secondary btn-sm edit-profile-button">
                         <i className="fas fa-user-cog" />
                           Edit Profile
                       </button>
-                    </Link>
+                    </a>
                   </h3>
                   <div>
                     <li style={{ listStyleType: "none" }}>
@@ -84,8 +84,8 @@ class Profile extends React.Component {
             </div>
           </div>
         </div>
+        <Follow />
       </div>
-
     );
   }
 }

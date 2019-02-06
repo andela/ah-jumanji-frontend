@@ -1,6 +1,5 @@
 import * as types from '../actions/types';
 import profileReducer from './profileReducer';
-import * as actions from '../actions/profile';
 
 
 describe('profile reducers', () => {
@@ -107,7 +106,7 @@ describe('profile reducers', () => {
 
     const expectedState = {
       profileImage: imageCreds
-    }
+    };
 
     expect(profileReducer(initial, action)).toEqual(expectedState);
   });
