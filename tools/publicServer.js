@@ -4,7 +4,6 @@ import compression from 'compression';
 // import favicon from 'serve-favicon';
 import listenServer from "./utils";
 
-
 /*eslint-disable no-console */
 
 const port = process.env.PORT || 4000;
