@@ -32,6 +32,28 @@ describe('follow actions', () => {
         };
         expect(actions.unfollow(message)).toEqual(expectedAction);
     });
+
+    it ('should create an action myfollowers', () => {
+        const followers = {
+            "user": "test.user"
+        };
+        const expectedAction = {
+          type: types.GET_FOLLOWERS,
+          followers
+        };
+        expect(actions.myFollowers(followers)).toEqual(expectedAction);
+    });
+
+    it ('should create an action myfollowing', () => {
+      const followed = {
+          "user": "test.user"
+      };
+      const expectedAction = {
+        type: types.GET_FOLLOWED,
+        followed
+      };
+      expect(actions.myFollowed(followed)).toEqual(expectedAction);
+  });
 });
 
 
@@ -66,6 +88,54 @@ describe('Follow actions request', () => {
     const store = mockStore();
 
     return store.dispatch(actions.followUser(user)).then(() => {
+      // return of async actions
+      expect(store.getActions()).toEqual(expectedAction);
+    });
+  });
+  it('fetches followers successfully', () => {
+    const followers = {
+      "user": "test.user"
+  };
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 200,
+        response: followers
+      });
+    });
+
+    const expectedAction = [{
+      type: types.GET_FOLLOWERS,
+      followers
+    }];
+
+    const store = mockStore();
+
+    return store.dispatch(actions.getFollowers(followers)).then(() => {
+      // return of async actions
+      expect(store.getActions()).toEqual(expectedAction);
+    });
+  });
+  it('fetches following successfully', () => {
+    const followed = {
+      "user": "test.user"
+  };
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 200,
+        response: followed
+      });
+    });
+
+    const expectedAction = [{
+      type: types.GET_FOLLOWED,
+      followed
+    }];
+
+    const store = mockStore();
+
+    return store.dispatch(actions.getFollowed(followed)).then(() => {
       // return of async actions
       expect(store.getActions()).toEqual(expectedAction);
     });

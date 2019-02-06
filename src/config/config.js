@@ -28,6 +28,8 @@ const config = {
     followUrl: baseUrl + '/api/profiles/',
     bookmarksUrl: baseUrl + '/api/articles/bookmarks/all/',
     singleBookmarksUrl: baseUrl + '/api/articles/bookmarks/single/',
+    getFollowersUrl: baseUrl + '/api/profiles/followers/',
+    getFollowedUrl: baseUrl + '/api/profiles/followed/'
   },
   firebase: {
     apiKey: process.env.FIREBASE_API_KEY || 'random',

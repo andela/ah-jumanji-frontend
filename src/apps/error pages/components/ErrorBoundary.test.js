@@ -19,7 +19,7 @@ class TempElement extends React.Component {
 
   render() {
     return (
-      <div></div>
+      <div />
     );
   }
 }
@@ -37,7 +37,6 @@ describe('Error boundary should catch Errors', function () {
   );
 
   it('should render an error page', function () {
-    console.debug(wrapper.debug());
     expect(wrapper.find('div')).toBeDefined();
     expect(wrapper.find('PageBackground')).toBeDefined();
     expect(wrapper.find('h1').length).toEqual(1);

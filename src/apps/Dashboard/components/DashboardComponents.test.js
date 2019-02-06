@@ -11,7 +11,6 @@ import thunk from 'redux-thunk';
 import Articles from './Articles';
 import LoaderData from '../../common/components/LoaderData';
 import DashboardContainer from './DashboardContainer';
-import ArticleComponent from './ArticleComponent';
 import ArticleLikesButton from './ArticleLikes';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -27,11 +26,11 @@ describe('components', () => {
         articles: {
           articles: ""
         }
-      }
+      };
       const enzymeWrapper = mount(
         <Provider store={store}>
           <MemoryRouter>
-            <Articles {...props}/>
+            <Articles {...props} />
           </MemoryRouter>
         </Provider>,);
       expect(enzymeWrapper.find('Articles')).toBeDefined();

@@ -21,7 +21,6 @@ class DashboardContainer extends Component {
 
   render() {
     const { currentPage } = this.state;
-    const { articleCount } = this.props;
     return (
       <React.Fragment>
         <SecondaryNav />
@@ -35,7 +34,7 @@ class DashboardContainer extends Component {
           </h4>
           <Articles currentPage={currentPage} />
           <Pagination
-            totalRecords={24}
+            totalRecords={48}
             pageLimit={12}
             pageNeighbours={0}
             onPageChanged={this.onPageChanged}

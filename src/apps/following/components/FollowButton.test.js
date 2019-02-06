@@ -16,7 +16,7 @@ describe('FollowButton Container', () => {
     const buttons = shallow(<FollowButton prop="props" />);
     expect(buttons.instance().props.prop).toBe("props");
   });
-  
+
   it('should render correctly in "debug" mode', () => {
     const component = shallow(<FollowButton debug />);
 

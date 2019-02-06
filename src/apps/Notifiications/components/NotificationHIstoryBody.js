@@ -19,7 +19,7 @@ export default function NotificationsBody(props) {
         </div>
       </nav>
       <div className="tab-content" id="nav-tabContent">
-        <NavTab label="unread_section" id="unread-section" content={unread_content} />
+        <NavTab label="unread_section" id="unread-section" content={unread_content} isActive="active" />
         <NavTab label="read_section" id="read-section" content={read_content} />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import {push} from 'connected-react-router';
 import store from '../../../index';
-import {registerNewError} from "../../error pages/actions/actions";
+import registerNewError from "../../error pages/actions/actions";
 
 export default class AppError extends Error {
   constructor(message, status) {
