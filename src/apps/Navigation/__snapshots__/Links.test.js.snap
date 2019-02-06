@@ -75,7 +75,17 @@ exports[`<AuthenticatedLinksSm /> should match the snapshot 1`] = `
       aria-labelledby="navbarDropdown"
       className="dropdown-menu"
     >
-      <NotificationLink />
+      <li>
+        <a
+          className="dropdown-item"
+          href="/a/notifications"
+        >
+          <i
+            className="fas fa-bell"
+          />
+          Notifications
+        </a>
+      </li>
       <DropDownItem
         classname="fas fa-user"
         classnameOuter="dropdown-item"
@@ -193,11 +203,6 @@ exports[`<HomeLinksSm /> should match the snapshot 1`] = `
           className="dropdown-item"
           href="/a/notifications"
         >
-          <span
-            className="badge badge-danger"
-          >
-            5
-          </span>
           <i
             className="fas fa-bell"
           />
