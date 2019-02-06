@@ -23,7 +23,7 @@ class LoginForm extends Component {
 
   componentDidMount() {
     const token = read_cookie('token');
-    if(token) {
+    if(token.length > 0) {
       window.location.replace('/a/home');
     }
   }
