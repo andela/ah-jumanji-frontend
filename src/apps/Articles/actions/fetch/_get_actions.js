@@ -1,11 +1,9 @@
 import axios from 'axios';
 import { read_cookie, bake_cookie } from 'sfcookies';
 import { GOT_ARTICLE, ERROR_GETTING_ARTICLE} from '../actionTypes';
-// import getUserCookie from '../../../common/utils/readTokens';
 
 import config from '../../../../config/config';
 
-// const token = getUserCookie();
 const token = read_cookie('token');
 const loggedInUsername = read_cookie('loggedInUsername');
 const endpointSingleBookmark = config.api.singleBookmarksUrl;
@@ -79,3 +77,4 @@ export function getError(){
         payload: {message: "Could not get that article"}
     };
 }
+
