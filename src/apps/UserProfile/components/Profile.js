@@ -4,16 +4,29 @@ import PropTypes from 'prop-types';
 import { viewProfile } from '../actions/profile';
 import countries from './countries';
 import Follow from '../../following/components/followersComponent';
-
+import Articles from '../../Dashboard/components/Articles';
+import Pagination from "../../Pagination/components/Pagination";
 
 class Profile extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentPage: 1
+    };
+  }
 
   componentDidMount() {
     const { viewProfile } = this.props;
     viewProfile();
   }
 
+  onPageChanged = data => {
+    const { currentPage } = data;
+    this.setState({ currentPage });
+  };
+
   render() {
+    const { currentPage } = this.state;
     const { profile } = this.props;
     const { country } = profile;
     const fullCountryName = countries[country];
@@ -49,30 +62,33 @@ class Profile extends React.Component {
                       {profile.bio}
                     </li>
                     <li style={{ listStyleType: "none", textTransform: "capitalize"}}>
-                      {fullCountryName ?
+                      {fullCountryName ? (
                         <span>
                           <i className="fas fa-globe africa-icon" />
                           &nbsp;
                           {fullCountryName}
-                        </span>: <span />}
+                        </span>
+): <span />}
                     </li>
                     <li style={{ listStyleType: "none" }}>
-                      {profile.phone_number ?
+                      {profile.phone_number ? (
                         <span>
                           <i className="fas fa-phone mobile-phone" />
                           &nbsp;
                           {profile.phone_number}
-                        </span> : <span />}
+                        </span>
+): <span />}
                     </li>
                     <li style={{ listStyleType: "none" }}>
-                      {profile.twitter_handle ?
+                      {profile.twitter_handle ? (
                         <span>
                           <i className="fab fa-twitter twitter-icon" />
                           &nbsp;
                           <a style={{ listStyleType: "none" }} href={`https://twitter.com/${profile.twitter_handle}`}>
                             {profile.twitter_handle}
                           </a>
-                        </span> : <span />}
+                        </span>
+): <span />}
                     </li>
                     <li style={{ listStyleType: "none" }}>
                       <a href={profile.website}>{profile.website}</a>
@@ -81,10 +97,18 @@ class Profile extends React.Component {
                 </div>
               </div>
               <hr />
+              <Follow />
+              <Articles currentPage={currentPage} user={profile.username} />
+              <Pagination
+                  totalRecords={24}
+                  pageLimit={12}
+                  pageNeighbours={0}
+                  onPageChanged={this.onPageChanged}
+              />
             </div>
           </div>
         </div>
-        <Follow />
+
       </div>
     );
   }

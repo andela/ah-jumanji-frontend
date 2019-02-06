@@ -38,8 +38,7 @@ describe('Error boundary should catch Errors', function () {
 
   it('should render an error page', function () {
     expect(wrapper.find('div')).toBeDefined();
-    expect(wrapper.find('PageBackground')).toBeDefined();
     expect(wrapper.find('h1').length).toEqual(1);
-    expect(wrapper.find('h1').text()).toEqual("500!");
+    expect(wrapper.find('h1').text()).toEqual("Error -500!");
   });
 });

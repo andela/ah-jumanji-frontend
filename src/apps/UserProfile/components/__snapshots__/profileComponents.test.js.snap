@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Profile /> should match the snapshot 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
 exports[`Edit Profile component should match the snapshot 1`] = `
 <Provider
   store={
@@ -24,7 +30,7 @@ exports[`Edit Profile component should match the snapshot 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "ebho05",
+              "key": "54ltt8",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +44,7 @@ exports[`Edit Profile component should match the snapshot 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "ebho05",
+            "key": "54ltt8",
             "pathname": "/",
             "search": "",
             "state": undefined,

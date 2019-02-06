@@ -2,18 +2,22 @@
 
 exports[`Error Page test should match the snapshot 1`] = `
 <Fragment>
-  <PageBackground />
+  <span
+    className="error-bg"
+  />
   <div
     className="container h-100 d-flex"
   >
     <div
       className="jumbotron-fluid register-redirect-modal my-auto position-relative"
     >
-      <em>
-        <h1>
-          404
-        </h1>
-      </em>
+      <h2>
+        Ooops!
+      </h2>
+      <h1>
+        Error -
+        404
+      </h1>
       <strong>
         <h5>
           Looks Like the page you are looking for was not found

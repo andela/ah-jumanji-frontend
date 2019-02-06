@@ -6,18 +6,35 @@ import { read_cookie } from 'sfcookies';
 // Import local files
 import { fetchAuthorProfile } from '../actions/profile';
 import FollowButton from '../../following/components/FollowButton';
-
-
+import Articles from '../../Dashboard/components/Articles';
+import Pagination from "../../Pagination/components/Pagination";
 
 
 class AuthorProfile extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        currentPage: 1
+      };
+    }
+
     componentDidMount () {
         const { fetchAuthorProfile } = this.props;
         fetchAuthorProfile();
     }
+
+    onPageChanged = data => {
+      const { currentPage } = data;
+      this.setState({ currentPage });
+    };
+
     render() {
+        const { currentPage } = this.state;
         const { authorProfile } = this.props;
         const loggedIn = read_cookie('loggedInUsername');
+        if (loggedIn === authorProfile.user) {
+          window.location.replace("/a/profile");
+        }
         return (
           <div>
             <div className="container">
@@ -37,16 +54,19 @@ class AuthorProfile extends Component {
                           {authorProfile.bio}
                         </li>
                         <li style={{ listStyleType: "none" }}>
-                          {
-                            loggedIn === authorProfile.user ? (false) : (
-                              <FollowButton username={authorProfile.user} />
-                            )
-                        }
+                          <FollowButton username={authorProfile.user} />
                         </li>
                       </div>
                     </div>
                   </div>
                   <hr />
+                  <Articles currentPage={currentPage} user={authorProfile.user} />
+                  <Pagination
+                      totalRecords={24}
+                      pageLimit={12}
+                      pageNeighbours={0}
+                      onPageChanged={this.onPageChanged}
+                  />
                 </div>
               </div>
             </div>

@@ -1,17 +1,19 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import PageBackground from "../../common/components/PageBackground";
 import BackButton from "./backButton";
-
 
 export default function ErrorPage(props) {
   const {header, message, button} = props;
   return (
     <React.Fragment>
-      <PageBackground />
+      <span className="error-bg" />
       <div className="container h-100 d-flex">
         <div className="jumbotron-fluid register-redirect-modal my-auto position-relative">
-          <em><h1>{header}</h1></em>
+          <h2>Ooops!</h2>
+          <h1>
+            Error -
+            {header}
+          </h1>
           <strong><h5>{message}</h5></strong>
           {button}
         </div>

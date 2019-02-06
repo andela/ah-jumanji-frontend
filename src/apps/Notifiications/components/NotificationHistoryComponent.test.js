@@ -3,10 +3,10 @@ import Enzyme from "enzyme/build";
 import Adapter from "enzyme-adapter-react-16/build";
 import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
-import {mountWithStore} from "../../resetPassword/tests/email_reset.test";
-import NotificationHistory from "./NotificationHistoryComponent";
 import TestRenderer from "react-test-renderer";
 import {Provider} from "react-redux";
+import {mountWithStore} from "../../resetPassword/tests/email_reset.test";
+import NotificationHistory from "./NotificationHistoryComponent";
 import NotificationItem from "./NotificationItem.test";
 
 Enzyme.configure({adapter: new Adapter()});
