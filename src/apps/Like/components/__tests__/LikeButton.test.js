@@ -56,11 +56,6 @@ describe('<LikeButton />', () => {
     shallowWithStore(<LikeButton />, store);
   });
 
-  it('renders the renders the span likeCount', () => {
-    const text = wrapper.find('span').first().text();
-    expect(text).toEqual('2');
-  });
-
   it('renders the renders the thumbs up icon', () => {
     expect(wrapper.find('i').exists()).toBe(true);
   });

@@ -30,6 +30,9 @@ class LikesViewComponent extends Component {
         <Link to={`/ah-jumanji/profile/${username}`}>
           {username.charAt(0).toUpperCase() + username.substr(1)}
         </Link>
+        <span className="float-right text-muted">
+          <button type="button" id="follow-btn">Follow</button>
+        </span>
       </li>
     );
   }
