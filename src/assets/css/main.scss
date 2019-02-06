@@ -47,8 +47,8 @@
   color: #4e4c4c !important;
 }
 .article-view{
-  text-align: center;
-  margin-left: 8%;
+  width: 70%;
+  margin: auto;
 }
 
 .article-more {
@@ -679,7 +679,6 @@ ul#likes-list {
 
 .article-title {
   font-size: 3rem;
-  text-align: center;
   width: 90%;
   margin: auto;
   width: 100%;
@@ -692,6 +691,20 @@ ul#likes-list {
 .article-title::-webkit-input-placeholder {
   color: rgb(211, 211, 211);
   font-size: 3rem;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  margin-top: 80px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 2;
+  cursor: pointer;
 }
 
 @import 'mediaqueries';

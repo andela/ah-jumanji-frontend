@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
     connect
   } from 'react-redux';
@@ -54,7 +53,7 @@ class CreateArticle extends React.Component{
       return(
         <div className="edit-article-view">
           <div>
-            <input onChange={this.handleTitleInput} className="article-title" name="title" placeholder="Title" />
+            <textarea onChange={this.handleTitleInput} className="article-title" name="title" placeholder="Title" />
             <FroalaEditor
               className="article-body"
               tag="textarea"
@@ -75,7 +74,7 @@ class CreateArticle extends React.Component{
                     'froalaEditor.image.error': function (e, editor, error, response) {
                         //error occurs
                         if (error) {
-                          toastNotification(error,"error"+" & "+response);
+                          toastNotification(error,"Could not upload that image " + response);
                             //respond
                         }
                     }

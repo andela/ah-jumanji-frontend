@@ -72,13 +72,17 @@ class EditorEditView extends React.Component{
 
         }else{
             let article_body = myProps.Articles.body;
+            let data = {
+                body: myProps.Articles.body,
+                title: myProps.Articles.title
+            };
             myState.model = article_body;
             return(
               <div>
                 <br />
                 <div className="publish-div">
-                  { this.authorCheck("update", "btn btn-outline-warning  btn-sm", "Update Story", article_body, myState.slug)}
-                  { this.authorCheck( "delete", "btn btn-outline-danger  btn-sm", "Delete Story", article_body, myState.slug)}
+                  { this.authorCheck("update", "btn btn-outline-warning  btn-sm", "Update Story", data, myState.slug)}
+                  { this.authorCheck( "delete", "btn btn-outline-danger  btn-sm", "Delete Story", data, myState.slug)}
                 </div>
                 <FroalaEditor
                 tag="textarea"

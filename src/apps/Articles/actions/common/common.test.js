@@ -72,3 +72,17 @@ describe("pressed button", ()=>{
     expect(commonActions.onButtonPressed("delete", "This is delete", "le slug", props)).toEqual("delete");
   });
 });
+
+describe("test read time", ()=>{
+  it("Returns time taken to read an article", ()=>{
+    expect(commonActions.readTime(60)).toEqual("1 min");
+    expect(commonActions.readTime(3600)).toEqual("1 hr plus");
+    expect(commonActions.readTime(30)).toEqual("1 sec");
+  });
+});
+
+describe("Date of article writing", ()=>{
+  it("Returns date of article", ()=>{
+    expect(commonActions.articleTime('2019-02-05T14:36:18.282190Z')).toEqual("Feb.  5 2019");
+  });
+});

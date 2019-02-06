@@ -12,10 +12,11 @@ import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
 
 import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView';
-import FollowButton from '../../../following/components/FollowButton';
 import { getArticles } from '../../actions/fetch/_get_actions';
 import { startFunction } from '../edit/_articleedit';
-import { openWindow } from '../../actions/common/common';
+import { FollowComponent } from '../common/_components';
+import BookmarkButton from "../../../Bookmarks/components/BookmarkButton";
+import { openWindow, articleTime, readTime } from '../../actions/common/common';
 
 
 class EditorView extends React.Component{
@@ -33,8 +34,8 @@ class EditorView extends React.Component{
     }
 
     componentDidMount(){
-        startFunction(this.state, this.props);
-        return 'mounted';
+      startFunction(this.state, this.props);
+      return 'mounted';
     }
 
     onEditPressed(slug){
@@ -57,7 +58,7 @@ class EditorView extends React.Component{
         const myProps = this.props;
         const myState = this.state;
         let bookmarked = false;
-        let { Articles } = this.props;
+        const { Articles } = this.props;
         if (Articles) {
           bookmarked = Articles.bookmarked;
         }
@@ -77,20 +78,19 @@ class EditorView extends React.Component{
               { read_cookie('loggedInUsername') === read_cookie("article_author") ?
                 this.button("#", myProps.slug, "btn btn-outline-warning  btn-sm", "Edit Story"): ""}
             </div>
-
-            <div className="profile-div">
-              <ul className="list-group list-group-flush">
-                <li className="article-pre-details">
-                  <img src={myProps.Articles.author.profile_photo} alt="jumanji" className="followers-avatar rounded-circle" />
-                  <a href={`/a/profile/${myProps.Articles.author.user}`}>{"  " + myProps.Articles.author.user}</a>
-                  <br />
-                </li>
-              </ul>
-              <div className="follow-div">
-                <FollowButton username={myProps.Articles.author.user} />
-              </div>
-            </div>
+            { read_cookie('loggedInUsername') !== read_cookie("article_author") ?
+                FollowComponent(myProps.Articles.author) : ""}
             <p className="article-title">{myProps.Articles.title}</p>
+            <span className="float-right">
+              <BookmarkButton slug={myProps.slug} bookmarked={bookmarked || false} />
+            </span>
+            <div className="profile-div">
+              <span className="text-muted">
+                {articleTime(myProps.Articles.updatedAt || '2019-02-05T14:36:18.282190Z') + " . " + readTime(myProps.Articles.readtime) +" Read "}
+                <i className="fas fa-book-reader" />
+              </span>
+            </div>
+            <br />
             <FroalaEditorView
             model={myProps.Articles.body}
             />

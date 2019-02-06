@@ -76,4 +76,3 @@ it('FroalaEditorView is present', () => {
   const component = shallow(<FroalaEditorView />);
   expect(component.exists()).toBe(true);
 });
-

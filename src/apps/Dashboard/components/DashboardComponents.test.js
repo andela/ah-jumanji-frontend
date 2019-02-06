@@ -34,7 +34,7 @@ describe('components', () => {
           </MemoryRouter>
         </Provider>,);
       expect(enzymeWrapper.find('Articles')).toBeDefined();
-      expect(enzymeWrapper.find('div')).toHaveLength(330);
+      expect(enzymeWrapper.find('div')).toHaveLength(331);
       expect(enzymeWrapper.contains(<LoaderData />)).toBe(true);
     });
 });
@@ -66,7 +66,7 @@ describe('components', () => {
           </MemoryRouter>
         </Provider>,);
       expect(enzymeWrapper.find('DashboardContainer')).toBeDefined();
-      expect(enzymeWrapper.find('div')).toHaveLength(332);
+      expect(enzymeWrapper.find('div')).toHaveLength(333);
     });
 });
 });

@@ -34,12 +34,6 @@ exports[`<AuthenticatedLinks /> should match the snapshot 1`] = `
         label="Profile"
         link="/a/profile"
       />
-      <DropDownItem
-        classname="fas fa-bookmark"
-        classnameOuter="dropdown-item"
-        label="Bookmarks"
-        link="/a/bookmarks"
-      />
       <div
         className="dropdown-divider"
       />
@@ -91,12 +85,6 @@ exports[`<AuthenticatedLinksSm /> should match the snapshot 1`] = `
         classnameOuter="dropdown-item"
         label="Profile"
         link="/a/profile"
-      />
-      <DropDownItem
-        classname="fas fa-bookmark"
-        classnameOuter="dropdown-item"
-        label="Bookmarks"
-        link="/a/bookmarks"
       />
       <div
         className="dropdown-divider"
@@ -214,12 +202,6 @@ exports[`<HomeLinksSm /> should match the snapshot 1`] = `
         classnameOuter="dropdown-item"
         label="Profile"
         link="/a/profile"
-      />
-      <DropDownItem
-        classname="fas fa-bookmark"
-        classnameOuter="dropdown-item"
-        label="Bookmarks"
-        link="/a/bookmarks"
       />
       <div
         className="dropdown-divider"

@@ -11,7 +11,7 @@ exports[`Create article page should render correctly in "debug" mode 1`] = `
   className="container auth-container"
 >
   <div
-    className="row"
+    className="article-view col-md-10"
   >
     <div
       className="col-md-12"

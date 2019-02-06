@@ -1,4 +1,5 @@
 const baseUrl = "https://ah-jumanji-staging.herokuapp.com";
+const BASE_URL_FRONTEND="https://ah-jumanji-frontend.herokuapp.com";
 
 const config = {
   api: {
@@ -28,7 +29,8 @@ const config = {
     bookmarksUrl: baseUrl + '/api/articles/bookmarks/all/',
     singleBookmarksUrl: baseUrl + '/api/articles/bookmarks/single/',
     getFollowersUrl: baseUrl + '/api/profiles/followers/',
-    getFollowedUrl: baseUrl + '/api/profiles/followed/'
+    getFollowedUrl: baseUrl + '/api/profiles/followed/',
+    baseUrlFrontend: BASE_URL_FRONTEND
   },
   firebase: {
     apiKey: "AIzaSyDLqlYrfTIkjXb01oA_9svo107jkV-YzAg",
