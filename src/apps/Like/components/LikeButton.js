@@ -43,7 +43,6 @@ class LikeButton extends Component{
 
 LikeButton.propTypes = {
   actions: PropTypes.object.isRequired,
-  likeCount: PropTypes.number.isRequired,
   liked: PropTypes.bool.isRequired,
 };
 

@@ -49,3 +49,16 @@ describe('<CommentsContainer />', () => {
     expect(component).toMatchSnapshot();
   });
 });
+
+describe('<CommentsContainer /> ', () => {
+  let container;
+  beforeEach(() => {
+    container = shallow(<CommentsContainer />);
+  });
+
+  it('renders correctly', () => expect(container.exists()).toEqual(true));
+  it('renders props', () => {
+    const cont = shallow(<CommentsContainer button="like" />);
+    expect(cont.instance().props.button).toBe("like");
+  });
+});

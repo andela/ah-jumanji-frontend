@@ -30,20 +30,38 @@
 }
 .publish-div {
   text-align: right;
+  position: relative;
+  right: 0;
+}
+.profile-div {
+  width: 75%;
+  text-align: left;
+  left: 0;
+  margin-bottom: 2%;
+}
+.follow-div{
+  margin-left: 7%;
+  height: 30px;
 }
 .more {
   color: #4e4c4c !important;
+}
+.article-view{
+  text-align: center;
+  margin-left: 8%;
 }
 
 .article-more {
   margin-left: 10px;
   color: #4e4c4c !important;
 }
+
 .btn-link {
   padding: 0.4rem 1rem;
   border: none;
   background-color: transparent;
   color: #72a57e;
+  outline: none!important;
 }
 
 .btn-link:hover {
@@ -266,6 +284,11 @@ a {
 }
 
 .edit-profile-button {
+  margin-left: 10px;
+}
+
+.follow_btn{
+  height: 27px;
   margin-left: 10px;
 }
 
@@ -508,6 +531,20 @@ ul#likes-list {
     letter-spacing: 0;
     font-weight: 400;
     font-style: normal;
+}
+
+#social-share-span {
+  margin-top: 20px;
+  margin-left: -2px;
+  cursor: pointer;
+}
+
+.twitter-icon, .africa-icon {
+  color: #55acee
+}
+
+.mobile-phone {
+  color: darkred;
 }
 
 // Reactions on comments

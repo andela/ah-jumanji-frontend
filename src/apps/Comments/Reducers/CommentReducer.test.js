@@ -83,4 +83,28 @@ describe('CommentList Reducers', () => {
     });
   });
 
+  it('should handle fetch comments failed', () => {
+    const action = {
+      type: types.FETCH_COMMENTS_FAILURE
+    };
+
+    expect(commentListReducer({}, action)).toEqual({});
+  });
+
+  it('should handle add comments failed', () => {
+    const action = {
+      type: types.ADD_COMMENT_FAILURE
+    };
+
+    expect(commentListReducer({}, action)).toEqual({});
+  });
+
+  it('should handle edit comments failed', () => {
+    const action = {
+      type: types.EDIT_COMMENT_FAILURE
+    };
+
+    expect(commentListReducer({}, action)).toEqual({});
+  });
+
 });
