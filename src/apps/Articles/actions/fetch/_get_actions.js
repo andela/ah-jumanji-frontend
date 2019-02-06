@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { read_cookie, bake_cookie } from 'sfcookies';
-import {toastNotification } from '../common/common';
 import { GOT_ARTICLE, ERROR_GETTING_ARTICLE} from '../actionTypes';
 
 import config from '../../../../config/config';
@@ -30,7 +29,7 @@ export const getArticles = (slug) =>dispatch=> {
             ));})
         .catch((err) => {
             dispatch(getError(err));
-            toastNotification("error", "Could not get that article!"+err);
+            window.location.replace('/');
         });
     return fetch;
 };

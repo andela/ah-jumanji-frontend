@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import { fileUploadHandler } from '../actions/cloudinary';
+import { viewProfile } from '../actions/profile';
 import countries from './countries';
 import { EditFormInput } from '../../common/components/EditFormInput';
 
@@ -21,6 +22,24 @@ class EditProfile extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
     this.fileSelectedHandler = this.fileSelectedHandler.bind(this);
+  }
+
+  componentDidMount() {
+    const { viewProfile } = this.props;
+    viewProfile();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      firstName: nextProps.profile.first_name,
+      lastName: nextProps.profile.last_name,
+      profilePhoto: nextProps.profile.profile_photo,
+      website: nextProps.profile.website,
+      phoneNumber: nextProps.profile.phone_number,
+      bio: nextProps.profile.bio,
+      country: nextProps.profile.country,
+      twitterHandle: nextProps.profile.twitter_handle
+    });
   }
 
   handleSubmit = (e) => {
@@ -154,9 +173,10 @@ class EditProfile extends Component {
 
 EditProfile.propTypes = {
   profile: PropTypes.object.isRequired,
-  fileUploadHandler: PropTypes.func.isRequired
+  fileUploadHandler: PropTypes.func.isRequired,
+  viewProfile: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ profileReducer }) => profileReducer;
 
-export default connect(mapStateToProps, { fileUploadHandler })(EditProfile);
+export default connect(mapStateToProps, { fileUploadHandler, viewProfile })(EditProfile);

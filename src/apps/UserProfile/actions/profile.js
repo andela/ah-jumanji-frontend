@@ -32,6 +32,7 @@ export const viewProfile = () => async dispatch => {
     toast.dismiss();
     toast.error(error.response.data.detail);
     dispatch(viewProfileFailed(error));
+    window.location.replace('/');
   }
 };
 
@@ -63,6 +64,7 @@ export const editProfile = (profileData) => async dispatch => {
       subscript.classList.remove("hidden");
       subscript.innerHTML = error.response.data.errors.website[0];
       dispatch(editProfileFailed(error));
+      window.location.replace('/');
     }
   }
 };

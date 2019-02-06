@@ -21,7 +21,6 @@ class DashboardContainer extends Component {
 
   render() {
     const { currentPage } = this.state;
-    const { articleCount } = this.props;
     return (
       <React.Fragment>
         <SecondaryNav />
