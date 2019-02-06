@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { read_cookie, bake_cookie } from 'sfcookies';
 import { GOT_ARTICLE, ERROR_GETTING_ARTICLE} from '../actionTypes';
+import getUserCookie from '../../../common/utils/readTokens';
 
 import config from '../../../../config/config';
 
@@ -9,24 +10,31 @@ const loggedInUsername = read_cookie('loggedInUsername');
 const endpointSingleBookmark = config.api.singleBookmarksUrl;
 
 export const getArticles = (slug) =>dispatch=> {
+
+      const token = getUserCookie();
       let url = `https://ah-jumanji-staging.herokuapp.com/api/articles/${slug}/`;
       let fetch = axios.get(url, {
           headers: {
             Accept: "application/json",
             Authorization: `Token ${token}`
-         },crossDomain: true
+         },
+            crossDomain: true
         })
         .then((response) => {
           let r = response.data.articles;
           let slug = response.data.articles.slug;
-          bake_cookie("article_author", r.author.user);
+
           axios.all([fetchBookmark(slug)]).then(
             axios.spread(
               (bookmarked) =>{
                 Object.assign(r, {"bookmarked": bookmarked});
                 dispatch(gotArticle(r));
+
               }
-            ));})
+            )
+          );
+
+        })
         .catch((err) => {
             dispatch(getError(err));
             window.location.replace('/');

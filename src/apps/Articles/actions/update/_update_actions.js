@@ -2,14 +2,13 @@ import axios from 'axios';
 import { read_cookie } from 'sfcookies';
 import {redirectUrl, toastNotification } from '../common/common';
 import {UPDATING_ARTICLE, UPDATED_ARTICLE, UPDATED_ERROR,UPDATING_CURRENT} from '../actionTypes';
-import {articleCreator} from '../post/_post_actions';
 
-export const updateArticle = (body,slug) =>dispatch=> {
+export const updateArticle = (data,slug) =>dispatch=> {
     const token = read_cookie("token");
     let updated_data = {
-        "title": articleCreator(body,0), //Get the title
-        "description": articleCreator(body,0), // Get first paragraph
-        "body": body,
+        "title": data.title, //Get the title
+         "description": data.body.slice(0, 25) + " ...", // Get first paragraph
+         "body": data.body,
         "tagList": "[default]"
       };
       if(updated_data.title === ""){
