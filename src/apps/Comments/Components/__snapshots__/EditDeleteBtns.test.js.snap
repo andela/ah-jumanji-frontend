@@ -23,6 +23,12 @@ exports[`Collect password updates should render  1`] = `
 </div>
 `;
 
+exports[`EditDeleteBtnsComponent should render correctly in "debug" mode 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
 exports[`ForgotPasswordComponent should render   1`] = `
 <div
   className="row login-container"

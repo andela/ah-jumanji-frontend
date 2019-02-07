@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
+import jest from 'jest-mock';
 import Profile from './Profile';
 import EditProfile from './EditProfile';
 import { initialState } from '../reducers/profileReducer';
@@ -62,9 +63,29 @@ describe('<Profile />', () => {
     );
   });
 
+  it('should match the snapshot', () => {
+    const component = shallow(<Profile debug />);
+    expect(component).toMatchSnapshot();
+  });
+
   it('renders without crashing', () => {
     shallowWithStore(<Profile />, store);
   });
+
+  it('should render edit profile page correctly', () => {
+    store = mockStore(initialState);
+    let wrapper = mount(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Profile {...props} />
+        </MemoryRouter>
+      </Provider>
+    );
+    expect(wrapper.find('Articles')).toBeDefined();
+    expect(wrapper.find('Pagination')).toBeDefined();
+    expect(wrapper.find('div')).toHaveLength(340);
+  });
+
 });
 
 
@@ -104,4 +125,3 @@ describe('Edit Profile component', () => {
   });
 
 });
-

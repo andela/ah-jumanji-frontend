@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme from 'enzyme';
+import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
@@ -12,6 +12,14 @@ const mockStore = configureMockStore(middlewares);
 
 
 Enzyme.configure({adapter: new Adapter()});
+
+describe('EditDeleteBtnsComponent', () => {
+  it('should render correctly in "debug" mode', () => {
+    const component = shallow(<EditDeleteBtnsComponent debug />);
+
+    expect(component).toMatchSnapshot();
+  });
+});
 
 describe('the edit delete button', function () {
   let store = mockStore({});

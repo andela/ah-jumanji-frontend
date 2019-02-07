@@ -42,21 +42,20 @@ class Follow extends Component {
           <ul className="nav justify-content-center">
             <li className="nav-item" id="articles">
               <a className="nav-link">
-                <span className="badge badge-pill badge-secondary">2</span>
                 Articles
               </a>
             </li>
             <li className="nav-item" id="followers">
-              <a className="nav-link">
+              <p className="nav-link">
                 <span className="badge badge-pill badge-secondary">{followers_count}</span>
                 Followers
-              </a>
+              </p>
             </li>
             <li className="nav-item" id="following">
-              <a className="nav-link">
+              <p className="nav-link">
                 <span className="badge badge-pill badge-secondary">{following_count}</span>
                 Following
-              </a>
+              </p>
             </li>
           </ul>
         </div>

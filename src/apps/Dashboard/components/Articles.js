@@ -58,41 +58,53 @@ class Articles extends Component {
 
 
   data = () => {
-    const { articles } = this.props;
+    const { articles, user } = this.props;
 
     if (articles !== undefined) {
-      const f = articles.articles;
+      let f = articles.articles;
       const r = [];
       let counter = 0;
       let articleImg = '';
 
-      for (const i in f) {
-        if (f[i].body.indexOf('src') > -1) {
-          const imageSplit = f[i].body.substring(f[i].body.indexOf('src=') + 1);
-          articleImg = imageSplit.split(/"/)[1];
-        } else {
-          articleImg = articlePlaceholder;
+      if (f!==undefined) {
+        if (user!==undefined) {
+          f = f.filter(person => person.author.user == user);
         }
 
-        const t = (
-          <ArticleComponent
-            key={i}
-            articleImage={articleImg}
-            articleSlug={f[i].slug}
-            articleLikes={f[i].likes}
-            articleComments={f[i].comments}
-            articleRatings={f[i].ratings}
-            articleAvatar={f[i].author.profile_photo !== '' ? f[i].author.profile_photo : defaultUserIcon}
-            authorName={f[i].author.user}
-            articleTitle={f[i].title}
-            bookmarked={f[i].bookmarked}
-          />
-        );
-        r.push(t);
-        counter += 1;
-      }
-      if (counter==12) {
-        return (r);
+        for (const i in f) {
+          if (f[i].body.indexOf('src') > -1) {
+            const imageSplit = f[i].body.substring(f[i].body.indexOf('src=') + 1);
+            articleImg = imageSplit.split(/"/)[1];
+          } else {
+            articleImg = articlePlaceholder;
+          }
+            const t = (
+              <ArticleComponent
+                key={i}
+                articleImage={articleImg}
+                articleSlug={f[i].slug}
+                articleLikes={f[i].likes}
+                articleComments={f[i].comments}
+                articleRatings={f[i].ratings}
+                articleAvatar={f[i].author.profile_photo !== '' ? f[i].author.profile_photo : defaultUserIcon}
+                authorName={f[i].author.user}
+                articleTitle={f[i].title}
+                bookmarked={f[i].bookmarked}
+              />
+            );
+            r.push(t);
+            counter += 1;
+        }
+
+        if (f.length>12) {
+          if (counter==12) {
+            return (r);
+          }
+        }else {
+          if (counter==f.length) {
+            return (r);
+          }
+        }
       }
 
     }
@@ -111,13 +123,16 @@ class Articles extends Component {
     let articlesLoaded = this.data();
     let loaded = false;
     this.masonryLoader();
-    if (articlesLoaded!==undefined && articlesLoaded.length==12) {
+    if (articlesLoaded!==undefined) {
       loaded = true;
       document.getElementById("overlay").style.display = "block";
       setTimeout(function(){
         document.getElementById("overlay").style.display = "none";
         imagesLoaded('.grid', function() {
-          new Masonry( '.grid',{itemSelector: '.grid-item',olumnWidth: '.grid-sizer'});
+          new Masonry( '.grid',{
+            itemSelector: '.grid-item',
+            columnWidth: '.grid-sizer'
+          });
         });
       }, 1200);}
     return (
@@ -129,6 +144,11 @@ class Articles extends Component {
             {articlesLoaded}
           </div>
         )}
+        { articlesLoaded!==undefined && articlesLoaded.length==0 ? (
+          <div className="text-center">
+            <i className="fas fa-exclamation-triangle" />
+            Oops! Nothing to show
+          </div>) : ( "" )}
       </React.Fragment>
     );
   }
@@ -138,6 +158,7 @@ Articles.propTypes = {
   actions: PropTypes.object.isRequired,
   articles: PropTypes.object.isRequired,
   currentPage: PropTypes.number.isRequired,
+  user: PropTypes.string.isRequired
 };
 
 

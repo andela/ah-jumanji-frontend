@@ -49,6 +49,7 @@ export function fetchArticle(pageNumber) {
         //loop through res and get slug of each article.
         let r = res.data.results;
         let ar = [];
+        let counter = 0;
         for (const i in r) {
           let slug = r[i].slug;
           // add likes, comments and rating of each article in the payload
@@ -60,12 +61,14 @@ export function fetchArticle(pageNumber) {
                 r[i]['ratings'] = ratings;
                 r[i]['bookmarked'] = bookmarked;
                 ar.push(r[i]);
-                dispatch(FetchSucess(ar));
+                counter++;
+                if (r.length==counter) {
+                  dispatch(FetchSucess(ar));
+                }
               }
             )
           );
         }
-
 
         dispatch(fetchCount());
 

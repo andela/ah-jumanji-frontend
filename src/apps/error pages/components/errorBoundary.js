@@ -50,8 +50,8 @@ class ErrorBoundary extends React.Component {
   render() {
     const {hasError, error_message} = this.state;
     const {children} = this.props;
-    let fancy_message = "An error 500 occurs when something blows up with our code.You viewing this does" +
-      " not in fact fix it. In fact you you are probably pissed.Take solace in knowing our TOP men are now aware";
+    let fancy_message = "Something probably went wrong." +
+      "Take solace in knowing we are working on solving the issue.";
     const message = error_message || fancy_message;
     if (hasError) {
       // You can render any custom fallback UI
